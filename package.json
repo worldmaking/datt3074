@@ -1,0 +1,19 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "Course notes for DATT3074  Creative Generative Audio Signal Processing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "es6-dynamic-template": "^2.0.0",
+    "express": "^4.19.2",
+    "highlight.js": "^11.10.0",
+    "json5": "^2.2.3",
+    "marked": "^1.1.1",
+    "ws": "^8.18.0"
+  }
+}

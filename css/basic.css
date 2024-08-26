@@ -1,0 +1,124 @@
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+@import url(fonts/Roboto/Roboto.css); 
+@import url(fonts/source-sans-pro/source-sans-pro.css); 
+
+body {
+	/*display: flex;
+	flex-flow: column;*/
+	height: 100vh;
+
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased; 
+	line-height: 1.4;
+
+	color: #222;
+	background-color: #fff; 
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
+	/* margin: 0 0 20px 0;*/
+	font-weight: lighter;
+	
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-shadow: none;
+  word-wrap: break-word;  
+}
+
+h1 {
+font-size: 2.5em; }
+
+h2 {
+font-size: 1.6em; }
+
+h3 {
+font-size: 1.3em; }
+
+h4 {
+font-size: 1em; }
+
+hr {
+	border-top: 1px dotted #e31837;
+
+	/*border: 0;
+    height: 1px;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #e31837, rgba(0, 0, 0, 0));*/
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+ol {
+    list-style-type: decimal; }
+  
+ul {
+    list-style-type: disc; }
+  
+ul ul {
+    list-style-type: circle; }
+  
+ul ul ul {
+	list-style-type: square; }
+
+
+pre {
+	display: block;
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	word-wrap: break-word;
+	padding: 8px;	
+	
+	border: solid 1px #ccc;
+	border-radius: 3px;
+	background: #f6f6f6;	
+	color: #333;
+}
+
+img {
+	max-width: 80%;
+}
+
+blockquote {
+	border-left: 15px solid #eee;
+	margin: 1.5em 0px;
+		padding: 0em 15px;
+}
+	
+a {
+	color: #e31837;
+	text-decoration: none;
+	transition: color .15s ease; }
+
+a:hover {
+	color: #dd7b89;
+	text-shadow: none;
+	border: none; 
+}
+
+::selection {
+	color: #fff;
+	background: #dd7b89;
+	text-shadow: none; }
+
+::-moz-selection {
+	color: #fff;
+	background: #dd7b89;
+	text-shadow: none; }
+	  
+
+.centremaxwidth960 {
+	margin:    0 auto;
+	padding:   0 10px; /* a bit of space for mobile screen edges */
+    max-width: 920px;
+}
