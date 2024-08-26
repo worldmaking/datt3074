@@ -34,19 +34,19 @@ footer {
 <ul>
 <li><a href="#datt3074-creative-generative-audio-signal-processing">DATT3074 Creative Generative Audio Signal Processing</a><ul>
 <li><a href="#course-information">Course Information</a></li>
-<li><a href="#week-0">Week 0</a></li>
-<li><a href="#week-1">Week 1</a></li>
-<li><a href="#week-2">Week 2</a></li>
-<li><a href="#week-3">Week 3</a></li>
-<li><a href="#week-4">Week 4</a></li>
-<li><a href="#week-5">Week 5</a></li>
-<li><a href="#week-6-reading-week">Week 6 [Reading week]</a></li>
-<li><a href="#week-7">Week 7</a></li>
-<li><a href="#week-8">Week 8</a></li>
-<li><a href="#week-9">Week 9</a></li>
-<li><a href="#week-10">Week 10</a></li>
-<li><a href="#week-11">Week 11</a></li>
-<li><a href="#week-12">Week 12</a></li>
+<li><a href="#week-0-one-sample-at-a-time">Week 0: One Sample at a Time</a></li>
+<li><a href="#week-1-ramps-modular-arithmetic-of-time">Week 1: Ramps: Modular Arithmetic of Time</a></li>
+<li><a href="#week-2-unit-shaping">Week 2: Unit Shaping</a></li>
+<li><a href="#week-3-uncertainty-and-unpredictablility">Week 3: Uncertainty and Unpredictablility</a></li>
+<li><a href="#week-4-stepping-in-time">Week 4: Stepping in Time</a></li>
+<li><a href="#week-5-filters-and-the-balance-of-time">Week 5: Filters and the Balance of Time</a></li>
+<li><a href="#week-6-reading-week">[Week 6: Reading week]</a></li>
+<li><a href="#week-7-the-effects-of-delay">Week 7: The Effects of Delay</a></li>
+<li><a href="#week-8-frequent-modulations">Week 8: Frequent Modulations</a></li>
+<li><a href="#week-9-navigating-waves-of-data">Week 9: Navigating Waves of Data</a></li>
+<li><a href="#week-10-windows-of-time">Week 10: Windows of Time</a></li>
+<li><a href="#week-11-exporting--embedding">Week 11: Exporting &amp; Embedding</a></li>
+<li><a href="#week-12-final-presentations">Week 12: Final Presentations</a></li>
 </ul>
 </li>
 </ul>
@@ -57,9 +57,13 @@ footer {
 <p><strong>Instructor:</strong> <a href="https://ampd.yorku.ca/profile/graham-wakefield/">Graham Wakefield</a> grrrwaaa a t york u do t ca</p>
 <p><strong>Hello and welcome!</strong></p>
 <p>This course is about the astonishing things you can do—and the insights you can find—when you work at the atomic sample-by-sample structure of digital audio. The course focuses on creative exploration of algorithmic and generative sonic signal processing with a special emphasis on “working at the sample level” in real-time/interactive contexts. This means working at the lowest level of time-domain digital audio signals, as is made possible through a software called gen~, that is part of Cycling &#39;74&#39;s Max and RNBO. These tools that are widely used for prototyping in artistic and industrial settings including audio software &amp; hardware design, music production, game audio, sonic arts, and other broader contexts. </p>
-<p>The course follows the structure of the textbook “<a href="https://cycling74.com/books/go">Generating Sound &amp; Organizing Time</a>”, Wakefield G. and Taylor, G. Cycling ’74, October 2021. ISBN-10: 1732590311 / ISBN-13: 978-1732590311</p>
-<p>Starting from the simplest beginnings we’ll see how very many seemingly unrelated synthesis and sound processing algorithms come down to a pretty small number of common circuits and useful patterns to think with, that can be reapplied in many different ways to bring new musical signal processes to life. </p>
-<p>For clarification: this is not a course about music composition, performance, or studio production as such; nor is it a course in mathematics and engineering for digital signal processing. No background in music theory, mathematics or computer science beyond high school levels are assumed. The curriculum is primarily practice-based: problem-driven and technique-focused leading toward applications that you can utilize in other project-based courses, research, compositions, and artworks.  </p>
+<p>Starting from the simplest beginnings we’ll see how very many seemingly unrelated synthesis and sound processing algorithms come down to a pretty small number of common circuits and useful patterns to think with, that can be reapplied in many different ways to bring new musical signal processes to life. For clarification: this is not a course about music composition, performance, or studio production as such; nor is it a course in mathematics and engineering for digital signal processing. No background in music theory, mathematics or computer science beyond high school levels are assumed. The curriculum is primarily practice-based: problem-driven and technique-focused leading toward applications that you can utilize in other project-based courses, research, compositions, and artworks.  </p>
+<p>The course follows the structure and assigns readings from the textbook “<a href="https://cycling74.com/books/go">Generating Sound &amp; Organizing Time</a>”, Wakefield G. and Taylor, G. Cycling ’74, October 2021. ISBN-10: 1732590311 / ISBN-13: 978-1732590311</p>
+<ul>
+<li>It is available on <a href="https://www.amazon.ca/Generating-Sound-Organizing-Time-Thinking/dp/1732590311">Amazon.ca here</a></li>
+<li>It is not currently in the York University Bookstore, but we are working on it. </li>
+<li>It is also not currently listed in the York University Library, but we are also working on it. </li>
+</ul>
 <!--
 Project algorithms may include a variety of digital oscillators, filters, audio-rate modulations, delay effects, microsound, generative rhythm and other patterns, noise and chaos, time-domain signal analysis & resynthesis, and nature-inspired systems. The last section of the course will also present translating and exporting these algorithms to contexts such as hardware (Daisy/Raspberry Pi/Arduino etc.), web (web audio), game engine (Unity/Unreal) as well as audio production (VST, Ableton devices).  
 
@@ -94,42 +98,81 @@ As it equips students with techniques and methods in audio synthesis and process
 <p>All course material is available at or linked from <a href="https://alicelab.world/datt3074/">this website</a></p>
 <p>Prerequisite: DATT 2050 or by permission of the instructor.</p>
 <hr>
-<h2 id="week-0">Week 0</h2>
+<h2 id="week-0-one-sample-at-a-time">Week 0: One Sample at a Time</h2>
 <p>Sep 4, 2023</p>
+<h3 id="what-is-gen">What is gen~</h3>
+<p><strong>Resources</strong></p>
+<ul>
+<li><p>Community</p>
+<ul>
+<li>The Cycling &#39;74 online forum has a <a href="https://cycling74.com/forums?category=Gen">gen~ category</a></li>
+<li>The <a href="https://discord.gg/unVt7Uy">Discord group</a> has a gen~ channel</li>
+</ul>
+</li>
+<li><p>Background</p>
+<ul>
+<li><a href="https://www.perfectcircuit.com/signal/graham-wakefield-generating-sound-organizing-time-interview?srsltid=AfmBOopwEVEoAMHRAQahco_wS51MufZYVDqNw0UvMrcsC1VquFp_7exX">Interview with Perfect Circuit (including RNBO examples)</a></li>
+</ul>
+</li>
+<li><p><a href="https://www.youtube.com/watch?v=jsOx4VwO_0w">Presentation for MusicHackspace London</a></p>
+</li>
+</ul>
 <hr>
-<h2 id="week-1">Week 1</h2>
+<h2 id="week-1-ramps-modular-arithmetic-of-time">Week 1: Ramps: Modular Arithmetic of Time</h2>
 <p>Sep 11, 2023</p>
 <hr>
-<h2 id="week-2">Week 2</h2>
+<h2 id="week-2-unit-shaping">Week 2: Unit Shaping</h2>
 <p>Sep 18, 2023</p>
 <hr>
-<h2 id="week-3">Week 3</h2>
+<h2 id="week-3-uncertainty-and-unpredictablility">Week 3: Uncertainty and Unpredictablility</h2>
 <p>Sep 25, 2023</p>
 <hr>
-<h2 id="week-4">Week 4</h2>
+<h2 id="week-4-stepping-in-time">Week 4: Stepping in Time</h2>
 <p>Oct 2, 2023</p>
 <hr>
-<h2 id="week-5">Week 5</h2>
+<h2 id="week-5-filters-and-the-balance-of-time">Week 5: Filters and the Balance of Time</h2>
 <p>Oct 9, 2023</p>
 <hr>
-<h2 id="week-6-reading-week">Week 6 [Reading week]</h2>
+<h2 id="week-6-reading-week">[Week 6: Reading week]</h2>
 <hr>
-<h2 id="week-7">Week 7</h2>
+<h2 id="week-7-the-effects-of-delay">Week 7: The Effects of Delay</h2>
 <p>Oct 23, 2023</p>
 <hr>
-<h2 id="week-8">Week 8</h2>
+<h2 id="week-8-frequent-modulations">Week 8: Frequent Modulations</h2>
 <p>Oct 30, 2023 </p>
 <hr>
-<h2 id="week-9">Week 9</h2>
+<h2 id="week-9-navigating-waves-of-data">Week 9: Navigating Waves of Data</h2>
 <p>Nov 6</p>
 <hr>
-<h2 id="week-10">Week 10</h2>
+<h2 id="week-10-windows-of-time">Week 10: Windows of Time</h2>
 <p>Nov 13</p>
 <hr>
-<h2 id="week-11">Week 11</h2>
+<h2 id="week-11-exporting--embedding">Week 11: Exporting &amp; Embedding</h2>
 <p>Nov 20</p>
+<ul>
+<li>You can use gen~ inside a MaxForLive device in Ableton Live</li>
+<li>You can export gen~ code as C++ (just send the &quot;export&quot; message to gen~) -- but it&#39;s up to you to figure out how to use it! Fortunately there are quite a few projects around already to help. </li>
+<li>You can export gen~ to an embedded Daisy microcontroller with <a href="https://github.com/electro-smith/oopsy">Oopsy</a>, which makes it a lot easier. See <a href="https://www.youtube.com/watch?v=fbd1CASqUmI">https://www.youtube.com/watch?v=fbd1CASqUmI</a><ul>
+<li>For standard devices, e.g. NoiseEngineering Versio, DaisyField, etc. or arbitary breadboard/PCB circuits via Daisy Seed</li>
+<li>Quite a few devices (commercial &amp; experimental) in the modular synthesis field.</li>
+</ul>
+</li>
+<li>Via gen~ in RNBO<ul>
+<li>To web audio</li>
+<li>To a VST/AudioUnit plugin, to use in any audio software (or video editor etc.)</li>
+<li>To a Raspberry Pi</li>
+</ul>
+</li>
+<li>More experimental:<ul>
+<li>gen~ to VCV rack: <a href="https://github.com/isabelgk/gen-rack">https://github.com/isabelgk/gen-rack</a></li>
+<li><a href="https://github.com/Cycling74/RNBOMetasound">Unreal Engine Metasounds</a></li>
+<li><a href="https://github.com/Cycling74/rnbo.unity.audioplugin">Unity</a></li>
+<li>Translate to <a href="http://www.charlie-roberts.com/genish/">genish.js</a></li>
+</ul>
+</li>
+</ul>
 <hr>
-<h2 id="week-12">Week 12</h2>
+<h2 id="week-12-final-presentations">Week 12: Final Presentations</h2>
 <p>Nov 27</p>
 <p><strong>Final meeting</strong></p>
 <hr>
