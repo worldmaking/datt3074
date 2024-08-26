@@ -1,5 +1,5 @@
 
-# DATT3070 Creative Generative Audio Signal Processing
+# DATT3074 Creative Generative Audio Signal Processing
 
 Wednesdays, 3pm-6pm, Fall 2024, Fine Arts building room ACW 103
 
