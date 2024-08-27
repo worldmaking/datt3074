@@ -80,6 +80,8 @@ Sep 4, 2023
 ## Week 1: Ramps: Modular Arithmetic of Time
 Sep 11, 2023
 
+---desmos: https://www.desmos.com/calculator/6pvtkzbh6b
+
 -----
 
 ## Week 2: Unit Shaping

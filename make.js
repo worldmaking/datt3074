@@ -66,16 +66,19 @@ function generate(file) {
 		// auto hr break at heading 1 titles:
 		.replace(/\n(#\s[^\n]+)/g, "\n---\n\n$1")
 		// replace @image:path as background contain 
-		.replace(/\n---image:([^\s]+)/g, `\n<img src="$1" />\n`)
+		.replace(/\n---image:\s*([^\s]+)/g, `\n<img src="$1" />\n`)
 		// // replace @youtube:ID as background video
-		.replace(/\n---youtube:([^\s]+)/g, `<iframe width="720" height="540" src="https://youtube.com/embed/$1" frameborder="0" allowfullscreen></iframe>`)
-		.replace(/\n---vimeo:([^\s]+)/g, `<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/$1?loop=1" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>`)
+		.replace(/\n---youtube:\s*([^\s]+)/g, `<iframe width="720" height="540" src="https://youtube.com/embed/$1" frameborder="0" allowfullscreen></iframe>`)
+		.replace(/\n---vimeo:\s*([^\s]+)/g, `<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/$1?loop=1" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>`)
 		// auto-embed codepens:
-		.replace(/\n---codepen:https?:\/\/codepen.io\/+([^\/]+)\/pen\/([^\/\n]+)\/?/g, 
+		.replace(/\n---codepen:\s*https?:\/\/codepen.io\/+([^\/]+)\/pen\/([^\/\n]+)\/?/g, 
 			`<p class="codepen" data-height="520" data-default-tab="js,result" data-user="$1" data-slug-hash="$2" data-preview="true"><span><a href="https://codepen.io/$1/pen/$2">Open pen.</a></span></p><script async src="https://static.codepen.io/assets/embed/ei.js"></script>`)
+		// auto embed desmos graphs:
+		.replace(/\n---desmos:\s*https?:\/\/www.desmos.com\/calculator\/([^\/\n]+)\/?/g, 
+			`<iframe src="https://www.desmos.com/calculator/$1?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>`)
 		// auto-embed youtube e.g. https://www.youtube.com/watch?v=AbcZ2f5fdNc
-		.replace(/\nhttps?:\/\/www.youtube.com\/watch\?v=([^\n\r\/]+)[^\n\r]*/g, `
-<iframe width="720" height="540" src="https://youtube.com/embed/$1" frameborder="0" allowfullscreen></iframe>
+		.replace(/\nhttps?:\/\/www.youtube.com\/watch\?v=([^\n\r\/]+)[^\n\r]*/g, 
+			`<iframe width="720" height="540" src="https://youtube.com/embed/$1" frameborder="0" allowfullscreen></iframe>
 `)
 
 	}
