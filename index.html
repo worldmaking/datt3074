@@ -36,10 +36,13 @@ footer {
 <li><a href="#course-information">Course Information</a></li>
 <li><a href="#week-0-one-sample-at-a-time">Week 0: One Sample at a Time</a></li>
 <li><a href="#week-1-ramps-modular-arithmetic-of-time">Week 1: Ramps: Modular Arithmetic of Time</a></li>
+<li><a href="#assignment-1">Assignment 1</a></li>
 <li><a href="#week-2-unit-shaping">Week 2: Unit Shaping</a></li>
 <li><a href="#week-3-uncertainty-and-unpredictablility">Week 3: Uncertainty and Unpredictablility</a></li>
+<li><a href="#assignment-2">Assignment 2</a></li>
 <li><a href="#week-4-stepping-in-time">Week 4: Stepping in Time</a></li>
 <li><a href="#week-5-filters-and-the-balance-of-time">Week 5: Filters and the Balance of Time</a></li>
+<li><a href="#assignment-3">Assignment 3</a></li>
 <li><a href="#week-6-reading-week">[Week 6: Reading week]</a></li>
 <li><a href="#week-7-the-effects-of-delay">Week 7: The Effects of Delay</a></li>
 <li><a href="#week-8-frequent-modulations">Week 8: Frequent Modulations</a></li>
@@ -53,68 +56,70 @@ footer {
 
 <hr>
 <h1 id="datt3074-creative-generative-audio-signal-processing">DATT3074 Creative Generative Audio Signal Processing</h1>
+<h2 id="course-information">Course Information</h2>
 <p>Wednesdays, 3pm-6pm, Fall 2024, Fine Arts building room ACW 103</p>
 <p><strong>Instructor:</strong> <a href="https://ampd.yorku.ca/profile/graham-wakefield/">Graham Wakefield</a> grrrwaaa a t york u do t ca</p>
-<p><strong>Hello and welcome!</strong></p>
+<p>Course material is available at or linked from <a href="https://alicelab.world/datt3074/">this website</a> -- bookmark it! </p>
 <p>This course is about the astonishing things you can do—and the insights you can find—when you work at the atomic sample-by-sample structure of digital audio. The course focuses on creative exploration of algorithmic and generative sonic signal processing with a special emphasis on “working at the sample level” in real-time/interactive contexts. This means working at the lowest level of time-domain digital audio signals, as is made possible through a software called gen~, that is part of Cycling &#39;74&#39;s Max and RNBO. These tools that are widely used for prototyping in artistic and industrial settings including audio software &amp; hardware design, music production, game audio, sonic arts, and other broader contexts. </p>
-<p>Starting from the simplest beginnings we’ll see how very many seemingly unrelated synthesis and sound processing algorithms come down to a pretty small number of common circuits and useful patterns to think with, that can be reapplied in many different ways to bring new musical signal processes to life. For clarification: this is not a course about music composition, performance, or studio production as such; nor is it a course in mathematics and engineering for digital signal processing. No background in music theory, mathematics or computer science beyond high school levels are assumed. The curriculum is primarily practice-based: problem-driven and technique-focused leading toward applications that you can utilize in other project-based courses, research, compositions, and artworks.  </p>
+<blockquote>
+<p>Audio is one of the primary modalities of digital media art and development. A core emphasis of the Digital Media programs at York is for students to develop their own computational solutions (algorithms and code) to explore creative technology problems most deeply, rather than only relying on available off-the-shelf media and tools. This course specifically serves this aspect – learning how to develop and refine creative algorithms for audio generation and processing, at the lowest level (sample streams) for maximum creative flexibility. </p>
+</blockquote>
+<p>Starting from the simplest beginnings we’ll see how very many seemingly unrelated synthesis and sound processing algorithms come down to a pretty small number of common circuits and useful patterns to think with, that can be reapplied in many different ways to bring new musical signal processes to life. </p>
+<blockquote>
+<p>As the course equips students with techniques and methods in audio synthesis and processing, it could further support students taking courses in sonic arts streams in Music and Digital Media. As it develops awareness and understanding of the potential of digital signal processing it could lead students to continue to take up more advanced signal processing courses in EECS. </p>
+</blockquote>
+<p>For clarification: this is not a course about music composition, performance, or studio production as such; nor is it a course in mathematics and engineering for digital signal processing. No background in music theory, mathematics or computer science beyond high school levels are assumed. The curriculum is primarily practice-based: problem-driven and technique-focused leading toward applications that you can utilize in other project-based courses, research, compositions, and artworks.  </p>
+<blockquote>
+<p>Prerequisite: DATT 2050 or by permission of the instructor.</p>
+</blockquote>
+<p><em>Note: 2024 is the first year the course runs, so it will be somewhat experimental as we learn what works. As such, the weekly content will be fleshed out adaptively over the next few weeks.</em></p>
+<p><strong>Course textbook</strong></p>
 <p>The course follows the structure and assigns readings from the textbook “<a href="https://cycling74.com/books/go">Generating Sound &amp; Organizing Time</a>”, Wakefield G. and Taylor, G. Cycling ’74, October 2021. ISBN-10: 1732590311 / ISBN-13: 978-1732590311</p>
 <ul>
 <li>It is available on <a href="https://www.amazon.ca/Generating-Sound-Organizing-Time-Thinking/dp/1732590311">Amazon.ca here</a></li>
 <li>There also four copies available in the Scott Library through <a href="https://ocul-yor.primo.exlibrisgroup.com/permalink/01OCUL_YOR/q36jf8/alma991036915148805164">York University Library course reserve here</a></li>
 <li>It is not currently in the York University Bookstore, but we are working on it. </li>
 </ul>
-<!--
-Project algorithms may include a variety of digital oscillators, filters, audio-rate modulations, delay effects, microsound, generative rhythm and other patterns, noise and chaos, time-domain signal analysis & resynthesis, and nature-inspired systems. The last section of the course will also present translating and exporting these algorithms to contexts such as hardware (Daisy/Raspberry Pi/Arduino etc.), web (web audio), game engine (Unity/Unreal) as well as audio production (VST, Ableton devices).  
-
-At the completion of the course students will:
-
-•    Show good understanding of the nature and varieties of computational audio synthesis, processing and modulation at the sample-by-sample level
-
-•    Develop grounding in multiple methodologies of algorithm design and prototyping for audio synthesis, processing, and generative structures
-
-•    Be able to apply these methodologies effectively in creative practice to real-time/interactive audio in a portfolio of assignments/projects, such as new audio effects, oscillators/instruments, algorithmic sequencers, etc. 
-
-•    Be able to demonstrate implementations and translate/export them to one or more application areas such as audio plugins, web platforms, game engine audio, C++ code etc. for use in other Digital Media contexts
-
-30% Assignments
-20% Participation
-20% Presentations
-30% Final Project
-
-All components can be potentially delivered electronically, no on-site examinations required. 
-
-Audio is one of the primary modalities of digital media art and development. A core emphasis of the Digital Media programs at York is for students to develop their own computational solutions (algorithms and code) to explore creative technology problems most deeply, rather than only relying on available off-the-shelf media and tools. This course specifically serves this aspect – learning how to develop and refine creative algorithms for audio generation and processing, at the lowest level (sample streams) for maximum creative flexibility. 
-
-The course proposal follows requests from students and faculty in the department of Computational Arts and the Digital Media programs. It leverages a specific expertise very well-represented in the department and program faculty but not yet represented in the curriculum. The primary textbook of the course was co-authored by faculty in Computational Arts, and has had strong reviews and popularity in creative and industry sectors, and has also supported workshops including international “synth hackathon” events.  
-
-As it equips students with techniques and methods in audio synthesis and processing, it could further support students taking courses in sonic arts streams in Music and Digital Media. As it develops awareness and understanding of the potential of digital signal processing it could lead students to continue to take up more advanced signal processing courses in EECS. 
-
-
-
--->
-
-<h2 id="course-information">Course Information</h2>
-<p>All course material is available at or linked from <a href="https://alicelab.world/datt3074/">this website</a></p>
-<p>Prerequisite: DATT 2050 or by permission of the instructor.</p>
+<p><strong>Course software</strong></p>
+<p>We will work using the <strong>gen~</strong> environment within <a href="https://cycling74.com">Cycling &#39;74&#39;s Max</a>. All students have access to a license for Max supported by the course fees. </p>
+<p><em>(If you also own RNBO you can use <strong>gen~</strong> in RNBO too; but at the current time we cannot provide student RNBO licenses.)</em></p>
+<p><strong>Evaluation</strong></p>
+<ul>
+<li>30% Assignments<ul>
+<li>Three practical individual assignments using gen~ patching through the course (details to follow)</li>
+</ul>
+</li>
+<li>20% Participation<ul>
+<li>Being present in class, taking part in discussions, group reviews, etc. </li>
+</ul>
+</li>
+<li>20% Presentations<ul>
+<li>Preenting your works in progress and final project, and explaining the development processes</li>
+</ul>
+</li>
+<li>30% Final Project<ul>
+<li>A more significant project, possibly collaborative, through several steps of development using gen~, with a final embodiment using a code export method (details to folllow)</li>
+</ul>
+</li>
+</ul>
 <hr>
 <h2 id="week-0-one-sample-at-a-time">Week 0: One Sample at a Time</h2>
 <p>Sep 4, 2023</p>
+<p><strong>Hello and welcome!</strong></p>
 <h3 id="what-is-gen">What is gen~</h3>
 <p><strong>Resources</strong></p>
 <ul>
+<li><p>Background</p>
+<ul>
+<li><a href="https://www.perfectcircuit.com/signal/graham-wakefield-generating-sound-organizing-time-interview?srsltid=AfmBOopwEVEoAMHRAQahco_wS51MufZYVDqNw0UvMrcsC1VquFp_7exX">Interview with Perfect Circuit (including RNBO examples)</a></li>
+<li><a href="https://www.youtube.com/watch?v=jsOx4VwO_0w">Presentation for MusicHackspace London</a></li>
+</ul>
+</li>
 <li><p>Community</p>
 <ul>
 <li>The Cycling &#39;74 online forum has a <a href="https://cycling74.com/forums?category=Gen">gen~ category</a></li>
 <li>The <a href="https://discord.gg/unVt7Uy">Discord group</a> has a gen~ channel</li>
 </ul>
-</li>
-<li><p>Background</p>
-<ul>
-<li><a href="https://www.perfectcircuit.com/signal/graham-wakefield-generating-sound-organizing-time-interview?srsltid=AfmBOopwEVEoAMHRAQahco_wS51MufZYVDqNw0UvMrcsC1VquFp_7exX">Interview with Perfect Circuit (including RNBO examples)</a></li>
-</ul>
-</li>
-<li><p><a href="https://www.youtube.com/watch?v=jsOx4VwO_0w">Presentation for MusicHackspace London</a></p>
 </li>
 </ul>
 <hr>
@@ -122,18 +127,26 @@ As it equips students with techniques and methods in audio synthesis and process
 <p>Sep 11, 2023</p>
 <iframe src="https://www.desmos.com/calculator/6pvtkzbh6b?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
 
+<h2 id="assignment-1">Assignment 1</h2>
+<p>Make a patch that can generate new ring tones for your phone. This is a generative patch: each time it runs, it produces a ring tone that sounds a little different. </p>
+<p>Your ring tones will be 30 seconds long. It can be stereo if you want, but mono (single channel) is fine. </p>
+<p>You can start from the template patch here: </p>
+<p>Explain why and how you built the patch the way you did. What makes it &quot;earcatching&quot; but not annoying? How did you make the variations consistently interesting, not too much the same, and yet still of a similar character?</p>
 <hr>
 <h2 id="week-2-unit-shaping">Week 2: Unit Shaping</h2>
 <p>Sep 18, 2023</p>
+<p><strong>Assignment 1 due</strong></p>
 <hr>
 <h2 id="week-3-uncertainty-and-unpredictablility">Week 3: Uncertainty and Unpredictablility</h2>
 <p>Sep 25, 2023</p>
+<h2 id="assignment-2">Assignment 2</h2>
 <hr>
 <h2 id="week-4-stepping-in-time">Week 4: Stepping in Time</h2>
 <p>Oct 2, 2023</p>
 <hr>
 <h2 id="week-5-filters-and-the-balance-of-time">Week 5: Filters and the Balance of Time</h2>
 <p>Oct 9, 2023</p>
+<h2 id="assignment-3">Assignment 3</h2>
 <hr>
 <h2 id="week-6-reading-week">[Week 6: Reading week]</h2>
 <hr>
