@@ -27,6 +27,37 @@ footer {
 	padding: 0.5em;
 }
 </style>
+<script>
+
+function download(filename, text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+}
+
+function copyPatch(str) {
+	navigator.clipboard.writeText(str);
+//   // Get the text field
+//   var copyText = document.getElementById("myInput");
+
+//   // Select the text field
+//   copyText.select();
+//   copyText.setSelectionRange(0, 99999); // For mobile devices
+
+//    // Copy the text inside the text field
+//   navigator.clipboard.writeText(copyText.value);
+
+//   // Alert the copied text
+//   alert("Copied the text: " + copyText.value);
+}
+</script>
 </head>
 
 <body class="centremaxwidth960">
@@ -37,6 +68,7 @@ footer {
 <li><a href="#week-0-one-sample-at-a-time">Week 0: One Sample at a Time</a></li>
 <li><a href="#week-1-ramps-modular-arithmetic-of-time">Week 1: Ramps: Modular Arithmetic of Time</a></li>
 <li><a href="#assignment-1">Assignment 1</a></li>
+<li><a href="#general-procedures-for-assigment-patches">General procedures for assigment patches</a></li>
 <li><a href="#week-2-unit-shaping">Week 2: Unit Shaping</a></li>
 <li><a href="#week-3-uncertainty-and-unpredictablility">Week 3: Uncertainty and Unpredictablility</a></li>
 <li><a href="#assignment-2">Assignment 2</a></li>
@@ -122,16 +154,100 @@ footer {
 </ul>
 </li>
 </ul>
+<p><strong>Homework</strong></p>
+<p>Begin thinking about and working on <a href="#assignment-1">Assignment 1</a></p>
 <hr>
 <h2 id="week-1-ramps-modular-arithmetic-of-time">Week 1: Ramps: Modular Arithmetic of Time</h2>
 <p>Sep 11, 2023</p>
 <iframe src="https://www.desmos.com/calculator/6pvtkzbh6b?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
 
 <h2 id="assignment-1">Assignment 1</h2>
-<p>Make a patch that can generate new ring tones for your phone. This is a generative patch: each time it runs, it produces a ring tone that sounds a little different. </p>
-<p>Your ring tones will be 30 seconds long. It can be stereo if you want, but mono (single channel) is fine. </p>
-<p>You can start from the template patch here: </p>
-<p>Explain why and how you built the patch the way you did. What makes it &quot;earcatching&quot; but not annoying? How did you make the variations consistently interesting, not too much the same, and yet still of a similar character?</p>
+<p>Make a patch that can generate new ring tones for your phone. This is a generative patch: each time the patch runs, it produces a ring tone that sounds a little different. Your ring tone will be 25 seconds long. It can be stereo if you want, but mono (single channel) is fine -- not all phones have stereo speakers.</p>
+<p>Be sure to follow all the <a href="#general-procedures-for-assigment-patches">general procedures for assignment patches</a></p>
+<p>Start from the template patch here: <a href="https://raw.githubusercontent.com/worldmaking/datt3074/main/assignment1.maxpat">https://raw.githubusercontent.com/worldmaking/datt3074/main/assignment1.maxpat</a>  -- save it as &quot;assignment1.maxpat&quot;. Or press the button below to copy the patch to your clipboard, and then open Max and select <code>File -&gt; New From Clipboard</code>, then save that patch as &quot;assignment1.maxpat&quot;:</p>
+<p><button value="----------begin_max5_patcher----------
+2562.3ocwas0bihiE94jeEpXeYlcSbPhal9oYps1eA6C6CcOUJYP1VciAFjH
+I8L0z+1WcCLXyMavd5pRbPRFcNe5b46Ho9Oe7AqMYePXVfOA9L3gG9yGe3AU
+SxFdv77CVGveDkfYpgYEkc3.Ika8jtON4Ctpc12Si.E3C4fexFvy.vetZHIz
+TRTVYpZbNlFSKOPSSHb0KEdrwrRdUq1lVowpIHayWeNvt5kli4Q6oo6dsfDw
+0xuiMbk8S.GGj7C2fpeC9M4W4ud7Q4udZlpItLllADRYdIuSEDMKEzObHEzU
+oe1gG0OGmEV+9OwTNfumx.JAfT.D+PjKnwjsB8D78rxBPgPv3YhmXB0N9xwg
+Mka1jPtLjIvp0WlQiIMmGoF70RFmtkFg4zrzlu8N.yPaI9gfJiEn9IOzBil7
+xhTAZR.aJ4B7BPSE.IFvDhRB4YlvaIg.hRnQeCvKn61QJtE1T9CXS4q0+.k9
+C8ruIFUaKH+dIIM56.VtXlKJOXMOMxc.Mx0ySsVFF1PkP1KrJ8N9Mx1rh4pH
+NiqHtAqWBEQi7YrnrbxO5TpQcJ0vykZTsAkdb7umSzhrkE325WgBT1Zdd5HW
+qcTpk80ZrkPeirps5ncnTc65Bk30rTSudUyM3zcCppHac5GjRIQt9Jc0Qs3Y
+9VEh2g488LbETz8J30sxdoKoUvBtjmcPDqLpO.XH2L8hoQAUZVsBtftY+JiQ
+2kJ6B.+D3WOl34.9ajhuj9eIDvdNOm8oWdAKhiRRvaV8dVQR7KwXN2wNv8k+
+At9k7L7FDeEU6DuMKkyn+gNujas4WW1GJpJHEF56p+XwwN.xCvDZYZL3mPdO
+Yaaef8yhTQa2JRqKRDIDmrhXURo4EFCgFJLVnqNEqJdLxGdShG++JnbhLnL3
+cZRBPHrRlJ.lrEAiFLSj1cknevVZB4Iv66oQ6UiHBqxPmBD3zajBNPkgt1NS
+DiWS4Ieu3wKmR6UvzAAWVlNFezPeMvqVF78WX7+emPvE.RAlQXFFORyrebCJ
+B.YeE3CZ.ew05ny9qW48DH.Nq5FNPXL7Nx47EprOmWpWX30k50USvE5qRKoI
+8gPKrNFIsAlo9ckTKbzgUL5mi27zuxDNkkHLqJFLtHS7L+6C4ci5PCajTUTt
+LgSJdkjhMAIr6U6epIBHlYg7HDZcu501FbKxJnBmzZie6QANGS4j5X0NquRj
+Sn8aZ3zKyGtEG0Ry5ztPjeVMllL1FAF6LoqpZtdPPIG.bhDG2ljg4GAS4KHU
+rRnSZVPkCxnaYsirLvlNXqHo64OKCuphJ5lLmWcTOYj0ZItJUkUmPmeGPGpW
+eLMx7zf+QBkwaaM1uYEB40vrBBu1npoj2ER9YAbL4XNlsF4IH4bAbY5xvBNN
+5LJ8+pvQg5R2Pgyxrf7Gw3nqgfeycNqNQbVjv.eXFCZ1o9Pc8m0+95KSaGll
+Vq.ugOZ7dduSP8pbDDygPzwoojjZpEcUj8PAbgiGt33ectevf0.BaTgjFEgA
+nFQokjSieUTlRAcSImb7uXF7z.nRHKojjssp4p1apRzTJmpWYEETFfplktFz
+45eqQkjktq+UnVC8fIGjeUb2S5kpx+7bfc28mEWEh0oitY6yJ3STPpV45ZZJ
+EZcchZWc+Jq3pOVlnQp8w6GWPzmN3+z+VNXrBG2fCtVmQZdwb5mmuZyJOtkl
+hxkXbrntILPfKpPw.dekJ4tvkJMzFTrtQUOgd5BsuRvPqpyakEcUz9FeilfG
+0Re6YsOB8XVuij9CvuvoBIqNQ6ypseYlIZGYWSFOh733BxWSHSu2CNdMB9ZN
+diSizJ2df2HEr1kU+fENOuQysCBe.+0L0KZccvGAfnaxutoBxazpuuacq3Bg
+jyEhcYgNL2G0atsg.ZQZIUIJUAtpDI0JmL7HK2vw1JlkuRrdU8BrZrO+q0aG
+tsxFITuecA1tGQDg4wNA4fuQhaFG0JKmjRSyKHrNpn3AqXxVrnboW6lEd69O
+oTf1c1IC7Gr1UPiyRkBQqkCYyUS2mAZhJPulJiZDo37N9xBqOAtzSmhfY7R1
+Fbgb0x3dhp5jmkkztq5uWBYK2zcNUPIoMJxyx6uyB5t8C7c2jI57vPuaUOLQ
+dNcuuJIF8pjcQ6wgSRL93se8efSoGvbBmpWBP10cpCQsmEUjkjzRe087VG8D
+KLziHuSi46aUTmrGwvo4UFQV0qxwzcDFucab7NV6Vpyg2noxMFG4W4jC4IBs
+n8.j68KiKXR7NyLvJCsl.vwi.uoicy.lsZen.msCd9Oa1ZWTa6O4wYIPBa9t
+5e6Q5KhnoXDGMSTQIIdMoGzfSTUNiEFJRynLRuvg8ECGqmGbfzYHbfpLDNAs
+YKsPvQaVTmb1vBuM.IAmyHx8fGTc3UMFaWGRQuYb6mwTuGrUeXim2J+l+K.V
+QgReVjGOf3auYiPc.H0EKwZ4..zH.fohcnd+b78u6FGEDQrrH4gYv2qO+Abx
+trBwSGTWHi4YkbFS6K.5fi.cHe8V9fzaptYCfBtiXmfnRrpBE0kSQdWc.YaA
+JZrhhU1KOmBJeAMlrGyXxvN2WeVvvv1G.1c.QTG9PCHQcMTNdHMKGV.CGCKr
+a.Ev.26NTDWVnHw1SD2Yp9AVSJoiY2AO8Fcb6ClFkPyA1.3Unx8jFt9.alGq
+DHBd7RscWizh0WZwsEYG.5Kt3cHCLbrLvHWS4Z5PG2lrtCAKJk9F3g3NhhG3
+eN0Cs6RH7d6s7xxQdGBWD2jv+l3t+uVPjvdQPBO8QJc+gB3xUByLKnyw9bWE
+Gy4NcSBiN.pfihpuTmKfQx5kGYzaNpq68FYxy91w8MsWDx8RCjFLMhVNp7Gq
+g2as1bIyFUu62mA0sdOBcimlRk+5q.k1UYs+8FZDDOgfuXYtu20GZhDl9h0x
+EbYlIb5ZK.LAWbu6PlrDNIl09+1ACfVWLuDWqIk0w3OAQCCAG2EZI+wd1aQ0
+rH6uarQnhEQUKWlrE.6VKawDFmlVum7etN1IXpqLWpLrdhxfH5jXAq43xJh0
+G1B7uUASxC6jAdfFmmIpH1rL4ZuBd1deYqXYXGH+P9P2pl8MQ07uDUCdiV3Q
+S05SRu6lY9gl5xrRbuUXAz+RjB66osxzEMzX9AFqcnoPTm00OcO8q6vesG6N
++ancWkQ8jh6MET0G4ofyv5Gtqf5TUG26t86EjiC1Sp2yuWOpWX6Tw56Cwohm
+4VQLbH3orzexJ3YWDikdhgmOw1yZh8lvDCO5wc0yCZByi2s.YmxD2NZ5otxN
+JRAP8co2I33SK8ZALbJxJbHY0MLTGuwQ9QkvJeZlqeP+KP1l2L4zxNumYxcI
+loInRSvxv0Vg4Md3bCCmatfhltjtFNfjBu8Rp2jkTDze.Q091KptKCnhlsjN
+pCgyYND5rgmbe1jywI2isStCame+05+tqc58VScm0559pI2YfG+qG++fr294
+h
+-----------end_max5_patcher-----------" onclick="copyPatch(this.value)">Copy Max Patch and select <strong>File / New From Clipboard</strong> in Max</button></p>
+<p><strong>If you want to put this ring tone on your phone:</strong></p>
+<ul>
+<li>Android: first use an online coverter tool (google for one) to convert your WAV file to mp3 or ogg. Then put the file on your phone under your /Ringtones folder. </li>
+<li>IOS: use an online converter to convert your WAV file into a m4r file. Then google for how to get that on your phone, because Apple made that a bit more complex. </li>
+</ul>
+<h2 id="general-procedures-for-assigment-patches">General procedures for assigment patches</h2>
+<ul>
+<li>All of your work should be inside the gen~ patcher -- you shouldn&#39;t need to work in the Max patch much, except to support the gen~ patch (e.g. adding a buffer~ or a scope~.) </li>
+<li><strong>Everything needed to run the patch should be included in the patch.</strong> Do not use Max Projects, 3rd party externals, external files etc. <ul>
+<li>You can use any of the &quot;go.&quot; abstractions from the book, or any of the gen~ example patchers built into Max. Don&#39;t use any other external patches. </li>
+<li>If you want to name a gen~ patcher, use <code>gen~ @title myname</code>, not <code>gen~ myname</code>.  Similarly, if you want to name a subpatcher inside the genpatcher, use <code>gen~ @title myname</code>, not <code>gen myname</code>.  This will ensure that all your work is in one patch. </li>
+<li>If you want to use an external sound file, set it up so that by default it uses a sound file that is included with Max, e.g. using <code>buffer~ test jongly</code>. The built-in sounds include: ahkey, anton, bass, brushes, cello-f2, cherokee, cym, drumloop, duduk, epno, eroica, huge, isthatyou, jongly, rainstick, sacre, sfizz_help_loop, sfizz_help_vibes, sho0630, talk, and vibes-a1.  Your project shouldn&#39;t depend on any other sound files to work. </li>
+</ul>
+</li>
+<li>Document your patch using comment objects (you can create a comment by typing &#39;c&#39; in edit mode.) <strong>This is an essential part of your grading!</strong>  <ul>
+<li>Include a full explanation of what needs to be done in the proper order to run your patch, e.g. <code>1. turn audio on</code>, <code>2. press this button</code>, <code>3. wiggle this parameter</code>. </li>
+<li>Include a longer comment to document particular parameter sets that you think sound good or best demonstrate what the patch is doing. </li>
+<li>Include a longer comment (you can put it in a subpatch if you want more space) to explain why and how you built the patch the way you did. What makes it &quot;earcatching&quot; but not annoying? How did you make the variations consistently interesting, not too much the same, and yet still of a similar character? Did you start from a certain inspiration (if so document it -- with links if you can!)</li>
+<li>Insert many small comments to document what each step or section are doing, to show that you understand how the algorithm is working (or insert comments with questions about any areas you are unsure of). This is essential for me to know what I should focus on in lecture patching sessions. </li>
+</ul>
+</li>
+<li>Save the Max patcher with the assignment number and your student number in the file name. Submit the file via this form here: </li>
+</ul>
 <hr>
 <h2 id="week-2-unit-shaping">Week 2: Unit Shaping</h2>
 <p>Sep 18, 2023</p>
