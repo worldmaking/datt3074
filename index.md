@@ -50,7 +50,7 @@ We will work using the **gen~** environment within [Cycling '74's Max](https://c
 -----
 
 ## Week 0: One Sample at a Time
-Sep 4, 2023
+Sep 4
 
 **Hello and welcome!**
 
@@ -75,7 +75,7 @@ Begin thinking about and working on [Assignment 1](#assignment-1)
 -----
 
 ## Week 1: Ramps: Modular Arithmetic of Time
-Sep 11, 2023
+Sep 11
 
 ---desmos: https://www.desmos.com/calculator/6pvtkzbh6b
 
@@ -173,26 +173,26 @@ h
 -----
 
 ## Week 2: Unit Shaping
-Sep 18, 2023
+Sep 18
 
 **Assignment 1 due**
 
 -----
 
 ## Week 3: Uncertainty and Unpredictablility
-Sep 25, 2023
+Sep 25
 
 ## Assignment 2
 
 -----
 
 ## Week 4: Stepping in Time
-Oct 2, 2023
+Oct 2
 
 -----
 
 ## Week 5: Filters and the Balance of Time
-Oct 9, 2023
+Oct 9
 
 ## Assignment 3
 
@@ -204,12 +204,12 @@ Oct 9, 2023
 -----
 
 ## Week 7: The Effects of Delay
-Oct 23, 2023
+Oct 23
 
 -----
 
 ## Week 8: Frequent Modulations
-Oct 30, 2023 
+Oct 30 
 
 -----
 
@@ -253,7 +253,7 @@ Nov 27
 **Further reading recommendations:**
 
 - Puckette, Miller. The Theory and Techniques of Electronic Music. World Scientific Publishing Company, 2007. (available online)
-- Cipriani, A and Giri, M. Electronic Music and Sound Design - Theory and Practice with Max 8 - volume 3. Contemponet, February, 2023.
+- Cipriani, A and Giri, M. Electronic Music and Sound Design - Theory and Practice with Max 8 - volume 3. Contemponet, February.
 - Loy, Gareth. Musimathics, Volume 1: The Mathematical Foundations of Music. Vol. 1. MIT press, 2011.
 - Loy, Gareth. Musimathics, Volume 2: The Mathematical Foundations of Music. Vol. 2. MIT press, 2011.
 - Roads, Curtis. The computer music tutorial. MIT press, 1996.
