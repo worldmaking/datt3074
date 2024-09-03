@@ -56,8 +56,6 @@ Sep 4
 
 https://docs.google.com/presentation/d/1xrXM86cCE7vzykYYdINs1G9g9f7FaeiiZd6IRlKBEjI/
 
-https://docs.google.com/presentation/d/1xrXM86cCE7vzykYYdINs1G9g9f7FaeiiZd6IRlKBEjI/
-
 **Get things installed**
 
 Make sure you have Max running, and can edit a gen~ patcher. 
