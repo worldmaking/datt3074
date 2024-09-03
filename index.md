@@ -47,8 +47,6 @@ We will work using the **gen~** environment within [Cycling '74's Max](https://c
 - 30% Final Project
   - A more significant project, possibly collaborative, through several steps of development using gen~, with a final embodiment using a code export method (details to folllow)
 
------
-
 # Week 0: One Sample at a Time
 Sep 4
 
@@ -170,8 +168,6 @@ If we have time:
   - The Cycling '74 online forum has a [gen~ category](https://cycling74.com/forums?category=Gen)
   - The [Discord group](https://discord.gg/unVt7Uy) has a gen~ channel
 
------
-
 # Week 1: Ramps: Modular Arithmetic of Time
 Sep 11
 
@@ -268,26 +264,18 @@ h
   - Insert many small comments to document what each step or section are doing, to show that you understand how the algorithm is working (or insert comments with questions about any areas you are unsure of). This is essential for me to know what I should focus on in lecture patching sessions. 
 - [Submit the Max patch via this form here](https://docs.google.com/forms/d/e/1FAIpQLScXR0kSb2AMFgC-DzRMBO8gHGkvcq17kJ-PU-EP1ZTRhdUoug/viewform?usp=sf_link)
 
------
-
 # Week 2: Unit Shaping
 Sep 18
 
 **Assignment 1 due**
-
------
 
 # Week 3: Uncertainty and Unpredictablility
 Sep 25
 
 ## Assignment 2
 
------
-
 # Week 4: Stepping in Time
 Oct 2
-
------
 
 # Week 5: Filters and the Balance of Time
 Oct 9
@@ -299,27 +287,17 @@ Oct 9
 ## [Week 6: Reading week]
 
 
------
-
 # Week 7: The Effects of Delay
 Oct 23
-
------
 
 # Week 8: Frequent Modulations
 Oct 30 
 
------
-
 # Week 9: Navigating Waves of Data
 Nov 6
 
------
-
 # Week 10: Windows of Time
 Nov 13
-
------
 
 # Week 11: Exporting & Embedding
 Nov 20
@@ -338,8 +316,6 @@ Nov 20
   - [Unreal Engine Metasounds](https://github.com/Cycling74/RNBOMetasound)
   - [Unity](https://github.com/Cycling74/rnbo.unity.audioplugin)
   - Translate to [genish.js](http://www.charlie-roberts.com/genish/)
-
------
 
 # Week 12: Final Presentations
 Nov 27
