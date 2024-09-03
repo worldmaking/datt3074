@@ -80,9 +80,11 @@ function generate(file) {
 		.replace(/<pre><code>\s*(----------begin_max5_patcher----------\s*[^-]*-----------end_max5_patcher-----------)\s*<\/code><\/pre>/g,
 			`<button value="$1" onclick="copyPatch(this.value)">Copy Max Patch and select **File / New From Clipboard** in Max</button>`
 		)
+		// auto-embed google slides: e.g. https://docs.google.com/presentation/d/1xrXM86cCE7vzykYYdINs1G9g9f7FaeiiZd6IRlKBEjI/
 		// auto-embed youtube e.g. https://www.youtube.com/watch?v=AbcZ2f5fdNc
-		.replace(/\nhttps?:\/\/www.youtube.com\/watch\?v=([^\n\r\/]+)[^\n\r]*/g, 
-			`<iframe width="720" height="540" src="https://youtube.com/embed/$1" frameborder="0" allowfullscreen></iframe>
+		.replace(/\n\s*(https:\/\/docs.google.com\/presentation\/d\/[^\n]*)/g, 
+			`<br/><br/>
+			<iframe src="$1/embed?start=false" frameborder="0" width="960" height="569" allowfullscreen></iframe>
 `)
 
 	}

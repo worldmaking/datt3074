@@ -54,9 +54,111 @@ Sep 4
 
 **Hello and welcome!**
 
-### What is gen~
+https://docs.google.com/presentation/d/1xrXM86cCE7vzykYYdINs1G9g9f7FaeiiZd6IRlKBEjI/
 
+**Get things installed**
 
+Make sure you have Max running, and can edit a gen~ patcher. 
+
+Be sure to also install the additional patches that come with the book (the download link & instructions are on page 3.)
+
+**Let's patch**
+
+Get to know some of the most commonly used gen~ operators. How to find out about operators while patching.
+
+- Make sound: noise, cycle, *, +, etc. 
+  - What does adding signals mean?
+  - What does multiplying signals mean?
+  
+- Get some parameters to control it
+  - Modulation can be like automatically wiggling parameters for you
+
+Get to know how to visualize the signals in a patch, to help understand what's going on. 
+
+It's always handy to have some extra `out` operators for debugging purposes! It can also be handy to have some example input sounds to work from. Here's a template patcher with some of these already set up:
+
+<pre><code>
+----------begin_max5_patcher----------
+1685.3ocyYk0jahCD9YO+Jn34ItPb3i7TRs+LR1ZJYPFqDLhUH7LSRk8291R
+BARFvl34XyKfQsN59quk+4cK72wdhT668Quu3sXwOuawB0PxAVz98B+i3mRK
+v0po4uqBKROP392qIdhRd7DsltiVPEOKmBpkBa+9ZhPu2AKCtW9v6uaIVvR+
+NIKiiyqS4rhB4zBZokVPS+t3.m0jevdbRIdWA4vvEnIbZHA8oTS+Awdzc4GY
+Ytiv3YfHYMRYyQZYAQT6LH9nZY9YjirZVSY1R.a..w.FzLEY1tu8ATre+VwZ
+Dl8xfNXddKt6+oSrBe.dtG9YAiUA+F0AT5kJdthzN6ZZdIFjRyDT5CZY9CbR
+ZKZuBIg6XEnGFFIesMQB9xU7q6tS939YpuAteGg+uFgwfbgseumUJ1iSIShc
+gCglsiiL1aoQkgBWFbEf.Ps8ELPGzgHxMnSU8YNUNoIwpMwJTZsBrRVogLKC
+U3TTx1xfa.7pSYUjNrC2HXGwBZpscvnf0t7TVAi656z9.YwbVfZj4T1auVT6
+J5ezsVWvOXZDJNYiEDgzuVE7mi8T3eR1SQaW+FZPkxNdjT1EuQPdRcr964j+
+ogTl9rWcEvJ7li9iAdngf2pIhSEbovKJQLIRaSkniybqFDSIROhOQ1y3yWPh
+tUAIFE7ZHHZjm45y+Z4dGt5k4eilxp+hIRBaAnMakuh1nRkfBhtQDpfdhrzE
+epwGqJzUfDq0C5w43x7VV7CnkHon0mSjKS8RxZcidsQ5D+eODbGvp8nHNU.R
+YAsjLO0zXAbQJbNJQC2aT5.TjcPD8obUo6O6TVgwuY4rZMbMP31HKH7ULF0m
+8DDv9EKHdJlvCBX4Qdphvox4C7j2iTwAubRYGjpMMZJE1n2nA2jGiCnFscUv
+5MwQnn0gIwauelCME7ek.l14MCiWdoJD1ZWvoNJwMWf.4GY3zKG+zRHVeYY.
+Z..WXioSVsbRrNTWh44sGgKGS6U2mv7tZGFRcTwC1MfIwkkjhNCkfQR30WEB
+GNAAg+ftQny7UsfkjqW6S+u5qD5dIqWKlQOGQII8nHZsScOP97rGvBAmtqQP
+5+UcKd1BnRHqngv1aF1LtsfRKoBpVyBIHVGZNkwlzPTwYVErx7o0PNS8Hnqk
+SakwY3LpzRI0OrNXb5rLS0tQiPt9.iKlIiXzbicLMfTWKdVKvwZ5JqXyqWoX
+e+krKcOAySCud3lLJyiV5INPq0gCGMjWzLqm6J0ktqY2Yl5iXThzU1kDiL8.
+CebqYFKIOB70.bPFa26SBJvgde0+YVC2q8JR7jZyu5O2BXQyuMFqvwW2U95d
+sgAQVNuQImWdh9pQrcQ2SKHmH7ZJqz1uxGWUYMrq26Q72zox1zY0B.hdnUcC
+wIxaSRu93tQwbfyE.a2v09GO002RaSj7xFphULV7FVRo.kZh5p19J8ypqVBp
+MyF3agG5JcQAJ6lsqz85FaEGSVoi9Zkrc.8ghlJokUbRM3q.ELoEfNxYj83l
+BwCi2KpK8yZ+0k3n8gtvOmSyXkRlvQcHG1bbf2fNpbhsvnlQItZjEC1j.tLA
+wZPHap2g4p69qvtGdv2fwJbI0stBxdQK4JJjgyEEErpoIxo4GtvZ2w.hGuzd
+qnTCAH0TePlm8AYZI24gKJZc0c29mvkTnVXhfpUAgAcDGbyjHWJmFgRFXnmR
+djlIN3zHijBLcZkwHxuSKmQyI0B2wDX88H1ORWveqgZLWa6ClBVcm.3h.I3g
+TPOV2NQiglM.zeSw1N11wMcF+RwOcigpxdA0RWKrIO1cvddPyjyVvvF1tRau
+SVSarJl3FkOypj9qwwrp1bplLHuxHBjGE86hEwuUXQaZTMVDt48FK.F9BfAZ
+bvHZZvHXVRaR.xjM78WbC8xH6Zx+cE5vaVnaM2aEZYg6WPn6SeHqrahfBpCQ
+RebznFJTJ0XA1Z85E3XIBwAgVn6Rl9kNEq2Tr0sWkqraDn.hYVpVxkZ8J3Vu
+.NIOnNBq.gidEyHkKHRqxLWa442sgZacUPZf3bESKbLPgfbzHSnMP8ZiAH9r
+OnYbNaclS2eWW7K5fSdGEPzUNmnwEvf2bjckCycjlUwnkhVaFnU1DHFX7Vc4
+vceLjQidQL5pYfPq0y4MWSDNtl.8lqIBcc3lPUfjuBCW080PVM7smUSlAqFE
+KeECQlLe8+g8s7eN4UAUQuKthyiSs9XHil7hcEClgq3XYaNq8e4QbVa+m0x+
+v18mtU+yayW0h+Xs2Kyze2ut6+Tw.6SJ
+-----------end_max5_patcher-----------
+</code></pre>
+
+- Feedback example: noise, mix, history
+
+**Let's work through the first patches of Chapter 2**
+
+- **Counting by sample frames**
+  - Every object, every signal cable, the entire patch, runs one sample at a time
+  - A counter with `+` and `history`.  Toggle to enable. `/ samplerate` for seconds.
+  - Adding a `switch` to rewind, `click~` to trigger it. 
+  - We have just built the `accum` operator. 
+- **Playing a sound file**
+  - Creating a `buffer~` and referencing it in `gen~`, reading with `peek`
+  - Looping with a `wrap` operator, `param duration` or buffer length
+- **Playing at different rates**
+  - Changing how much we count by
+  - The quantization problem (fractional samples) and aliasing noise
+  - Use interpolation, via `sample` and a 0 to 1 scale, so use `wrap 0 1`
+- **A phasor**
+  - Setting rate in Hz via `/ samplerate`. Now we have built the `phasor` operator.
+  - For a drumloop soundfile: Hz = bpm/60/number-of-beats
+
+If we have time: 
+- Continue to discuss the merits of phasor ramps over triggers for rhythm & cyclic time,
+- Or explore the First few ideas with noise in Chapter 4, 
+- Or Chapter 2 shaping Ramps into LFOs
+
+**Homework**
+
+- Read Chapter 1 to review thinking in signals, and get to know the most common operators
+  -  Math operations (all just numbers)
+  - `scale`, `clip` and `wrap` are especially useful. 
+  - Logic operations (0=false, anything else=true).  
+  - Routing: `switch` and `gate`/`selector` and `latch` and `mix` 
+  - Feedback & delay via `history` (single sample) or `delay` (many samples)
+  - Counters (integrators): `accum`, `counter` and `phasor`.  See also `delta` and `change`. 
+  - Working with data: `buffer` and `data`, `peek`/`sample` and `poke`
+  - Code via `codebox`
+  - Structure: subpatches via `gen` (and saving as external `gendsp` files)
+- Read through Chapter 2 in advance of next week, and bring any questions or ideas to discuss! 
+- Begin thinking about and working on [Assignment 1](#assignment-1)
 
 **Resources**
 
@@ -67,10 +169,6 @@ Sep 4
 - Community
   - The Cycling '74 online forum has a [gen~ category](https://cycling74.com/forums?category=Gen)
   - The [Discord group](https://discord.gg/unVt7Uy) has a gen~ channel
-
-**Homework**
-
-Begin thinking about and working on [Assignment 1](#assignment-1)
 
 -----
 

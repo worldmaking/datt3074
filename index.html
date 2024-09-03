@@ -137,8 +137,120 @@ function copyPatch(str) {
 <hr>
 <h2 id="week-0-one-sample-at-a-time">Week 0: One Sample at a Time</h2>
 <p>Sep 4</p>
-<p><strong>Hello and welcome!</strong></p>
-<h3 id="what-is-gen">What is gen~</h3>
+<p><strong>Hello and welcome!</strong><br/><br/>
+            <iframe src="https://docs.google.com/presentation/d/1xrXM86cCE7vzykYYdINs1G9g9f7FaeiiZd6IRlKBEjI//embed?start=false" frameborder="0" width="960" height="569" allowfullscreen></iframe></p>
+<p><strong>Get things installed</strong></p>
+<p>Make sure you have Max running, and can edit a gen~ patcher. </p>
+<p>Be sure to also install the additional patches that come with the book (the download link &amp; instructions are on page 3.)</p>
+<p><strong>Let&#39;s patch</strong></p>
+<p>Get to know some of the most commonly used gen~ operators. How to find out about operators while patching.</p>
+<ul>
+<li><p>Make sound: noise, cycle, *, +, etc. </p>
+<ul>
+<li>What does adding signals mean?</li>
+<li>What does multiplying signals mean?</li>
+</ul>
+</li>
+<li><p>Get some parameters to control it</p>
+<ul>
+<li>Modulation can be like automatically wiggling parameters for you</li>
+</ul>
+</li>
+</ul>
+<p>Get to know how to visualize the signals in a patch, to help understand what&#39;s going on. </p>
+<p>It&#39;s always handy to have some extra <code>out</code> operators for debugging purposes! It can also be handy to have some example input sounds to work from. Here&#39;s a template patcher with some of these already set up:</p>
+<p><button value="----------begin_max5_patcher----------
+1685.3ocyYk0jahCD9YO+Jn34ItPb3i7TRs+LR1ZJYPFqDLhUH7LSRk8291R
+BARFvl34XyKfQsN59quk+4cK72wdhT668Quu3sXwOuawB0PxAVz98B+i3mRK
+v0po4uqBKROP392qIdhRd7DsltiVPEOKmBpkBa+9ZhPu2AKCtW9v6uaIVvR+
+NIKiiyqS4rhB4zBZokVPS+t3.m0jevdbRIdWA4vvEnIbZHA8oTS+Awdzc4GY
+Ytiv3YfHYMRYyQZYAQT6LH9nZY9YjirZVSY1R.a..w.FzLEY1tu8ATre+VwZ
+Dl8xfNXddKt6+oSrBe.dtG9YAiUA+F0AT5kJdthzN6ZZdIFjRyDT5CZY9CbR
+ZKZuBIg6XEnGFFIesMQB9xU7q6tS939YpuAteGg+uFgwfbgseumUJ1iSIShc
+gCglsiiL1aoQkgBWFbEf.Ps8ELPGzgHxMnSU8YNUNoIwpMwJTZsBrRVogLKC
+U3TTx1xfa.7pSYUjNrC2HXGwBZpscvnf0t7TVAi656z9.YwbVfZj4T1auVT6
+J5ezsVWvOXZDJNYiEDgzuVE7mi8T3eR1SQaW+FZPkxNdjT1EuQPdRcr964j+
+ogTl9rWcEvJ7li9iAdngf2pIhSEbovKJQLIRaSkniybqFDSIROhOQ1y3yWPh
+tUAIFE7ZHHZjm45y+Z4dGt5k4eilxp+hIRBaAnMakuh1nRkfBhtQDpfdhrzE
+epwGqJzUfDq0C5w43x7VV7CnkHon0mSjKS8RxZcidsQ5D+eODbGvp8nHNU.R
+YAsjLO0zXAbQJbNJQC2aT5.TjcPD8obUo6O6TVgwuY4rZMbMP31HKH7ULF0m
+8DDv9EKHdJlvCBX4Qdphvox4C7j2iTwAubRYGjpMMZJE1n2nA2jGiCnFscUv
+5MwQnn0gIwauelCME7ek.l14MCiWdoJD1ZWvoNJwMWf.4GY3zKG+zRHVeYY.
+Z..WXioSVsbRrNTWh44sGgKGS6U2mv7tZGFRcTwC1MfIwkkjhNCkfQR30WEB
+GNAAg+ftQny7UsfkjqW6S+u5qD5dIqWKlQOGQII8nHZsScOP97rGvBAmtqQP
+5+UcKd1BnRHqngv1aF1LtsfRKoBpVyBIHVGZNkwlzPTwYVErx7o0PNS8Hnqk
+SakwY3LpzRI0OrNXb5rLS0tQiPt9.iKlIiXzbicLMfTWKdVKvwZ5JqXyqWoX
+e+krKcOAySCud3lLJyiV5INPq0gCGMjWzLqm6J0ktqY2Yl5iXThzU1kDiL8.
+CebqYFKIOB70.bPFa26SBJvgde0+YVC2q8JR7jZyu5O2BXQyuMFqvwW2U95d
+sgAQVNuQImWdh9pQrcQ2SKHmH7ZJqz1uxGWUYMrq26Q72zox1zY0B.hdnUcC
+wIxaSRu93tQwbfyE.a2v09GO002RaSj7xFphULV7FVRo.kZh5p19J8ypqVBp
+MyF3agG5JcQAJ6lsqz85FaEGSVoi9Zkrc.8ghlJokUbRM3q.ELoEfNxYj83l
+BwCi2KpK8yZ+0k3n8gtvOmSyXkRlvQcHG1bbf2fNpbhsvnlQItZjEC1j.tLA
+wZPHap2g4p69qvtGdv2fwJbI0stBxdQK4JJjgyEEErpoIxo4GtvZ2w.hGuzd
+qnTCAH0TePlm8AYZI24gKJZc0c29mvkTnVXhfpUAgAcDGbyjHWJmFgRFXnmR
+djlIN3zHijBLcZkwHxuSKmQyI0B2wDX88H1ORWveqgZLWa6ClBVcm.3h.I3g
+TPOV2NQiglM.zeSw1N11wMcF+RwOcigpxdA0RWKrIO1cvddPyjyVvvF1tRau
+SVSarJl3FkOypj9qwwrp1bplLHuxHBjGE86hEwuUXQaZTMVDt48FK.F9BfAZ
+bvHZZvHXVRaR.xjM78WbC8xH6Zx+cE5vaVnaM2aEZYg6WPn6SeHqrahfBpCQ
+RebznFJTJ0XA1Z85E3XIBwAgVn6Rl9kNEq2Tr0sWkqraDn.hYVpVxkZ8J3Vu
+.NIOnNBq.gidEyHkKHRqxLWa442sgZacUPZf3bESKbLPgfbzHSnMP8ZiAH9r
+OnYbNaclS2eWW7K5fSdGEPzUNmnwEvf2bjckCycjlUwnkhVaFnU1DHFX7Vc4
+vceLjQidQL5pYfPq0y4MWSDNtl.8lqIBcc3lPUfjuBCW080PVM7smUSlAqFE
+KeECQlLe8+g8s7eN4UAUQuKthyiSs9XHil7hcEClgq3XYaNq8e4QbVa+m0x+
+v18mtU+yayW0h+Xs2Kyze2ut6+Tw.6SJ
+-----------end_max5_patcher-----------" onclick="copyPatch(this.value)">Copy Max Patch and select <strong>File / New From Clipboard</strong> in Max</button></p>
+<ul>
+<li>Feedback example: noise, mix, history</li>
+</ul>
+<p><strong>Let&#39;s work through the first patches of Chapter 2</strong></p>
+<ul>
+<li><strong>Counting by sample frames</strong><ul>
+<li>Every object, every signal cable, the entire patch, runs one sample at a time</li>
+<li>A counter with <code>+</code> and <code>history</code>.  Toggle to enable. <code>/ samplerate</code> for seconds.</li>
+<li>Adding a <code>switch</code> to rewind, <code>click~</code> to trigger it. </li>
+<li>We have just built the <code>accum</code> operator. </li>
+</ul>
+</li>
+<li><strong>Playing a sound file</strong><ul>
+<li>Creating a <code>buffer~</code> and referencing it in <code>gen~</code>, reading with <code>peek</code></li>
+<li>Looping with a <code>wrap</code> operator, <code>param duration</code> or buffer length</li>
+</ul>
+</li>
+<li><strong>Playing at different rates</strong><ul>
+<li>Changing how much we count by</li>
+<li>The quantization problem (fractional samples) and aliasing noise</li>
+<li>Use interpolation, via <code>sample</code> and a 0 to 1 scale, so use <code>wrap 0 1</code></li>
+</ul>
+</li>
+<li><strong>A phasor</strong><ul>
+<li>Setting rate in Hz via <code>/ samplerate</code>. Now we have built the <code>phasor</code> operator.</li>
+<li>For a drumloop soundfile: Hz = bpm/60/number-of-beats</li>
+</ul>
+</li>
+</ul>
+<p>If we have time: </p>
+<ul>
+<li>Continue to discuss the merits of phasor ramps over triggers for rhythm &amp; cyclic time,</li>
+<li>Or explore the First few ideas with noise in Chapter 4, </li>
+<li>Or Chapter 2 shaping Ramps into LFOs</li>
+</ul>
+<p><strong>Homework</strong></p>
+<ul>
+<li>Read Chapter 1 to review thinking in signals, and get to know the most common operators<ul>
+<li> Math operations (all just numbers)</li>
+<li><code>scale</code>, <code>clip</code> and <code>wrap</code> are especially useful. </li>
+<li>Logic operations (0=false, anything else=true).  </li>
+<li>Routing: <code>switch</code> and <code>gate</code>/<code>selector</code> and <code>latch</code> and <code>mix</code> </li>
+<li>Feedback &amp; delay via <code>history</code> (single sample) or <code>delay</code> (many samples)</li>
+<li>Counters (integrators): <code>accum</code>, <code>counter</code> and <code>phasor</code>.  See also <code>delta</code> and <code>change</code>. </li>
+<li>Working with data: <code>buffer</code> and <code>data</code>, <code>peek</code>/<code>sample</code> and <code>poke</code></li>
+<li>Code via <code>codebox</code></li>
+<li>Structure: subpatches via <code>gen</code> (and saving as external <code>gendsp</code> files)</li>
+</ul>
+</li>
+<li>Read through Chapter 2 in advance of next week, and bring any questions or ideas to discuss! </li>
+<li>Begin thinking about and working on <a href="#assignment-1">Assignment 1</a></li>
+</ul>
 <p><strong>Resources</strong></p>
 <ul>
 <li><p>Background</p>
@@ -154,8 +266,6 @@ function copyPatch(str) {
 </ul>
 </li>
 </ul>
-<p><strong>Homework</strong></p>
-<p>Begin thinking about and working on <a href="#assignment-1">Assignment 1</a></p>
 <hr>
 <h2 id="week-1-ramps-modular-arithmetic-of-time">Week 1: Ramps: Modular Arithmetic of Time</h2>
 <p>Sep 11</p>
