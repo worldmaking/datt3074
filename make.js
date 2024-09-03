@@ -84,7 +84,7 @@ function generate(file) {
 		// auto-embed youtube e.g. https://www.youtube.com/watch?v=AbcZ2f5fdNc
 		.replace(/\n\s*(https:\/\/docs.google.com\/presentation\/d\/[^\n]*)/g, 
 			`<p>$1</p>
-			<iframe src="$1/embed?start=false" frameborder="0" width="960" height="569" allowfullscreen></iframe>
+			<iframe src="$1embed?start=false" frameborder="0" width="960" height="569" allowfullscreen></iframe>
 `)
 
 	}
