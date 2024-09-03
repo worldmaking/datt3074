@@ -49,7 +49,7 @@ We will work using the **gen~** environment within [Cycling '74's Max](https://c
 
 -----
 
-## Week 0: One Sample at a Time
+# Week 0: One Sample at a Time
 Sep 4
 
 **Hello and welcome!**
@@ -172,7 +172,7 @@ If we have time:
 
 -----
 
-## Week 1: Ramps: Modular Arithmetic of Time
+# Week 1: Ramps: Modular Arithmetic of Time
 Sep 11
 
 ---desmos: https://www.desmos.com/calculator/6pvtkzbh6b
@@ -270,26 +270,26 @@ h
 
 -----
 
-## Week 2: Unit Shaping
+# Week 2: Unit Shaping
 Sep 18
 
 **Assignment 1 due**
 
 -----
 
-## Week 3: Uncertainty and Unpredictablility
+# Week 3: Uncertainty and Unpredictablility
 Sep 25
 
 ## Assignment 2
 
 -----
 
-## Week 4: Stepping in Time
+# Week 4: Stepping in Time
 Oct 2
 
 -----
 
-## Week 5: Filters and the Balance of Time
+# Week 5: Filters and the Balance of Time
 Oct 9
 
 ## Assignment 3
@@ -301,27 +301,27 @@ Oct 9
 
 -----
 
-## Week 7: The Effects of Delay
+# Week 7: The Effects of Delay
 Oct 23
 
 -----
 
-## Week 8: Frequent Modulations
+# Week 8: Frequent Modulations
 Oct 30 
 
 -----
 
-## Week 9: Navigating Waves of Data
+# Week 9: Navigating Waves of Data
 Nov 6
 
 -----
 
-## Week 10: Windows of Time
+# Week 10: Windows of Time
 Nov 13
 
 -----
 
-## Week 11: Exporting & Embedding
+# Week 11: Exporting & Embedding
 Nov 20
 
 - You can use gen~ inside a MaxForLive device in Ableton Live
@@ -341,7 +341,7 @@ Nov 20
 
 -----
 
-## Week 12: Final Presentations
+# Week 12: Final Presentations
 Nov 27
 
 **Final meeting**
