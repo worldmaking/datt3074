@@ -120,28 +120,7 @@ v18mtU+yayW0h+Xs2Kyze2ut6+Tw.6SJ
 
 - Feedback example: noise, mix, history
 
-**Let's work through the first patches of Chapter 2**
-
-- **Counting by sample frames**
-  - Every object, every signal cable, the entire patch, runs one sample at a time
-  - A counter with `+` and `history`.  Toggle to enable. `/ samplerate` for seconds.
-  - Adding a `switch` to rewind, `click~` to trigger it. 
-  - We have just built the `accum` operator. 
-- **Playing a sound file**
-  - Creating a `buffer~` and referencing it in `gen~`, reading with `peek`
-  - Looping with a `wrap` operator, `param duration` or buffer length
-- **Playing at different rates**
-  - Changing how much we count by
-  - The quantization problem (fractional samples) and aliasing noise
-  - Use interpolation, via `sample` and a 0 to 1 scale, so use `wrap 0 1`
-- **A phasor**
-  - Setting rate in Hz via `/ samplerate`. Now we have built the `phasor` operator.
-  - For a drumloop soundfile: Hz = bpm/60/number-of-beats
-
-If we have time: 
-- Continue to discuss the merits of phasor ramps over triggers for rhythm & cyclic time,
-- Or explore the First few ideas with noise in Chapter 4, 
-- Or Chapter 2 shaping Ramps into LFOs
+[Today's Zoom Recording](https://yorku.zoom.us/rec/share/ZL5_tEz7cuDZHNk585qCGx3GwyIf-ui4tt6ScNreRbT1ma-lIToigpasxu9n24I0.up3Jixd74Ti1Cb1j)
 
 **Homework**
 
@@ -172,6 +151,32 @@ If we have time:
 Sep 11
 
 ---desmos: https://www.desmos.com/calculator/6pvtkzbh6b
+
+**Let's work through the first patches of Chapter 2**
+
+- **Counting by sample frames**
+  - Every object, every signal cable, the entire patch, runs one sample at a time
+  - A counter with `+` and `history`.  Toggle to enable. `/ samplerate` for seconds.
+  - Adding a `switch` to rewind, `click~` to trigger it. 
+  - We have just built the `accum` operator. 
+- **Playing a sound file**
+  - Creating a `buffer~` and referencing it in `gen~`, reading with `peek`
+  - Looping with a `wrap` operator, `param duration` or buffer length
+- **Playing at different rates**
+  - Changing how much we count by
+  - The quantization problem (fractional samples) and aliasing noise
+  - Use interpolation, via `sample` and a 0 to 1 scale, so use `wrap 0 1`
+- **A phasor**
+  - Setting rate in Hz via `/ samplerate`. Now we have built the `phasor` operator.
+  - For a drumloop soundfile: Hz = bpm/60/number-of-beats
+
+- **Discuss the merits of phasor ramps over triggers for rhythm & cyclic time**
+  - Deep dive patching: a generative beat slicer
+  - Looking through some of the example patches for phasor ramp rhythms
+   
+- According to time left:
+  - Move on to Chapter 3 shaping Ramps into LFOs
+  - Or the first few ideas with noise in Chapter 4 
 
 ## Assignment 1
 

@@ -211,38 +211,7 @@ v18mtU+yayW0h+Xs2Kyze2ut6+Tw.6SJ
 <ul>
 <li>Feedback example: noise, mix, history</li>
 </ul>
-<p><strong>Let&#39;s work through the first patches of Chapter 2</strong></p>
-<ul>
-<li><strong>Counting by sample frames</strong><ul>
-<li>Every object, every signal cable, the entire patch, runs one sample at a time</li>
-<li>A counter with <code>+</code> and <code>history</code>.  Toggle to enable. <code>/ samplerate</code> for seconds.</li>
-<li>Adding a <code>switch</code> to rewind, <code>click~</code> to trigger it. </li>
-<li>We have just built the <code>accum</code> operator. </li>
-</ul>
-</li>
-<li><strong>Playing a sound file</strong><ul>
-<li>Creating a <code>buffer~</code> and referencing it in <code>gen~</code>, reading with <code>peek</code></li>
-<li>Looping with a <code>wrap</code> operator, <code>param duration</code> or buffer length</li>
-</ul>
-</li>
-<li><strong>Playing at different rates</strong><ul>
-<li>Changing how much we count by</li>
-<li>The quantization problem (fractional samples) and aliasing noise</li>
-<li>Use interpolation, via <code>sample</code> and a 0 to 1 scale, so use <code>wrap 0 1</code></li>
-</ul>
-</li>
-<li><strong>A phasor</strong><ul>
-<li>Setting rate in Hz via <code>/ samplerate</code>. Now we have built the <code>phasor</code> operator.</li>
-<li>For a drumloop soundfile: Hz = bpm/60/number-of-beats</li>
-</ul>
-</li>
-</ul>
-<p>If we have time: </p>
-<ul>
-<li>Continue to discuss the merits of phasor ramps over triggers for rhythm &amp; cyclic time,</li>
-<li>Or explore the First few ideas with noise in Chapter 4, </li>
-<li>Or Chapter 2 shaping Ramps into LFOs</li>
-</ul>
+<p><a href="https://yorku.zoom.us/rec/share/ZL5_tEz7cuDZHNk585qCGx3GwyIf-ui4tt6ScNreRbT1ma-lIToigpasxu9n24I0.up3Jixd74Ti1Cb1j">Today&#39;s Zoom Recording</a></p>
 <p><strong>Homework</strong></p>
 <ul>
 <li>Read Chapter 1 to review thinking in signals, and get to know the most common operators<ul>
@@ -280,6 +249,48 @@ v18mtU+yayW0h+Xs2Kyze2ut6+Tw.6SJ
 <p>Sep 11</p>
 <iframe src="https://www.desmos.com/calculator/6pvtkzbh6b?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
 
+<p><strong>Let&#39;s work through the first patches of Chapter 2</strong></p>
+<ul>
+<li><p><strong>Counting by sample frames</strong></p>
+<ul>
+<li>Every object, every signal cable, the entire patch, runs one sample at a time</li>
+<li>A counter with <code>+</code> and <code>history</code>.  Toggle to enable. <code>/ samplerate</code> for seconds.</li>
+<li>Adding a <code>switch</code> to rewind, <code>click~</code> to trigger it. </li>
+<li>We have just built the <code>accum</code> operator. </li>
+</ul>
+</li>
+<li><p><strong>Playing a sound file</strong></p>
+<ul>
+<li>Creating a <code>buffer~</code> and referencing it in <code>gen~</code>, reading with <code>peek</code></li>
+<li>Looping with a <code>wrap</code> operator, <code>param duration</code> or buffer length</li>
+</ul>
+</li>
+<li><p><strong>Playing at different rates</strong></p>
+<ul>
+<li>Changing how much we count by</li>
+<li>The quantization problem (fractional samples) and aliasing noise</li>
+<li>Use interpolation, via <code>sample</code> and a 0 to 1 scale, so use <code>wrap 0 1</code></li>
+</ul>
+</li>
+<li><p><strong>A phasor</strong></p>
+<ul>
+<li>Setting rate in Hz via <code>/ samplerate</code>. Now we have built the <code>phasor</code> operator.</li>
+<li>For a drumloop soundfile: Hz = bpm/60/number-of-beats</li>
+</ul>
+</li>
+<li><p><strong>Discuss the merits of phasor ramps over triggers for rhythm &amp; cyclic time</strong></p>
+<ul>
+<li>Deep dive patching: a generative beat slicer</li>
+<li>Looking through some of the example patches for phasor ramp rhythms</li>
+</ul>
+</li>
+<li><p>According to time left:</p>
+<ul>
+<li>Move on to Chapter 3 shaping Ramps into LFOs</li>
+<li>Or the first few ideas with noise in Chapter 4 </li>
+</ul>
+</li>
+</ul>
 <h2 id="assignment-1">Assignment 1</h2>
 <p>Make a patch that can generate new ring tones for your phone. This is a generative patch: each time the patch runs, it produces a ring tone that sounds a little different. Your ring tone will be 25 seconds long. It can be stereo if you want, but mono (single channel) is fine -- not all phones have stereo speakers.</p>
 <p>Be sure to follow all the <a href="#general-procedures-for-assigment-patches">general procedures for assignment patches</a></p>
