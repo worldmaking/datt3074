@@ -74,8 +74,9 @@ function generate(file) {
 		.replace(/\n---codepen:\s*https?:\/\/codepen.io\/+([^\/]+)\/pen\/([^\/\n]+)\/?/g, 
 			`<p class="codepen" data-height="520" data-default-tab="js,result" data-user="$1" data-slug-hash="$2" data-preview="true"><span><a href="https://codepen.io/$1/pen/$2">Open pen.</a></span></p><script async src="https://static.codepen.io/assets/embed/ei.js"></script>`)
 		// auto embed desmos graphs:
-		.replace(/\n---desmos:\s*https?:\/\/www.desmos.com\/calculator\/([^\/\n]+)\/?/g, 
-			`<iframe src="https://www.desmos.com/calculator/$1?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>`)
+		.replace(/\n\s*https?:\/\/www.desmos.com\/calculator\/([^\/\n]+)\/?/g, 
+				`<br \><br \>
+				<iframe src="https://www.desmos.com/calculator/$1?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>`)
 		// auto-embed max patchers:
 		.replace(/<pre><code>\s*(----------begin_max5_patcher----------\s*[^-]*-----------end_max5_patcher-----------)\s*<\/code><\/pre>/g,
 			`<button value="$1" onclick="copyPatch(this.value)">Copy Max Patch and select **File / New From Clipboard** in Max</button>`

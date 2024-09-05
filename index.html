@@ -246,43 +246,40 @@ v18mtU+yayW0h+Xs2Kyze2ut6+Tw.6SJ
 </ul>
 <hr>
 <h1 id="week-1-ramps-modular-arithmetic-of-time">Week 1: Ramps: Modular Arithmetic of Time</h1>
-<p>Sep 11</p>
-<iframe src="https://www.desmos.com/calculator/6pvtkzbh6b?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe>
-
+<p>Sep 11<br ><br >
+                <iframe src="https://www.desmos.com/calculator/6pvtkzbh6b?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
 <p><strong>Let&#39;s work through the first patches of Chapter 2</strong></p>
 <ul>
-<li><p><strong>Counting by sample frames</strong></p>
-<ul>
+<li><strong>Counting by sample frames</strong><ul>
 <li>Every object, every signal cable, the entire patch, runs one sample at a time</li>
 <li>A counter with <code>+</code> and <code>history</code>.  Toggle to enable. <code>/ samplerate</code> for seconds.</li>
 <li>Adding a <code>switch</code> to rewind, <code>click~</code> to trigger it. </li>
 <li>We have just built the <code>accum</code> operator. </li>
 </ul>
 </li>
-<li><p><strong>Playing a sound file</strong></p>
-<ul>
+<li><strong>Playing a sound file</strong><ul>
 <li>Creating a <code>buffer~</code> and referencing it in <code>gen~</code>, reading with <code>peek</code></li>
 <li>Looping with a <code>wrap</code> operator, <code>param duration</code> or buffer length</li>
 </ul>
 </li>
-<li><p><strong>Playing at different rates</strong></p>
-<ul>
+<li><strong>Playing at different rates</strong><ul>
 <li>Changing how much we count by</li>
 <li>The quantization problem (fractional samples) and aliasing noise</li>
 <li>Use interpolation, via <code>sample</code> and a 0 to 1 scale, so use <code>wrap 0 1</code></li>
 </ul>
 </li>
-<li><p><strong>A phasor</strong></p>
-<ul>
+<li><strong>A phasor</strong><ul>
 <li>Setting rate in Hz via <code>/ samplerate</code>. Now we have built the <code>phasor</code> operator.</li>
 <li>For a drumloop soundfile: Hz = bpm/60/number-of-beats</li>
 </ul>
 </li>
-<li><p><strong>Discuss the merits of phasor ramps over triggers for rhythm &amp; cyclic time</strong></p>
-<ul>
-<li>Deep dive patching: a generative beat slicer</li>
-<li>Looking through some of the example patches for phasor ramp rhythms</li>
 </ul>
+<p><strong>Discuss the merits of phasor ramps over triggers for rhythm &amp; cyclic time</strong><br ><br >
+                <iframe src="https://www.desmos.com/calculator/lizn4hxeit?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
+<ul>
+<li><p>Deep dive patching: a generative beat slicer</p>
+</li>
+<li><p>Looking through some of the example patches for phasor ramp rhythms</p>
 </li>
 <li><p>According to time left:</p>
 <ul>

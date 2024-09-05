@@ -150,7 +150,7 @@ v18mtU+yayW0h+Xs2Kyze2ut6+Tw.6SJ
 # Week 1: Ramps: Modular Arithmetic of Time
 Sep 11
 
----desmos: https://www.desmos.com/calculator/6pvtkzbh6b
+https://www.desmos.com/calculator/6pvtkzbh6b
 
 **Let's work through the first patches of Chapter 2**
 
@@ -170,7 +170,11 @@ Sep 11
   - Setting rate in Hz via `/ samplerate`. Now we have built the `phasor` operator.
   - For a drumloop soundfile: Hz = bpm/60/number-of-beats
 
-- **Discuss the merits of phasor ramps over triggers for rhythm & cyclic time**
+
+**Discuss the merits of phasor ramps over triggers for rhythm & cyclic time**
+
+https://www.desmos.com/calculator/lizn4hxeit
+
   - Deep dive patching: a generative beat slicer
   - Looking through some of the example patches for phasor ramp rhythms
    
