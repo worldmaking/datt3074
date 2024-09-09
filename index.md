@@ -27,14 +27,14 @@ For clarification: this is not a course about music composition, performance, or
 
 The course follows the structure and assigns readings from the textbook “[Generating Sound & Organizing Time](https://cycling74.com/books/go)”, Wakefield G. and Taylor, G. Cycling ’74, October 2021. ISBN-10: 1732590311 / ISBN-13: 978-1732590311
 - It is available on [Amazon.ca here](https://www.amazon.ca/Generating-Sound-Organizing-Time-Thinking/dp/1732590311)
-- There also four copies available in the Scott Library through [York University Library course reserve here](https://ocul-yor.primo.exlibrisgroup.com/permalink/01OCUL_YOR/q36jf8/alma991036915148805164)
-- It is not currently in the York University Bookstore, but we are working on it. 
+- Copies are also on delivery for early September in the York University Bookstore.
+- There also four copies available in the Scott Library through [York University Library course reserve here](https://ocul-yor.primo.exlibrisgroup.com/permalink/01OCUL_YOR/q36jf8/alma991036915148805164) 
 
 **Course software**
 
 We will work using the **gen~** environment within [Cycling '74's Max](https://cycling74.com). All students have access to a license for Max supported by the course fees. 
 
-*(If you also own RNBO you can use **gen~** in RNBO too; but at the current time we cannot provide student RNBO licenses.)*
+License codes should be coming to all students by Sep 11th. 
 
 **Evaluation**
 
