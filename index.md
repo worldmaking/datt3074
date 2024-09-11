@@ -175,7 +175,7 @@ https://www.desmos.com/calculator/6pvtkzbh6b
 
 https://www.desmos.com/calculator/lizn4hxeit
 
-  - Deep dive patching: a generative beat slicer
+  - **Deep dive patching: a generative beat slicer**
   - Looking through some of the example patches for phasor ramp rhythms
    
 - According to time left:
