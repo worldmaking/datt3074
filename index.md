@@ -186,7 +186,7 @@ https://www.desmos.com/calculator/lizn4hxeit
 
 Make a patch that can generate new ring tones for your phone. This is a generative patch: each time the patch runs, it produces a ring tone that sounds a little different. Your ring tone will be 25 seconds long. It can be stereo if you want, but mono (single channel) is fine -- not all phones have stereo speakers.
 
-Be sure to follow all the [general procedures for assignment patches](#general-procedures-for-assigment-patches)
+Be sure to follow all the [general procedures for assignment patches](#general-procedures-for-assignment-patches)
 
 Start from the template patch here: https://raw.githubusercontent.com/worldmaking/datt3074/main/assignment1.maxpat  -- save it as "assignment1.maxpat". Or press the button below to copy the patch to your clipboard, and then open Max and select `File -> New From Clipboard`, then save that patch as "assignment1.maxpat":
 
@@ -259,7 +259,7 @@ h
 - IOS: use an online converter to convert your WAV file into a m4r file. Then google for how to get that on your phone, because Apple made that a bit more complex. 
 
 
-## General procedures for assigment patches
+## General procedures for assinment patches
 
 - All of your work should be inside the gen~ patcher -- you shouldn't need to work in the Max patch much, except to support the gen~ patch (e.g. adding a buffer~ or a scope~.) 
 - **Everything needed to run the patch should be included in the patch.** Do not use Max Projects, 3rd party externals, external files etc. 
