@@ -3,7 +3,7 @@
 
 ## Course Information
 
-Wednesdays, 3pm-6pm, Fall 2024, Fine Arts building room ACW 103
+Wednesdays, 3pm-6pm, Fall 2024, Fine Arts building room *ACW 103 or ACW 102*
 
 **Instructor:** [Graham Wakefield](https://ampd.yorku.ca/profile/graham-wakefield/) grrrwaaa a t york u do t ca
 
