@@ -483,13 +483,53 @@ h
 <h1 id="week-2-unit-shaping">Week 2: Unit Shaping</h1>
 <p>Sep 18</p>
 <p><strong>Assignment 1 due</strong></p>
+<hr>
 <ul>
-<li><p>Looking through some of the example patches for phasor ramp rhythms</p>
+<li><strong>Examples of working with phasor ramp rhythms</strong><ul>
+<li>A phasor beat clock: <strong>ramp_from_bpm.maxpat</strong></li>
+<li>Deriving faster sub-ramps by multiplying the ramp and sending through <code>wrap 0 1</code>: see <strong>ramp_ratchets.maxpat</strong></li>
+<li>Deriving steps by multiplying the ramp and sending through a <code>floor</code> (<code>go.ramp2steps</code>): see <strong>ramp_steps.maxpat</strong></li>
+<li>Shifting the <em>phase</em> of a ramp by subtracting a fraction and sending through <code>wrap 0 1</code> (<code>go.ramp.rotate</code>): see <strong>ramp_rotate.maxpat</strong></li>
+<li>Deriving the ramp slope safely (<code>go.ramp2slope</code>) and getting information from the ramp&#39;s slope (<code>go.ramp2freq</code>): direction, phase within cycle, Hz, BPM, period, time until next cycle, etc: see <strong>ramp_slope.maxpat</strong>. </li>
+<li>Deriving <strong>triggers</strong> when a ramp cycles (<code>go.ramp2trig</code>), which you can use to start a sound, sample an input, etc: <strong>ramp_to_trig.maxpat</strong>. </li>
+<li>Deriving related frequency phasors with arbitrary divisions and multiplications, by taking the slope and re-accumulating it, and choosing when to sync, using <code>go.ramp.div.simple</code>, or <code>go.ramp.div</code> and <code>go.ramp.mul</code>: see <strong>ramp_div.maxpat</strong> then <strong>ramp_divisions.maxpat</strong></li>
+<li>More generative patterns by subdividing subdivisions -- multiplying, modulo, and then rewrapping: <strong>ramp_modulo_rhythm.maxpat</strong><ul>
+<li>This also shows making swing rhythms by shaping the unit phasor -- see Ch3 <strong>ramp.swing.maxpat</strong> -- leading to the idea of <strong>unit shapers</strong>, see Ch3 <strong>unit_shapers.maxpat</strong></li>
+</ul>
 </li>
-<li><p>Move on to Chapter 3 shaping Ramps into LFOs</p>
+</ul>
 </li>
-<li><p>The first few ideas with noise in Chapter 4 </p>
+</ul>
+<p><strong>Patching together deep dive: Chapter 3 Unit Shaping / From ramps to LFOs</strong></p>
+<ul>
+<li>From a simple ramp, let&#39;s define many different shapes we can use for modulators, envelopes etc. If the source ramp is rhythmic, then these modulations are tempo-synced.  Let&#39;s try to make these shapes morphable too! <ul>
+<li>Using the <code>triangle</code> or <code>go.unit.triangle</code> shapers, with duty-cycles, including morphing from ramp to triangle to reverse ramp! </li>
+<li>Syncing parameter changes via <code>latch</code> and <code>go.ramp2trig</code></li>
+<li>Shaping ramps into sines: start from triangle so we can also use duty shaping (<code>go.unit.sine</code>)</li>
+<li>Mix tri to sine with latched control</li>
+<li>Use a comparator (e.g. <code>&gt;</code> operator) to derive a pulse, along with pulse duty parameter</li>
+<li>How about morphing? Scale and clip to get trapezoids that can morph from ramp to pulse. (<code>go.unit.trapezoid</code>)</li>
+<li>We can insert this trapezoidal shaping between triangle and sine shaping for a huge range of different curves! (<code>go.lfo.multi</code>)</li>
+<li>Try driving this from one of the modulo or ratchet rhythm patches as a paramter control or gain shaper?</li>
+</ul>
 </li>
+</ul>
+<p><strong>Sample &amp; hold for random steps, LFOs and glides</strong></p>
+<p>The <code>latch</code> operator with <code>go.ramp2trig</code> means we can create arbitrary stepped sequences. </p>
+<ul>
+<li>Feed it with an LFO for a deterministic complex step generator: Ch5 <strong>latched-sequencer.maxpat</strong>. Discussion about harmonic ratios.</li>
+<li>Try feeding it with <code>noise</code> for a classic rhythmic sample&amp;hold signal. See Chapter 3 first few pages; Ch4 <strong>random_steps.maxpat</strong></li>
+<li><code>scale</code> the <code>noise</code> to get a desired range (Ch4 <strong>random_range.maxpat</strong>)</li>
+<li>quantize the <code>noise</code> using a <code>* N</code>, <code>floor</code>, <code>/ N</code> sequence (Ch4 <strong>random_integer.maxpat</strong>)</li>
+<li>Feed back to the phasor rate for Ch4 <strong>random_periods.maxpat</strong></li>
+</ul>
+<p>What if we don&#39;t want it to jump between steps, but instead to <strong>glide</strong> between them?</p>
+<ul>
+<li>Basic pattern: a mix between two latched values, driven by the ramp. The output is fed back to the old <code>latch</code>.  (See Chapter 2 &quot;Shaping smooth-stepped interpolation&quot;)</li>
+<li>Apply a smoother curve to the glide, e.g. <code>go.unit.sine</code>. </li>
+<li>If the input is a pulse wave rather than noise, we can use this as the basis of an LFO. Just need a trigger when the pulse changes value, which we can use <code>change</code> for. </li>
+<li>See Ch3 <strong>Interpolating_LFO.maxpat</strong></li>
+<li>It doesn&#39;t need to be driven by a phasor. For a non-cycling glide, feed an <code>accum</code> ramp into a <code>clip 0 1</code> to stop at 1. Retrigger the <code>accum</code> ramp when the target changes (via <code>change</code>). This is a basic line generator (see Ch6 <strong>slide_slew_and_line.maxpat</strong>).  We can smoothly shape the ramp too, see Ch2 <strong>interpolating_glides.maxpat</strong>. </li>
 </ul>
 <hr>
 <h1 id="week-3-uncertainty-and-unpredictablility">Week 3: Uncertainty and Unpredictablility</h1>

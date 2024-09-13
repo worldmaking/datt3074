@@ -393,11 +393,46 @@ Sep 18
 
 **Assignment 1 due**
 
-- Looking through some of the example patches for phasor ramp rhythms
+---
+
+- **Examples of working with phasor ramp rhythms**
+  - A phasor beat clock: **ramp_from_bpm.maxpat**
+  - Deriving faster sub-ramps by multiplying the ramp and sending through `wrap 0 1`: see **ramp_ratchets.maxpat**
+  - Deriving steps by multiplying the ramp and sending through a `floor` (`go.ramp2steps`): see **ramp_steps.maxpat**
+  - Shifting the *phase* of a ramp by subtracting a fraction and sending through `wrap 0 1` (`go.ramp.rotate`): see **ramp_rotate.maxpat**
+  - Deriving the ramp slope safely (`go.ramp2slope`) and getting information from the ramp's slope (`go.ramp2freq`): direction, phase within cycle, Hz, BPM, period, time until next cycle, etc: see **ramp_slope.maxpat**. 
+  - Deriving **triggers** when a ramp cycles (`go.ramp2trig`), which you can use to start a sound, sample an input, etc: **ramp_to_trig.maxpat**. 
+  - Deriving related frequency phasors with arbitrary divisions and multiplications, by taking the slope and re-accumulating it, and choosing when to sync, using `go.ramp.div.simple`, or `go.ramp.div` and `go.ramp.mul`: see **ramp_div.maxpat** then **ramp_divisions.maxpat**
+  - More generative patterns by subdividing subdivisions -- multiplying, modulo, and then rewrapping: **ramp_modulo_rhythm.maxpat**
+    - This also shows making swing rhythms by shaping the unit phasor -- see Ch3 **ramp.swing.maxpat** -- leading to the idea of **unit shapers**, see Ch3 **unit_shapers.maxpat**
    
-- Move on to Chapter 3 shaping Ramps into LFOs
-  
-- The first few ideas with noise in Chapter 4 
+**Patching together deep dive: Chapter 3 Unit Shaping / From ramps to LFOs**
+
+- From a simple ramp, let's define many different shapes we can use for modulators, envelopes etc. If the source ramp is rhythmic, then these modulations are tempo-synced.  Let's try to make these shapes morphable too! 
+  - Using the `triangle` or `go.unit.triangle` shapers, with duty-cycles, including morphing from ramp to triangle to reverse ramp! 
+  - Syncing parameter changes via `latch` and `go.ramp2trig`
+  - Shaping ramps into sines: start from triangle so we can also use duty shaping (`go.unit.sine`)
+  - Mix tri to sine with latched control
+  - Use a comparator (e.g. `>` operator) to derive a pulse, along with pulse duty parameter
+  - How about morphing? Scale and clip to get trapezoids that can morph from ramp to pulse. (`go.unit.trapezoid`)
+  - We can insert this trapezoidal shaping between triangle and sine shaping for a huge range of different curves! (`go.lfo.multi`)
+  - Try driving this from one of the modulo or ratchet rhythm patches as a paramter control or gain shaper?
+
+**Sample & hold for random steps, LFOs and glides**
+
+The `latch` operator with `go.ramp2trig` means we can create arbitrary stepped sequences. 
+  - Feed it with an LFO for a deterministic complex step generator: Ch5 **latched-sequencer.maxpat**. Discussion about harmonic ratios.
+  - Try feeding it with `noise` for a classic rhythmic sample&hold signal. See Chapter 3 first few pages; Ch4 **random_steps.maxpat**
+  - `scale` the `noise` to get a desired range (Ch4 **random_range.maxpat**)
+  - quantize the `noise` using a `* N`, `floor`, `/ N` sequence (Ch4 **random_integer.maxpat**)
+  - Feed back to the phasor rate for Ch4 **random_periods.maxpat**
+
+What if we don't want it to jump between steps, but instead to **glide** between them?
+  - Basic pattern: a mix between two latched values, driven by the ramp. The output is fed back to the old `latch`.  (See Chapter 2 "Shaping smooth-stepped interpolation")
+  - Apply a smoother curve to the glide, e.g. `go.unit.sine`. 
+  - If the input is a pulse wave rather than noise, we can use this as the basis of an LFO. Just need a trigger when the pulse changes value, which we can use `change` for. 
+  - See Ch3 **Interpolating_LFO.maxpat**
+  - It doesn't need to be driven by a phasor. For a non-cycling glide, feed an `accum` ramp into a `clip 0 1` to stop at 1. Retrigger the `accum` ramp when the target changes (via `change`). This is a basic line generator (see Ch6 **slide_slew_and_line.maxpat**).  We can smoothly shape the ramp too, see Ch2 **interpolating_glides.maxpat**. 
 
 # Week 3: Uncertainty and Unpredictablility
 Sep 25
