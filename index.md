@@ -388,12 +388,12 @@ h
   - Insert many small comments to document what each step or section are doing, to show that you understand how the algorithm is working (or insert comments with questions about any areas you are unsure of). This is essential for me to know what I should focus on in lecture patching sessions. 
 - [Submit the Max patch via this form here](https://docs.google.com/forms/d/e/1FAIpQLScXR0kSb2AMFgC-DzRMBO8gHGkvcq17kJ-PU-EP1ZTRhdUoug/viewform?usp=sf_link)
 
+**Assignment 1 due Sep 21**
+
 # Week 2: Unit Shaping
 Sep 18
 
-**Assignment 1 due**
-
----
+[Online on Zoom](https://yorku.zoom.us/j/96845682958)
 
 - **Examples of working with phasor ramp rhythms**
   - A phasor beat clock: **ramp_from_bpm.maxpat**
