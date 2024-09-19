@@ -393,7 +393,7 @@ h
 # Week 2: Unit Shaping
 Sep 18
 
-[Online on Zoom](https://yorku.zoom.us/j/96845682958)
+[Zoom recording](https://yorku.zoom.us/rec/share/FgkO9V8vK-bC27z-XJsfaLdsN4dWlLjAPzCVJFIwj404-GM60I0Nblq0rZ3OLW4h.moN-NS8z43sjb4Z4)
 
 - **Examples of working with phasor ramp rhythms**
   - A phasor beat clock: **ramp_from_bpm.maxpat**
