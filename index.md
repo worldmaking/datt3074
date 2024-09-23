@@ -558,6 +558,7 @@ Oct 2
   - Pitch is linear (additive), frequency is exponential (multiplicative).  Adding 1 octave means multiplying a frequency by 2 (subtracting 1 octave means dividing by 2).  In general, a pitch offset of N octaves implies a frequency multiplier of `pow(2, N)` or simply `exp2(N)`.   
   - MIDI, which most keyboards and music apps use, works with semitones. There are 12 semitones in one octave. Adding 12 semitones means multiplying a frequency by 2.   Adding one semitone means... multiplying by `pow(2, 13/12)`, or `exp2(13/12)`. That's a lot harder to remember!   So some synthesizers use a different scale called "volt per octave", where adding 1 volt of level means going up one octave, which is multiplying the frequency by 2. 
   - See **pitch.maxpat**: how to convert back & forth between Hz, MIDI, and octave representations. 
+
 - Quantizing
   - What if we want to ensure that our sounds are tuned to exact semitones?  
     - In MIDI representation, just ensure the value is integer (e.g. `floor` or `round`)
@@ -565,7 +566,9 @@ Oct 2
     - In Hz representation, convert to MIDI or octave, quantize, then convert back
   - A neat trick to quickly quantize an octave signal to a common scale:
     - First quantize to K (octave -> * K -> round -> / K), then quantize the result to 12 ( -> * 12 -> round -> / 12).  If K=7 this gives major/minor scales; if K=5 it gives pentatonic modes.  You can also add offsets before the `round` operators for inversion & transposition.  See **quantizing-pitch.maxpat**
-  
+
+https://www.desmos.com/calculator/pr6rgxwplx
+
 - **Deep dive**: We can combine those ideas into a more complex generative sequencer, based on the Klee Sequencer: 
   - Feed some binary choice input (the "data" input) into a `go.shiftregister8`, which is clocked by a `phasor` -> `go.ramp2trig`, for example. 
   - Multiply all the outputs by some pitch offset, e.g. in semitones, and sum them.  That's the melody output. 
@@ -577,6 +580,8 @@ Oct 2
   - The book shows how in this case we can accurately represent the loop as a single integer, and how we can manipulate the bits as an integer (**shift-register-integer.maxpat**)
 
 - Depending on time, we could **deep dive** into another looping sequencer -- the urn model from Ch4
+
+https://www.desmos.com/calculator/gflrzuhqee
 
 - **Deep dive**: Euclidean rhythms: an algorithm to distribute K events over N steps as evenly as possible. It happens to produce a lot of rhythmic motifs common in musics from around the world. Also prevalent in techno. 
   - Rather than use the GCD algorithm, which is recursive, we can solve it in a much simpler way, equivalent to rasterizing a ramp of slope K/N, looping every N steps. 
