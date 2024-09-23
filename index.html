@@ -594,10 +594,149 @@ jhz8+48+O7IrgnC
 <hr>
 <h1 id="week-3-uncertainty-and-unpredictablility">Week 3: Uncertainty and Unpredictablility</h1>
 <p>Sep 25</p>
+<ul>
+<li><p>What is noise?</p>
+<ul>
+<li>A non-repeating pattern, which our perceptual system cannot resolve </li>
+<li>How long does it have to not repeat? <strong>random_when_does_noise_get_forgotten.maxpat</strong></li>
+<li>Filtered noise (noise colors) -- a quick example using <code>go.svf.hz</code></li>
+<li>Shaping noise: noise <strong>color</strong> and noise <strong>distribution</strong> are not the same. Distribution is about what kinds of <em>values</em> are produced, color is about what frequencies of similarity are more likely to occur <em>over time</em>.   Importantly, <em>color and distribution are mostly indepenedent: you can have the same color but very different distributions</em> -- see <strong>random_distributions.maxpat</strong>. </li>
+</ul>
+</li>
+<li><p>Random techniques (ch4) -- we covered most of these last week, but maybe build a random walker to review?</p>
+<ul>
+<li>Random ranges: <code>noise</code> -&gt; <code>scale</code>.  Or, for a 0..1 range, <code>noise</code> -&gt; <code>abs</code>. </li>
+<li>Random integers: <code>noise</code> -&gt; <code>scale</code> -&gt; <code>floor</code>, and <code>go.random</code>. </li>
+<li>Chance: <code>noise</code> -&gt; <code>abs</code> -&gt; <code>&lt; chance</code> (maybe -&gt; <code>latch</code>), where &quot;chance&quot; is from 0 (no chance) to 1 (sure thing).  Use <code>go.chance</code>.  <strong>random_chance.maxpat</strong><ul>
+<li>A low probability of passing a noise signal can create nice dust &amp; scratches sound</li>
+</ul>
+</li>
+<li>Stepped random: <code>noise</code> -&gt; <code>latch</code><ul>
+<li>Smooth stepped random: use the <code>latch</code> seqeuence into <code>mix</code> as we saw last week. Can chain this into a longer interpolated curve: <strong>random_smoothed.maxpat</strong></li>
+</ul>
+</li>
+<li>Random periods: a stepped random that changes the period of stepping on each step: <strong>random_periods.maxpat</strong></li>
+<li><strong>Random walks</strong>: accumulate a random source (e.g. a stepped random). May want to <code>wrap</code>, <code>clip</code> or <code>fold</code> the count to keep it in a usable range. <ul>
+<li>Can also smooth these steps, see <strong>random_walks.maxpat</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>What is chaos? An algorithm producing a deterministic yet unpredictable trajectory. Tend to have recognizable patterns of behaviour but never quite exactly the same. This can make them perceptually interesting, especially for modulations. Another way to ride the line between tedious repetition and incoherent randomness.  </p>
+<ul>
+<li>Lots of different chaotic algorithms are known, and many included in the book (see the <strong>go.chaos</strong> subfolders)</li>
+<li>Focus example: Lorenz attractor</li>
+<li>Most of them are essentially accumulators that are cross-coupled, so they have multiple simultaneous outputs. </li>
+<li>Output ranges can be very different for different algorithms; but we can use an &quot;auto-limter&quot; patch to keep things in our desired range</li>
+<li>Example: loosening up a clock: <strong>chaos.tempo.nonrobotic.maxpat</strong></li>
+<li>Example: injecting audio into a chaotic system <strong>chaos_Lorenz_audioinjection.maxpat</strong></li>
+</ul>
+</li>
+<li><p>Continue to Chapter 5: Stepping in Time</p>
+</li>
+</ul>
 <h2 id="assignment-2">Assignment 2</h2>
+<p>Remix your colleague&#39;s work!   </p>
+<p>You will take one or two of your fellow student&#39;s Assignment 1 patches, and modify them into something you think is interesting <strong>in a different way</strong>.  (I will share a folder that contains all the patches). </p>
+<p>It can still be a ring-tone generator if you want, or it could be an endless generative music box/drum pattern generator. </p>
+<p>Again you are welcome to borrow patching from any of the examples in the GO book, or the gen~ examples that come with Max (under Help / examples / gen). </p>
+<p>Be sure to include a statement including:</p>
+<ul>
+<li><strong>which</strong> patches (from fellow students &amp; from examples) that you used, and </li>
+<li><strong>how</strong> you changed them and <strong>why</strong></li>
+<li><strong>what</strong> challenges you found, and what you learned</li>
+</ul>
+<p>Be sure to follow all the <a href="#general-procedures-for-assignment-patches">general procedures for assignment patches</a></p>
+<p><strong>Assignment due Oct 9</strong></p>
 <hr>
 <h1 id="week-4-stepping-in-time">Week 4: Stepping in Time</h1>
 <p>Oct 2</p>
+<ul>
+<li><p>We can create melodies by mixing scaled gate signals e.g. <strong>mixer-sequencer.maxpat</strong>. Or take some chaos, feed it through a comparator, and mix those. </p>
+</li>
+<li><p>We saw the basic sample &amp; hold sequencer in week 2 (<strong>latched-sequencer.maxpat</strong>), and the basic shift register (<strong>shift-register.maxpat</strong>)</p>
+</li>
+<li><p>A quick primer on representing pitch in signals</p>
+<ul>
+<li>Oscillators like <code>phasor</code> and <code>cycle</code> work with frequencies in Hz, meaning repetitions per second. But we are used to thinking about pitches in octaves, semitones, etc. What&#39;s the relationship?</li>
+<li>Pitch is linear (additive), frequency is exponential (multiplicative).  Adding 1 octave means multiplying a frequency by 2 (subtracting 1 octave means dividing by 2).  In general, a pitch offset of N octaves implies a frequency multiplier of <code>pow(2, N)</code> or simply <code>exp2(N)</code>.   </li>
+<li>MIDI, which most keyboards and music apps use, works with semitones. There are 12 semitones in one octave. Adding 12 semitones means multiplying a frequency by 2.   Adding one semitone means... multiplying by <code>pow(2, 13/12)</code>, or <code>exp2(13/12)</code>. That&#39;s a lot harder to remember!   So some synthesizers use a different scale called &quot;volt per octave&quot;, where adding 1 volt of level means going up one octave, which is multiplying the frequency by 2. </li>
+<li>See <strong>pitch.maxpat</strong>: how to convert back &amp; forth between Hz, MIDI, and octave representations. </li>
+</ul>
+</li>
+<li><p>Quantizing</p>
+<ul>
+<li>What if we want to ensure that our sounds are tuned to exact semitones?  <ul>
+<li>In MIDI representation, just ensure the value is integer (e.g. <code>floor</code> or <code>round</code>)</li>
+<li>In octave representation, multiply by 12, make integer, then divide by 12</li>
+<li>In Hz representation, convert to MIDI or octave, quantize, then convert back</li>
+</ul>
+</li>
+<li>A neat trick to quickly quantize an octave signal to a common scale:<ul>
+<li>First quantize to K (octave -&gt; * K -&gt; round -&gt; / K), then quantize the result to 12 ( -&gt; * 12 -&gt; round -&gt; / 12).  If K=7 this gives major/minor scales; if K=5 it gives pentatonic modes.  You can also add offsets before the <code>round</code> operators for inversion &amp; transposition.  See <strong>quantizing-pitch.maxpat</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Deep dive</strong>: We can combine those ideas into a more complex generative sequencer, based on the Klee Sequencer: </p>
+<ul>
+<li>Feed some binary choice input (the &quot;data&quot; input) into a <code>go.shiftregister8</code>, which is clocked by a <code>phasor</code> -&gt; <code>go.ramp2trig</code>, for example. </li>
+<li>Multiply all the outputs by some pitch offset, e.g. in semitones, and sum them.  That&#39;s the melody output. </li>
+<li>We can choose to loop the pattern by feeding the last shift register stage back to the data input. </li>
+<li><strong>shift-register-weighted-random.maxpat</strong></li>
+<li>We can choose whether to replicate or mutate (evolve) by <code>xor</code> of the last step with some chance control: <strong>shift-register-weighted-xor.maxpat</strong><ul>
+<li>(this can also be a chaotic sequence generator (an &quot;LFSR&quot;), especially if feeding back multiple steps)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Another variant, often found in modular synthesizers, is to set all the scaling weights to be powers of 2, which is a binary digital-to-analog encoder. </p>
+<ul>
+<li>The book shows how in this case we can accurately represent the loop as a single integer, and how we can manipulate the bits as an integer (<strong>shift-register-integer.maxpat</strong>)</li>
+</ul>
+</li>
+<li><p>Depending on time, we could <strong>deep dive</strong> into another looping sequencer -- the urn model from Ch4</p>
+</li>
+<li><p><strong>Deep dive</strong>: Euclidean rhythms: an algorithm to distribute K events over N steps as evenly as possible. It happens to produce a lot of rhythmic motifs common in musics from around the world. Also prevalent in techno. </p>
+<ul>
+<li>Rather than use the GCD algorithm, which is recursive, we can solve it in a much simpler way, equivalent to rasterizing a ramp of slope K/N, looping every N steps. <ul>
+<li>Notice that this is essentially the same as what we did earlier to quantize pitches to scales!</li>
+</ul>
+</li>
+<li>Scale ramp by N, quantize to N steps with <code>floor</code>, multiply by K/N for the desired slope, quantize again with <code>floor</code> for the Euclidean steps. Send these through <code>change</code> -&gt; <code>bool</code> for triggers.</li>
+<li>What about ramps? We know that ramps are much better than triggers! Then we could make a Euclidean LFO, for example, or place ratchets inside the Euclidean pattern, etc. <ul>
+<li>The solution here is a little more intricate, but essentially we compute what is our current step (<code>ceil</code> of quantized * N/K) and our next step (same but for quantized+1) are, the difference of which is the number of beats in the event. </li>
+<li>Then we take our original <code>phasor * N</code> ramp, subtract the current step, and divide by the step length, to get a 0 to 1 ramp.  [We could have used a <code>scale</code> operator there.]</li>
+<li>We can shift (rotate) the pattern by adding an integer offset to the scaled phasor.  We can sync parameter changes to the beat with <code>latch</code> operators.  Lots of other possible refinements, e.g. what to do when K &gt; N. </li>
+</ul>
+</li>
+<li><strong>euclidian_rhythms.maxpat</strong>, <strong>euclidean_ratchets.maxpat</strong>, <strong>euclidean_LFO.maxpat</strong></li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>Timbral shaping via sigmoids (end of Ch3) to turn a simpler signal into a more complex one. </p>
+<ul>
+<li>For audio waveshaping we often use sigmoid shapes, such as <code>tanh</code></li>
+<li>This can add spectral complexity -- adding harmonics (&quot;harmonic distortion&quot;). Sine &amp; triangle are good input choices. </li>
+<li>The response depends on the loudness of the input. Often put a &quot;preamplification&quot; gain element first. </li>
+<li>The response also depends on the symmetry of the input: sometimes add a bias after the gain.</li>
+<li>Lots of different &quot;sigmoid&quot; functions similar to <code>tanh</code>, see the <code>go.sigmoid.*</code> abstractions in <strong>bipolar_waveshaping_sigmoids.maxpat</strong></li>
+<li>Works especially well with dynamic gain changes such as envelopes, bright-to-dull decay, see <strong>bipolar_waveshaping_sigmoids_enveloped.maxpat</strong></li>
+<li>Can also normalize the sigmoids, see <code>go.unit.sigmoid.*</code></li>
+<li>More interesting input than sine can create quite complex intermodulation distortion effects, see <strong>bipolar_waveshaping_intermodulation.maxpat</strong></li>
+</ul>
+</li>
+<li><p>Timbral shaping via quantizing (bitcrushing) -- last section of Chapter 5</p>
+<ul>
+<li>Recall the basic quantizer: * N -&gt; round -&gt; / N. This same method can be used for audio signals too -- the smaller N is, the steppier our audio becomes, creating a harsh kind of bitcrushing noise. </li>
+<li>We can use the <em>distance</em> between the quantized &amp; unquantized outputs to mix between them, creating a slightly smoother step between each note <strong>quantizing-pitch-smoothed.maxpat</strong></li>
+<li>The same can be done for audio, softening the bitcrushing. <strong>quantizing-audio-bitcrush.maxpat</strong></li>
+</ul>
+</li>
+</ul>
+<p>(Basically, it can be worth experimenting whether a process we use for control signals might also do something interesting for audio signals!)</p>
 <hr>
 <h1 id="week-5-filters-and-the-balance-of-time">Week 5: Filters and the Balance of Time</h1>
 <p>Oct 9</p>
