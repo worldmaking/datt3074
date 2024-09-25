@@ -521,15 +521,15 @@ What if we don't want it to jump between steps, but instead to **glide** between
 # Week 3: Uncertainty and Unpredictablility
 Sep 25
 
-- Reviewing [Assignment 1](#assignment-1) & [the sounds](#assignment-1-sounds)
+Reviewing [Assignment 1](#assignment-1) & [the sounds](#assignment-1-sounds)
 
-- What is noise?
+**What is noise?**
   - A non-repeating pattern, which our perceptual system cannot resolve 
   - How long does it have to not repeat? **random_when_does_noise_get_forgotten.maxpat**
   - Filtered noise (noise colors) -- a quick example using `go.svf.hz`
   - Shaping noise: noise **color** and noise **distribution** are not the same. Distribution is about what kinds of *values* are produced, color is about what frequencies of similarity are more likely to occur *over time*.   Importantly, *color and distribution are mostly indepenedent: you can have the same color but very different distributions* -- see **random_distributions.maxpat**. 
   
-- Random techniques (ch4) -- we covered most of these last week, but maybe build a random walker to review?
+**Random techniques** (ch4) -- we covered most of these last week, but maybe build a random walker to review?
   - Random ranges: `noise` -> `scale`.  Or, for a 0..1 range, `noise` -> `abs`. 
   - Random integers: `noise` -> `scale` -> `floor`, and `go.random`. 
   - Chance: `noise` -> `abs` -> `< chance` (maybe -> `latch`), where "chance" is from 0 (no chance) to 1 (sure thing).  Use `go.chance`.  **random_chance.maxpat**
@@ -540,7 +540,7 @@ Sep 25
   - **Random walks**: accumulate a random source (e.g. a stepped random). May want to `wrap`, `clip` or `fold` the count to keep it in a usable range. 
     - Can also smooth these steps, see **random_walks.maxpat**
 
-- What is chaos? An algorithm producing a deterministic yet unpredictable trajectory. Tend to have recognizable patterns of behaviour but never quite exactly the same. This can make them perceptually interesting, especially for modulations. Another way to ride the line between tedious repetition and incoherent randomness.  
+**What is chaos?** An algorithm producing a deterministic yet unpredictable trajectory. Tend to have recognizable patterns of behaviour but never quite exactly the same. This can make them perceptually interesting, especially for modulations. Another way to ride the line between tedious repetition and incoherent randomness.  
   - Lots of different chaotic algorithms are known, and many included in the book (see the **go.chaos** subfolders)
   - Focus example: Lorenz attractor
   - Most of them are essentially accumulators that are cross-coupled, so they have multiple simultaneous outputs. 
@@ -614,16 +614,17 @@ p62i5784c8NdGuG2sqtS2g5xUU6xMe8l+EfYQwwF
 # Week 4: Stepping in Time
 Oct 2
 
-- We can create melodies by mixing scaled gate signals e.g. **mixer-sequencer.maxpat**. Or take some chaos, feed it through a comparator, and mix those. 
-- We saw the basic sample & hold sequencer in week 2 (**latched-sequencer.maxpat**), and the basic shift register (**shift-register.maxpat**)
+We can create melodies by mixing scaled gate signals e.g. **mixer-sequencer.maxpat**. Or take some chaos, feed it through a comparator, and mix those. 
 
-- A quick primer on representing pitch in signals
+We saw the basic sample & hold sequencer in week 2 (**latched-sequencer.maxpat**), and the basic shift register (**shift-register.maxpat**)
+
+A quick primer on representing pitch in signals
   - Oscillators like `phasor` and `cycle` work with frequencies in Hz, meaning repetitions per second. But we are used to thinking about pitches in octaves, semitones, etc. What's the relationship?
   - Pitch is linear (additive), frequency is exponential (multiplicative).  Adding 1 octave means multiplying a frequency by 2 (subtracting 1 octave means dividing by 2).  In general, a pitch offset of N octaves implies a frequency multiplier of `pow(2, N)` or simply `exp2(N)`.   
   - MIDI, which most keyboards and music apps use, works with semitones. There are 12 semitones in one octave. Adding 12 semitones means multiplying a frequency by 2.   Adding one semitone means... multiplying by `pow(2, 13/12)`, or `exp2(13/12)`. That's a lot harder to remember!   So some synthesizers use a different scale called "volt per octave", where adding 1 volt of level means going up one octave, which is multiplying the frequency by 2. 
   - See **pitch.maxpat**: how to convert back & forth between Hz, MIDI, and octave representations. 
 
-- Quantizing
+Quantizing
   - What if we want to ensure that our sounds are tuned to exact semitones?  
     - In MIDI representation, just ensure the value is integer (e.g. `floor` or `round`)
     - In octave representation, multiply by 12, make integer, then divide by 12
@@ -635,21 +636,21 @@ See **quantizing-pitch.maxpat**
 
 https://www.desmos.com/calculator/pr6rgxwplx
 
-- **Deep dive**: We can combine those ideas into a more complex generative sequencer, based on the Klee Sequencer: 
+**Deep dive**: We can combine those ideas into a more complex generative sequencer, based on the Klee Sequencer: 
   - Feed some binary choice input (the "data" input) into a `go.shiftregister8`, which is clocked by a `phasor` -> `go.ramp2trig`, for example. 
   - Multiply all the outputs by some pitch offset, e.g. in semitones, and sum them.  That's the melody output. 
   - We can choose to loop the pattern by feeding the last shift register stage back to the data input. 
   - **shift-register-weighted-random.maxpat**
   - We can choose whether to replicate or mutate (evolve) by `xor` of the last step with some chance control: **shift-register-weighted-xor.maxpat**
     - (this can also be a chaotic sequence generator (an "LFSR"), especially if feeding back multiple steps)
-- Another variant, often found in modular synthesizers, is to set all the scaling weights to be powers of 2, which is a binary digital-to-analog encoder. 
-  - The book shows how in this case we can accurately represent the loop as a single integer, and how we can manipulate the bits as an integer (**shift-register-integer.maxpat**)
+  - Another variant, often found in modular synthesizers, is to set all the scaling weights to be powers of 2, which is a binary digital-to-analog encoder. 
+    - The book shows how in this case we can accurately represent the loop as a single integer, and how we can manipulate the bits as an integer (**shift-register-integer.maxpat**)
 
 Depending on time, we could **deep dive** into another looping sequencer -- the urn model from Ch4
 
 https://www.desmos.com/calculator/gflrzuhqee
 
-- **Deep dive**: Euclidean rhythms: an algorithm to distribute K events over N steps as evenly as possible. It happens to produce a lot of rhythmic motifs common in musics from around the world. Also prevalent in techno. 
+**Deep dive**: Euclidean rhythms: an algorithm to distribute K events over N steps as evenly as possible. It happens to produce a lot of rhythmic motifs common in musics from around the world. Also prevalent in techno. 
   - Rather than use the GCD algorithm, which is recursive, we can solve it in a much simpler way, equivalent to rasterizing a ramp of slope K/N, looping every N steps. 
     - Notice that this is essentially the same as what we did earlier to quantize pitches to scales!
   - Scale ramp by N, quantize to N steps with `floor`, multiply by K/N for the desired slope, quantize again with `floor` for the Euclidean steps. Send these through `change` -> `bool` for triggers.
@@ -661,7 +662,7 @@ https://www.desmos.com/calculator/gflrzuhqee
 
 ---
 
-- Timbral shaping via sigmoids (end of Ch3) to turn a simpler signal into a more complex one. 
+Timbral shaping via sigmoids (end of Ch3) to turn a simpler signal into a more complex one. 
   - For audio waveshaping we often use sigmoid shapes, such as `tanh`
   - This can add spectral complexity -- adding harmonics ("harmonic distortion"). Sine & triangle are good input choices. 
   - The response depends on the loudness of the input. Often put a "preamplification" gain element first. 
@@ -671,7 +672,7 @@ https://www.desmos.com/calculator/gflrzuhqee
   - Can also normalize the sigmoids, see `go.unit.sigmoid.*`
   - More interesting input than sine can create quite complex intermodulation distortion effects, see **bipolar_waveshaping_intermodulation.maxpat**
 
-- Timbral shaping via quantizing (bitcrushing) -- last section of Chapter 5
+Timbral shaping via quantizing (bitcrushing) -- last section of Chapter 5
   - Recall the basic quantizer: * N -> round -> / N. This same method can be used for audio signals too -- the smaller N is, the steppier our audio becomes, creating a harsh kind of bitcrushing noise. 
   - We can use the *distance* between the quantized & unquantized outputs to mix between them, creating a slightly smoother step between each note **quantizing-pitch-smoothed.maxpat**
   - The same can be done for audio, softening the bitcrushing. **quantizing-audio-bitcrush.maxpat**
