@@ -718,14 +718,14 @@ p62i5784c8NdGuG2sqtS2g5xUU6xMe8l+EfYQwwF
 <p>Oct 2</p>
 <p>We can create melodies by mixing scaled gate signals e.g. <strong>mixer-sequencer.maxpat</strong>. Or take some chaos, feed it through a comparator, and mix those. </p>
 <p>We saw the basic sample &amp; hold sequencer in week 2 (<strong>latched-sequencer.maxpat</strong>), and the basic shift register (<strong>shift-register.maxpat</strong>)</p>
-<p>A quick primer on representing pitch in signals</p>
+<p><strong>A quick primer on pitch</strong>, and how we represent pitch in signals</p>
 <ul>
 <li>Oscillators like <code>phasor</code> and <code>cycle</code> work with frequencies in Hz, meaning repetitions per second. But we are used to thinking about pitches in octaves, semitones, etc. What&#39;s the relationship?</li>
 <li>Pitch is linear (additive), frequency is exponential (multiplicative).  Adding 1 octave means multiplying a frequency by 2 (subtracting 1 octave means dividing by 2).  In general, a pitch offset of N octaves implies a frequency multiplier of <code>pow(2, N)</code> or simply <code>exp2(N)</code>.   </li>
 <li>MIDI, which most keyboards and music apps use, works with semitones. There are 12 semitones in one octave. Adding 12 semitones means multiplying a frequency by 2.   Adding one semitone means... multiplying by <code>pow(2, 13/12)</code>, or <code>exp2(13/12)</code>. That&#39;s a lot harder to remember!   So some synthesizers use a different scale called &quot;volt per octave&quot;, where adding 1 volt of level means going up one octave, which is multiplying the frequency by 2. </li>
 <li>See <strong>pitch.maxpat</strong>: how to convert back &amp; forth between Hz, MIDI, and octave representations. </li>
 </ul>
-<p>Quantizing</p>
+<p><strong>Quantizing</strong></p>
 <ul>
 <li>What if we want to ensure that our sounds are tuned to exact semitones?  <ul>
 <li>In MIDI representation, just ensure the value is integer (e.g. <code>floor</code> or <code>round</code>)</li>
@@ -734,9 +734,7 @@ p62i5784c8NdGuG2sqtS2g5xUU6xMe8l+EfYQwwF
 </ul>
 </li>
 <li>A neat trick to quickly quantize an octave signal to a common scale:<ul>
-<li><p>First quantize to K (octave -&gt; * K -&gt; round -&gt; / K), then quantize the result to 12 ( -&gt; * 12 -&gt; round -&gt; / 12).  If K=7 this gives major/minor scales; if K=5 it gives pentatonic modes.  You can also add offsets before the <code>round</code> operators for inversion &amp; transposition.  </p>
-<p>See <strong>quantizing-pitch.maxpat</strong><br ><br ></p>
-<pre><code>      &lt;iframe src=&quot;https://www.desmos.com/calculator/pr6rgxwplx?embed&quot; width=&quot;100%&quot; height=&quot;300&quot; style=&quot;border: 1px solid #ccc&quot; frameborder=0&gt;&lt;/iframe&gt;
+<li>First quantize to K (octave -&gt; * K -&gt; round -&gt; / K), then quantize the result to 12 ( -&gt; * 12 -&gt; round -&gt; / 12).  If K=7 this gives major/minor scales; if K=5 it gives pentatonic modes.  You can also add offsets before the <code>round</code> operators for inversion &amp; transposition.  See <strong>quantizing-pitch.maxpat</strong><br ><br ><pre><code>        &lt;iframe src=&quot;https://www.desmos.com/calculator/pr6rgxwplx?embed&quot; width=&quot;100%&quot; height=&quot;300&quot; style=&quot;border: 1px solid #ccc&quot; frameborder=0&gt;&lt;/iframe&gt;
 </code></pre>
 </li>
 </ul>

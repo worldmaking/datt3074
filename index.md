@@ -618,47 +618,47 @@ We can create melodies by mixing scaled gate signals e.g. **mixer-sequencer.maxp
 
 We saw the basic sample & hold sequencer in week 2 (**latched-sequencer.maxpat**), and the basic shift register (**shift-register.maxpat**)
 
-A quick primer on representing pitch in signals
-  - Oscillators like `phasor` and `cycle` work with frequencies in Hz, meaning repetitions per second. But we are used to thinking about pitches in octaves, semitones, etc. What's the relationship?
-  - Pitch is linear (additive), frequency is exponential (multiplicative).  Adding 1 octave means multiplying a frequency by 2 (subtracting 1 octave means dividing by 2).  In general, a pitch offset of N octaves implies a frequency multiplier of `pow(2, N)` or simply `exp2(N)`.   
-  - MIDI, which most keyboards and music apps use, works with semitones. There are 12 semitones in one octave. Adding 12 semitones means multiplying a frequency by 2.   Adding one semitone means... multiplying by `pow(2, 13/12)`, or `exp2(13/12)`. That's a lot harder to remember!   So some synthesizers use a different scale called "volt per octave", where adding 1 volt of level means going up one octave, which is multiplying the frequency by 2. 
-  - See **pitch.maxpat**: how to convert back & forth between Hz, MIDI, and octave representations. 
+**A quick primer on pitch**, and how we represent pitch in signals
+- Oscillators like `phasor` and `cycle` work with frequencies in Hz, meaning repetitions per second. But we are used to thinking about pitches in octaves, semitones, etc. What's the relationship?
+- Pitch is linear (additive), frequency is exponential (multiplicative).  Adding 1 octave means multiplying a frequency by 2 (subtracting 1 octave means dividing by 2).  In general, a pitch offset of N octaves implies a frequency multiplier of `pow(2, N)` or simply `exp2(N)`.   
+- MIDI, which most keyboards and music apps use, works with semitones. There are 12 semitones in one octave. Adding 12 semitones means multiplying a frequency by 2.   Adding one semitone means... multiplying by `pow(2, 13/12)`, or `exp2(13/12)`. That's a lot harder to remember!   So some synthesizers use a different scale called "volt per octave", where adding 1 volt of level means going up one octave, which is multiplying the frequency by 2. 
+- See **pitch.maxpat**: how to convert back & forth between Hz, MIDI, and octave representations. 
 
-Quantizing
-  - What if we want to ensure that our sounds are tuned to exact semitones?  
-    - In MIDI representation, just ensure the value is integer (e.g. `floor` or `round`)
-    - In octave representation, multiply by 12, make integer, then divide by 12
-    - In Hz representation, convert to MIDI or octave, quantize, then convert back
-  - A neat trick to quickly quantize an octave signal to a common scale:
-    - First quantize to K (octave -> * K -> round -> / K), then quantize the result to 12 ( -> * 12 -> round -> / 12).  If K=7 this gives major/minor scales; if K=5 it gives pentatonic modes.  You can also add offsets before the `round` operators for inversion & transposition.  
+**Quantizing**
+- What if we want to ensure that our sounds are tuned to exact semitones?  
+  - In MIDI representation, just ensure the value is integer (e.g. `floor` or `round`)
+  - In octave representation, multiply by 12, make integer, then divide by 12
+  - In Hz representation, convert to MIDI or octave, quantize, then convert back
+- A neat trick to quickly quantize an octave signal to a common scale:
+  - First quantize to K (octave -> * K -> round -> / K), then quantize the result to 12 ( -> * 12 -> round -> / 12).  If K=7 this gives major/minor scales; if K=5 it gives pentatonic modes.  You can also add offsets before the `round` operators for inversion & transposition.  
      
 See **quantizing-pitch.maxpat**
 
 https://www.desmos.com/calculator/pr6rgxwplx
 
 **Deep dive**: We can combine those ideas into a more complex generative sequencer, based on the Klee Sequencer: 
-  - Feed some binary choice input (the "data" input) into a `go.shiftregister8`, which is clocked by a `phasor` -> `go.ramp2trig`, for example. 
-  - Multiply all the outputs by some pitch offset, e.g. in semitones, and sum them.  That's the melody output. 
-  - We can choose to loop the pattern by feeding the last shift register stage back to the data input. 
-  - **shift-register-weighted-random.maxpat**
-  - We can choose whether to replicate or mutate (evolve) by `xor` of the last step with some chance control: **shift-register-weighted-xor.maxpat**
-    - (this can also be a chaotic sequence generator (an "LFSR"), especially if feeding back multiple steps)
-  - Another variant, often found in modular synthesizers, is to set all the scaling weights to be powers of 2, which is a binary digital-to-analog encoder. 
-    - The book shows how in this case we can accurately represent the loop as a single integer, and how we can manipulate the bits as an integer (**shift-register-integer.maxpat**)
+- Feed some binary choice input (the "data" input) into a `go.shiftregister8`, which is clocked by a `phasor` -> `go.ramp2trig`, for example. 
+- Multiply all the outputs by some pitch offset, e.g. in semitones, and sum them.  That's the melody output. 
+- We can choose to loop the pattern by feeding the last shift register stage back to the data input. 
+- **shift-register-weighted-random.maxpat**
+- We can choose whether to replicate or mutate (evolve) by `xor` of the last step with some chance control: **shift-register-weighted-xor.maxpat**
+  - (this can also be a chaotic sequence generator (an "LFSR"), especially if feeding back multiple steps)
+- Another variant, often found in modular synthesizers, is to set all the scaling weights to be powers of 2, which is a binary digital-to-analog encoder. 
+  - The book shows how in this case we can accurately represent the loop as a single integer, and how we can manipulate the bits as an integer (**shift-register-integer.maxpat**)
 
 Depending on time, we could **deep dive** into another looping sequencer -- the urn model from Ch4
 
 https://www.desmos.com/calculator/gflrzuhqee
 
 **Deep dive**: Euclidean rhythms: an algorithm to distribute K events over N steps as evenly as possible. It happens to produce a lot of rhythmic motifs common in musics from around the world. Also prevalent in techno. 
-  - Rather than use the GCD algorithm, which is recursive, we can solve it in a much simpler way, equivalent to rasterizing a ramp of slope K/N, looping every N steps. 
-    - Notice that this is essentially the same as what we did earlier to quantize pitches to scales!
-  - Scale ramp by N, quantize to N steps with `floor`, multiply by K/N for the desired slope, quantize again with `floor` for the Euclidean steps. Send these through `change` -> `bool` for triggers.
-  - What about ramps? We know that ramps are much better than triggers! Then we could make a Euclidean LFO, for example, or place ratchets inside the Euclidean pattern, etc. 
-    - The solution here is a little more intricate, but essentially we compute what is our current step (`ceil` of quantized * N/K) and our next step (same but for quantized+1) are, the difference of which is the number of beats in the event. 
-    - Then we take our original `phasor * N` ramp, subtract the current step, and divide by the step length, to get a 0 to 1 ramp.  [We could have used a `scale` operator there.]
-    - We can shift (rotate) the pattern by adding an integer offset to the scaled phasor.  We can sync parameter changes to the beat with `latch` operators.  Lots of other possible refinements, e.g. what to do when K > N. 
-  - **euclidian_rhythms.maxpat**, **euclidean_ratchets.maxpat**, **euclidean_LFO.maxpat**
+- Rather than use the GCD algorithm, which is recursive, we can solve it in a much simpler way, equivalent to rasterizing a ramp of slope K/N, looping every N steps. 
+  - Notice that this is essentially the same as what we did earlier to quantize pitches to scales!
+- Scale ramp by N, quantize to N steps with `floor`, multiply by K/N for the desired slope, quantize again with `floor` for the Euclidean steps. Send these through `change` -> `bool` for triggers.
+- What about ramps? We know that ramps are much better than triggers! Then we could make a Euclidean LFO, for example, or place ratchets inside the Euclidean pattern, etc. 
+  - The solution here is a little more intricate, but essentially we compute what is our current step (`ceil` of quantized * N/K) and our next step (same but for quantized+1) are, the difference of which is the number of beats in the event. 
+  - Then we take our original `phasor * N` ramp, subtract the current step, and divide by the step length, to get a 0 to 1 ramp.  [We could have used a `scale` operator there.]
+  - We can shift (rotate) the pattern by adding an integer offset to the scaled phasor.  We can sync parameter changes to the beat with `latch` operators.  Lots of other possible refinements, e.g. what to do when K > N. 
+- **euclidian_rhythms.maxpat**, **euclidean_ratchets.maxpat**, **euclidean_LFO.maxpat**
 
 ---
 
