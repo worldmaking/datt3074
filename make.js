@@ -81,6 +81,11 @@ function generate(file) {
 		.replace(/<pre><code>\s*(----------begin_max5_patcher----------\s*[^-]*-----------end_max5_patcher-----------)\s*<\/code><\/pre>/g,
 			`<button value="$1" onclick="copyPatch(this.value)">Copy Max Patch and select **File / New From Clipboard** in Max</button>`
 		)
+		// auto-embed mp3:
+		.replace(/---audio:\s*([^\n]*)/g, (match, url) => {
+			let base = url.split('\\').pop().split('/').pop()
+			return `<p><audio controls src="${url}" title="${base}"></audio> <a href="${url}">${base}</a></p>`
+		})
 		// auto-embed google slides: e.g. https://docs.google.com/presentation/d/1xrXM86cCE7vzykYYdINs1G9g9f7FaeiiZd6IRlKBEjI/
 		// auto-embed youtube e.g. https://www.youtube.com/watch?v=AbcZ2f5fdNc
 		.replace(/\n\s*(https:\/\/docs.google.com\/presentation\/d\/[^\n]*)/g, 
