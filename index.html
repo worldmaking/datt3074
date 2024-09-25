@@ -738,7 +738,9 @@ p62i5784c8NdGuG2sqtS2g5xUU6xMe8l+EfYQwwF
 </ul>
 </li>
 <li>A neat trick to quickly quantize an octave signal to a common scale:<ul>
-<li>First quantize to K (octave -&gt; * K -&gt; round -&gt; / K), then quantize the result to 12 ( -&gt; * 12 -&gt; round -&gt; / 12).  If K=7 this gives major/minor scales; if K=5 it gives pentatonic modes.  You can also add offsets before the <code>round</code> operators for inversion &amp; transposition.  See <strong>quantizing-pitch.maxpat</strong><br ><br ><pre><code>      &lt;iframe src=&quot;https://www.desmos.com/calculator/pr6rgxwplx?embed&quot; width=&quot;100%&quot; height=&quot;300&quot; style=&quot;border: 1px solid #ccc&quot; frameborder=0&gt;&lt;/iframe&gt;
+<li><p>First quantize to K (octave -&gt; * K -&gt; round -&gt; / K), then quantize the result to 12 ( -&gt; * 12 -&gt; round -&gt; / 12).  If K=7 this gives major/minor scales; if K=5 it gives pentatonic modes.  You can also add offsets before the <code>round</code> operators for inversion &amp; transposition.  </p>
+<p>See <strong>quantizing-pitch.maxpat</strong><br ><br ></p>
+<pre><code>      &lt;iframe src=&quot;https://www.desmos.com/calculator/pr6rgxwplx?embed&quot; width=&quot;100%&quot; height=&quot;300&quot; style=&quot;border: 1px solid #ccc&quot; frameborder=0&gt;&lt;/iframe&gt;
 </code></pre>
 </li>
 </ul>
@@ -762,12 +764,11 @@ p62i5784c8NdGuG2sqtS2g5xUU6xMe8l+EfYQwwF
 <li>The book shows how in this case we can accurately represent the loop as a single integer, and how we can manipulate the bits as an integer (<strong>shift-register-integer.maxpat</strong>)</li>
 </ul>
 </li>
-<li><p>Depending on time, we could <strong>deep dive</strong> into another looping sequencer -- the urn model from Ch4<br ><br ></p>
-<pre><code>          &lt;iframe src=&quot;https://www.desmos.com/calculator/gflrzuhqee?embed&quot; width=&quot;100%&quot; height=&quot;300&quot; style=&quot;border: 1px solid #ccc&quot; frameborder=0&gt;&lt;/iframe&gt;
-</code></pre>
-</li>
-<li><p><strong>Deep dive</strong>: Euclidean rhythms: an algorithm to distribute K events over N steps as evenly as possible. It happens to produce a lot of rhythmic motifs common in musics from around the world. Also prevalent in techno. </p>
+</ul>
+<p>Depending on time, we could <strong>deep dive</strong> into another looping sequencer -- the urn model from Ch4<br ><br >
+                <iframe src="https://www.desmos.com/calculator/gflrzuhqee?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
 <ul>
+<li><strong>Deep dive</strong>: Euclidean rhythms: an algorithm to distribute K events over N steps as evenly as possible. It happens to produce a lot of rhythmic motifs common in musics from around the world. Also prevalent in techno. <ul>
 <li>Rather than use the GCD algorithm, which is recursive, we can solve it in a much simpler way, equivalent to rasterizing a ramp of slope K/N, looping every N steps. <ul>
 <li>Notice that this is essentially the same as what we did earlier to quantize pitches to scales!</li>
 </ul>

@@ -629,7 +629,9 @@ Oct 2
     - In octave representation, multiply by 12, make integer, then divide by 12
     - In Hz representation, convert to MIDI or octave, quantize, then convert back
   - A neat trick to quickly quantize an octave signal to a common scale:
-    - First quantize to K (octave -> * K -> round -> / K), then quantize the result to 12 ( -> * 12 -> round -> / 12).  If K=7 this gives major/minor scales; if K=5 it gives pentatonic modes.  You can also add offsets before the `round` operators for inversion & transposition.  See **quantizing-pitch.maxpat**
+    - First quantize to K (octave -> * K -> round -> / K), then quantize the result to 12 ( -> * 12 -> round -> / 12).  If K=7 this gives major/minor scales; if K=5 it gives pentatonic modes.  You can also add offsets before the `round` operators for inversion & transposition.  
+     
+See **quantizing-pitch.maxpat**
 
 https://www.desmos.com/calculator/pr6rgxwplx
 
@@ -643,7 +645,7 @@ https://www.desmos.com/calculator/pr6rgxwplx
 - Another variant, often found in modular synthesizers, is to set all the scaling weights to be powers of 2, which is a binary digital-to-analog encoder. 
   - The book shows how in this case we can accurately represent the loop as a single integer, and how we can manipulate the bits as an integer (**shift-register-integer.maxpat**)
 
-- Depending on time, we could **deep dive** into another looping sequencer -- the urn model from Ch4
+Depending on time, we could **deep dive** into another looping sequencer -- the urn model from Ch4
 
 https://www.desmos.com/calculator/gflrzuhqee
 
