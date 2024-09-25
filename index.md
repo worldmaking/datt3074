@@ -554,11 +554,11 @@ Sep 25
 
 A lot of sound synthesis technology innovation has been inspired by science fiction, or indeed has pioneered science fiction! Sometimes these are also built from very meager resources. A wonderful example is the [soundtrack of the film Forbidden Planet](https://en.wikipedia.org/wiki/Forbidden_Planet#Soundtrack) from **1956**.
 
-> "Forbidden Planet's innovative electronic music score (credited as "electronic tonalities") was composed by [Bebe and Louis Barron](https://en.wikipedia.org/wiki/Bebe_and_Louis_Barron). It is credited with being the first completely electronic film score, preceding the development of analog synthesizers by Robert Moog and Don Buchla in the early 1960s. Using ideas and procedures from the book *Cybernetics: Or Control and Communication in the Animal and the Machine (1948)* by the mathematician and electrical engineer Norbert Wiener, Louis Barron constructed his own electronic circuits that he used to generate the score's "bleeps, blurps, whirs, whines, throbs, hums, and screeches". By following the equations presented in the book, Louis was able to build electronic circuits that he manipulated to generate sounds. Most of the production was not scripted or notated in any way. The circuit generated sound was not treated as notes, but instead as "actors". 
-
 ---youtube:AMR75C_zfso
 
-Create your own "electronic tonalities" for an alien world, e.g. 
+> "Forbidden Planet's innovative electronic music score (credited as "electronic tonalities") was composed by [Bebe and Louis Barron](https://en.wikipedia.org/wiki/Bebe_and_Louis_Barron). It is credited with being the first completely electronic film score, preceding the development of analog synthesizers by Robert Moog and Don Buchla in the early 1960s. Using ideas and procedures from the book *Cybernetics: Or Control and Communication in the Animal and the Machine (1948)* by the mathematician and electrical engineer Norbert Wiener, Louis Barron constructed his own electronic circuits that he used to generate the score's "bleeps, blurps, whirs, whines, throbs, hums, and screeches". By following the equations presented in the book, Louis was able to build electronic circuits that he manipulated to generate sounds. Most of the production was not scripted or notated in any way. The circuit generated sound was not treated as notes, but instead as "actors". 
+
+**The assignment**: Create your own "electronic tonalities" for an alien world, e.g. 
 - create the music of an alien race, or of their advanced technologies
 - or, create the sounds of an alien world or ecosystem
 
@@ -608,26 +608,6 @@ kpt3rTUCnJKb++yq.T+dimqt1BqWg.qzyPWyLx7cuO9mw9zehBlTkG0ErZKN
 p62i5784c8NdGuG2sqtS2g5xUU6xMe8l+EfYQwwF
 -----------end_max5_patcher-----------
 </code></pre>
-
-
-
-
-<!--
-Remix your colleague's work!   
-
-You will take one or two of your fellow student's Assignment 1 patches, and modify them into something you think is interesting **in a different way**.  (I will share a folder that contains all the patches). 
-
-It can still be a ring-tone generator if you want, or it could be an endless generative music box/drum pattern generator. 
-
-Again you are welcome to borrow patching from any of the examples in the GO book, or the gen~ examples that come with Max (under Help / examples / gen). 
-
-Be sure to include a statement including:
-- **which** patches (from fellow students & from examples) that you used, and 
-- **how** you changed them and **why**
-- **what** challenges you found, and what you learned
-
-Be sure to follow all the [general procedures for assignment patches](#general-procedures-for-assignment-patches)
--->
 
 **Assignment due Oct 9**
 
@@ -700,6 +680,21 @@ https://www.desmos.com/calculator/gflrzuhqee
 Oct 9
 
 ## Assignment 3
+
+<!--
+Remix your colleague's work!   
+
+You will take one or two of your fellow student's previous assignment patches, and modify them into something you think is interesting **in a different way**.  (I will share a folder that contains all the patches). 
+
+Again you are welcome to borrow patching from any of the examples in the GO book, or the gen~ examples that come with Max (under Help / examples / gen). 
+
+Be sure to include a statement including:
+- **which** patches (from fellow students & from examples) that you used, and 
+- **how** you changed them and **why**
+- **what** challenges you found, and what you learned
+
+Be sure to follow all the [general procedures for assignment patches](#general-procedures-for-assignment-patches)
+-->
 
 -----
 
