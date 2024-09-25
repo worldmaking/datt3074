@@ -630,8 +630,8 @@ We saw the basic sample & hold sequencer in week 2 (**latched-sequencer.maxpat**
   - In octave representation, multiply by 12, make integer, then divide by 12
   - In Hz representation, convert to MIDI or octave, quantize, then convert back
 - A neat trick to quickly quantize an octave signal to a common scale:
-  - First quantize to K (octave -> * K -> round -> / K), then quantize the result to 12 ( -> * 12 -> round -> / 12).  If K=7 this gives major/minor scales; if K=5 it gives pentatonic modes.  You can also add offsets before the `round` operators for inversion & transposition.  
-     
+  - First quantize to K (octave -> * K -> round -> / K), then quantize the result to 12 ( -> * 12 -> round -> / 12).  If K=7 this gives major/minor scales; if K=5 it gives pentatonic modes.  You can also add offsets before the `round` operators for inversion & transposition.
+
 See **quantizing-pitch.maxpat**
 
 https://www.desmos.com/calculator/pr6rgxwplx
