@@ -615,6 +615,7 @@ jhz8+48+O7IrgnC
 <hr>
 <h1 id="week-3-uncertainty-and-unpredictablility">Week 3: Uncertainty and Unpredictablility</h1>
 <p>Sep 25</p>
+<p><a href="https://yorku.zoom.us/rec/share/hOsXZrPLHHdsrvByV6L08t2bL4ST8_trA-W3ZcYc4YZ_Q-v0vUgAMgtObdhrrF-P.v7jIU_hzeyU-p94H">Zoom recording</a></p>
 <p>Reviewing <a href="#assignment-1">Assignment 1</a> &amp; <a href="#assignment-1-sounds">the sounds</a></p>
 <p><strong>What is noise?</strong></p>
 <ul>
@@ -794,6 +795,55 @@ p62i5784c8NdGuG2sqtS2g5xUU6xMe8l+EfYQwwF
 <hr>
 <h1 id="week-5-filters-and-the-balance-of-time">Week 5: Filters and the Balance of Time</h1>
 <p>Oct 9</p>
+<p>In almost every class since the first week we have encountered a simple lowpass filter. Most often we have seen the filter as a <code>mix</code> and <code>history</code> pair, which is known as a <strong>one pole filter</strong>, but if we dig into the algebra of this a bit, or rather, if we re-arrange the patching a bit, there&#39;s a few other ways of seeing what this is. </p>
+<ul>
+<li><strong>Averaging</strong>. The <code>mix</code> operator is just a weighted average between two inputs <code>a</code> and <code>b</code>. If the mix is in the centre, when the mix amount <code>t</code> equals 0.5, then this is <code>a*0.5 + b*0.5</code>, which is the same as <code>(a/2+b/2)</code>, which is the same as <code>(a+b)/2</code>, which is what an average of two numbers is.  A <em>weighted</em> average skews the balance more to input <code>a</code> or input <code>b</code>, but makes sure that the sum of the weights is still 1.0. That means <code>a*(1-t) + b*t</code>, which is exactly what <code>mix</code> does. </li>
+<li>If we unpack the <code>mix</code> operator to a <code>* t</code> and <code>* 1-t</code> and <code>+</code>, we should be able to see the feedback loop through a <code>+</code> operator makes an <strong>integrator</strong> or counter, just like we saw back in the first week.  But this integrator is <em>leaky</em>, because while we are counting up we are also scaling the count down again with <code>* t</code>. </li>
+<li>What does it do to a sound when we feed back the output back to input <code>b</code>?  Now we are averaging the input with the past history of a signal. The higher we set <code>t</code>, the more weight we give to the history. Averaging a signal over time is going to smoothen it out, which means fast oscillations will be softened more than slow oscillations. That&#39;s why higher frequencies are reduced more than lower frequencies, so it is a <strong>low pass filter</strong>. </li>
+<li>There&#39;s another way we can look at this patch. We can re-arrange our equation <code>a*(1-t) + b*t</code> into <code>t*(b-a) + a</code>. If you look at this as a patch and follow the path from the <code>history b</code> onward, first we subtract <code>a</code> (getting the value of <code>b</code> relative to <code>a</code>, which is a translation, or difference), then we scale that difference down a bit, then we translate it back from being relative by adding <code>a</code> back on again. So this is a kind of <strong>translation</strong>. We project <code>b</code> into the point-of-view of <code>a</code>, reduce it, then project it back out of the point-of-view of <code>a</code>. Intuitively, what this is doing is trying to make <code>b</code> get closer to <code>a</code>, which means our <code>history</code> is constantly trying to get closer to our input, as if chasing it, but it can only catch up sluggishly. And that&#39;s another way to understand how it will smoothen the signal out. </li>
+</ul>
+<p>What&#39;s the difference between a signal and its lowpass-filtered copy? If the lowpass smoothens it out, then what&#39;s removed is all the fast, noisy movements. This difference, or residual, is the original signal with all the low frequencies removed, leaving only the high frequencies behind -- which is a <strong>high pass filter</strong>. It&#39;s as simple as <code>input - lowpass</code>. It does the opposite of averaging, and the opposite of integrating, which is differentiating. It doesn&#39;t follow the trend of the input, it gets distracted by all the input&#39;s skittish movements. </p>
+<ul>
+<li>A high pass filter will always be centred around zero. Why? This is also called a DC-blocking filter. Useful enough that we have a <code>dcblock</code> operator just for this job.</li>
+</ul>
+<p><strong>Setting the frequency</strong>. </p>
+<ul>
+<li>The parameter <code>t</code> has to be very close to 1.0 to have a significant effect on a gate signal. The closer it is to 1.0, the smoother the output, the deeper the frequency filtering. Often we measure a filter&#39;s response in terms of a &quot;cutoff frequency&quot;, which is the frequency at which the input will lose half of its power. The math to compute the parameter <code>t</code> in terms of a cutoff frequency is: <code>exp(-twopi * hz/samplerate)</code>. </li>
+<li>Alternatively, if we want to set a decay in seconds, we can use <code>t60(seconds * samplerate)</code>. This will set the time at which an input impulse will decay by 60db, which is about 0.001.  That might be useful if we want to use our filter to filter very slow events, like a note on/off gate. Filtering a gate like this can produce natural <em>envelope</em> shapes for a sound. </li>
+</ul>
+<p><strong>Envelopes and low pass gates</strong></p>
+<ul>
+<li>Once you have a nice envelope you can multiply this by a sound to make it&#39;s level naturally appear and fade away. </li>
+<li>Consider using a faster rise and slower fall for a more natural envelope shape: set the envelope parameter differently according to the gate input value (e.g. with a <code>mix</code> or <code>switch</code>)</li>
+</ul>
+<p>But even better, we can combine both: we can send the sound through a lowpass filter, and open and close this filter by the envelope. This is called a <strong>low pass gate</strong>. </p>
+<ul>
+<li>Use the envelope level to set the filter frequency</li>
+<li>Consider chaining several low pass filters for a deeper effect. </li>
+</ul>
+<p><strong>Allpass filters</strong></p>
+<ul>
+<li>A slightly more complex circuit, that feeds some signal backward, and some signal forward. These are exactly balanced so that there is no frequency effect at all -- the output sounds the same as the input! So why would you want to do that?</li>
+<li>What it does is it <em>delays</em> part of the signal, and it delays some frequencies more than others, depending on the frequency parameter. It might delay some fractional amount between 0 and 2 samples. OK, so why would you want to do that?</li>
+<li>Actually there&#39;s lots of uses for this (we&#39;ll see more later in the course), but one of the simplest is to mix it with the original signal, creating a complex spectral effect called &quot;phasing&quot;. Cascade a few allpass filters for a deeper effect. <strong>phaser-4stage.maxpat</strong> and <strong>phaser-8stage.maxpat</strong>. </li>
+<li>Another quick observation: look at the waveform coming out of an allpass filter, and see how it looks different to the input, <em>and yet it sounds exactly the same</em>. How can that be?</li>
+</ul>
+<p><strong>Biquad filters</strong></p>
+<ul>
+<li>A widely-used kind of filter, that has two feed-forward and two feedback paths. It turns out that this circuit can be used for a lot of different filter shapes: lowpass, highpass, bandpass, resonant bandpass, lowshelf, highshelf, allpass, etc. The math for computing the coefficients is quite complex, but is wrapped up in <code>go.biquad.coeffs</code>.  We can make their effects deeper (sharper changes between pass and filter bands) by cascading several in series; filtering the filtered signal. </li>
+</ul>
+<p>However a drawback with biquads is that they don&#39;t modulate very well, and can sound nasty and blow up.  This partly comes down to the integrators at the core of their design, which are Euler-style integrators: they add and then output the count. Instead we can turn to a different class of filters that are built around a different kind of integrator, called a trapezoidal integrator.  Whereas Euler integrators are biased either to the past or the future, a trapezoidal integrator balances both as a kind of average. It&#39;s a kind of linear approximation of the value half-way through a sample.  The math and patching needed to turn this integrator into a basic one pole filter is a little more complex but not really more expensive, and it handles audio-rate modulation much better.</p>
+<p><strong>State variable trapezoidal filter</strong></p>
+<ul>
+<li>A wonderful example of the trapezoidal method is the state variable filter (e.g. <code>go.svf</code>), which, similar to biquads, can produce many different output spectra, but it does them all at once, and can be modulated at audio-rates very nicely.  This will be our go-to filter most of the time. </li>
+</ul>
+<p><strong>Crossover filter</strong></p>
+<p><strong>Sub-audio filtering for control signals</strong></p>
+<ul>
+<li><strong>One pole</strong></li>
+<li><strong>Slew limiting</strong></li>
+<li><strong>Lag generator</strong></li>
+</ul>
 <h2 id="assignment-3">Assignment 3</h2>
 <!--
 Remix your colleague's work!   
