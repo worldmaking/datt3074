@@ -856,6 +856,31 @@ See <strong>slide_slew_and_line.maxpat</strong></p>
 <p>A wonderful example of the trapezoidal method is the state variable filter (e.g. <code>go.svf</code>), which, similar to biquads, can produce many different output spectra, but it does them all at once, and can be modulated at audio-rates very nicely.  This will be our go-to filter most of the time.  See <strong>trapezoidal-state-variable-filter.maxpat</strong></p>
 <h2 id="assignment-3">Assignment 3</h2>
 <!--
+
+Make a drum machine with just N input knobs/switches. Could be a group project, where each person designs one percussion sound with 1 or 2 variant knobs. One or two people design the pattern generators (including the parameter curves). See the c74 project.
+
+
+Team project: drum machine
+- some members create individual drum sounds -- each sound is in a sub-patch and has these inputs:
+    - phasor ramp input to trigger the sound (get a trigger via go.ramp2trig)
+    - level (0 to 1: zero means silent, one is maximum intensity)
+    - timbre (0 to 1: usually increasing this would increase the attention to this sound, e.g. a more spectrally-rich sound, more energy, more sizzling noise, etc.)
+    Maybe level and timbre are a single parameter?
+- some members create pattern generators
+    - One pattern generator track per drum sound
+        - Each pattern track outputs a sequence of ramps plus stepped signals for level/timbre
+    - There should be controls to modify the patterns. These could be
+        - A knob (0..1) to control the density of events
+        - A button to randomly modify the loop
+        - A "fill" button to create extra events while it is enabled
+        - Level/Mute/solo controls per track
+- Everything driven from one core BPM source
+
+Or everyone designs one of each, and we run a few in parallel, all synced to a network clock. Install the Link Max Package, and use `link.phasor~`. We just all need to be on the same wifi. E.g. somebody sets up an ad-hoc network (mac: search for Internet Sharing).
+
+-->
+
+<!--
 Remix your colleague's work!   
 
 You will take one or two of your fellow student's previous assignment patches, and modify them into something you think is interesting **in a different way**.  (I will share a folder that contains all the patches). 
