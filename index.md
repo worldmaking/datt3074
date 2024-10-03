@@ -616,6 +616,8 @@ p62i5784c8NdGuG2sqtS2g5xUU6xMe8l+EfYQwwF
 # Week 4: Stepping in Time
 Oct 2
 
+[Zoom Recording](https://yorku.zoom.us/rec/share/ueNEZRT55KuhCN73jZc2CtstoEZTK5uaOe2App3gWOQqk8Ut-Hhm6jVVVjkZZBVs.3IT8WxYZVMXVVEVG)
+
 We can create melodies by mixing scaled gate signals e.g. **mixer-sequencer.maxpat**. Or take some chaos, feed it through a comparator, and mix those. 
 
 We saw the basic sample & hold sequencer in week 2 (**latched-sequencer.maxpat**), and the basic shift register (**shift-register.maxpat**)
@@ -814,7 +816,6 @@ zLFrKrDvQomfy0izf5mJtpOqTKwcwyJwROq7JcboUp8xpzyKoRkkSolJkRrc
 Ee7e8w+e.dwUzKA
 -----------end_max5_patcher-----------
 </code></pre>
-
 
 # Week 5: Filters and the Balance of Time
 Oct 9
