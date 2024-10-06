@@ -615,6 +615,8 @@ p62i5784c8NdGuG2sqtS2g5xUU6xMe8l+EfYQwwF
 
 **Assignment due Oct 9**
 
+[Please submit Assignment 2 here](https://docs.google.com/forms/d/e/1FAIpQLScQmz1jJviJXZV8FQ2I6k1fhuZYgF4uJP9UzwLXJ77V_Uy6Dw/viewform?usp=sf_link)
+
 # Week 4: Stepping in Time
 Oct 2
 
