@@ -884,8 +884,6 @@ So how do we build a filter out of this kind of trapzoidal integrator? The math 
 A wonderful example of the trapezoidal method is the state variable filter (e.g. `go.svf`), which, similar to biquads, can produce many different output spectra, but it does them all at once, and can be modulated at audio-rates very nicely.  This will be our go-to filter most of the time.  See **trapezoidal-state-variable-filter.maxpat**
 
 
-## Assignment 3
-
 <!--
 
 Make a drum machine with just N input knobs/switches. Could be a group project, where each person designs one percussion sound with 1 or 2 variant knobs. One or two people design the pattern generators (including the parameter curves). See the c74 project.
@@ -933,6 +931,8 @@ Be sure to follow all the [general procedures for assignment patches](#general-p
 
 # Week 7: The Effects of Delay
 Oct 23
+
+## Assignment 3
 
 # Week 8: Frequent Modulations
 Oct 30 
