@@ -884,17 +884,148 @@ So how do we build a filter out of this kind of trapzoidal integrator? The math 
 A wonderful example of the trapezoidal method is the state variable filter (e.g. `go.svf`), which, similar to biquads, can produce many different output spectra, but it does them all at once, and can be modulated at audio-rates very nicely.  This will be our go-to filter most of the time.  See **trapezoidal-state-variable-filter.maxpat**
 
 
+
+# Week 6: Reading week
+
+
+# Week 7: The Effects of Delay
+Oct 23
+
+What is a digital delay? 
+
+In a way it is a bit like a long chain of `history` objects, each one delaying the input by one sample. But it would take tens of thousands of these objects  to get an echo of one second; and we don't want to have tens of thousands of objects running in a patch! Instead we can use the `delay` object, which does things much more efficiently. For example, any signal sent into a `delay 10000` object will come out of the output 10000 samples later. 
+
+It is helpful to think of a delay as a loop of memory.
+
+![loop](https://upload.wikimedia.org/wikipedia/commons/b/b7/Circular_buffer.svg)
+
+- The loop is made up of slots, each one of which can hold one number. 
+- There is a "write head" (or "read pointer") that moves around this loop by one step for every sample of passing time, writing in some input value. 
+- We can have a "read head", that also moves around this loop, reading values out.  
+- The distance between the write and read head then gives the delay time (in samples) it takes for a writer's input value to come out at the reader's output.
+
+So, instead of moving the data around, we move the reader & writer around.  
+
+> In computer science, this is often called a "ring buffer" or "circular buffer", and it is used in many different applications, such as thread message passing and input event handling:
+
+![circular buffer](https://upload.wikimedia.org/wikipedia/commons/f/fd/Circular_Buffer_Animation.gif)
+
+The main difference is that in a digital audio delay, the write point **always** moves at the current sample rate, one step at a time.  (Another difference is that in audio delays, we can also have multiple readers, called a "multi tap delay")
+
+What kinds of sounds can you get from a delay? Take a look at the **delay_multi_effect.maxpat** patch and spend some time playing around, there's a huge range of possibilities!  
+
+Then let's build our way up to that. 
+
+---
+
+The **gen~** `delay` operator takes an argument to say how many slots the loop has. This length effectively sets the maximum delay time, in samples.  If you want to set it in seconds, e.g. for up to a 4-second delay, you could write `delay samplerate*4`. If you don't specify it, it defaults to one second. 
+
+You can also change the delay time dynamically through the 2nd inlet (this is also measured in samples); this can be anything less than the maximum delay you specified when you created it. 
+
+The `delay` operator also has a 2nd optional argument for if you specify more than one reader tap. E.g. a `delay 1024 4` will have four read points, and you'll get extra inlets to set their delay times, and extra outlets for their audio. 
+
+---
+
+- To set delay times in seconds, use seconds -> `* samplerate`. To set in milliseconds, you can use ms -> `mstosamps`. 
+- To hear a delay as an echo, you may want to add or `mix` it with the input signal. See **delay_feedforward_basic.maxpat**
+- This is a feedforward delay because the delay feeds forward to the patch output. But we can also make it a feedback delay by routing the output of the delay back to the input. The `delay` operator allows feedback loops just like `history` does. E.g. set the input of the delay to be the output of the mix between input and delay. See **delay_feedback_basic.maxpat**
+
+> Did you notice that this looks a lot like the `mix` + `history` one pole filter we have seen so many times already? It's exactly like a one pole filter, but just stretched out over time.  You can also turn other classic filter structures into delay structures by replacing `history` with `delay`. 
+
+- If you get an echo going then set the feedback balance to 1.0, it becomes an endless looper. But now the input is unheard. 
+- Instead we can use the `mix` as a wet/dry balance control, and use a simple multiplier for our feedback control, adding both input and feedback to the delay. 
+
+- To set a *decay* time, we can use the `t60` operator just like we did for the low pass gate. Remember, `t60` is for feedback multipliers. But we should divide the decay time by the delay time before sending it to the `t60`, because we will do one multiply per loop, not one per sample. See **delay_feedback_decaytime.maxpat**
+
+A lot of the character of a delay depends on what other kinds of processing we put in this feedback loop. 
+
+- One thing we probably want is a DC blocker. Can you think why?  What can we use for that? See **delay_feedback_filtered_dcblock.maxpat**
+- If we add a simple onepole filter, the echoes will seem to get darker each time, which can sound quite natural. See **See **delay_feedback_filtered.maxpat**
+- Or we could put other filters in there too, for something wilder. Watch out though, as anything resonant could also blow up. So often a delay feedback loop will also include a waveshaper, typically a soft limiter, to keep things within a safe range. A sigmoid shaper is ideal. See **delay_feedback_saturated.maxpat**
+
+What about modulating the delay? You might notice that it can often lead to clicks. As usual, we can smooth the stepped quality of parameter changes using a simple onepole, or `slide`, or a slew limiter, or lag generator, etc.  These basically smoothen out any sudden changes of levels in a way that is mostly imperceptible. 
+
+However there's one parameter for which this is not the case. If you smoothen out changes to the *delay time*, you'll start to hear pitch changing effects. See **delay_morphed_times.maxpat**. These are like the Doppler shifts when a sound is moving toward you or away from you (in this case, it is the reader & writer that are moving towards each other or away.) This is relativity! The pitch shift is exactly proportional to the slope (the "velocity") of the signal that controls the delay time. 
+
+That patch also shows how you can calculate what the pitch change will be, or vice versa, how to *control* the pitch change in a desired way!
+
+What if you want to change the delay time without any pitch artefacts at all? The only way to get around relativity is to create a second delay (or a second tap of your delay), and crossfade between them. It's a sleight of hand: whichever one is currently silent in the crossfader, we can change the delay time however we want, and then quickly crossfade over to it -- quick enough to not be distracting, but not so quick to click. The patching to do this is a little trickier, but the core of it is a very handy little circuit that we will use again as `go.background.change`. See **delay_morphed_times_no_pitch_change.maxpat**
+
+---
+
+Delays of around 0.05ms to 5ms (equivalent to frequencies of 500Hz to 20kHz) have almost filter-like effects. These are often call "comb filters" because the spectrum response has teeth like a comb. See **comb_filter.maxpat**
+
+With delays of 0.5 to 25ms, we are in the region of pitches, and with enough feedback these can sound a bit like a stringed instrument. This is usually called Karplus-Strong synthesis. See **string_basic.maxpat**
+- We can control it with precise pitches. E.g. from a MIDI note (or `kslider` pitch), use `mtof` to get the frequency in Hz, and then `!/ 1` to calculate the period in seconds (as 1/frequency), then multiply by `* samplerate` to get a period in samples. (Or combine the last two operations as `!/ samplerate`). See **string_pitched.maxpat**
+- You'll notice high notes decay more quickly than low notes -- because their period is shorter. We can fix that by changing the feedback parameter using the `t60` method as before. See **string_feedback_control.maxpat**
+- We'll want to put a high-pass filter in the loop to block DC, so that it doesn't blow up that way. 
+- Negating the feedback creates a more hollow tone, one octave lower. See **string_inverted_feedback.maxpat**
+- We can put a low pass filter in the feedback loop for a more natural damping effect. This adds quite a lot of character. 
+  - However you might notice that the more damping we apply, the more it seems to pitch down. Why? 
+  - The filter has a *phase response* that means that frequencies closer to the filter cutoff frequency get delayed more, causing the effective feedback loop to seem longer, and thus pitching down. We can compensate for this by calculating what the phase delay would be for our string's fundamental frequency, and subtracting that from the delay time. 
+  - For a onepole filter, the delay is `2*log(1 - b)`, where `b` is the filter coefficient. See **string_damping.maxpat**. 
+- Even with no damping, you might hear somethign that sounds like damping happening, and for some notes more than others. What's causing this? 
+  - Actually it is the interpolation built into `delay`. Remember the delay loop is a ring of discrete memory slots. If we ask for a delay time of 2.5 samples, do we read from sample slot 2 or slot 3? 
+  - By default `delay` will return the weighted average of the two nearest memory slots, which is *linear interpolation*, the same as we used with the `sample` operator before.  But as we know, averaging is also like a low pass filter. The mixing of two nearest slots is what is causing the apparent damping. 
+  - Of course using `delay @interp none` sounds much worse. There's no simple and cheap solution here, but there are a few different kinds of interpolators that you can try with different tradeoffs. See **delay_interpoation_types.maxpat** for some examples. 
+- Finally we can see all these together in **string_everything.maxpat**
+
+## Assignment 3
+
+**Drum machine**
+
+> A drum machine is an electronic musical instrument that creates percussion sounds, drum beats, and patterns. ([Wikipedia](https://en.wikipedia.org/wiki/Drum_machine))
+
+There are two parts to a drum machine:
+- a set of distinct drum sounds, usually short and distinct, usually with some parameters to control intensity and timbre
+- a section that generates rhythm patterns to activate and modulate each drum sound
+
+Typically a drum machine would have four or more distinct drum sounds, and one rhythm pattern generator for each sound. 
+
+So, **for this project, I recommend working in pairs or teams**. Some members can make drum sound subpatches, some members can make pattern generator subpatches, and you can combine these together to make the whole drum machine using the template below. 
+
+Aim to make the drum sounds to be quite distinct. Often a drum kit occupies different parts of the spectrum: the kick drum in the lower frequencies, cymbals and high hats in the highest frequencies, and snares/toms/claps in regions between. Also aim to make the patterns also distinct -- some relatively sparse, some more dense; some focused more on down beats, others elsewhere. 
+
+Whichever kind of patch you contribute, **be sure to put your name and student ID in a comment in that subpatch**. 
+
+**Drum sounds**
+
+These do not at all have to sound anything like real drums, or a real drum machine. Pretty much any sound enveloped with a fast attack and slower decay over a fairly short duration can function as a percussive element. Make an alien drum machine!  Try your sound out in the template patch and try to edit it to make it as compelling as you can. 
+
+Your patch should have three inputs and one output.  
+- The 1st input is how the drum sound is triggered. A trigger signal is normally 0, but is momentarily a value of 1 when the the drum sound should start. 
+- The 2nd input, expects a number between 0 and 1, to control the "accent" or "intensity" of the sound. 
+  - If this value is "1" when the sound starts, the sound should be more intense, a little louder, more distorted, or in some other way attract more attention, than if it were "0". 
+- The 3rd input, also varying between 0 and 1, should change the timbre or shape of the sound. 
+  - It is up to you how. 
+- The patch has one output for the percussion sound output. At the loudest point it should be near the range of -1 to +1, but never beyond these limits. 
+
+Save this patch as a "gendsp" file. With the drum sound patch open and focused, use File -> Save As... to save it as a `gendsp` file. The filename should be `drum_XXX.gendsp`, where `XXX` is your student number.
+
+**Rhythm pattern generator**
+
+The pattern generator will create percussive patterns for around four different drum sounds.  That means you will be producing four different ramped phasor outputs, all derived from the input BPM phasor. 
+
+The pattern generator patcher must have these inputs and outputs:
+
+- 1st input: a standard BPM-driven beat phasor. 
+- 2nd input: a parameter to control variations of the pattern. This parameter be limited to values between 0 to 1, where 0 is more "steady" or "normal" or "background", and 1 is more "irregular" or "wild" or "active". This is a performer's control. 
+  
+- 1st output: a generated pattern to trigger a drum sound. 
+  - This should be a pattern of triggers, related to the underlying tempo beat, but in an interesting rhythmic pattern. (If you want to use ramp-generated patterns such as we saw in Chapter 2 of the book, and elsewhere, which I highly recommend, you can convert these to triggers using a `go.ramp2trig`.) 
+  - Alternatively, if you have any kind of synced evolving signal, you can get triggers from it using a `go.zerox`, which will output a trigger whenever the input rises above zero.  
+- 2nd output: a stepped signal between 0 and 1, to control the "accent" or "intensity" of the sound. 
+- 3rd output: a slow stepped signal or varying LFO, limited to values between 0 and 1, to modulate the timbre of the drum sound. 
+
+As usual you are welcome to adapt and re-use any of the patchers in the book, or in the examples folder, to build your drum sounds or pattern generators. 
+
+**Template patch**: **TODO**
+
 <!--
 
 Make a drum machine with just N input knobs/switches. Could be a group project, where each person designs one percussion sound with 1 or 2 variant knobs. One or two people design the pattern generators (including the parameter curves). See the c74 project.
 
 
-Team project: drum machine
-- some members create individual drum sounds -- each sound is in a sub-patch and has these inputs:
-	- phasor ramp input to trigger the sound (get a trigger via go.ramp2trig)
-	- level (0 to 1: zero means silent, one is maximum intensity)
-	- timbre (0 to 1: usually increasing this would increase the attention to this sound, e.g. a more spectrally-rich sound, more energy, more sizzling noise, etc.)
-	Maybe level and timbre are a single parameter?
 - some members create pattern generators
 	- One pattern generator track per drum sound
 		- Each pattern track outputs a sequence of ramps plus stepped signals for level/timbre
@@ -924,15 +1055,6 @@ Be sure to include a statement including:
 Be sure to follow all the [general procedures for assignment patches](#general-procedures-for-assignment-patches)
 -->
 
------
-
-## [Week 6: Reading week]
-
-
-# Week 7: The Effects of Delay
-Oct 23
-
-## Assignment 3
 
 # Week 8: Frequent Modulations
 Oct 30 
