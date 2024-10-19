@@ -972,6 +972,7 @@ With delays of 0.5 to 25ms, we are in the region of pitches, and with enough fee
 
 ## Assignment 3
 
+<!--
 **Drum machine**
 
 > A drum machine is an electronic musical instrument that creates percussion sounds, drum beats, and patterns. ([Wikipedia](https://en.wikipedia.org/wiki/Drum_machine))
@@ -1021,20 +1022,8 @@ As usual you are welcome to adapt and re-use any of the patchers in the book, or
 
 **Template patch**: **TODO**
 
+--> 
 <!--
-
-Make a drum machine with just N input knobs/switches. Could be a group project, where each person designs one percussion sound with 1 or 2 variant knobs. One or two people design the pattern generators (including the parameter curves). See the c74 project.
-
-
-- some members create pattern generators
-	- One pattern generator track per drum sound
-		- Each pattern track outputs a sequence of ramps plus stepped signals for level/timbre
-	- There should be controls to modify the patterns. These could be
-		- A knob (0..1) to control the density of events
-		- A button to randomly modify the loop
-		- A "fill" button to create extra events while it is enabled
-		- Level/Mute/solo controls per track
-- Everything driven from one core BPM source
 
 Or everyone designs one of each, and we run a few in parallel, all synced to a network clock. Install the Link Max Package, and use `link.phasor~`. We just all need to be on the same wifi. E.g. somebody sets up an ad-hoc network (mac: search for Internet Sharing).
 

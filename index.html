@@ -1044,70 +1044,58 @@ See <strong>slide_slew_and_line.maxpat</strong></p>
 <li>Finally we can see all these together in <strong>string_everything.maxpat</strong></li>
 </ul>
 <h2 id="assignment-3">Assignment 3</h2>
-<p><strong>Drum machine</strong></p>
-<blockquote>
-<p>A drum machine is an electronic musical instrument that creates percussion sounds, drum beats, and patterns. (<a href="https://en.wikipedia.org/wiki/Drum_machine">Wikipedia</a>)</p>
-</blockquote>
-<p>There are two parts to a drum machine:</p>
-<ul>
-<li>a set of distinct drum sounds, usually short and distinct, usually with some parameters to control intensity and timbre</li>
-<li>a section that generates rhythm patterns to activate and modulate each drum sound</li>
-</ul>
-<p>Typically a drum machine would have four or more distinct drum sounds, and one rhythm pattern generator for each sound. </p>
-<p>So, <strong>for this project, I recommend working in pairs or teams</strong>. Some members can make drum sound subpatches, some members can make pattern generator subpatches, and you can combine these together to make the whole drum machine using the template below. </p>
-<p>Aim to make the drum sounds to be quite distinct. Often a drum kit occupies different parts of the spectrum: the kick drum in the lower frequencies, cymbals and high hats in the highest frequencies, and snares/toms/claps in regions between. Also aim to make the patterns also distinct -- some relatively sparse, some more dense; some focused more on down beats, others elsewhere. </p>
-<p>Whichever kind of patch you contribute, <strong>be sure to put your name and student ID in a comment in that subpatch</strong>. </p>
-<p><strong>Drum sounds</strong></p>
-<p>These do not at all have to sound anything like real drums, or a real drum machine. Pretty much any sound enveloped with a fast attack and slower decay over a fairly short duration can function as a percussive element. Make an alien drum machine!  Try your sound out in the template patch and try to edit it to make it as compelling as you can. </p>
-<p>Your patch should have three inputs and one output.  </p>
-<ul>
-<li>The 1st input is how the drum sound is triggered. A trigger signal is normally 0, but is momentarily a value of 1 when the the drum sound should start. </li>
-<li>The 2nd input, expects a number between 0 and 1, to control the &quot;accent&quot; or &quot;intensity&quot; of the sound. <ul>
-<li>If this value is &quot;1&quot; when the sound starts, the sound should be more intense, a little louder, more distorted, or in some other way attract more attention, than if it were &quot;0&quot;. </li>
-</ul>
-</li>
-<li>The 3rd input, also varying between 0 and 1, should change the timbre or shape of the sound. <ul>
-<li>It is up to you how. </li>
-</ul>
-</li>
-<li>The patch has one output for the percussion sound output. At the loudest point it should be near the range of -1 to +1, but never beyond these limits. </li>
-</ul>
-<p>Save this patch as a &quot;gendsp&quot; file. With the drum sound patch open and focused, use File -&gt; Save As... to save it as a <code>gendsp</code> file. The filename should be <code>drum_XXX.gendsp</code>, where <code>XXX</code> is your student number.</p>
-<p><strong>Rhythm pattern generator</strong></p>
-<p>The pattern generator will create percussive patterns for around four different drum sounds.  That means you will be producing four different ramped phasor outputs, all derived from the input BPM phasor. </p>
-<p>The pattern generator patcher must have these inputs and outputs:</p>
-<ul>
-<li><p>1st input: a standard BPM-driven beat phasor. </p>
-</li>
-<li><p>2nd input: a parameter to control variations of the pattern. This parameter be limited to values between 0 to 1, where 0 is more &quot;steady&quot; or &quot;normal&quot; or &quot;background&quot;, and 1 is more &quot;irregular&quot; or &quot;wild&quot; or &quot;active&quot;. This is a performer&#39;s control. </p>
-</li>
-<li><p>1st output: a generated pattern to trigger a drum sound. </p>
-<ul>
-<li>This should be a pattern of triggers, related to the underlying tempo beat, but in an interesting rhythmic pattern. (If you want to use ramp-generated patterns such as we saw in Chapter 2 of the book, and elsewhere, which I highly recommend, you can convert these to triggers using a <code>go.ramp2trig</code>.) </li>
-<li>Alternatively, if you have any kind of synced evolving signal, you can get triggers from it using a <code>go.zerox</code>, which will output a trigger whenever the input rises above zero.  </li>
-</ul>
-</li>
-<li><p>2nd output: a stepped signal between 0 and 1, to control the &quot;accent&quot; or &quot;intensity&quot; of the sound. </p>
-</li>
-<li><p>3rd output: a slow stepped signal or varying LFO, limited to values between 0 and 1, to modulate the timbre of the drum sound. </p>
-</li>
-</ul>
-<p>As usual you are welcome to adapt and re-use any of the patchers in the book, or in the examples folder, to build your drum sounds or pattern generators. </p>
-<p><strong>Template patch</strong>: <strong>TODO</strong></p>
 <!--
+**Drum machine**
 
-Make a drum machine with just N input knobs/switches. Could be a group project, where each person designs one percussion sound with 1 or 2 variant knobs. One or two people design the pattern generators (including the parameter curves). See the c74 project.
+> A drum machine is an electronic musical instrument that creates percussion sounds, drum beats, and patterns. ([Wikipedia](https://en.wikipedia.org/wiki/Drum_machine))
 
+There are two parts to a drum machine:
+- a set of distinct drum sounds, usually short and distinct, usually with some parameters to control intensity and timbre
+- a section that generates rhythm patterns to activate and modulate each drum sound
 
-- some members create pattern generators
-    - One pattern generator track per drum sound
-        - Each pattern track outputs a sequence of ramps plus stepped signals for level/timbre
-    - There should be controls to modify the patterns. These could be
-        - A knob (0..1) to control the density of events
-        - A button to randomly modify the loop
-        - A "fill" button to create extra events while it is enabled
-        - Level/Mute/solo controls per track
-- Everything driven from one core BPM source
+Typically a drum machine would have four or more distinct drum sounds, and one rhythm pattern generator for each sound. 
+
+So, **for this project, I recommend working in pairs or teams**. Some members can make drum sound subpatches, some members can make pattern generator subpatches, and you can combine these together to make the whole drum machine using the template below. 
+
+Aim to make the drum sounds to be quite distinct. Often a drum kit occupies different parts of the spectrum: the kick drum in the lower frequencies, cymbals and high hats in the highest frequencies, and snares/toms/claps in regions between. Also aim to make the patterns also distinct -- some relatively sparse, some more dense; some focused more on down beats, others elsewhere. 
+
+Whichever kind of patch you contribute, **be sure to put your name and student ID in a comment in that subpatch**. 
+
+**Drum sounds**
+
+These do not at all have to sound anything like real drums, or a real drum machine. Pretty much any sound enveloped with a fast attack and slower decay over a fairly short duration can function as a percussive element. Make an alien drum machine!  Try your sound out in the template patch and try to edit it to make it as compelling as you can. 
+
+Your patch should have three inputs and one output.  
+- The 1st input is how the drum sound is triggered. A trigger signal is normally 0, but is momentarily a value of 1 when the the drum sound should start. 
+- The 2nd input, expects a number between 0 and 1, to control the "accent" or "intensity" of the sound. 
+  - If this value is "1" when the sound starts, the sound should be more intense, a little louder, more distorted, or in some other way attract more attention, than if it were "0". 
+- The 3rd input, also varying between 0 and 1, should change the timbre or shape of the sound. 
+  - It is up to you how. 
+- The patch has one output for the percussion sound output. At the loudest point it should be near the range of -1 to +1, but never beyond these limits. 
+
+Save this patch as a "gendsp" file. With the drum sound patch open and focused, use File -> Save As... to save it as a `gendsp` file. The filename should be `drum_XXX.gendsp`, where `XXX` is your student number.
+
+**Rhythm pattern generator**
+
+The pattern generator will create percussive patterns for around four different drum sounds.  That means you will be producing four different ramped phasor outputs, all derived from the input BPM phasor. 
+
+The pattern generator patcher must have these inputs and outputs:
+
+- 1st input: a standard BPM-driven beat phasor. 
+- 2nd input: a parameter to control variations of the pattern. This parameter be limited to values between 0 to 1, where 0 is more "steady" or "normal" or "background", and 1 is more "irregular" or "wild" or "active". This is a performer's control. 
+  
+- 1st output: a generated pattern to trigger a drum sound. 
+  - This should be a pattern of triggers, related to the underlying tempo beat, but in an interesting rhythmic pattern. (If you want to use ramp-generated patterns such as we saw in Chapter 2 of the book, and elsewhere, which I highly recommend, you can convert these to triggers using a `go.ramp2trig`.) 
+  - Alternatively, if you have any kind of synced evolving signal, you can get triggers from it using a `go.zerox`, which will output a trigger whenever the input rises above zero.  
+- 2nd output: a stepped signal between 0 and 1, to control the "accent" or "intensity" of the sound. 
+- 3rd output: a slow stepped signal or varying LFO, limited to values between 0 and 1, to modulate the timbre of the drum sound. 
+
+As usual you are welcome to adapt and re-use any of the patchers in the book, or in the examples folder, to build your drum sounds or pattern generators. 
+
+**Template patch**: **TODO**
+
+--> 
+<!--
 
 Or everyone designs one of each, and we run a few in parallel, all synced to a network clock. Install the Link Max Package, and use `link.phasor~`. We just all need to be on the same wifi. E.g. somebody sets up an ad-hoc network (mac: search for Internet Sharing).
 
