@@ -52,6 +52,8 @@ The computers in ACW 102 also have Max installed and licensed, and students can 
 # Week 0: One Sample at a Time
 Sep 4
 
+[Zoom Recording](#zoom-recordings)
+
 **Hello and welcome!**
 
 https://docs.google.com/presentation/d/1xrXM86cCE7vzykYYdINs1G9g9f7FaeiiZd6IRlKBEjI/
@@ -122,8 +124,6 @@ v18mtU+yayW0h+Xs2Kyze2ut6+Tw.6SJ
 
 - Feedback example: noise, mix, history
 
-[Today's Zoom Recording](https://yorku.zoom.us/rec/share/ZL5_tEz7cuDZHNk585qCGx3GwyIf-ui4tt6ScNreRbT1ma-lIToigpasxu9n24I0.up3Jixd74Ti1Cb1j)
-
 **Homework**
 
 - Read Chapter 1 to review thinking in signals, and get to know the most common operators
@@ -152,7 +152,7 @@ v18mtU+yayW0h+Xs2Kyze2ut6+Tw.6SJ
 # Week 1: Ramps: Modular Arithmetic of Time
 Sep 11
 
-[Zoom recording](https://yorku.zoom.us/rec/share/c48SeyUAO5fOMAsi4FHKUKhfC0cuqSElXscdCOm3_45viQCBLXB_2ntBETZTwlS_.T6avFZCTHbIMSuZz)
+[Zoom Recording](#zoom-recordings)
 
 https://www.desmos.com/calculator/6pvtkzbh6b
 
@@ -416,7 +416,7 @@ h
 # Week 2: Unit Shaping
 Sep 18
 
-[Zoom recording](https://yorku.zoom.us/rec/share/FgkO9V8vK-bC27z-XJsfaLdsN4dWlLjAPzCVJFIwj404-GM60I0Nblq0rZ3OLW4h.moN-NS8z43sjb4Z4)
+[Zoom Recording](#zoom-recordings)
 
 - **Examples of working with phasor ramp rhythms**
   - A phasor beat clock: **ramp_from_bpm.maxpat**
@@ -523,7 +523,7 @@ What if we don't want it to jump between steps, but instead to **glide** between
 # Week 3: Uncertainty and Unpredictablility
 Sep 25
 
-[Zoom recording](https://yorku.zoom.us/rec/share/hOsXZrPLHHdsrvByV6L08t2bL4ST8_trA-W3ZcYc4YZ_Q-v0vUgAMgtObdhrrF-P.v7jIU_hzeyU-p94H)
+[Zoom Recording](#zoom-recordings)
 
 Reviewing [Assignment 1](#assignment-1) & [the sounds](#assignment-1-sounds)
 
@@ -620,7 +620,7 @@ p62i5784c8NdGuG2sqtS2g5xUU6xMe8l+EfYQwwF
 # Week 4: Stepping in Time
 Oct 2
 
-[Zoom Recording](https://yorku.zoom.us/rec/share/ueNEZRT55KuhCN73jZc2CtstoEZTK5uaOe2App3gWOQqk8Ut-Hhm6jVVVjkZZBVs.3IT8WxYZVMXVVEVG)
+[Zoom Recording](#zoom-recordings)
 
 We can create melodies by mixing scaled gate signals e.g. **mixer-sequencer.maxpat**. Or take some chaos, feed it through a comparator, and mix those. 
 
@@ -807,9 +807,8 @@ Ad8hb+bnf5N0o5h37STjusN9D03+IZw+TJw+7zg+moB+BZvuNJv2Fv+W92e4
 # Week 5: Filters and the Balance of Time
 Oct 9
 
-[Zoom Recording 1 -- catching up: Euclidean Rhythms, pitch quantizers, and audio bitcrushing](https://yorku.zoom.us/rec/share/iDWJhpSMjXnuglzEKIoD_iDxK6lIEw8sl4YwyhMBZXSGlN5A1IeqIUIl6ZSEADKb.wXZvqRpiamOTxXFz)
 
-[Zoom Recording 2 -- filters](https://yorku.zoom.us/rec/share/i59rxlt_NoYpDxxoQGfmQPdsBREseAF4UuGiONZbUbpEVLax8A7UiJ9OPD8moqXy.dhqkOLQaIpN2-jQR)
+[Week 5 Zoom Recordings](https://yorku.zoom.us/rec/share/ueNEZRT55KuhCN73jZc2CtstoEZTK5uaOe2App3gWOQqk8Ut-Hhm6jVVVjkZZBVs.3IT8WxYZVMXVVEVG)
 
 In almost every class since the first week we have encountered a simple lowpass filter. Most often we have seen the filter as a `mix` and `history` pair, which is known as a **one pole filter**, but if we dig into the algebra of this a bit, or rather, if we re-arrange the patching a bit, there's a few other ways of seeing what this is. 
 (See **onepole-explorations.maxpat** for examples of most of the ideas below.)
@@ -1080,6 +1079,16 @@ Nov 20
 Nov 27
 
 **Final meeting**
+
+# Zoom Recordings
+
+- [Week 0 Zoom Recording - first patching](https://yorku.zoom.us/rec/share/ZL5_tEz7cuDZHNk585qCGx3GwyIf-ui4tt6ScNreRbT1ma-lIToigpasxu9n24I0.up3Jixd74Ti1Cb1j)
+- [Week 1 Zoom recording - ramps and beat slicer](https://yorku.zoom.us/rec/share/c48SeyUAO5fOMAsi4FHKUKhfC0cuqSElXscdCOm3_45viQCBLXB_2ntBETZTwlS_.T6avFZCTHbIMSuZz)
+- [Week 2 Zoom recording - more ramp processing, from ramps to LFOs, and other shapes](https://yorku.zoom.us/rec/share/FgkO9V8vK-bC27z-XJsfaLdsN4dWlLjAPzCVJFIwj404-GM60I0Nblq0rZ3OLW4h.moN-NS8z43sjb4Z4)
+- [Week 3 Zoom recording - noise, uncertainty, chaos, simple sequencer](https://yorku.zoom.us/rec/share/hOsXZrPLHHdsrvByV6L08t2bL4ST8_trA-W3ZcYc4YZ_Q-v0vUgAMgtObdhrrF-P.v7jIU_hzeyU-p94H)
+- [Week 4 Zoom Recording - pitch conversions, quantizing, shift register sequencer](https://yorku.zoom.us/rec/share/ueNEZRT55KuhCN73jZc2CtstoEZTK5uaOe2App3gWOQqk8Ut-Hhm6jVVVjkZZBVs.3IT8WxYZVMXVVEVG)
+- [Week 5 Zoom Recording 1 -- catching up: Euclidean Rhythms, pitch quantizers, and audio bitcrushing](https://yorku.zoom.us/rec/share/iDWJhpSMjXnuglzEKIoD_iDxK6lIEw8sl4YwyhMBZXSGlN5A1IeqIUIl6ZSEADKb.wXZvqRpiamOTxXFz)
+- [Week 5 Zoom Recording 2 -- filters](https://yorku.zoom.us/rec/share/i59rxlt_NoYpDxxoQGfmQPdsBREseAF4UuGiONZbUbpEVLax8A7UiJ9OPD8moqXy.dhqkOLQaIpN2-jQR)
 
 -----
 
