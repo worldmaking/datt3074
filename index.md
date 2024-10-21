@@ -1082,13 +1082,13 @@ Nov 27
 
 # Zoom Recordings
 
-- [Week 0 Zoom Recording - first patching](https://yorku.zoom.us/rec/share/ZL5_tEz7cuDZHNk585qCGx3GwyIf-ui4tt6ScNreRbT1ma-lIToigpasxu9n24I0.up3Jixd74Ti1Cb1j)
+- [Week 0 Zoom recording - first patching](https://yorku.zoom.us/rec/share/ZL5_tEz7cuDZHNk585qCGx3GwyIf-ui4tt6ScNreRbT1ma-lIToigpasxu9n24I0.up3Jixd74Ti1Cb1j)
 - [Week 1 Zoom recording - ramps and beat slicer](https://yorku.zoom.us/rec/share/c48SeyUAO5fOMAsi4FHKUKhfC0cuqSElXscdCOm3_45viQCBLXB_2ntBETZTwlS_.T6avFZCTHbIMSuZz)
 - [Week 2 Zoom recording - more ramp processing, from ramps to LFOs, and other shapes](https://yorku.zoom.us/rec/share/FgkO9V8vK-bC27z-XJsfaLdsN4dWlLjAPzCVJFIwj404-GM60I0Nblq0rZ3OLW4h.moN-NS8z43sjb4Z4)
 - [Week 3 Zoom recording - noise, uncertainty, chaos, simple sequencer](https://yorku.zoom.us/rec/share/hOsXZrPLHHdsrvByV6L08t2bL4ST8_trA-W3ZcYc4YZ_Q-v0vUgAMgtObdhrrF-P.v7jIU_hzeyU-p94H)
-- [Week 4 Zoom Recording - pitch conversions, quantizing, shift register sequencer](https://yorku.zoom.us/rec/share/ueNEZRT55KuhCN73jZc2CtstoEZTK5uaOe2App3gWOQqk8Ut-Hhm6jVVVjkZZBVs.3IT8WxYZVMXVVEVG)
-- [Week 5 Zoom Recording 1 -- catching up: Euclidean Rhythms, pitch quantizers, and audio bitcrushing](https://yorku.zoom.us/rec/share/iDWJhpSMjXnuglzEKIoD_iDxK6lIEw8sl4YwyhMBZXSGlN5A1IeqIUIl6ZSEADKb.wXZvqRpiamOTxXFz)
-- [Week 5 Zoom Recording 2 -- filters](https://yorku.zoom.us/rec/share/i59rxlt_NoYpDxxoQGfmQPdsBREseAF4UuGiONZbUbpEVLax8A7UiJ9OPD8moqXy.dhqkOLQaIpN2-jQR)
+- [Week 4 Zoom recording - pitch conversions, quantizing, shift register sequencer](https://yorku.zoom.us/rec/share/ueNEZRT55KuhCN73jZc2CtstoEZTK5uaOe2App3gWOQqk8Ut-Hhm6jVVVjkZZBVs.3IT8WxYZVMXVVEVG)
+- [Week 5 Zoom recording 1 - catching up: Euclidean Rhythms, pitch quantizers, and audio bitcrushing](https://yorku.zoom.us/rec/share/iDWJhpSMjXnuglzEKIoD_iDxK6lIEw8sl4YwyhMBZXSGlN5A1IeqIUIl6ZSEADKb.wXZvqRpiamOTxXFz)
+- [Week 5 Zoom recording 2 - filters, lines, slews, more filters](https://yorku.zoom.us/rec/share/i59rxlt_NoYpDxxoQGfmQPdsBREseAF4UuGiONZbUbpEVLax8A7UiJ9OPD8moqXy.dhqkOLQaIpN2-jQR)
 
 -----
 
