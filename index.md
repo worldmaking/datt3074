@@ -47,7 +47,7 @@ The computers in ACW 102 also have Max installed and licensed, and students can 
 - 20% Presentations
   - Preenting your works in progress and final project, and explaining the development processes
 - 30% Final Project
-  - A more significant project, possibly collaborative, through several steps of development using gen~, with a final embodiment using a code export method (details to folllow)
+  - A more significant project, possibly collaborative, through several steps of development using gen~, with a final embodiment using a code export method (details to follow)
 
 # Week 0: One Sample at a Time
 Sep 4
