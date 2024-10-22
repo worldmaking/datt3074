@@ -41,7 +41,7 @@ The computers in ACW 102 also have Max installed and licensed, and students can 
 **Evaluation**
 
 - 30% Assignments
-  - Three practical individual assignments using gen~ patching through the course (details to follow)
+  - Three or four practical individual assignments using gen~ patching through the course (details to follow)
 - 20% Participation
   - Being present in class, taking part in discussions, group reviews, etc. 
 - 20% Presentations
