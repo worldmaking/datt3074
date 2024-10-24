@@ -894,6 +894,8 @@ A wonderful example of the trapezoidal method is the state variable filter (e.g.
 # Week 7: The Effects of Delay
 Oct 23
 
+[Zoom Recording](#zoom-recordings)
+
 What is a digital delay? 
 
 In a way it is a bit like a long chain of `history` objects, each one delaying the input by one sample. But it would take tens of thousands of these objects  to get an echo of one second; and we don't want to have tens of thousands of objects running in a patch! Instead we can use the `delay` object, which does things much more efficiently. For example, any signal sent into a `delay 10000` object will come out of the output 10000 samples later. 
@@ -1089,6 +1091,7 @@ Nov 27
 - [Week 4 Zoom recording - pitch conversions, quantizing, shift register sequencer](https://yorku.zoom.us/rec/share/ueNEZRT55KuhCN73jZc2CtstoEZTK5uaOe2App3gWOQqk8Ut-Hhm6jVVVjkZZBVs.3IT8WxYZVMXVVEVG)
 - [Week 5 Zoom recording 1 - catching up: Euclidean Rhythms, pitch quantizers, and audio bitcrushing](https://yorku.zoom.us/rec/share/iDWJhpSMjXnuglzEKIoD_iDxK6lIEw8sl4YwyhMBZXSGlN5A1IeqIUIl6ZSEADKb.wXZvqRpiamOTxXFz)
 - [Week 5 Zoom recording 2 - filters, lines, slews, more filters](https://yorku.zoom.us/rec/share/i59rxlt_NoYpDxxoQGfmQPdsBREseAF4UuGiONZbUbpEVLax8A7UiJ9OPD8moqXy.dhqkOLQaIpN2-jQR)
+- [Week 6 Zoom recording - delay effects](https://yorku.zoom.us/rec/share/zzaFDAYbv7VFpi641qbFF2xhVpTqhHTJU6JX9ivVI-4346Tca9UPm36zS4w5SSLv.12-v5HytdmCvgxlo)
 
 -----
 
