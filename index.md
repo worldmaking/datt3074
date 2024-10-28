@@ -977,6 +977,129 @@ With delays of 0.5 to 25ms, we are in the region of pitches, and with enough fee
 
 ## Assignment 3
 
+**Generative Radio Station!**
+
+Have you ever heard [Generative.FM](https://generative.fm)? It is a collection of generative radio stations that never end or repeat. It could be music for working to, sleeping to, meditating to, focusing to, ... and never getting bored from.  (*It's not the first generative radio station ever, there have been quite a few, but it's the most active one I could find today*)
+
+This assignment is to create a robot radio station, which is always absolutely different every time you listen in. 
+
+- To ensure it is always unique, the patch should use the current date and time to modify its parameters. The template patch below has this already set up for you. You can either listen to the current date & time, or pick a random date & time (or choose by hand), to make sure that the station has enough variety. 
+
+- Most of the stations at generative.fm are pretty ambient, and might be a bit too slow and sleepy. Let's make stations that are a little more upbeat. The template patch has a clock source built in (with bar and beat phasor ramps).  Use this to drive for some element of your station -- maybe a backbeat, maybe a melody, maybe an LFO pattern, etc. 
+
+Before building the patch, spend some time resaerching among the example patches drawn from the textbook or from the Max / Help -> Examples -> gen folders. Spend some time playing with many of these patches until you find **three or four** that you think you can work with. Your radio station must combine these patches together in a way that you (and your friends) can listen to for a long time.  You can modify these patches as much as you want, and you are recommended to add more processing of your own to make it uniquely yours. 
+
+Later, we will use RNBO to embed these patches as running code in a class website. In order to do so, we have some specific rules for the assignment:
+- Do not use any patches that require poly~ or pfft~. 
+- **Do not use any external sound files at all**; no buffer~ etc.  (That will rule out a lot of the example patchers.)
+- Do not modify anything in the starter Max patch -- only add your patching INSIDE of the `gen~ @title CLOCK_RADIO` patch. 
+- That means that you will have to figure out how to embed the patchers you want to use inside of that `gen~ @title CLOCK_RADIO` patch, and connect them up. 
+- The audio output should be routed to the `dcblock` -> `tanh` -> `out` section at the bottom of `gen~ @title CLOCK_RADIO` patch. If your output is mono (not stereo), route it to both of them.  
+- Do not add any extra inputs or outputs. 
+
+Aesthetic requirements:
+- It should never sound the same -- each minute, each hour and each day is notably different
+- Every single input (bar, beat, seconds, minute, hour, day, and month) must be used to control the patch. 
+- Some aspect of it should follow the tempo of the bar/beat phasors -- it could be subtle but should be there
+- It should generate sounds that you can listen to for a long time -- for working, walking, meditating, sleeping, etc. -- it's up to you. 
+
+Comments:
+- Make sure to add a comment with your student number. 
+- Add a comment to name your radio station
+- Also add comments to explain which example patches you chose to work with, and why. Explain how you changed them. Explain why you chose to map the various inputs (beat, bar, seconds, minutes, hour, day, month) to them. Explain what modifcations and additions you made and why. 
+
+**Assignment 3 is due on Nov 10.**
+
+Here's the assignment 3 template patch:
+
+<pre><code>
+----------begin_max5_patcher----------
+3489.3oc6c02aaabF+uc9TbPCXXCyV4tiGeQECCMyMc0XoIcwonnHYvfR7jD
+anH0HO4X2h1O66dizjxjRjTjTptouHayij2yyu64c9bT+xyNazzn6nIi.eA3
+8fyN6Wd1YmIOj3.mo+6yFsx8tYAtIxSazrnUqngrQmqFiQuiIO9e+cKofP2U
+TPzbv8QahAwtd9Q+izSbdTHSLr7jeQrua.3eFE3Ath4F3OK8rB2rJZCKfxjS
+FTez0trYK8CWbSLcFSQrHzXyyAHK6wvyAF7+R7CiwPv+M27k3+yx4CSFCeXB
+7CSu+H8A88jTUzze5BG3Hww90m8LwGmWSPIj9I9E+HLgAfkyXoSr5Pr6WSUb
+0HeNxlwBkv1DSCAmhrfhefwoelcMK887ng4mi8ww1SZCGWoXvOJV5ulsgSEL
+vq2rZJMtmkAvS5XY.amtDQd22b00fWb80W8ud829xW+Nv27hqAe6Kd8OBt96
+d4kW80WcI3su7+78W81WJF8Zv6dC3qeyqd0a9AvEW.l4FSmuIH3dvrkzYeD3
+FD.Xb8L9b5uHTLc.+vDV7lYL+nvDfK6CgKYr0Iewyet.RoAtSG+on3.um64x
+XFPaxy8C8n2MdIaUve5gayEFozcfeHcVzlPIwar6EtluhIEXssDeRPRcWhct
+Er8txX1lUF5O64N621MwFDMyMH+rVF0aKkzrPNRB2L8yxIebIjuQaH+jYQqo
++ViwZrRufXSTVLjjqvtQF4x43YYK03cwCS2LOSOxzpDFCOfLlRHZX3KTq3q0
+bZMNZWrWkN.1o0e8RpIAki0MIMPBzZxIECoVJOD9oUlpC7ukNdgqeXFybqab
+l8sGOZQV0L0jgaBmgbCCoAYRavpfAggVtAlyy+ah+edPjKS7KA9I610u15iV
+tmHsAgLrZBXYOJ61Gy4VFM9FZn6z.Z9UvD2aod2v8VD6OcCi9vuknQTMjJ.s
+fMzn4oGN834u8AQgKpFXKbpq3KQhSyJ0O8Vi5Kip4BaX4iG4w+OZNmVEFNYY
+TLqlDR5pVYSylPeVB6dEhQTiKE9R+QCkD43JKJrgpTScCWrSQESkcBzDodEA
+m9Ys8yZYsKIEXGFcz24KBqgmqPnWzJ.OHEJ3OCX97EpcEOR49JltY5VxxkgM
+1pHncjQeLQFGsIpIXCoKiN76SnxH5lsINVDN2.f.DzjCDAL5RD3xXpfmcCAz
+Pu.ZRhJwQPByUDTKGcbYfDN+6k.3pe+uMTd3vd9ymSU.FcM+53bHfeteRbtB
+rie67TXIOUTfv1JMbL.jIUGSS3WrbBto.9Z1xnQjliMcjHKF1DvD0kf4ailF
+w.Wxil8ifeHJ9if2Jvx9J+KrxGTGm9kUqRAW3lZied.4lO46wVJcoXlexKwD
+q3hk2kUbRd4nVEKigsTeB6nPEErTH2bO+j0At2m5mptIna5z0Fi6Frxy89CB
+oLflcMRYeZhTKi1DeXPE1oqgJqSSnhS07PMOLvxD00fkYWCVUTvv0fET1EB+
+VWvcfcQ9n.JOGjRKf3463G0wBlor9LHazivu8kggIYT9aOMd6TFl6GPukFmv
+86lCq4q+qWm6vEylXk6OEIuQNYAjyoB0grxNTL8V+zq2L6ntwbljw4vMwJud
+2YQdHlegbPbHWnUPJoAymRRxEKg2xj0tyTWrXMMc3bQTpBmREUkC1REOkyCv
+FWXXgviL0KeZEi3ISG5GlOTjBC6Qm6tIfcSdunROtkL9bMEV5fE83mw.Kh88
+hBEDQgUBwgSmNtKdkIZy7Li7LBcWWxEykA3vRECJBnaSxT2XwBkV2AmNHKJJ
+n3PYWW.cNSO7Zed11EQQVz5pGL1ewxcbs7XkXQq108VNRBOsO0n2Hx4+FQFx
+EOO2f.sFcwa+ctg9q3ZyREYA6ByFTY+XYxr3nffB7qZjaKYDOtL9LZlUUXdg
+A9o6uNUHZT1prm+BZBq3wXtKRJdjrTZycnMS05v2vnq3VMYacBhhGmv3IV+o
+D8IlJnkG.d3gKkWmNu4wBGemg4VzVI2R4dxbp5nYqLhVnxOKTECmIb6v4qzc
+w1VBQpJUmq9.otG5ZbX8dxft4n.QUfdDDcvn.oKQA4zUMWkmF1cMSpjwMjK+
+SvpvSS+rZ1FVAaiySkoKd40djWf3AwHsJzgXTgBJ0mfDREkkLuN4mMV3XxnB
+STEAV0Q3Rg.tJp.o0brfsD01KhYanhD0P8nJr1NrpJCs5QONhQOQPDKKb2fH
+VCKhfI8EhX5X1MHh4vhHF3dCQPcjLBYXQDTugHZKuGNhfFHDgaPONhmOID7k
+tyX92RAn9zyjk1wDNW9XsShYnDYzEqVDzV0.CdW.iJPOQw3DwmWO.xQFYi5o
+sta7oBO23ABd3oc4xCtEJ927mP0Y09XzyXWnW00GY2PH1TkWr54rgM1BCKjx
+twXXSg2+.iuXcrR8K.OTF.2Vwty.VY2Bb9C+rAht5mWiNqttFYsNUR3q9HxA
+mtGwoQo6g5PDRw1sudGXkvfEptPPEq6jIGsLdOPHPICb3HfI72qBAFDsPf4g
+BAnFAAlmNP.1woifflU4GxIDDXzURAFMBBLJABd3YMH5MiJpfrjGDiWN1jDs
+IdVpyfzhxAJxNdzDleX1id48Y0kRbd0ZoooDwjZRC1O57hh8TONM3Qkvrplv
+PGUByrZBCeTILR0DlwQkvPUSXjdgvrq6RIpG0.spKQf6QhfTWYm9zVjYcQBi
+djHP0kHf8HQfqqPAF22TApNTQepeTWujoXVuQDniMQPpqVZuZovotlJH845Q
+cWP5UCVX7IgwBg1G9X6FSREniseLL5v8gnOXZiWo2+IpNIZGa9jF0wKKBhl5
+FrUapTVCwz9cxQEczWPjq2JQSsi5x8MktS8zaCXaXGrMfI1soqqYQKVDP63M
+4bJ2oJLGAl9Ys6odh0.0ulKng+F3KY9bFDb4qdyk+6ad6K9pqdS43At16Mr8
+uk4H51sGoxS2rgcceIstogyS5V2zKY8X9pUIsuosdmzIwUGn7op5P9b6a941
+27ysuYO19lhM9l30YPzbQWbx+CttzFVBfEAlwk54fWt2hHYaFL09.qPiiU4V
+4BWqRgp1xbI9dzxGY6JcV5NyU8X0kOqRaUSZXLoMOW8AqoQulF5IgeIFmvcP
+Ri.taDPMGm3KD.t.A8Cg+E+4.eFvOA7SaRXfUb6BmCh4mBUbX9ZEWGbo9RR9
+q4mpJWJpdAizhELbaVvvVXwaNDK8aQEhb8yrUcBwP0oHdylJ7A0asVDDJPDa
+Uc+ISZeqgX7z.Pv1jNBPvCkN8WcoDQ.T5Zsp7L9oFS8D6L1elFG8gvWv05em
+a3RvG4mThPE9S9LNmKaj9KPBE5+FRzJ4KnGntrYCzkqgFqIOtrGVNv5GZqca
+VOFpd+fww49Vc0jn1cfsW5D9D.MR0UOXz.MYv7+p73pbbVKUsNTIxV0+n1sV
+GB4LPRMbNFfUFytPlLP62SKZMF0tydR668QzP0x4ABln2ZtZcSxpJthAo8sR
+r4SB3.0UvA4o.bXn2hOGNbX7T.NvJyEc.bLTM16hnwwtqViYbil8EpfzUoU8
+Vbv1p8VTQOIDRz6Z9CWHYnBISVabPBObCdVAeImv.P9ObuCXNouAInpfI0.j
+fUs2AGRLR9Vgo.DgP8rmYkXDRUb5VAQNCJD44deA.x.129pg4dmA1J.xdXkg
+juXSFJ8LkGKsPjCt0Xj0fhQh2SNEPHrQOGhisVMC1ZDZnh+kCJHvT23KDN16
+O4lGDabZOlfFNLAClRcY8JnfvvbnhUqQE7.lzLRmzr3gu09VBWWWEk8CGmVG
+gWoIE0KM4cc6PHTu1aNF0swwfmBcKEpW6YKXcoh9rU9PMrYs6GhntMKEx7Q8
+10Jeu0Q9gLsZBxQVIOjZOaXZ+veMj6Yf5yPjFxPF6igPGYFxnYLjg5ANtCFB
+ejYHbCYHzj8vPFG0t2GgOAZbdTe1371MQ2quHBmlXQ63aWE1LgbrCbOB4ji6
+F3At+lpssuc7a065+89hIW8ZLUuaKUkLL+CfZj5IOKO0KfiQbreb150nDdL9
+Ap.EQPw+j0aipWtHSWLKJP0aguW1bU49.suWhkpag5oukcSP5K8gOxtIOtkG
+NgPY8KkqmXvLYT+z3tyDcMw5ktIQw8ei6pq.ptwcwM4kxu8ePaP2Il5lcmn9
+ldQkMtI7ycn6m6P2O2gtGVG5t2RxNcs3MZFTUUVqzxxRf8bw1PP82jBVm7k2
+WUts8WY18UrszuUNjNsUe2bzphsYMrOi4wyiiVwkRZ46uL42CR0UnP8NKBgb
+N4ey2oZboZTZZX83bkTwDieGTBVzoPo1p4liz5THA8dIItt4aiAUyAbXeaLn
++d5q691XvXRc2cexYpnrsB61dsTifOdMrPp3UIHWnnT425kkttU241xpFy8V
+D3i21mEqXZ6IF67ZTUQL5phd3yDrNyD7.mIwNdb+7TgmhRWAmFN0gIQkO039
+mqslT9TC6et1xo2.78x0EEx6R.GVmotyA7ZYBwjTNWeXSsYc35Tn4vlI6Aal
+rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
+8wK5JiICkFVchbZK2ScjM3lXXrac2VGdFS5qYde7bw9yobzVk5vVkNWLoaUx
+7sJW9iKUd0kIe6RjKKOdUesi8re8Y+evDY6us
+-----------end_max5_patcher-----------
+</code></pre>
+
+<!--
+
+
+-->
+
 <!--
 **Drum machine**
 
@@ -1000,34 +1123,31 @@ These do not at all have to sound anything like real drums, or a real drum machi
 
 Your patch should have three inputs and one output.  
 - The 1st input is how the drum sound is triggered. A trigger signal is normally 0, but is momentarily a value of 1 when the the drum sound should start. 
-- The 2nd input, expects a number between 0 and 1, to control the "accent" or "intensity" of the sound. 
+- The 2nd input, expects a number between 0 and 1, to control the "accent" or "intensity" or "timbre" of the sound. 
   - If this value is "1" when the sound starts, the sound should be more intense, a little louder, more distorted, or in some other way attract more attention, than if it were "0". 
-- The 3rd input, also varying between 0 and 1, should change the timbre or shape of the sound. 
-  - It is up to you how. 
 - The patch has one output for the percussion sound output. At the loudest point it should be near the range of -1 to +1, but never beyond these limits. 
 
 Save this patch as a "gendsp" file. With the drum sound patch open and focused, use File -> Save As... to save it as a `gendsp` file. The filename should be `drum_XXX.gendsp`, where `XXX` is your student number.
 
 **Rhythm pattern generator**
 
-The pattern generator will create percussive patterns for around four different drum sounds.  That means you will be producing four different ramped phasor outputs, all derived from the input BPM phasor. 
+The pattern generator will create percussive patterns for up to four different drum sounds.  That means you will be producing four different ramped phasor outputs, all derived from the input BPM phasor.
 
 The pattern generator patcher must have these inputs and outputs:
 
 - 1st input: a standard BPM-driven beat phasor. 
-- 2nd input: a parameter to control variations of the pattern. This parameter be limited to values between 0 to 1, where 0 is more "steady" or "normal" or "background", and 1 is more "irregular" or "wild" or "active". This is a performer's control. 
+- 2nd input: a corresponding measure phasor (cycles once every 4 beats).
+- param variation input: a parameter to control variations of the pattern. This parameter be limited to values between 0 to 1, where 0 is more "steady" or "normal" or "background", and 1 is more "irregular" or "wild" or "active". This is a performer's control. 
   
 - 1st output: a generated pattern to trigger a drum sound. 
   - This should be a pattern of triggers, related to the underlying tempo beat, but in an interesting rhythmic pattern. (If you want to use ramp-generated patterns such as we saw in Chapter 2 of the book, and elsewhere, which I highly recommend, you can convert these to triggers using a `go.ramp2trig`.) 
   - Alternatively, if you have any kind of synced evolving signal, you can get triggers from it using a `go.zerox`, which will output a trigger whenever the input rises above zero.  
-- 2nd output: a stepped signal between 0 and 1, to control the "accent" or "intensity" of the sound. 
-- 3rd output: a slow stepped signal or varying LFO, limited to values between 0 and 1, to modulate the timbre of the drum sound. 
+- 2nd output: a slow stepped signal or varying LFO, limited to values between 0 and 1, to modulate the "accent", "intensity" or timbre of the drum sound. 
 
 As usual you are welcome to adapt and re-use any of the patchers in the book, or in the examples folder, to build your drum sounds or pattern generators. 
 
 **Template patch**: **TODO**
-
---> 
+-->
 <!--
 
 Or everyone designs one of each, and we run a few in parallel, all synced to a network clock. Install the Link Max Package, and use `link.phasor~`. We just all need to be on the same wifi. E.g. somebody sets up an ad-hoc network (mac: search for Internet Sharing).
