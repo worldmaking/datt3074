@@ -388,7 +388,6 @@ h
   - Include a longer comment to document particular parameter sets that you think sound good or best demonstrate what the patch is doing. 
   - Include a longer comment (you can put it in a subpatch if you want more space) to explain why and how you built the patch the way you did. What makes it "earcatching" but not annoying? How did you make the variations consistently interesting, not too much the same, and yet still of a similar character? Did you start from a certain inspiration (if so document it -- with links if you can!)
   - Insert many small comments to document what each step or section are doing, to show that you understand how the algorithm is working (or insert comments with questions about any areas you are unsure of). This is essential for me to know what I should focus on in lecture patching sessions. 
-- [Submit the Max patch via this form here](https://docs.google.com/forms/d/e/1FAIpQLScXR0kSb2AMFgC-DzRMBO8gHGkvcq17kJ-PU-EP1ZTRhdUoug/viewform?usp=sf_link)
 
 **Assignment 1 due Sep 21**
 
@@ -1003,12 +1002,14 @@ Aesthetic requirements:
 - Some aspect of it should follow the tempo of the bar/beat phasors -- it could be subtle but should be there
 - It should generate sounds that you can listen to for a long time -- for working, walking, meditating, sleeping, etc. -- it's up to you. 
 
+And all the usual [general requirements for assignments](https://alicelab.world/datt3074/index.html#general-procedures-for-assignment-patches)
+
 Comments:
 - Make sure to add a comment with your student number. 
 - Add a comment to name your radio station
 - Also add comments to explain which example patches you chose to work with, and why. Explain how you changed them. Explain why you chose to map the various inputs (beat, bar, seconds, minutes, hour, day, month) to them. Explain what modifcations and additions you made and why. 
 
-**Assignment 3 is due on Nov 10.**
+**Assignment 3 is due on Nov 10.**  - [Submit the Max patch via this form here](https://docs.google.com/forms/d/e/1FAIpQLScXR0kSb2AMFgC-DzRMBO8gHGkvcq17kJ-PU-EP1ZTRhdUoug/viewform?usp=sf_link)
 
 Here's the assignment 3 template patch:
 
