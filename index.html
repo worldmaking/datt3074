@@ -138,7 +138,7 @@ function copyPatch(str) {
 </ul>
 </li>
 <li>20% Presentations<ul>
-<li>Preenting your works in progress and final project, and explaining the development processes</li>
+<li>Presenting your works in progress and final project, and explaining the development processes</li>
 </ul>
 </li>
 <li>30% Final Project<ul>
@@ -1162,81 +1162,6 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 8wK5JiICkFVchbZK2ScjM3lXXrac2VGdFS5qYde7bw9yobzVk5vVkNWLoaUx
 7sJW9iKUd0kIe6RjKKOdUesi8re8Y+evDY6us
 -----------end_max5_patcher-----------" onclick="copyPatch(this.value)">Copy Max Patch and select <strong>File / New From Clipboard</strong> in Max</button></p>
-<!--
-
-
--->
-
-<!--
-**Drum machine**
-
-> A drum machine is an electronic musical instrument that creates percussion sounds, drum beats, and patterns. ([Wikipedia](https://en.wikipedia.org/wiki/Drum_machine))
-
-There are two parts to a drum machine:
-- a set of distinct drum sounds, usually short and distinct, usually with some parameters to control intensity and timbre
-- a section that generates rhythm patterns to activate and modulate each drum sound
-
-Typically a drum machine would have four or more distinct drum sounds, and one rhythm pattern generator for each sound. 
-
-So, **for this project, I recommend working in pairs or teams**. Some members can make drum sound subpatches, some members can make pattern generator subpatches, and you can combine these together to make the whole drum machine using the template below. 
-
-Aim to make the drum sounds to be quite distinct. Often a drum kit occupies different parts of the spectrum: the kick drum in the lower frequencies, cymbals and high hats in the highest frequencies, and snares/toms/claps in regions between. Also aim to make the patterns also distinct -- some relatively sparse, some more dense; some focused more on down beats, others elsewhere. 
-
-Whichever kind of patch you contribute, **be sure to put your name and student ID in a comment in that subpatch**. 
-
-**Drum sounds**
-
-These do not at all have to sound anything like real drums, or a real drum machine. Pretty much any sound enveloped with a fast attack and slower decay over a fairly short duration can function as a percussive element. Make an alien drum machine!  Try your sound out in the template patch and try to edit it to make it as compelling as you can. 
-
-Your patch should have three inputs and one output.  
-- The 1st input is how the drum sound is triggered. A trigger signal is normally 0, but is momentarily a value of 1 when the the drum sound should start. 
-- The 2nd input, expects a number between 0 and 1, to control the "accent" or "intensity" or "timbre" of the sound. 
-  - If this value is "1" when the sound starts, the sound should be more intense, a little louder, more distorted, or in some other way attract more attention, than if it were "0". 
-- The patch has one output for the percussion sound output. At the loudest point it should be near the range of -1 to +1, but never beyond these limits. 
-
-Save this patch as a "gendsp" file. With the drum sound patch open and focused, use File -> Save As... to save it as a `gendsp` file. The filename should be `drum_XXX.gendsp`, where `XXX` is your student number.
-
-**Rhythm pattern generator**
-
-The pattern generator will create percussive patterns for up to four different drum sounds.  That means you will be producing four different ramped phasor outputs, all derived from the input BPM phasor.
-
-The pattern generator patcher must have these inputs and outputs:
-
-- 1st input: a standard BPM-driven beat phasor. 
-- 2nd input: a corresponding measure phasor (cycles once every 4 beats).
-- param variation input: a parameter to control variations of the pattern. This parameter be limited to values between 0 to 1, where 0 is more "steady" or "normal" or "background", and 1 is more "irregular" or "wild" or "active". This is a performer's control. 
-  
-- 1st output: a generated pattern to trigger a drum sound. 
-  - This should be a pattern of triggers, related to the underlying tempo beat, but in an interesting rhythmic pattern. (If you want to use ramp-generated patterns such as we saw in Chapter 2 of the book, and elsewhere, which I highly recommend, you can convert these to triggers using a `go.ramp2trig`.) 
-  - Alternatively, if you have any kind of synced evolving signal, you can get triggers from it using a `go.zerox`, which will output a trigger whenever the input rises above zero.  
-- 2nd output: a slow stepped signal or varying LFO, limited to values between 0 and 1, to modulate the "accent", "intensity" or timbre of the drum sound. 
-
-As usual you are welcome to adapt and re-use any of the patchers in the book, or in the examples folder, to build your drum sounds or pattern generators. 
-
-**Template patch**: **TODO**
--->
-<!--
-
-Or everyone designs one of each, and we run a few in parallel, all synced to a network clock. Install the Link Max Package, and use `link.phasor~`. We just all need to be on the same wifi. E.g. somebody sets up an ad-hoc network (mac: search for Internet Sharing).
-
--->
-
-<!--
-Remix your colleague's work!   
-
-You will take one or two of your fellow student's previous assignment patches, and modify them into something you think is interesting **in a different way**.  (I will share a folder that contains all the patches). 
-
-Again you are welcome to borrow patching from any of the examples in the GO book, or the gen~ examples that come with Max (under Help / examples / gen). 
-
-Be sure to include a statement including:
-- **which** patches (from fellow students & from examples) that you used, and 
-- **how** you changed them and **why**
-- **what** challenges you found, and what you learned
-
-Be sure to follow all the [general procedures for assignment patches](#general-procedures-for-assignment-patches)
--->
-
-
 <hr>
 <h1 id="week-8-frequent-modulations">Week 8: Frequent Modulations</h1>
 <p>Oct 30 </p>
