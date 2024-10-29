@@ -986,7 +986,7 @@ This assignment is to create a robot radio station, which is always absolutely d
 
 - Most of the stations at generative.fm are pretty ambient, and might be a bit too slow and sleepy. Let's make stations that are a little more upbeat. The template patch has a clock source built in (with bar and beat phasor ramps).  Use this to drive for some element of your station -- maybe a backbeat, maybe a melody, maybe an LFO pattern, etc. 
 
-Before building the patch, spend some time resaerching among the example patches drawn from the textbook or from the Max / Help -> Examples -> gen folders. Spend some time playing with many of these patches until you find **three or four** that you think you can work with. Your radio station must combine these patches together in a way that you (and your friends) can listen to for a long time.  You can modify these patches as much as you want, and you are recommended to add more processing of your own to make it uniquely yours. 
+- Before building the patch, spend some time researching among the example patches drawn from the textbook or from the Max / Help -> Examples -> gen folders. Spend some time playing with many of these patches until you find **three or four** that you think you can work with. Your radio station must combine these patches together in a way that you (and your friends) can listen to for a long time.  You can modify these patches as much as you want, and you are recommended to add more processing of your own to make it uniquely yours. 
 
 Later, we will use RNBO to embed these patches as running code in a class website. In order to do so, we have some specific rules for the assignment:
 - Do not use any patches that require poly~ or pfft~. 
