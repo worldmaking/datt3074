@@ -1257,7 +1257,7 @@ Some targets are dependent on having other software installed. Some require lice
 
 Here's Oopsy:
 
-https://www.youtube.com/watch?v=fbd1CASqUmI
+---youtube:fbd1CASqUmI
 
 [Back to top](#top)
 
