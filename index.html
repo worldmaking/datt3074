@@ -64,7 +64,7 @@ function copyPatch(str) {
 </head>
 
 <body class="centremaxwidth960">
-<header><a href="index.html">Creative Generative Audio Signal Processing</a></header>
+<header><a href="index.html">Creative Generative Audio Signal Processing</a><a name="top"></a></header>
 <ul>
 <li><a href="#datt3074-creative-generative-audio-signal-processing">DATT3074 Creative Generative Audio Signal Processing</a><ul>
 <li><a href="#course-information">Course Information</a></li>
@@ -92,7 +92,10 @@ function copyPatch(str) {
 <li><a href="#week-8-frequent-modulations">Week 8: Frequent Modulations</a></li>
 <li><a href="#week-9-navigating-waves-of-data">Week 9: Navigating Waves of Data</a></li>
 <li><a href="#week-10-windows-of-time">Week 10: Windows of Time</a></li>
-<li><a href="#week-11-exporting--embedding">Week 11: Exporting &amp; Embedding</a></li>
+<li><a href="#week-11-exporting--embedding">Week 11: Exporting &amp; Embedding</a><ul>
+<li><a href="#export-targets">Export targets</a></li>
+</ul>
+</li>
 <li><a href="#week-12-final-presentations">Week 12: Final Presentations</a></li>
 <li><a href="#zoom-recordings">Zoom Recordings</a></li>
 </ul>
@@ -146,6 +149,7 @@ function copyPatch(str) {
 </ul>
 </li>
 </ul>
+<p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-0-one-sample-at-a-time">Week 0: One Sample at a Time</h1>
 <p>Sep 4</p>
@@ -247,6 +251,7 @@ v18mtU+yayW0h+Xs2Kyze2ut6+Tw.6SJ
 </ul>
 </li>
 </ul>
+<p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-1-ramps-modular-arithmetic-of-time">Week 1: Ramps: Modular Arithmetic of Time</h1>
 <p>Sep 11</p>
@@ -502,6 +507,7 @@ h
 <p><audio controls src="assignment1_sounds/219167360.wav.mp3" title="219167360.wav.mp3"></audio> <a href="assignment1_sounds/219167360.wav.mp3">219167360.wav.mp3</a></p>
 <p><audio controls src="assignment1_sounds/216416901.wav.mp3" title="216416901.wav.mp3"></audio> <a href="assignment1_sounds/216416901.wav.mp3">216416901.wav.mp3</a></p>
 
+<p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-2-unit-shaping">Week 2: Unit Shaping</h1>
 <p>Sep 18</p>
@@ -613,6 +619,7 @@ jhz8+48+O7IrgnC
 <li>See Ch3 <strong>Interpolating_LFO.maxpat</strong></li>
 <li>It doesn&#39;t need to be driven by a phasor. For a non-cycling glide, feed an <code>accum</code> ramp into a <code>clip 0 1</code> to stop at 1. Retrigger the <code>accum</code> ramp when the target changes (via <code>change</code>). This is a basic line generator (see Ch6 <strong>slide_slew_and_line.maxpat</strong>).  We can smoothly shape the ramp too, see Ch2 <strong>interpolating_glides.maxpat</strong>. </li>
 </ul>
+<p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-3-uncertainty-and-unpredictablility">Week 3: Uncertainty and Unpredictablility</h1>
 <p>Sep 25</p>
@@ -716,6 +723,7 @@ p62i5784c8NdGuG2sqtS2g5xUU6xMe8l+EfYQwwF
 -----------end_max5_patcher-----------" onclick="copyPatch(this.value)">Copy Max Patch and select <strong>File / New From Clipboard</strong> in Max</button></p>
 <p><strong>Assignment due Oct 9</strong></p>
 <p><a href="https://docs.google.com/forms/d/e/1FAIpQLScQmz1jJviJXZV8FQ2I6k1fhuZYgF4uJP9UzwLXJ77V_Uy6Dw/viewform?usp=sf_link">Please submit Assignment 2 here</a></p>
+<p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-4-stepping-in-time">Week 4: Stepping in Time</h1>
 <p>Oct 2</p>
@@ -905,6 +913,7 @@ SzqUSzgplXWqlFrw4vqUSvPUSWy7jpFhZhLgixcs54XmeGuRzidECCc.DMoh
 Ad8hb+bnf5N0o5h37STjusN9D03+IZw+TJw+7zg+moB+BZvuNJv2Fv+W92e4
 +CDrQdXM
 -----------end_max5_patcher-----------" onclick="copyPatch(this.value)">Copy Max Patch and select <strong>File / New From Clipboard</strong> in Max</button></p>
+<p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-5-filters-and-the-balance-of-time">Week 5: Filters and the Balance of Time</h1>
 <p>Oct 9</p>
@@ -968,8 +977,10 @@ See <strong>slide_slew_and_line.maxpat</strong></p>
 <p>So how do we build a filter out of this kind of trapzoidal integrator? The math and patching needed to create a one pole filter from this is a slightly more complex than from the Euler integrator, but not really any more expensive, and it handles audio-rate modulation much better. See <strong>trapezoidal-onepole.maxpat</strong></p>
 <p><strong>State variable trapezoidal filter</strong></p>
 <p>A wonderful example of the trapezoidal method is the state variable filter (e.g. <code>go.svf</code>), which, similar to biquads, can produce many different output spectra, but it does them all at once, and can be modulated at audio-rates very nicely.  This will be our go-to filter most of the time.  See <strong>trapezoidal-state-variable-filter.maxpat</strong></p>
+<p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-6-reading-week">Week 6: Reading week</h1>
+<p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-7-the-effects-of-delay">Week 7: The Effects of Delay</h1>
 <p>Oct 23</p>
@@ -1080,7 +1091,7 @@ See <strong>slide_slew_and_line.maxpat</strong></p>
 <li>Add a comment to name your radio station</li>
 <li>Also add comments to explain which example patches you chose to work with, and why. Explain how you changed them. Explain why you chose to map the various inputs (beat, bar, seconds, minutes, hour, day, month) to them. Explain what modifcations and additions you made and why. </li>
 </ul>
-<p><strong>Assignment 3 is due on Nov 10.</strong>  - <a href="https://docs.google.com/forms/d/e/1FAIpQLScXR0kSb2AMFgC-DzRMBO8gHGkvcq17kJ-PU-EP1ZTRhdUoug/viewform?usp=sf_link">Submit the Max patch via this form here</a></p>
+<p><strong>Assignment 3 is due on Nov 10.</strong>  - <a href="https://docs.google.com/forms/d/e/1FAIpQLSdppThQmusV_H8CMImkfzv3hDxIpZdkO-ugrwwquF1_9hyW0Q/viewform?usp=sf_link">Submit the Max patch via this form here</a></p>
 <p>Here&#39;s the assignment 3 template patch:</p>
 <p><button value="----------begin_max5_patcher----------
 3489.3oc6c02aaabF+uc9TbPCXXCyV4tiGeQECCMyMc0XoIcwonnHYvfR7jD
@@ -1162,40 +1173,124 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 8wK5JiICkFVchbZK2ScjM3lXXrac2VGdFS5qYde7bw9yobzVk5vVkNWLoaUx
 7sJW9iKUd0kIe6RjKKOdUesi8re8Y+evDY6us
 -----------end_max5_patcher-----------" onclick="copyPatch(this.value)">Copy Max Patch and select <strong>File / New From Clipboard</strong> in Max</button></p>
+<p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-8-frequent-modulations">Week 8: Frequent Modulations</h1>
 <p>Oct 30 </p>
+<p>This chapter is all about modulating one oscillator by another. </p>
+<p>Many times we have seen multiplying a signal by some other constant to set its apparent loudness, or multiplying by an envelope to shape the loudness over time. Try multiplying an audible sine wave (e.g. <code>cycle 200</code>) by a low frequency oscillator (LFO, e.g. <code>cycle 2</code>). You might want to <code>scale -1 1 0 1</code> to get the LFO to be unipolar, just like an envelope. Now try raising the frequency of the LFO into audible rates, and listen to what happens. <br ><br >
+                <iframe src="https://www.desmos.com/calculator/fpraafrdzh  ?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
+<p>Look at it on the spectroscope~ -- what can you see?</p>
+<p>These new frequencies are called <strong>sidebands</strong>.  If you scaled the second oscillator to be unipolar, this is <strong>Amplitude Modulation</strong> (AM). If you didn&#39;t, and you directly multiplied the two signals, it is <strong>Ring Modulation</strong> (RM). Actually you can pretty easily mix betwween these two, see <strong>AMRM.maxpat</strong>.  </p>
+<p>With AM and RM, the new sidebands are the <em>sum</em> and <em>difference</em> of the two input frequencies. If the input signals are more complex than sinewaves, then there will be sums and differences for every frequency component in each signal -- that can get complex fast. But we&#39;re going to look at things that get even wilder. </p>
+<p>To do that, first let&#39;s break apart the <code>cycle</code> operator into its subcomponents: <code>phasor -&gt; * twopi -&gt; sin</code>. Now we can modulate the oscillator in two different ways: we could modulate the frequency of the <code>phasor</code> to get <strong>Frequency Modulation</strong> (FM), or we could modulate the <em>phase</em> going into the <code>sin</code>, which is called <strong>Phase Modulation</strong> (PM). The amount of modulation we apply is scaled by a multiplier called the <strong>modulation index</strong> -- often driven by an envelope. See <strong>FMPM.maxpat</strong>. With simple sines in this way they sound the same, but as we make things more complex they diverge. <br ><br >
+                <iframe src="https://www.desmos.com/calculator/np3jcgobxa?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
+<p>Look at the spectroscope~ now, and you&#39;ll see a cascade of new sidebands. The higher the modulation index, the more of these sidebands appear. The main oscillator (the carrier) is still present, but there are additional frequences above and below, spaced by the frequency of the modulator oscillator. </p>
+<p>So, if you want a harmonic sound, you&#39;ll want the carrier and modulator frequencies to form a simple integer ratio (or near-integer ratio). One way, encouraged by FM pioneer John Chowning, is to establish a base frequency, and then make both carrier and modulator be (integer or near-integer) multiples of that base frequency. See <strong>FMPM-harmonicity.maxpat</strong>). When this happens, the many sidebands tend to line up with each other in a way that creates a much less &quot;clangorous&quot; sound. </p>
+<p>Digital FM synthesizers became popular in the 1980&#39;s (actually they were PM synthesizers but marketed as &quot;FM&quot; for historic reasons). Those synthesizers often used more than two oscillators -- four or six were typical -- and you could arrange these in different structures, such as multiple carriers sharing modulators, or multiple modulators controlling a carrier, or cascades of modulators modulating modulators modulating modulators modulating carriers etc. Each of these &quot;algorithms&quot; has different sonic potentials. See the example patches. </p>
+<p>Looking at <strong>FMPM-cascade-modulation.maxpat</strong> when the modulator is modulated it becomes more complex than a simple sine wave, and now we can start to hear and see the differences between PM and FM.  Or, for a more complex waveform, try looking at just how different a triangle-wave modulator affects FM and PM. Slow down the triangle wave to sub-audio rates so we can look at the signals.  What you see is that while in FM the level of the modulator directly affects the apparent output pitch in FM, with PM it is the <em>rate of change</em> of the modulator that affects the apparent pitch. That makes sense, because we have bypassed the integrator in the <code>phasor</code>. <br ><br >
+                <iframe src="https://www.desmos.com/calculator/29nk9s5voh?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
+<p>That is, to turn FM into PM, you just need to integrate the modulator. The <strong>FMPM-blending.maxpat</strong> shows how we can make them exactly equal by passing the modulator through a low pass filter (a leaky integrator) for PM, and through a matching high pass filter (a leaky differentiator) for FM. Actually filtering like this is a good idea in general for other reasons:</p>
+<ul>
+<li>It&#39;s a good idea to put a high-pass filter on FM modulation, in order to stop it from going out of tune when using any signal not centred around zero. This is a DC-blocker. </li>
+<li>It&#39;s a good idea to smoothen out (low pass filter) PM modulation, so that it never makes any sudden jumps in phase, because these will probably cause clicks in the output. </li>
+</ul>
+<p>Some synthesizers also offered feedback algorithms: taking the oscillator&#39;s output and using it to phase modulate itself, via an &quot;index&quot; multiplier.  Here the spectrum is less symmetric, and it can produce sawtooth-like waveforms. But the feedback multiplier is very sensitive, and it can quickly become chaotic noise. We can tame that noise a little by placing a filter in the feedback loop -- see <strong>FMPM-feedback.maxpat</strong>.  This is a pretty rich oscillator for how simple it is!</p>
+<p>It gets even richer when you place feedback oscillators into bigger structures. One of my favourite patches in the book is simply two of these oscillators feeding back into each other -- see <strong>PM-cross-feedback-filtered.maxpat</strong></p>
+<p>But don&#39;t stop there -- these AM, RM, FM, and PM components are like LEGO, you can just keep combining parts into bigger structures. Try inserting other weird stuff in there too -- wavefolders, bitcrushers, delays, etc. See for example <strong>FMPM-waveshaping-modulator.maxpat</strong>, or for a more unusual example, <strong>PM-asymmetric.maxpat</strong><br ><br >
+                <iframe src="https://www.desmos.com/calculator/rup97dp5gx?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
+<p><em>Actually there&#39;s another way of looking at what phase modulation is -- as another kind of waveshaping! No matter what phase signal we send in, the output will always be somewhere between -1 and +1. This is especially true when the carrier frequency is 0Hz -- then we only hear the modulator&#39;s frequency, and the index is like a brightness control.</em></p>
+<p>With all of AM, RM, FM, PM, the addition of sidebands might create very low (inaudible) frequencies, which you might want to filter out with a DC-blocking highpass filter. </p>
+<p>It can also create incredibly high frequencies, which are much too high to be represented at our samplerate. Unfortunately in a digital system, there really is a limit to how high of a frequency you can represent -- this is the <strong>Nyquist limit</strong> which is <code>samplerate/2</code>. Any frequency generated above this will <strong>alias</strong>, which means, it folds back down below samplerate/2 again. These aliasing frequencies are usually inharmonic, and often undesirable -- part of the reason why analog synthesizers are sometimes preferred over digital ones.  </p>
+<p>Unfortunately you can&#39;t just use a filter to remove these frequencies after they have been generated, because they have already aliased at that point. Instead we have to modify our algorithm so that aliasing frequencies are not generated in the first place. </p>
+<p>Instead we either have to increase the samplerate (such as by oversampling -- which is complex and not covered in this course), or modify the input modulator/carrier waveforms (e.g. by filtering) to limit how high their frequency content is, and thereby limit the sidebands. See <strong>AMRM-bandlimited.maxpat</strong>. For FM/PM this is complicated by the modulation index, but see <strong>FMPM-carsonrule.maxpat</strong> or <strong>FMPM-carsonrule-filtered.maxpat</strong> for solution that work with sine waves, and <strong>FMPM-antialias-filter.maxpat</strong> for a more general solution.</p>
+<p>We saw last week how delays can create pitch shifts through Doppler effects, and if we modulate the delay time quickly this can create warbling effects. This is in fact also a kind of phase modulation! The <strong>PM-is-doppler-delay.maxpat</strong> patch demonstrates what we need to do to convert a simple PM patch into one that works with <code>delay</code> -- including keeping the modulation signal above 0 (because delays can&#39;t read the future), and converting the phase in radians to a delay in samples.  One of the benefits of using a delay is that now we can phase modulate <em>any singal at all</em>; but one of the disadvantages is that, to make it equivalent to regular PM, we need to know the frequency of the carrier.  </p>
+<p>You may have noticed that FM and PM often produces complex inharmonic &quot;clangorous&quot; tones. But there&#39;s a way to get all the fluidity of FM/PM and yet stay completely harmonic, if you want. The trick is similar to how we solved changing delay times without pitch shifts: we replace our single gliding sine oscillator with two integer harmonic oscillators and crossfade between them instead. See <strong>Harmonic.maxpat</strong>. The <code>go.harmonic</code> abstraction can be dropped in as a replacement for the sine oscillators at the heart of all the patches we have seen before -- compare <strong>AMRM.maxpat</strong> with <strong>AMRM-blended-harmonics.maxpat</strong> for example. See also <strong>PM-blended-harmonics.maxpat</strong>, and <strong>ModFM.maxpat</strong>.</p>
+<p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-9-navigating-waves-of-data">Week 9: Navigating Waves of Data</h1>
 <p>Nov 6</p>
+<p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-10-windows-of-time">Week 10: Windows of Time</h1>
 <p>Nov 13</p>
+<p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-11-exporting--embedding">Week 11: Exporting &amp; Embedding</h1>
 <p>Nov 20</p>
-<ul>
-<li>You can use gen~ inside a MaxForLive device in Ableton Live</li>
-<li>You can export gen~ code as C++ (just send the &quot;export&quot; message to gen~) -- but it&#39;s up to you to figure out how to use it! Fortunately there are quite a few projects around already to help. </li>
-<li>You can export gen~ to an embedded Daisy microcontroller with <a href="https://github.com/electro-smith/oopsy">Oopsy</a>, which makes it a lot easier. See <a href="https://www.youtube.com/watch?v=fbd1CASqUmI">https://www.youtube.com/watch?v=fbd1CASqUmI</a><ul>
-<li>For standard devices, e.g. NoiseEngineering Versio, DaisyField, etc. or arbitary breadboard/PCB circuits via Daisy Seed</li>
-<li>Quite a few devices (commercial &amp; experimental) in the modular synthesis field.</li>
-</ul>
-</li>
-<li>Via gen~ in RNBO<ul>
-<li>To web audio</li>
-<li>To a VST/AudioUnit plugin, to use in any audio software (or video editor etc.)</li>
-<li>To a Raspberry Pi</li>
-</ul>
-</li>
-<li>More experimental:<ul>
-<li>gen~ to VCV rack: <a href="https://github.com/isabelgk/gen-rack">https://github.com/isabelgk/gen-rack</a></li>
-<li><a href="https://github.com/Cycling74/RNBOMetasound">Unreal Engine Metasounds</a></li>
-<li><a href="https://github.com/Cycling74/rnbo.unity.audioplugin">Unity</a></li>
-<li>Translate to <a href="http://www.charlie-roberts.com/genish/">genish.js</a></li>
-</ul>
-</li>
-</ul>
+<h2 id="export-targets">Export targets</h2>
+<p>For a long time Max, and more recently Gen, have been used extensively in industry (both large and small-scale), research centres, and community spaces to design and develop new audio-related software and hardware. (For example, Ableton Live was originally designed from a Max patch!) Today it is easier than ever to take the algorithms you write in a gen~ patch and place them into distributable software and hardware. </p>
+<p>It has always been possible to export C++ code from a gen~ patch just by sending the <code>exportcode</code> message, but that&#39;s a pretty uncomfortable workflow. Now it is much easier because gen~ also works inside of <a href="https://rnbo.cycling74.com">RNBO</a>. RNBO is a kind of re-implementation of the core of Max, including gen~, that is designed for code export from the ground-up, and has built-in support for many targets, as well as community projects for others. We have some RNBO licenses in our Digital Media lab machines that we can use for this. Or, there are other ways of exporting code and using it too -- here are some of them:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Target</th>
+<th align="left">Toolchain</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Web</td>
+<td align="left"><a href="https://rnbo.cycling74.com/learn/the-web-export-target">RNBO</a></td>
+<td align="left">It can basically be <strong>anything</strong> (a soundtrack, a soundtoy, sound for a VR world, etc.) that you can embed into a website, but you will need to code your own interface in Javascript.</td>
+</tr>
+<tr>
+<td align="left">Audio Plugin (VST, AU)</td>
+<td align="left"><a href="https://rnbo.cycling74.com/learn/using-the-vst-audiounit-target">RNBO</a></td>
+<td align="left">Typically either an <strong>audio effect</strong> (sound -&gt; sound), or an <strong>instrument</strong> (MIDI -&gt; sound), which you can use in any typical audio software or DAW (or video editors too). It will only have a basic default interface though; to make a custom interface <a href="https://rnbo.cycling74.com/learn/programming-a-custom-ui-with-juce">you can try using JUCE</a></td>
+</tr>
+<tr>
+<td align="left">Ableton Live device</td>
+<td align="left"><a href="https://www.ableton.com/en/blog/make-your-own-max-live-devices/">Max4Live</a></td>
+<td align="left">Build new devices for what is probably the world&#39;s most popular digital audio software. Requires a <a href="https://www.ableton.com/en/live/max-for-live/">Max4Live</a> license; 30 day trial available.</td>
+</tr>
+<tr>
+<td align="left"><a href="https://vcvrack.com">VCVRack</a> module</td>
+<td align="left"><a href="https://rnbo.cycling74.com/explore/vcv-rack-starter">RNBO adapter</a></td>
+<td align="left">Create a module for this popular free virtual modular synthesizer software</td>
+</tr>
+<tr>
+<td align="left"><a href="https://vcvrack.com">VCVRack</a> module</td>
+<td align="left"><a href="https://github.com/isabelgk/gen-rack">gen~ adapter</a></td>
+<td align="left">Create a module for this popular free virtual modular synthesizer software</td>
+</tr>
+<tr>
+<td align="left"><a href="https://supercollider.github.io">Supercollider</a></td>
+<td align="left"><a href="https://rnbo.cycling74.com/explore/supercollider-ugen">RNBO starter</a></td>
+<td align="left">Create a unit generator (UGen) for this advanced audio programming language</td>
+</tr>
+<tr>
+<td align="left">Unreal plugin</td>
+<td align="left"><a href="https://github.com/Cycling74/RNBOMetasound">RNBO adapter</a></td>
+<td align="left">Create a &quot;Metasound&quot; plugin for the Unreal game engine</td>
+</tr>
+<tr>
+<td align="left">Unity plugin</td>
+<td align="left"><a href="https://github.com/Cycling74/rnbo.unity.audioplugin">RNBO adapter</a></td>
+<td align="left">Create a plugin for the Unity game engine</td>
+</tr>
+<tr>
+<td align="left">Daisy hardware</td>
+<td align="left"><a href="https://github.com/electro-smith/oopsy">Oopsy</a></td>
+<td align="left">The <a href="https://electro-smith.com/collections/daisy">Daisy</a> is a small Arduino-like microcontroller with high-fidelity audio support; it is now used inside many commercial (mostly independent) hardware devices (<strong>guitar pedals, Eurorack modules, desktop synthesizers</strong>) as well as lots of custom <strong>breadboard-style</strong> community projects for instruments and installations etc. Oopsy is a free/open source tool that makes it really easy to export gen~ patches to Daisy hardware. We have some Daisy-bsaed hardware available to use from the Alice Lab. See <a href="https://www.youtube.com/watch?v=fbd1CASqUmI">https://www.youtube.com/watch?v=fbd1CASqUmI</a></td>
+</tr>
+<tr>
+<td align="left">Raspberry Pi</td>
+<td align="left"><a href="https://rnbo.cycling74.com/learn/raspberry-pi-target-overview">RNBO</a></td>
+<td align="left">For custom <strong>sensor-based instruments, interactive installations, etc.</strong> Includes full support for USB Audio devices, MIDI, OSC, etc.</td>
+</tr>
+<tr>
+<td align="left">C++ code</td>
+<td align="left"><a href="https://rnbo.cycling74.com/learn/the-cpp-source-code-target-introduction">RNBO</a></td>
+<td align="left">To embed in a custom C++ based application. It&#39;s up to you how to connect this with your other C++ code, but you could start from <a href="https://rnbo.cycling74.com/explore/c-plugin-application-template">this RNBO/JUCE template</a></td>
+</tr>
+<tr>
+<td align="left">C++ code</td>
+<td align="left"><a href="https://docs.cycling74.com/max8/refpages/gen~#exportcode">gen~</a></td>
+<td align="left">Just send the <code>exportcode</code> message to a <code>gen~</code> object, and it will output some C++. It&#39;s up to you how to connect this with your other C++ code.</td>
+</tr>
+</tbody></table>
+<p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-12-final-presentations">Week 12: Final Presentations</h1>
 <p>Nov 27</p>
