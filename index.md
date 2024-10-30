@@ -1133,7 +1133,7 @@ With AM and RM, the new sidebands are the *sum* and *difference* of the two inpu
 
 To do that, first let's break apart the `cycle` operator into its subcomponents: `phasor -> * twopi -> sin`. Now we can modulate the oscillator in two different ways: we could modulate the frequency of the `phasor` to get **Frequency Modulation** (FM), or we could modulate the *phase* going into the `sin`, which is called **Phase Modulation** (PM). The amount of modulation we apply is scaled by a multiplier called the **modulation index** -- often driven by an envelope. See **FMPM.maxpat**. With simple sines in this way they sound the same, but as we make things more complex they diverge. 
 
-https://www.desmos.com/calculator/np3jcgobxa
+https://www.desmos.com/calculator/vif8m29jsg
 
 Look at the spectroscope~ now, and you'll see a cascade of new sidebands. The higher the modulation index, the more of these sidebands appear. The main oscillator (the carrier) is still present, but there are additional frequences above and below, spaced by the frequency of the modulator oscillator. 
 
