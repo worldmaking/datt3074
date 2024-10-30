@@ -90,7 +90,10 @@ function copyPatch(str) {
 </ul>
 </li>
 <li><a href="#week-8-frequent-modulations">Week 8: Frequent Modulations</a></li>
-<li><a href="#week-9-navigating-waves-of-data">Week 9: Navigating Waves of Data</a></li>
+<li><a href="#week-9-navigating-waves-of-data">Week 9: Navigating Waves of Data</a><ul>
+<li><a href="#final-project">Final Project</a></li>
+</ul>
+</li>
 <li><a href="#week-10-windows-of-time">Week 10: Windows of Time</a></li>
 <li><a href="#week-11-exporting--embedding">Week 11: Exporting &amp; Embedding</a><ul>
 <li><a href="#export-targets">Export targets</a></li>
@@ -1178,6 +1181,9 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 <hr>
 <h1 id="week-8-frequent-modulations">Week 8: Frequent Modulations</h1>
 <p>Oct 30 </p>
+<hr>
+<p><strong>Thinking ahead about <a href="#final-project">final project</a></strong></p>
+<hr>
 <p>This chapter is all about modulating one oscillator by another. </p>
 <p>Many times we have seen multiplying a signal by some other constant to set its apparent loudness, or multiplying by an envelope to shape the loudness over time. Try multiplying an audible sine wave (e.g. <code>cycle 200</code>) by a low frequency oscillator (LFO, e.g. <code>cycle 2</code>). You might want to <code>scale -1 1 0 1</code> to get the LFO to be unipolar, just like an envelope. Now try raising the frequency of the LFO into audible rates, and listen to what happens. <br ><br >
                 <iframe src="https://www.desmos.com/calculator/fpraafrdzh  ?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
@@ -1211,6 +1217,32 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 <hr>
 <h1 id="week-9-navigating-waves-of-data">Week 9: Navigating Waves of Data</h1>
 <p>Nov 6</p>
+<h2 id="final-project">Final Project</h2>
+<p>Some requirements:</p>
+<ul>
+<li>Must use some kind of code export: see <a href="#export-targets">notes on export targets</a></li>
+<li>Must include some way to present or exhibit -- a performance with newly designed instruments, part of an existing installation, a web-page, a film, sounds for a video game, or it could be software, e.g. a packaged audio plugin. </li>
+<li>Can be individual or group</li>
+</ul>
+<p>You should have your proposed idea ready for next week! </p>
+<p>Some more detail on ideas:</p>
+<p>Perhaps a few of you want to design instruments and make a &quot;gen~ band&quot; (or &quot;gen~ ensemble&quot;) to perform together? </p>
+<ul>
+<li>You can use <a href="https://www.ableton.com/en/link/">Ableton Link</a> -- &quot;Link is a technology that keeps devices in time over a local network, so you can forget the hassle of setting up and focus on playing music.&quot;  You can install the Link package in Max just by searching for &quot;link&quot; in Max&#39;s Package Manager (<code>File -&gt; Show Package Manager</code>, search for &quot;Link&quot;, install) and once installed, you can create a <code>link.phasor~</code> object that will give you bar and beat phasor ramps you can route into gen~; and anyone on the same local network will be synced to the same tempo.  Link also works with Ableton Live of course, and also <a href="https://github.com/stellare-modular/vcv-link">VCVRack</a>, <a href="https://doc.sccode.org/Classes/LinkClock.html">SuperCollider</a>, tons of Android and iOS apps, TouchDesigner, TidalCycles, and lots of other interesting software, and also some hardware devices too -- see <a href="https://www.ableton.com/en/link/products/">list here</a>. </li>
+<li>Think about how the performance you can showcase your patch</li>
+<li>You&#39;ll need to develop quickly, so that you have time to practice together! </li>
+</ul>
+<p>Web-based data sonification:</p>
+<ul>
+<li>Find an online free data source. Ideally something that changes hourly or daily (e.g. weather/climate/transport etc. data), but if not it can be static data that you move through gradually (e.g. a random walk over openstreetmap data). </li>
+<li>Use this dataset to derive changing control signals for your patch</li>
+<li>Export this as a web page that visualizes and sonifies the data</li>
+</ul>
+<p>Sounds for a project in another course</p>
+<ul>
+<li>E.g. if you are making a game, or website, Max project, or some other project in another course, you can create sounds for this project as your work for DATT3074. </li>
+</ul>
+<p>Or something else -- tell me your ideas! </p>
 <p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-10-windows-of-time">Week 10: Windows of Time</h1>
@@ -1291,6 +1323,9 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 <td align="left">Just send the <code>exportcode</code> message to a <code>gen~</code> object, and it will output some C++. It&#39;s up to you how to connect this with your other C++ code.</td>
 </tr>
 </tbody></table>
+<p>Note that all of export targets will require extra work on your part to complete the project, and will require developing familiarity with the target itself. I strongly suggest taking the simplest possible examples through the export process to test them and get familiar with the process and any limitations before going any further. </p>
+<p>Some targets are dependent on having other software installed. Some require licenses -- we do have RNBO licenses on some machines in the lab, and you can also get a trial license of RNBO to use at home. We do not have Max4Live licenses, but you can get this as part of a 30-day trial of Ableton Suite. VCVRack and Supercollider are free to install. Unreal and Unity are also free to install. You may already have software that can load VST or AU audio plugins -- pretty much any audio editor, digital audio workstation, many video editors, etc. -- many of which are free. For hardware projects, we do have a couple of Daisy-based devices available in the Alice Lab that can be used, including a guitar-pedal and some Eurorack modules, as well as bare Daisy Seed for breadboarding. </p>
+<p><strong>This means you will need to budget your development &amp; testing time carefully around any access limitations!</strong></p>
 <p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-12-final-presentations">Week 12: Final Presentations</h1>

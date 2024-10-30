@@ -1114,12 +1114,16 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 -----------end_max5_patcher-----------
 </code></pre>
 
-
-
 [Back to top](#top)
 
 # Week 8: Frequent Modulations
 Oct 30 
+
+---
+
+**Thinking ahead about [final project](#final-project)**
+
+---
 
 This chapter is all about modulating one oscillator by another. 
 
@@ -1181,6 +1185,39 @@ You may have noticed that FM and PM often produces complex inharmonic "clangorou
 # Week 9: Navigating Waves of Data
 Nov 6
 
+## Final Project
+
+
+
+Some requirements:
+- Must use some kind of code export: see [notes on export targets](#export-targets)
+- Must include some way to present or exhibit -- a performance with newly designed instruments, part of an existing installation, a web-page, a film, sounds for a video game, or it could be software, e.g. a packaged audio plugin. 
+- Can be individual or group
+
+You should have your proposed idea ready for next week! 
+
+Some more detail on ideas:
+
+Perhaps a few of you want to design instruments and make a "gen~ band" (or "gen~ ensemble") to perform together? 
+- You can use [Ableton Link](https://www.ableton.com/en/link/) -- "Link is a technology that keeps devices in time over a local network, so you can forget the hassle of setting up and focus on playing music."  You can install the Link package in Max just by searching for "link" in Max's Package Manager (`File -> Show Package Manager`, search for "Link", install) and once installed, you can create a `link.phasor~` object that will give you bar and beat phasor ramps you can route into gen~; and anyone on the same local network will be synced to the same tempo.  Link also works with Ableton Live of course, and also [VCVRack](https://github.com/stellare-modular/vcv-link), [SuperCollider](https://doc.sccode.org/Classes/LinkClock.html), tons of Android and iOS apps, TouchDesigner, TidalCycles, and lots of other interesting software, and also some hardware devices too -- see [list here](https://www.ableton.com/en/link/products/). 
+- Think about how the performance you can showcase your patch
+- You'll need to develop quickly, so that you have time to practice together! 
+
+
+Web-based data sonification:
+- Find an online free data source. Ideally something that changes hourly or daily (e.g. weather/climate/transport etc. data), but if not it can be static data that you move through gradually (e.g. a random walk over openstreetmap data). 
+- Use this dataset to derive changing control signals for your patch
+- Export this as a web page that visualizes and sonifies the data
+
+
+Sounds for a project in another course
+- E.g. if you are making a game, or website, Max project, or some other project in another course, you can create sounds for this project as your work for DATT3074. 
+
+
+Or something else -- tell me your ideas! 
+
+
+
 [Back to top](#top)
 
 # Week 10: Windows of Time
@@ -1211,6 +1248,12 @@ It has always been possible to export C++ code from a gen~ patch just by sending
 | Raspberry Pi | [RNBO](https://rnbo.cycling74.com/learn/raspberry-pi-target-overview) | For custom **sensor-based instruments, interactive installations, etc.** Includes full support for USB Audio devices, MIDI, OSC, etc. |
 | C++ code | [RNBO](https://rnbo.cycling74.com/learn/the-cpp-source-code-target-introduction) | To embed in a custom C++ based application. It's up to you how to connect this with your other C++ code, but you could start from [this RNBO/JUCE template](https://rnbo.cycling74.com/explore/c-plugin-application-template) |
 | C++ code | [gen~](https://docs.cycling74.com/max8/refpages/gen~#exportcode) | Just send the `exportcode` message to a `gen~` object, and it will output some C++. It's up to you how to connect this with your other C++ code. | 
+
+Note that all of export targets will require extra work on your part to complete the project, and will require developing familiarity with the target itself. I strongly suggest taking the simplest possible examples through the export process to test them and get familiar with the process and any limitations before going any further. 
+
+Some targets are dependent on having other software installed. Some require licenses -- we do have RNBO licenses on some machines in the lab, and you can also get a trial license of RNBO to use at home. We do not have Max4Live licenses, but you can get this as part of a 30-day trial of Ableton Suite. VCVRack and Supercollider are free to install. Unreal and Unity are also free to install. You may already have software that can load VST or AU audio plugins -- pretty much any audio editor, digital audio workstation, many video editors, etc. -- many of which are free. For hardware projects, we do have a couple of Daisy-based devices available in the Alice Lab that can be used, including a guitar-pedal and some Eurorack modules, as well as bare Daisy Seed for breadboarding. 
+
+**This means you will need to budget your development & testing time carefully around any access limitations!**
 
 [Back to top](#top)
 
