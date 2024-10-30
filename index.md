@@ -1255,6 +1255,10 @@ Some targets are dependent on having other software installed. Some require lice
 
 **This means you will need to budget your development & testing time carefully around any access limitations!**
 
+Here's Oopsy:
+
+https://www.youtube.com/watch?v=fbd1CASqUmI
+
 [Back to top](#top)
 
 # Week 12: Final Presentations
