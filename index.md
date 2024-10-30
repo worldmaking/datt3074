@@ -1025,6 +1025,8 @@ Comments:
 - Add a comment to name your radio station
 - Also add comments to explain which example patches you chose to work with, and why. Explain how you changed them. Explain why you chose to map the various inputs (beat, bar, seconds, minutes, hour, day, month) to them. Explain what modifcations and additions you made and why. 
 
+[Here's a quick example radio station, based on a couple of patches we have already looked at](radio/index.html)
+
 **Assignment 3 is due on Nov 10.**  - [Submit the Max patch via this form here](https://docs.google.com/forms/d/e/1FAIpQLSdppThQmusV_H8CMImkfzv3hDxIpZdkO-ugrwwquF1_9hyW0Q/viewform?usp=sf_link)
 
 Here's the assignment 3 template patch:
