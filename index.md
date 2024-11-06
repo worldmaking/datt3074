@@ -1241,7 +1241,7 @@ https://www.desmos.com/calculator/eqbpsq9mba
 
 And here's why it happens for playback of discretized sample data at different rates:
 
-https://www.desmos.com/calculator/mlbuivohmb
+https://www.desmos.com/calculator/zt0hvfrxz3
 
 To fix this, we can use sinc interpolation and mipmapping.  
 
