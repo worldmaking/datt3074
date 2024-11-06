@@ -1239,38 +1239,21 @@ Here's one way of understanding why aliasing happens in general:
 
 https://www.desmos.com/calculator/eqbpsq9mba
 
-And here's why it happens for playback of discretized data:
+To reduce this aliasing, we can use sinc interpolation (blue) rather than linear interpolation (red).  
 
+https://www.desmos.com/calculator/mzxif1hrjg
 
-To fix this, we can use sinc interpolation and mipmapping.  
-
-https://www.desmos.com/calculator/b4qppdss0x
-
-This is quite a deep topic and you should refer to the textbook for full details. See **wavetable_sincmipmap_sample.maxpat** for a simple example of a single sawtooth waveform, and **wavetable_1D_sincmipmap.maxpat** shows an example for a morphing wavetable. 
-
-![mipmap](https://upload.wikimedia.org/wikipedia/commons/5/59/Mipmap_Aliasing_Comparison.png)
-https://www.desmos.com/calculator/jbsqdms0lf
-
-
-Here's one way of understanding why aliasing happens in general:
-
-https://www.desmos.com/calculator/eqbpsq9mba
-
-And here's why it happens for playback of discretized sample data at different rates:
+But aliasing can still happen for playback of discretized sample data at different rates:
 
 https://www.desmos.com/calculator/di42b6wkma
 
-To fix the aliasing, we can use sinc interpolation.  
-
-https://www.desmos.com/calculator/mlbuivohmb
-
-To handle the case when the buffer contains too much data to represent, we can use mipmapping. 
+To handle the case when the buffer contains too much data to represent, we can use mipmapping: 
 
 ![mipmap](https://upload.wikimedia.org/wikipedia/commons/5/59/Mipmap_Aliasing_Comparison.png)
 
-https://www.desmos.com/calculator/b4qppdss0x
+This means reapeatedly decimating the data in powers of two -- but we can achieve the same result just by quantizing our buffer lookup accordingly:
 
-https://www.desmos.com/calculator/jbsqdms0lf
+https://www.desmos.com/calculator/nvtliafeln
 
 This is quite a deep topic and you should refer to the textbook for full details. See **wavetable_sincmipmap_sample.maxpat** for a simple example of a single sawtooth waveform, and **wavetable_1D_sincmipmap.maxpat** shows an example for a morphing wavetable. 
 

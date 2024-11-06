@@ -1,20 +1,35 @@
-async function setup() {
-    const patchExportURL = "export/patch.export.json";
+let outputNode;
+let device;
 
-    // Create AudioContext
-    const WAContext = window.AudioContext || window.webkitAudioContext;
-    const context = new WAContext();
+async function setupDevice(path) {
+    const patchExportURL = `${path}/patch.export.json`;
+    const dependencyURL = `${path}/dependencies.json`;
 
-    // Create gain node and connect it to audio output
-    const outputNode = context.createGain();
-    outputNode.connect(context.destination);
+    if (!outputNode) {
+        // Skip if you're not using guardrails.js
+        if (typeof guardrails === "function") guardrails();
+        
+        // Create AudioContext
+        const WAContext = window.AudioContext || window.webkitAudioContext;
+        const context = new WAContext();
+        document.body.onclick = () => {
+            context.resume();
+        }
+
+        // Create gain node and connect it to audio output
+        outputNode = context.createGain();
+        outputNode.connect(context.destination);
+    }
+
+    if (device) {
+        device.disconnect(outputNode);
+    }
     
     // Fetch the exported patcher
     let response, patcher;
     try {
         response = await fetch(patchExportURL);
         patcher = await response.json();
-    
         if (!window.RNBO) {
             // Load RNBO script dynamically
             // Note that you can skip this by knowing the RNBO version of your patch
@@ -44,11 +59,11 @@ async function setup() {
     // (Optional) Fetch the dependencies
     let dependencies = [];
     try {
-        const dependenciesResponse = await fetch("export/dependencies.json");
+        const dependenciesResponse = await fetch(dependencyURL);
         dependencies = await dependenciesResponse.json();
 
         // Prepend "export" to any file dependenciies
-        dependencies = dependencies.map(d => d.file ? Object.assign({}, d, { file: "export/" + d.file }) : d);
+        dependencies = dependencies.map(d => d.file ? Object.assign({}, d, { file: path + d.file }) : d);
     } catch (e) {}
 
     // Create the device
@@ -71,71 +86,6 @@ async function setup() {
     // Connect the device to the web audio graph
     device.node.connect(outputNode);
 
-    // // (Optional) Extract the name and rnbo version of the patcher from the description
-    // document.getElementById("patcher-title").innerText = (patcher.desc.meta.filename || "Unnamed Patcher") + " (v" + patcher.desc.meta.rnboversion + ")";
-
-    // (Optional) Automatically create sliders for the device parameters
-    //makeSliders(device);
-
-    // // (Optional) Create a form to send messages to RNBO inputs
-    // makeInportForm(device);
-
-    // // (Optional) Attach listeners to outports so you can log messages from the RNBO patcher
-    // attachOutports(device);
-
-    // // (Optional) Load presets, if any
-    // loadPresets(device, patcher);
-
-    // // (Optional) Connect MIDI inputs
-    // makeMIDIKeyboard(device);
-
-    document.body.onclick = () => {
-        context.resume();
-    }
-
-    // Skip if you're not using guardrails.js
-    if (typeof guardrails === "function")
-        guardrails();
-
-	// Clock:
-	setInterval(()=>{
-
-		var currentdate = new Date();
-		// var datetime = "Last Sync: " + currentdate.getDay() + "/" + currentdate.getMonth() 
-		// + "/" + currentdate.getFullYear() + " @ " 
-		// + currentdate.getHours() + ":" 
-		// + currentdate.getMinutes() + ":" + currentdate.getSeconds();
-
-		document.getElementById("date").innerText = (currentdate.getDate()) + "/" + (currentdate.getMonth()+1)
-		+ "/" + currentdate.getFullYear() + " @ " 
-		+ currentdate.getHours() + ":" 
-		+ currentdate.getMinutes() + ":" + currentdate.getSeconds();
-
-		device.parameters.forEach(param => {
-			switch(param.name) {
-				case "CLOCK_RADIO/second": {
-					param.value = currentdate.getSeconds();
-					break;
-				}
-				case "CLOCK_RADIO/minute": {
-					param.value = currentdate.getMinutes();
-					break;
-				}
-				case "CLOCK_RADIO/hour": {
-					param.value = currentdate.getHours();
-					break;
-				}
-				case "CLOCK_RADIO/day": {
-					param.value = currentdate.getDate();
-					break;
-				}
-				case "CLOCK_RADIO/month": {
-					param.value = currentdate.getMonth();
-					break;
-				}
-			}
-		})
-	}, 1000)
 }
 
 function loadRNBOScript(version) {
@@ -154,226 +104,46 @@ function loadRNBOScript(version) {
     });
 }
 
-function makeSliders(device) {
-    let pdiv = document.getElementById("rnbo-parameter-sliders");
-    let noParamLabel = document.getElementById("no-param-label");
-    if (noParamLabel && device.numParameters > 0) pdiv.removeChild(noParamLabel);
+// Clock parameters:
+setInterval(()=>{
 
-    // This will allow us to ignore parameter update events while dragging the slider.
-    let isDraggingSlider = false;
-    let uiElements = {};
+    if (!device) return;
+
+    var currentdate = new Date();
+    // var datetime = "Last Sync: " + currentdate.getDay() + "/" + currentdate.getMonth() 
+    // + "/" + currentdate.getFullYear() + " @ " 
+    // + currentdate.getHours() + ":" 
+    // + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+
+    document.getElementById("date").innerText = (currentdate.getDate()) + "/" + (currentdate.getMonth()+1)
+    + "/" + currentdate.getFullYear() + " @ " 
+    + currentdate.getHours() + ":" 
+    + currentdate.getMinutes() + ":" + currentdate.getSeconds();
 
     device.parameters.forEach(param => {
-        // Subpatchers also have params. If we want to expose top-level
-        // params only, the best way to determine if a parameter is top level
-        // or not is to exclude parameters with a '/' in them.
-        // You can uncomment the following line if you don't want to include subpatcher params
-        
-        //if (param.id.includes("/")) return;
-
-        // Create a label, an input slider and a value display
-        let label = document.createElement("label");
-        let slider = document.createElement("input");
-        let text = document.createElement("input");
-        let sliderContainer = document.createElement("div");
-        sliderContainer.appendChild(label);
-        sliderContainer.appendChild(slider);
-        sliderContainer.appendChild(text);
-
-        // Add a name for the label
-        label.setAttribute("name", param.name);
-        label.setAttribute("for", param.name);
-        label.setAttribute("class", "param-label");
-        label.textContent = `${param.name}: `;
-
-        // Make each slider reflect its parameter
-        slider.setAttribute("type", "range");
-        slider.setAttribute("class", "param-slider");
-        slider.setAttribute("id", param.id);
-        slider.setAttribute("name", param.name);
-        slider.setAttribute("min", param.min);
-        slider.setAttribute("max", param.max);
-        if (param.steps > 1) {
-            slider.setAttribute("step", (param.max - param.min) / (param.steps - 1));
-        } else {
-            slider.setAttribute("step", (param.max - param.min) / 1000.0);
-        }
-        slider.setAttribute("value", param.value);
-
-        // Make a settable text input display for the value
-        text.setAttribute("value", param.value.toFixed(1));
-        text.setAttribute("type", "text");
-
-        // Make each slider control its parameter
-        slider.addEventListener("pointerdown", () => {
-            isDraggingSlider = true;
-        });
-        slider.addEventListener("pointerup", () => {
-            isDraggingSlider = false;
-            slider.value = param.value;
-            text.value = param.value.toFixed(1);
-        });
-        slider.addEventListener("input", () => {
-            let value = Number.parseFloat(slider.value);
-            param.value = value;
-        });
-
-        // Make the text box input control the parameter value as well
-        text.addEventListener("keydown", (ev) => {
-            if (ev.key === "Enter") {
-                let newValue = Number.parseFloat(text.value);
-                if (isNaN(newValue)) {
-                    text.value = param.value;
-                } else {
-                    newValue = Math.min(newValue, param.max);
-                    newValue = Math.max(newValue, param.min);
-                    text.value = newValue;
-                    param.value = newValue;
-                }
+        switch(param.name) {
+            case "CLOCK_RADIO/second": {
+                param.value = currentdate.getSeconds();
+                break;
             }
-        });
-
-        // Store the slider and text by name so we can access them later
-        uiElements[param.id] = { slider, text };
-
-        // Add the slider element
-        pdiv.appendChild(sliderContainer);
-    });
-
-    // Listen to parameter changes from the device
-    device.parameterChangeEvent.subscribe(param => {
-        if (!isDraggingSlider)
-            uiElements[param.id].slider.value = param.value;
-        uiElements[param.id].text.value = param.value.toFixed(1);
-    });
-}
-
-function makeInportForm(device) {
-    const idiv = document.getElementById("rnbo-inports");
-    const inportSelect = document.getElementById("inport-select");
-    const inportText = document.getElementById("inport-text");
-    const inportForm = document.getElementById("inport-form");
-    let inportTag = null;
-    
-    // Device messages correspond to inlets/outlets or inports/outports
-    // You can filter for one or the other using the "type" of the message
-    const messages = device.messages;
-    const inports = messages.filter(message => message.type === RNBO.MessagePortType.Inport);
-
-    if (inports.length === 0) {
-        idiv.removeChild(document.getElementById("inport-form"));
-        return;
-    } else {
-        idiv.removeChild(document.getElementById("no-inports-label"));
-        inports.forEach(inport => {
-            const option = document.createElement("option");
-            option.innerText = inport.tag;
-            inportSelect.appendChild(option);
-        });
-        inportSelect.onchange = () => inportTag = inportSelect.value;
-        inportTag = inportSelect.value;
-
-        inportForm.onsubmit = (ev) => {
-            // Do this or else the page will reload
-            ev.preventDefault();
-
-            // Turn the text into a list of numbers (RNBO messages must be numbers, not text)
-            const values = inportText.value.split(/\s+/).map(s => parseFloat(s));
-            
-            // Send the message event to the RNBO device
-            let messageEvent = new RNBO.MessageEvent(RNBO.TimeNow, inportTag, values);
-            device.scheduleEvent(messageEvent);
+            case "CLOCK_RADIO/minute": {
+                param.value = currentdate.getMinutes();
+                break;
+            }
+            case "CLOCK_RADIO/hour": {
+                param.value = currentdate.getHours();
+                break;
+            }
+            case "CLOCK_RADIO/day": {
+                param.value = currentdate.getDate();
+                break;
+            }
+            case "CLOCK_RADIO/month": {
+                param.value = currentdate.getMonth();
+                break;
+            }
         }
-    }
-}
+    })
+}, 1000)
 
-function attachOutports(device) {
-    const outports = device.outports;
-    if (outports.length < 1) {
-        document.getElementById("rnbo-console").removeChild(document.getElementById("rnbo-console-div"));
-        return;
-    }
-
-    document.getElementById("rnbo-console").removeChild(document.getElementById("no-outports-label"));
-    device.messageEvent.subscribe((ev) => {
-
-        // Ignore message events that don't belong to an outport
-        if (outports.findIndex(elt => elt.tag === ev.tag) < 0) return;
-
-        // Message events have a tag as well as a payload
-        console.log(`${ev.tag}: ${ev.payload}`);
-
-        document.getElementById("rnbo-console-readout").innerText = `${ev.tag}: ${ev.payload}`;
-    });
-}
-
-function loadPresets(device, patcher) {
-    let presets = patcher.presets || [];
-    if (presets.length < 1) {
-        document.getElementById("rnbo-presets").removeChild(document.getElementById("preset-select"));
-        return;
-    }
-
-    document.getElementById("rnbo-presets").removeChild(document.getElementById("no-presets-label"));
-    let presetSelect = document.getElementById("preset-select");
-    presets.forEach((preset, index) => {
-        const option = document.createElement("option");
-        option.innerText = preset.name;
-        option.value = index;
-        presetSelect.appendChild(option);
-    });
-    presetSelect.onchange = () => device.setPreset(presets[presetSelect.value].preset);
-}
-
-function makeMIDIKeyboard(device) {
-    let mdiv = document.getElementById("rnbo-clickable-keyboard");
-    if (device.numMIDIInputPorts === 0) return;
-
-    mdiv.removeChild(document.getElementById("no-midi-label"));
-
-    const midiNotes = [49, 52, 56, 63];
-    midiNotes.forEach(note => {
-        const key = document.createElement("div");
-        const label = document.createElement("p");
-        label.textContent = note;
-        key.appendChild(label);
-        key.addEventListener("pointerdown", () => {
-            let midiChannel = 0;
-
-            // Format a MIDI message paylaod, this constructs a MIDI on event
-            let noteOnMessage = [
-                144 + midiChannel, // Code for a note on: 10010000 & midi channel (0-15)
-                note, // MIDI Note
-                100 // MIDI Velocity
-            ];
-        
-            let noteOffMessage = [
-                128 + midiChannel, // Code for a note off: 10000000 & midi channel (0-15)
-                note, // MIDI Note
-                0 // MIDI Velocity
-            ];
-        
-            // Including rnbo.min.js (or the unminified rnbo.js) will add the RNBO object
-            // to the global namespace. This includes the TimeNow constant as well as
-            // the MIDIEvent constructor.
-            let midiPort = 0;
-            let noteDurationMs = 250;
-        
-            // When scheduling an event to occur in the future, use the current audio context time
-            // multiplied by 1000 (converting seconds to milliseconds) for now.
-            let noteOnEvent = new RNBO.MIDIEvent(device.context.currentTime * 1000, midiPort, noteOnMessage);
-            let noteOffEvent = new RNBO.MIDIEvent(device.context.currentTime * 1000 + noteDurationMs, midiPort, noteOffMessage);
-        
-            device.scheduleEvent(noteOnEvent);
-            device.scheduleEvent(noteOffEvent);
-
-            key.classList.add("clicked");
-        });
-
-        key.addEventListener("pointerup", () => key.classList.remove("clicked"));
-
-        mdiv.appendChild(key);
-    });
-}
-
-setup();
+setupDevice("export")

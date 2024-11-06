@@ -1261,13 +1261,15 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 <p>Let&#39;s look at the wavetable oscillators again. So far our wavetable operators are using linear interpolation to smoothly estimate the values between samples. That&#39;s a lot better than no interpolation at all, but it is far from perfect. If you start using rich harmonic waveforms like sawtooth shapes, and place them under extreme modulations, you will probably start to hear digital aliasing. </p>
 <p>Here&#39;s one way of understanding why aliasing happens in general:<br ><br >
                 <iframe src="https://www.desmos.com/calculator/eqbpsq9mba?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
-<p>And here&#39;s why it happens for playback of discretized sample data at different rates:<br ><br >
-                <iframe src="https://www.desmos.com/calculator/zt0hvfrxz3?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
-<p>To fix this, we can use sinc interpolation and mipmapping.  <br ><br >
-                <iframe src="https://www.desmos.com/calculator/b4qppdss0x?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
+<p>To reduce this aliasing, we can use sinc interpolation (blue) rather than linear interpolation (red).  <br ><br >
+                <iframe src="https://www.desmos.com/calculator/mzxif1hrjg?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
+<p>But aliasing can still happen for playback of discretized sample data at different rates:<br ><br >
+                <iframe src="https://www.desmos.com/calculator/di42b6wkma?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
+<p>To handle the case when the buffer contains too much data to represent, we can use mipmapping: </p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Mipmap_Aliasing_Comparison.png" alt="mipmap"></p>
+<p>This means reapeatedly decimating the data in powers of two -- but we can achieve the same result just by quantizing our buffer lookup accordingly:<br ><br >
+                <iframe src="https://www.desmos.com/calculator/nvtliafeln?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
 <p>This is quite a deep topic and you should refer to the textbook for full details. See <strong>wavetable_sincmipmap_sample.maxpat</strong> for a simple example of a single sawtooth waveform, and <strong>wavetable_1D_sincmipmap.maxpat</strong> shows an example for a morphing wavetable. </p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Mipmap_Aliasing_Comparison.png" alt="mipmap"><br ><br >
-                <iframe src="https://www.desmos.com/calculator/jbsqdms0lf?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
 <h2 id="final-project">Final Project</h2>
 <p>Some requirements:</p>
 <ul>
