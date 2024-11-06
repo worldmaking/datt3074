@@ -1119,6 +1119,8 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 # Week 8: Frequent Modulations
 Oct 30 
 
+[Zoom Recording](#zoom-recordings)
+
 ---
 
 **Thinking ahead about [final project](#final-project)**
@@ -1186,6 +1188,8 @@ You may have noticed that FM and PM often produces complex inharmonic "clangorou
 
 # Week 9: Navigating Waves of Data
 Nov 6
+
+[Zoom Recording](#zoom-recordings)
 
 - Final project discussions
 
@@ -1294,10 +1298,14 @@ Or something else -- tell me your ideas!
 # Week 10: Windows of Time
 Nov 13
 
+[Zoom Recording](#zoom-recordings)
+
 [Back to top](#top)
 
 # Week 11: Exporting & Embedding
 Nov 20
+
+[Zoom Recording](#zoom-recordings)
 
 ## Export targets
 
@@ -1335,6 +1343,8 @@ Here's Oopsy:
 # Week 12: Final Presentations
 Nov 27
 
+[Zoom Recording](#zoom-recordings)
+
 **Final meeting**
 
 # Zoom Recordings
@@ -1348,6 +1358,7 @@ Nov 27
 - [Week 5 Zoom recording 2 - filters, lines, slews, more filters](https://yorku.zoom.us/rec/share/i59rxlt_NoYpDxxoQGfmQPdsBREseAF4UuGiONZbUbpEVLax8A7UiJ9OPD8moqXy.dhqkOLQaIpN2-jQR)
 - [Week 6 Zoom recording - delay effects](https://yorku.zoom.us/rec/share/zzaFDAYbv7VFpi641qbFF2xhVpTqhHTJU6JX9ivVI-4346Tca9UPm36zS4w5SSLv.12-v5HytdmCvgxlo)
 - [Week 7 Zoom recording - frequent modulations 1](https://yorku.zoom.us/rec/share/NcKhkz2hqEuPfgNeidRFCWjEg_XtTYNeWrLSeAajHI-tmRTv1C4EvCkZHUQb2ZJu.R2756ONcU45ty3Cl)
+-  [Week 8 Zoom recording - frequent modulations 2]()
 
 -----
 
