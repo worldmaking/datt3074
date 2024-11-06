@@ -1241,6 +1241,8 @@ This is quite a deep topic and you should refer to the textbook for full details
 
 https://www.desmos.com/calculator/jbsqdms0lf
 
+![mipmap](https://upload.wikimedia.org/wikipedia/commons/5/59/Mipmap_Aliasing_Comparison.png)
+
 
 
 ## Final Project
