@@ -1192,6 +1192,7 @@ Nov 6
 [Zoom Recording](#zoom-recordings)
 
 - Final project discussions
+  - [Project Ideas Doc](https://docs.google.com/document/d/1xBaPt7R7XKsno1gr0GTEcA5vDRDkDHNyNZeU9xOIoGY/edit?usp=sharing)
 
 - Radio discussions
 
@@ -1358,7 +1359,7 @@ Nov 27
 - [Week 5 Zoom recording 2 - filters, lines, slews, more filters](https://yorku.zoom.us/rec/share/i59rxlt_NoYpDxxoQGfmQPdsBREseAF4UuGiONZbUbpEVLax8A7UiJ9OPD8moqXy.dhqkOLQaIpN2-jQR)
 - [Week 6 Zoom recording - delay effects](https://yorku.zoom.us/rec/share/zzaFDAYbv7VFpi641qbFF2xhVpTqhHTJU6JX9ivVI-4346Tca9UPm36zS4w5SSLv.12-v5HytdmCvgxlo)
 - [Week 7 Zoom recording - frequent modulations 1](https://yorku.zoom.us/rec/share/NcKhkz2hqEuPfgNeidRFCWjEg_XtTYNeWrLSeAajHI-tmRTv1C4EvCkZHUQb2ZJu.R2756ONcU45ty3Cl)
--  [Week 8 Zoom recording - frequent modulations 2]()
+-  [Week 8 Zoom recording - frequent modulations 2](https://yorku.zoom.us/rec/share/JbhqKvgQSunZmXES36cWoPhb-Xbg2HnrLvvIDH24KGVt31oTPC8AMDAuiiUjLKbG.cV3jn3RI6ULzVk1v)
 
 -----
 

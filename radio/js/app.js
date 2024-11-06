@@ -1,5 +1,6 @@
 let outputNode;
 let device;
+let context
 
 async function setupDevice(path) {
     const patchExportURL = `${path}/patch.export.json`;
@@ -11,7 +12,7 @@ async function setupDevice(path) {
         
         // Create AudioContext
         const WAContext = window.AudioContext || window.webkitAudioContext;
-        const context = new WAContext();
+        context = new WAContext();
         document.body.onclick = () => {
             context.resume();
         }
@@ -21,7 +22,7 @@ async function setupDevice(path) {
         outputNode.connect(context.destination);
     }
 
-    if (device) {
+    if (device != null) {
         device.disconnect(outputNode);
     }
     
@@ -67,7 +68,6 @@ async function setupDevice(path) {
     } catch (e) {}
 
     // Create the device
-    let device;
     try {
         device = await RNBO.createDevice({ context, patcher });
     } catch (err) {
