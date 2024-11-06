@@ -1260,8 +1260,6 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 <p>The math here is really open-ended. One interesting example is an algorithm to generate a variety of <strong>polygonal</strong> orbits. See <strong>polygonal.maxpat</strong>. </p>
 <p>Note that all of these oscillators could be inserted into any of the FM/PM algorithms we enountered before.</p>
 <p>Let&#39;s look at the wavetable oscillators again. So far our wavetable operators are using linear interpolation to smoothly estimate the values between samples. That&#39;s a lot better than no interpolation at all, but it is far from perfect. If you start using rich harmonic waveforms like sawtooth shapes, and place them under extreme modulations, you will probably start to hear digital aliasing. </p>
-<p>Here&#39;s one way of understanding why aliasing happens in general:<br ><br >
-                <iframe src="https://www.desmos.com/calculator/eqbpsq9mba?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
 <p>To reduce this aliasing, we can use sinc interpolation (blue) rather than linear interpolation (red).  <br ><br >
                 <iframe src="https://www.desmos.com/calculator/mzxif1hrjg?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
 <p>But aliasing can still happen for playback of discretized sample data at different rates:<br ><br >

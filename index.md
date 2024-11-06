@@ -1237,10 +1237,6 @@ Note that all of these oscillators could be inserted into any of the FM/PM algor
 
 Let's look at the wavetable oscillators again. So far our wavetable operators are using linear interpolation to smoothly estimate the values between samples. That's a lot better than no interpolation at all, but it is far from perfect. If you start using rich harmonic waveforms like sawtooth shapes, and place them under extreme modulations, you will probably start to hear digital aliasing. 
 
-Here's one way of understanding why aliasing happens in general:
-
-https://www.desmos.com/calculator/eqbpsq9mba
-
 To reduce this aliasing, we can use sinc interpolation (blue) rather than linear interpolation (red).  
 
 https://www.desmos.com/calculator/mzxif1hrjg
