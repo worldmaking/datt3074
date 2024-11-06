@@ -1220,6 +1220,8 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 <ul>
 <li><p>Final project discussions</p>
 </li>
+<li><p>Radio discussions</p>
+</li>
 <li><p>SynthUX Hackathon -- do you want to help organize one at York University?</p>
 <ul>
 <li><a href="https://www.synthux.academy/synthux-hackathon?enchmail=Z3JycndhYWFAZ21haWwuY29t&amp;utm_source=encharge&amp;utm_medium=email&amp;utm_campaign=Synthux+Hackathon+2025+and+2024+gallery%21&amp;utm_content=Join+Synthux+Hackathon+2025">2024 gallery</a></li>
@@ -1255,13 +1257,14 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 <p>To generate terrains we&#39;ll need to dig into a <code>codebox</code> for nested for loops -- one loop for X and another for Y. See <strong>waveterrain_generate_codebox.maxpat</strong>. Or, we can make use of Jitter matrices to generate terrains, see <strong>waveterrain_generate_BFG.maxpat</strong>. </p>
 <p>A lot of the interest in wave terrains is in the orbit design. You may notice that a wider radius tends to create a brighter sound, as it takes in more data points over time. We can build more complex orbits using multiple <code>poltocar</code> operators, and apply different operations to deal with X and Y values that may go out of range, such as <code>fold</code>, <code>wrap</code>, <code>clip</code> or <code>tanh</code> (or other sigmoids). See <strong>wavetable_2D_carom.maxpat</strong>.  </p>
 <p>The math here is really open-ended. One interesting example is an algorithm to generate a variety of <strong>polygonal</strong> orbits. See <strong>polygonal.maxpat</strong>. </p>
-<p>Note that all of these oscillators could be inserted into any of the FM/PM algorithms we enountered before.<br ><br >
+<p>Note that all of these oscillators could be inserted into any of the FM/PM algorithms we enountered before.</p>
+<p>Let&#39;s look at the wavetable oscillators again. So far our wavetable operators are using linear interpolation to smoothly estimate the values between samples. That&#39;s a lot better than no interpolation at all, but it is far from perfect. If you start using rich harmonic waveforms like sawtooth shapes, and place them under extreme modulations, you will probably start to hear digital aliasing. <br ><br >
                 <iframe src="https://www.desmos.com/calculator/pf1fncttey?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
-<p>Let&#39;s look at the wavetable oscillators again. So far our wavetable operators are using linear interpolation to smoothly estimate the values between samples. That&#39;s a lot better than no interpolation at all, but it is far from perfect. If you start using rich harmonic waveforms like sawtooth shapes, and place them under extreme modulations, you will probably start to hear digital aliasing. To fix this, we can use sinc interpolation and mipmapping.  <br ><br >
+<p>To fix this, we can use sinc interpolation and mipmapping.  <br ><br >
                 <iframe src="https://www.desmos.com/calculator/ifvveaclzy?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
-<p>This is quite a deep topic and you should refer to the textbook for full details. See <strong>wavetable_sincmipmap_sample.maxpat</strong> for a simple example of a single sawtooth waveform, and <strong>wavetable_1D_sincmipmap.maxpat</strong> shows an example for a morphing wavetable. <br ><br >
+<p>This is quite a deep topic and you should refer to the textbook for full details. See <strong>wavetable_sincmipmap_sample.maxpat</strong> for a simple example of a single sawtooth waveform, and <strong>wavetable_1D_sincmipmap.maxpat</strong> shows an example for a morphing wavetable. </p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Mipmap_Aliasing_Comparison.png" alt="mipmap"><br ><br >
                 <iframe src="https://www.desmos.com/calculator/jbsqdms0lf?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Mipmap_Aliasing_Comparison.png" alt="mipmap"></p>
 <h2 id="final-project">Final Project</h2>
 <p>Some requirements:</p>
 <ul>

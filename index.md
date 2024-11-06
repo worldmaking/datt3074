@@ -1187,6 +1187,8 @@ Nov 6
 
 - Final project discussions
 
+- Radio discussions
+
 - SynthUX Hackathon -- do you want to help organize one at York University?
   - [2024 gallery](https://www.synthux.academy/synthux-hackathon?enchmail=Z3JycndhYWFAZ21haWwuY29t&utm_source=encharge&utm_medium=email&utm_campaign=Synthux+Hackathon+2025+and+2024+gallery%21&utm_content=Join+Synthux+Hackathon+2025)
   - [2023 playlist](https://www.youtube.com/watch?v=c4VkFAqvXvM&list=PLZbxc8QYjD1cAIv1CcilXVWVpZyj_NY_n)
@@ -1231,17 +1233,19 @@ The math here is really open-ended. One interesting example is an algorithm to g
 
 Note that all of these oscillators could be inserted into any of the FM/PM algorithms we enountered before.
 
+Let's look at the wavetable oscillators again. So far our wavetable operators are using linear interpolation to smoothly estimate the values between samples. That's a lot better than no interpolation at all, but it is far from perfect. If you start using rich harmonic waveforms like sawtooth shapes, and place them under extreme modulations, you will probably start to hear digital aliasing. 
+
 https://www.desmos.com/calculator/pf1fncttey
 
-Let's look at the wavetable oscillators again. So far our wavetable operators are using linear interpolation to smoothly estimate the values between samples. That's a lot better than no interpolation at all, but it is far from perfect. If you start using rich harmonic waveforms like sawtooth shapes, and place them under extreme modulations, you will probably start to hear digital aliasing. To fix this, we can use sinc interpolation and mipmapping.  
+To fix this, we can use sinc interpolation and mipmapping.  
 
 https://www.desmos.com/calculator/ifvveaclzy
 
 This is quite a deep topic and you should refer to the textbook for full details. See **wavetable_sincmipmap_sample.maxpat** for a simple example of a single sawtooth waveform, and **wavetable_1D_sincmipmap.maxpat** shows an example for a morphing wavetable. 
 
+![mipmap](https://upload.wikimedia.org/wikipedia/commons/5/59/Mipmap_Aliasing_Comparison.png)
 https://www.desmos.com/calculator/jbsqdms0lf
 
-![mipmap](https://upload.wikimedia.org/wikipedia/commons/5/59/Mipmap_Aliasing_Comparison.png)
 
 
 
