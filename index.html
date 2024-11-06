@@ -1217,6 +1217,50 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 <hr>
 <h1 id="week-9-navigating-waves-of-data">Week 9: Navigating Waves of Data</h1>
 <p>Nov 6</p>
+<ul>
+<li><p>Final project discussions</p>
+</li>
+<li><p>SynthUX Hackathon -- do you want to help organize one at York University?</p>
+<ul>
+<li><a href="https://www.synthux.academy/synthux-hackathon?enchmail=Z3JycndhYWFAZ21haWwuY29t&amp;utm_source=encharge&amp;utm_medium=email&amp;utm_campaign=Synthux+Hackathon+2025+and+2024+gallery%21&amp;utm_content=Join+Synthux+Hackathon+2025">2024 gallery</a></li>
+<li><a href="https://www.youtube.com/watch?v=c4VkFAqvXvM&amp;list=PLZbxc8QYjD1cAIv1CcilXVWVpZyj_NY_n">2023 playlist</a></li>
+</ul>
+</li>
+<li><p>Longer-term projects -- do you want to do things in the Alice Lab?</p>
+</li>
+<li><p>Continuing from last week, from PM feedback onward. </p>
+</li>
+</ul>
+<hr>
+<p><strong>Navigating Waves of Data (Chapter 9)</strong></p>
+<p>Back in chapter 2 we saw how to play a buffer~ with the <code>sample</code> operator, using linear interpolation to estimate the values between samples. Remember, linear interpolation is just like a <code>mix</code> crossfade. </p>
+<p>When the phasor playing a buffer is an audible frequency, this dominates the apparent pitch, while the buffer content determines the waveform and timbre of the sound.  This seems incredibly flexible, but the buffer data is static. </p>
+<p>To work around this, many synthesizers packed multiple waveforms into a single buffer, so you can select different subsections at any time. This is a <strong>wavetable</strong>. </p>
+<p>In gen~ we can use the <code>wave</code> operator to jump around different parts of a wavetable. See <strong>wavetable_1D.maxpat</strong> and the <code>building</code> subpatchers. We just have to be careful to pick the right subsets. For example, if a buffer contains 64 waveforms (like <strong>wavetable64.wav</strong> does), then the length of each waveform is <code>dim(tables) / 64</code>. The <code>wave</code> start index must be an integer multiple of this length, and the <code>wave</code> end point should be the next integer multiple.  It&#39;s important to understand this -- we&#39;ll end up expanding this idea into 2D and 3D sets of waveforms later! </p>
+<p>To smoothly morph between two adjacent waveforms, we can use two <code>wave</code> players and <code>mix</code> between them. E.g. If the wave selection value is 3.4, then we mix 60% of wave 3, and 40% of wave 4. </p>
+<p>These ideas extend to 2D: </p>
+<ul>
+<li>64 waveforms are imagined to be in an 8x8 grid. </li>
+<li>We have 2 indices, X and Y, ranging from 0 to 7 (<code>wrap 0 N</code>).  The sample index is then &quot;len&quot; * X * (Y*8). </li>
+<li>We can also morph between adjacent waveforms, but now we need four <code>wave</code> operators and bilinear interpolation -- which means two <code>mix</code> operators for each X pair into another <code>mix</code> for the Y. </li>
+<li>See <strong>wavetables_2D.maxpat</strong></li>
+</ul>
+<p>Of course we could take that to a 3D volume too:</p>
+<ul>
+<li>Now we have X, Y, and Z indices, 8 nearest waves means 8 <code>wave</code> operators; and three layers of <code>mix</code> operators to morph them. </li>
+<li>See <strong>wavetable_3D.maxpat</strong></li>
+</ul>
+<hr>
+<p>A related approach to 2D wavetables is to create <strong>wave terrains</strong>. In this case, there is a 2D space in which each cell is a single sample, rather than a single waveform. You play a wave terrain by traversing a path through it -- which is sometimes called an <em>orbit</em>.  We can re-use a lot of the patching from the 2D wavetable -- for computing indices and doing bilinar interpolation. For a simple orbit, we can use the <code>poltocar</code> operator, which generates X and Y pairs from a radius and angle. See <strong>waveterrain_2D.maxpat</strong>. </p>
+<p>To generate terrains we&#39;ll need to dig into a <code>codebox</code> for nested for loops -- one loop for X and another for Y. See <strong>waveterrain_generate_codebox.maxpat</strong>. Or, we can make use of Jitter matrices to generate terrains, see <strong>waveterrain_generate_BFG.maxpat</strong>. </p>
+<p>A lot of the interest in wave terrains is in the orbit design. You may notice that a wider radius tends to create a brighter sound, as it takes in more data points over time. We can build more complex orbits using multiple <code>poltocar</code> operators, and apply different operations to deal with X and Y values that may go out of range, such as <code>fold</code>, <code>wrap</code>, <code>clip</code> or <code>tanh</code> (or other sigmoids). See <strong>wavetable_2D_carom.maxpat</strong>.  </p>
+<p>The math here is really open-ended. One interesting example is an algorithm to generate a variety of <strong>polygonal</strong> orbits. See <strong>polygonal.maxpat</strong>. </p>
+<p>Note that all of these oscillators could be inserted into any of the FM/PM algorithms we enountered before.<br ><br >
+                <iframe src="https://www.desmos.com/calculator/pf1fncttey?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
+<p>Let&#39;s look at the wavetable oscillators again. So far our wavetable operators are using linear interpolation to smoothly estimate the values between samples. That&#39;s a lot better than no interpolation at all, but it is far from perfect. If you start using rich harmonic waveforms like sawtooth shapes, and place them under extreme modulations, you will probably start to hear digital aliasing. To fix this, we can use sinc interpolation and mipmapping.  <br ><br >
+                <iframe src="https://www.desmos.com/calculator/ifvveaclzy?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
+<p>This is quite a deep topic and you should refer to the textbook for full details. See <strong>wavetable_sincmipmap_sample.maxpat</strong> for a simple example of a single sawtooth waveform, and <strong>wavetable_1D_sincmipmap.maxpat</strong> shows an example for a morphing wavetable. <br ><br >
+                <iframe src="https://www.desmos.com/calculator/jbsqdms0lf?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
 <h2 id="final-project">Final Project</h2>
 <p>Some requirements:</p>
 <ul>

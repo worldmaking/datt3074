@@ -1185,9 +1185,65 @@ You may have noticed that FM and PM often produces complex inharmonic "clangorou
 # Week 9: Navigating Waves of Data
 Nov 6
 
+- Final project discussions
+
+- SynthUX Hackathon -- do you want to help organize one at York University?
+  - [2024 gallery](https://www.synthux.academy/synthux-hackathon?enchmail=Z3JycndhYWFAZ21haWwuY29t&utm_source=encharge&utm_medium=email&utm_campaign=Synthux+Hackathon+2025+and+2024+gallery%21&utm_content=Join+Synthux+Hackathon+2025)
+  - [2023 playlist](https://www.youtube.com/watch?v=c4VkFAqvXvM&list=PLZbxc8QYjD1cAIv1CcilXVWVpZyj_NY_n)
+
+- Longer-term projects -- do you want to do things in the Alice Lab?
+
+- Continuing from last week, from PM feedback onward. 
+
+---
+
+**Navigating Waves of Data (Chapter 9)**
+
+Back in chapter 2 we saw how to play a buffer~ with the `sample` operator, using linear interpolation to estimate the values between samples. Remember, linear interpolation is just like a `mix` crossfade. 
+
+When the phasor playing a buffer is an audible frequency, this dominates the apparent pitch, while the buffer content determines the waveform and timbre of the sound.  This seems incredibly flexible, but the buffer data is static. 
+
+To work around this, many synthesizers packed multiple waveforms into a single buffer, so you can select different subsections at any time. This is a **wavetable**. 
+
+In gen~ we can use the `wave` operator to jump around different parts of a wavetable. See **wavetable_1D.maxpat** and the `building` subpatchers. We just have to be careful to pick the right subsets. For example, if a buffer contains 64 waveforms (like **wavetable64.wav** does), then the length of each waveform is `dim(tables) / 64`. The `wave` start index must be an integer multiple of this length, and the `wave` end point should be the next integer multiple.  It's important to understand this -- we'll end up expanding this idea into 2D and 3D sets of waveforms later! 
+
+To smoothly morph between two adjacent waveforms, we can use two `wave` players and `mix` between them. E.g. If the wave selection value is 3.4, then we mix 60% of wave 3, and 40% of wave 4. 
+
+These ideas extend to 2D: 
+- 64 waveforms are imagined to be in an 8x8 grid. 
+- We have 2 indices, X and Y, ranging from 0 to 7 (`wrap 0 N`).  The sample index is then "len" * X * (Y*8). 
+- We can also morph between adjacent waveforms, but now we need four `wave` operators and bilinear interpolation -- which means two `mix` operators for each X pair into another `mix` for the Y. 
+- See **wavetables_2D.maxpat**
+
+Of course we could take that to a 3D volume too:
+- Now we have X, Y, and Z indices, 8 nearest waves means 8 `wave` operators; and three layers of `mix` operators to morph them. 
+- See **wavetable_3D.maxpat**
+  
+---
+
+A related approach to 2D wavetables is to create **wave terrains**. In this case, there is a 2D space in which each cell is a single sample, rather than a single waveform. You play a wave terrain by traversing a path through it -- which is sometimes called an *orbit*.  We can re-use a lot of the patching from the 2D wavetable -- for computing indices and doing bilinar interpolation. For a simple orbit, we can use the `poltocar` operator, which generates X and Y pairs from a radius and angle. See **waveterrain_2D.maxpat**. 
+
+To generate terrains we'll need to dig into a `codebox` for nested for loops -- one loop for X and another for Y. See **waveterrain_generate_codebox.maxpat**. Or, we can make use of Jitter matrices to generate terrains, see **waveterrain_generate_BFG.maxpat**. 
+
+A lot of the interest in wave terrains is in the orbit design. You may notice that a wider radius tends to create a brighter sound, as it takes in more data points over time. We can build more complex orbits using multiple `poltocar` operators, and apply different operations to deal with X and Y values that may go out of range, such as `fold`, `wrap`, `clip` or `tanh` (or other sigmoids). See **wavetable_2D_carom.maxpat**.  
+
+The math here is really open-ended. One interesting example is an algorithm to generate a variety of **polygonal** orbits. See **polygonal.maxpat**. 
+
+Note that all of these oscillators could be inserted into any of the FM/PM algorithms we enountered before.
+
+https://www.desmos.com/calculator/pf1fncttey
+
+Let's look at the wavetable oscillators again. So far our wavetable operators are using linear interpolation to smoothly estimate the values between samples. That's a lot better than no interpolation at all, but it is far from perfect. If you start using rich harmonic waveforms like sawtooth shapes, and place them under extreme modulations, you will probably start to hear digital aliasing. To fix this, we can use sinc interpolation and mipmapping.  
+
+https://www.desmos.com/calculator/ifvveaclzy
+
+This is quite a deep topic and you should refer to the textbook for full details. See **wavetable_sincmipmap_sample.maxpat** for a simple example of a single sawtooth waveform, and **wavetable_1D_sincmipmap.maxpat** shows an example for a morphing wavetable. 
+
+https://www.desmos.com/calculator/jbsqdms0lf
+
+
+
 ## Final Project
-
-
 
 Some requirements:
 - Must use some kind of code export: see [notes on export targets](#export-targets)

@@ -228,8 +228,8 @@ for (const name of Object.keys(nets)) {
     }
 }
 
-server.listen(PORT, "127.0.0.1", function() {
-	console.log(server.address())
-	//console.log(`server listening on http://${server.address().address}:${server.address().port}`);
-	console.log(`server listening on http://localhost:${server.address().port}`);
-});
+// server.listen(PORT, "127.0.0.1", function() {
+// 	console.log(server.address())
+// 	//console.log(`server listening on http://${server.address().address}:${server.address().port}`);
+// 	console.log(`server listening on http://localhost:${server.address().port}`);
+// });
