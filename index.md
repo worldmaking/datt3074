@@ -1167,9 +1167,11 @@ https://www.desmos.com/calculator/rup97dp5gx
 
 With all of AM, RM, FM, PM, the addition of sidebands might create very low (inaudible) frequencies, which you might want to filter out with a DC-blocking highpass filter. 
 
-It can also create incredibly high frequencies, which are much too high to be represented at our samplerate. Unfortunately in a digital system, there really is a limit to how high of a frequency you can represent -- this is the **Nyquist limit** which is `samplerate/2`. Any frequency generated above this will **alias**, which means, it folds back down below samplerate/2 again. These aliasing frequencies are usually inharmonic, and often undesirable -- part of the reason why analog synthesizers are sometimes preferred over digital ones.  
+It can also create incredibly high frequencies, which are much too high to be represented at our samplerate. Unfortunately in a digital system, there really is a limit to how high of a frequency you can represent -- this is the **Nyquist limit** which is `samplerate/2`. Any frequency generated above this will **alias**, which means, it folds back down below samplerate/2 again. Here's a visual way to understand why aliasing happens:
 
-Unfortunately you can't just use a filter to remove these frequencies after they have been generated, because they have already aliased at that point. Instead we have to modify our algorithm so that aliasing frequencies are not generated in the first place. 
+https://www.desmos.com/calculator/eqbpsq9mba
+
+These aliasing frequencies are usually inharmonic, and often undesirable -- part of the reason why analog synthesizers are sometimes preferred over digital ones.  Unfortunately you can't just use a filter to remove these frequencies after they have been generated, because they have already aliased at that point. Instead we have to modify our algorithm so that aliasing frequencies are not generated in the first place. 
 
 Instead we either have to increase the samplerate (such as by oversampling -- which is complex and not covered in this course), or modify the input modulator/carrier waveforms (e.g. by filtering) to limit how high their frequency content is, and thereby limit the sidebands. See **AMRM-bandlimited.maxpat**. For FM/PM this is complicated by the modulation index, but see **FMPM-carsonrule.maxpat** or **FMPM-carsonrule-filtered.maxpat** for solution that work with sine waves, and **FMPM-antialias-filter.maxpat** for a more general solution.
 
