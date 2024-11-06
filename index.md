@@ -1235,11 +1235,17 @@ Note that all of these oscillators could be inserted into any of the FM/PM algor
 
 Let's look at the wavetable oscillators again. So far our wavetable operators are using linear interpolation to smoothly estimate the values between samples. That's a lot better than no interpolation at all, but it is far from perfect. If you start using rich harmonic waveforms like sawtooth shapes, and place them under extreme modulations, you will probably start to hear digital aliasing. 
 
+Here's one way of understanding why aliasing happens in general:
+
+https://www.desmos.com/calculator/eqbpsq9mba
+
+And here's why it happens for playback of discretized sample data at different rates:
+
 https://www.desmos.com/calculator/mlbuivohmb
 
 To fix this, we can use sinc interpolation and mipmapping.  
 
-https://www.desmos.com/calculator/ifvveaclzy
+https://www.desmos.com/calculator/b4qppdss0x
 
 This is quite a deep topic and you should refer to the textbook for full details. See **wavetable_sincmipmap_sample.maxpat** for a simple example of a single sawtooth waveform, and **wavetable_1D_sincmipmap.maxpat** shows an example for a morphing wavetable. 
 
