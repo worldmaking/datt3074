@@ -90,12 +90,12 @@ function copyPatch(str) {
 </ul>
 </li>
 <li><a href="#week-8-frequent-modulations">Week 8: Frequent Modulations</a></li>
-<li><a href="#week-9-navigating-waves-of-data">Week 9: Navigating Waves of Data</a><ul>
+<li><a href="#week-9-review">Week 9: Review</a><ul>
 <li><a href="#final-project">Final Project</a></li>
 </ul>
 </li>
-<li><a href="#week-10-windows-of-time">Week 10: Windows of Time</a></li>
-<li><a href="#week-11-exporting--embedding">Week 11: Exporting &amp; Embedding</a><ul>
+<li><a href="#week-10-navigating-waves-of-data">Week 10: Navigating Waves of Data</a></li>
+<li><a href="#week-11-windows-of-time">Week 11: Windows of Time</a><ul>
 <li><a href="#export-targets">Export targets</a></li>
 </ul>
 </li>
@@ -1217,7 +1217,7 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 <p>You may have noticed that FM and PM often produces complex inharmonic &quot;clangorous&quot; tones. But there&#39;s a way to get all the fluidity of FM/PM and yet stay completely harmonic, if you want. The trick is similar to how we solved changing delay times without pitch shifts: we replace our single gliding sine oscillator with two integer harmonic oscillators and crossfade between them instead. See <strong>Harmonic.maxpat</strong>. The <code>go.harmonic</code> abstraction can be dropped in as a replacement for the sine oscillators at the heart of all the patches we have seen before -- compare <strong>AMRM.maxpat</strong> with <strong>AMRM-blended-harmonics.maxpat</strong> for example. See also <strong>PM-blended-harmonics.maxpat</strong>, and <strong>ModFM.maxpat</strong>.</p>
 <p><a href="#top">Back to top</a></p>
 <hr>
-<h1 id="week-9-navigating-waves-of-data">Week 9: Navigating Waves of Data</h1>
+<h1 id="week-9-review">Week 9: Review</h1>
 <p>Nov 6</p>
 <p><a href="#zoom-recordings">Zoom Recording</a></p>
 <ul>
@@ -1237,6 +1237,44 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 <li><p>Longer-term projects -- do you want to do things in the Alice Lab?</p>
 </li>
 <li><p>Continuing from last week, from PM feedback onward. </p>
+</li>
+</ul>
+<hr>
+<h2 id="final-project">Final Project</h2>
+<p>Some requirements:</p>
+<ul>
+<li>Must use some kind of code export: see <a href="#export-targets">notes on export targets</a></li>
+<li>Must include some way to present or exhibit -- a performance with newly designed instruments, part of an existing installation, a web-page, a film, sounds for a video game, or it could be software, e.g. a packaged audio plugin. </li>
+<li>Can be individual or group</li>
+</ul>
+<p>You should have your proposed idea ready for next week! </p>
+<p>Some more detail on ideas:</p>
+<p>Perhaps a few of you want to design instruments and make a &quot;gen~ band&quot; (or &quot;gen~ ensemble&quot;) to perform together? </p>
+<ul>
+<li>You can use <a href="https://www.ableton.com/en/link/">Ableton Link</a> -- &quot;Link is a technology that keeps devices in time over a local network, so you can forget the hassle of setting up and focus on playing music.&quot;  You can install the Link package in Max just by searching for &quot;link&quot; in Max&#39;s Package Manager (<code>File -&gt; Show Package Manager</code>, search for &quot;Link&quot;, install) and once installed, you can create a <code>link.phasor~</code> object that will give you bar and beat phasor ramps you can route into gen~; and anyone on the same local network will be synced to the same tempo.  Link also works with Ableton Live of course, and also <a href="https://github.com/stellare-modular/vcv-link">VCVRack</a>, <a href="https://doc.sccode.org/Classes/LinkClock.html">SuperCollider</a>, tons of Android and iOS apps, TouchDesigner, TidalCycles, and lots of other interesting software, and also some hardware devices too -- see <a href="https://www.ableton.com/en/link/products/">list here</a>. </li>
+<li>Think about how the performance you can showcase your patch</li>
+<li>You&#39;ll need to develop quickly, so that you have time to practice together! </li>
+</ul>
+<p>Web-based data sonification:</p>
+<ul>
+<li>Find an online free data source. Ideally something that changes hourly or daily (e.g. weather/climate/transport etc. data), but if not it can be static data that you move through gradually (e.g. a random walk over openstreetmap data). </li>
+<li>Use this dataset to derive changing control signals for your patch</li>
+<li>Export this as a web page that visualizes and sonifies the data</li>
+</ul>
+<p>Sounds for a project in another course</p>
+<ul>
+<li>E.g. if you are making a game, or website, Max project, or some other project in another course, you can create sounds for this project as your work for DATT3074. </li>
+</ul>
+<p>Or something else -- tell me your ideas! </p>
+<p><a href="#top">Back to top</a></p>
+<hr>
+<h1 id="week-10-navigating-waves-of-data">Week 10: Navigating Waves of Data</h1>
+<p>Nov 13</p>
+<p><a href="#zoom-recordings">Zoom Recording</a></p>
+<ul>
+<li><p><a href="radio/">Assignment 3 demo: RADIO DATT3074</a></p>
+</li>
+<li><p>Final project discussion</p>
 </li>
 </ul>
 <hr>
@@ -1274,40 +1312,9 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 <p>This means reapeatedly decimating the data in powers of two -- but we can achieve the same result just by quantizing our buffer lookup accordingly:<br ><br >
                 <iframe src="https://www.desmos.com/calculator/nvtliafeln?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
 <p>This is quite a deep topic and you should refer to the textbook for full details. See <strong>wavetable_sincmipmap_sample.maxpat</strong> for a simple example of a single sawtooth waveform, and <strong>wavetable_1D_sincmipmap.maxpat</strong> shows an example for a morphing wavetable. </p>
-<h2 id="final-project">Final Project</h2>
-<p>Some requirements:</p>
-<ul>
-<li>Must use some kind of code export: see <a href="#export-targets">notes on export targets</a></li>
-<li>Must include some way to present or exhibit -- a performance with newly designed instruments, part of an existing installation, a web-page, a film, sounds for a video game, or it could be software, e.g. a packaged audio plugin. </li>
-<li>Can be individual or group</li>
-</ul>
-<p>You should have your proposed idea ready for next week! </p>
-<p>Some more detail on ideas:</p>
-<p>Perhaps a few of you want to design instruments and make a &quot;gen~ band&quot; (or &quot;gen~ ensemble&quot;) to perform together? </p>
-<ul>
-<li>You can use <a href="https://www.ableton.com/en/link/">Ableton Link</a> -- &quot;Link is a technology that keeps devices in time over a local network, so you can forget the hassle of setting up and focus on playing music.&quot;  You can install the Link package in Max just by searching for &quot;link&quot; in Max&#39;s Package Manager (<code>File -&gt; Show Package Manager</code>, search for &quot;Link&quot;, install) and once installed, you can create a <code>link.phasor~</code> object that will give you bar and beat phasor ramps you can route into gen~; and anyone on the same local network will be synced to the same tempo.  Link also works with Ableton Live of course, and also <a href="https://github.com/stellare-modular/vcv-link">VCVRack</a>, <a href="https://doc.sccode.org/Classes/LinkClock.html">SuperCollider</a>, tons of Android and iOS apps, TouchDesigner, TidalCycles, and lots of other interesting software, and also some hardware devices too -- see <a href="https://www.ableton.com/en/link/products/">list here</a>. </li>
-<li>Think about how the performance you can showcase your patch</li>
-<li>You&#39;ll need to develop quickly, so that you have time to practice together! </li>
-</ul>
-<p>Web-based data sonification:</p>
-<ul>
-<li>Find an online free data source. Ideally something that changes hourly or daily (e.g. weather/climate/transport etc. data), but if not it can be static data that you move through gradually (e.g. a random walk over openstreetmap data). </li>
-<li>Use this dataset to derive changing control signals for your patch</li>
-<li>Export this as a web page that visualizes and sonifies the data</li>
-</ul>
-<p>Sounds for a project in another course</p>
-<ul>
-<li>E.g. if you are making a game, or website, Max project, or some other project in another course, you can create sounds for this project as your work for DATT3074. </li>
-</ul>
-<p>Or something else -- tell me your ideas! </p>
 <p><a href="#top">Back to top</a></p>
 <hr>
-<h1 id="week-10-windows-of-time">Week 10: Windows of Time</h1>
-<p>Nov 13</p>
-<p><a href="#zoom-recordings">Zoom Recording</a></p>
-<p><a href="#top">Back to top</a></p>
-<hr>
-<h1 id="week-11-exporting--embedding">Week 11: Exporting &amp; Embedding</h1>
+<h1 id="week-11-windows-of-time">Week 11: Windows of Time</h1>
 <p>Nov 20</p>
 <p><a href="#zoom-recordings">Zoom Recording</a></p>
 <h2 id="export-targets">Export targets</h2>

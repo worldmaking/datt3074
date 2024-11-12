@@ -60,7 +60,7 @@ setup();
 // Clock parameters:
 setInterval(() => {
 	let currentdate = new Date();
-	if (date_div) {
+	if (date_div && device) {
 		date_div.innerText =
 		currentdate.getDate() +
 		"/" +

@@ -1186,7 +1186,7 @@ You may have noticed that FM and PM often produces complex inharmonic "clangorou
 
 [Back to top](#top)
 
-# Week 9: Navigating Waves of Data
+# Week 9: Review
 Nov 6
 
 [Zoom Recording](#zoom-recordings)
@@ -1203,6 +1203,48 @@ Nov 6
 - Longer-term projects -- do you want to do things in the Alice Lab?
 
 - Continuing from last week, from PM feedback onward. 
+
+---
+
+## Final Project
+
+Some requirements:
+- Must use some kind of code export: see [notes on export targets](#export-targets)
+- Must include some way to present or exhibit -- a performance with newly designed instruments, part of an existing installation, a web-page, a film, sounds for a video game, or it could be software, e.g. a packaged audio plugin. 
+- Can be individual or group
+
+You should have your proposed idea ready for next week! 
+
+Some more detail on ideas:
+
+Perhaps a few of you want to design instruments and make a "gen~ band" (or "gen~ ensemble") to perform together? 
+- You can use [Ableton Link](https://www.ableton.com/en/link/) -- "Link is a technology that keeps devices in time over a local network, so you can forget the hassle of setting up and focus on playing music."  You can install the Link package in Max just by searching for "link" in Max's Package Manager (`File -> Show Package Manager`, search for "Link", install) and once installed, you can create a `link.phasor~` object that will give you bar and beat phasor ramps you can route into gen~; and anyone on the same local network will be synced to the same tempo.  Link also works with Ableton Live of course, and also [VCVRack](https://github.com/stellare-modular/vcv-link), [SuperCollider](https://doc.sccode.org/Classes/LinkClock.html), tons of Android and iOS apps, TouchDesigner, TidalCycles, and lots of other interesting software, and also some hardware devices too -- see [list here](https://www.ableton.com/en/link/products/). 
+- Think about how the performance you can showcase your patch
+- You'll need to develop quickly, so that you have time to practice together! 
+
+
+Web-based data sonification:
+- Find an online free data source. Ideally something that changes hourly or daily (e.g. weather/climate/transport etc. data), but if not it can be static data that you move through gradually (e.g. a random walk over openstreetmap data). 
+- Use this dataset to derive changing control signals for your patch
+- Export this as a web page that visualizes and sonifies the data
+
+
+Sounds for a project in another course
+- E.g. if you are making a game, or website, Max project, or some other project in another course, you can create sounds for this project as your work for DATT3074. 
+
+
+Or something else -- tell me your ideas! 
+
+[Back to top](#top)
+
+# Week 10: Navigating Waves of Data
+Nov 13
+
+[Zoom Recording](#zoom-recordings)
+
+- [Assignment 3 demo: RADIO DATT3074](radio/)
+  
+- Final project discussion
 
 ---
 
@@ -1261,49 +1303,9 @@ https://www.desmos.com/calculator/nvtliafeln
 This is quite a deep topic and you should refer to the textbook for full details. See **wavetable_sincmipmap_sample.maxpat** for a simple example of a single sawtooth waveform, and **wavetable_1D_sincmipmap.maxpat** shows an example for a morphing wavetable. 
 
 
-
-
-## Final Project
-
-Some requirements:
-- Must use some kind of code export: see [notes on export targets](#export-targets)
-- Must include some way to present or exhibit -- a performance with newly designed instruments, part of an existing installation, a web-page, a film, sounds for a video game, or it could be software, e.g. a packaged audio plugin. 
-- Can be individual or group
-
-You should have your proposed idea ready for next week! 
-
-Some more detail on ideas:
-
-Perhaps a few of you want to design instruments and make a "gen~ band" (or "gen~ ensemble") to perform together? 
-- You can use [Ableton Link](https://www.ableton.com/en/link/) -- "Link is a technology that keeps devices in time over a local network, so you can forget the hassle of setting up and focus on playing music."  You can install the Link package in Max just by searching for "link" in Max's Package Manager (`File -> Show Package Manager`, search for "Link", install) and once installed, you can create a `link.phasor~` object that will give you bar and beat phasor ramps you can route into gen~; and anyone on the same local network will be synced to the same tempo.  Link also works with Ableton Live of course, and also [VCVRack](https://github.com/stellare-modular/vcv-link), [SuperCollider](https://doc.sccode.org/Classes/LinkClock.html), tons of Android and iOS apps, TouchDesigner, TidalCycles, and lots of other interesting software, and also some hardware devices too -- see [list here](https://www.ableton.com/en/link/products/). 
-- Think about how the performance you can showcase your patch
-- You'll need to develop quickly, so that you have time to practice together! 
-
-
-Web-based data sonification:
-- Find an online free data source. Ideally something that changes hourly or daily (e.g. weather/climate/transport etc. data), but if not it can be static data that you move through gradually (e.g. a random walk over openstreetmap data). 
-- Use this dataset to derive changing control signals for your patch
-- Export this as a web page that visualizes and sonifies the data
-
-
-Sounds for a project in another course
-- E.g. if you are making a game, or website, Max project, or some other project in another course, you can create sounds for this project as your work for DATT3074. 
-
-
-Or something else -- tell me your ideas! 
-
-
-
 [Back to top](#top)
 
-# Week 10: Windows of Time
-Nov 13
-
-[Zoom Recording](#zoom-recordings)
-
-[Back to top](#top)
-
-# Week 11: Exporting & Embedding
+# Week 11: Windows of Time
 Nov 20
 
 [Zoom Recording](#zoom-recordings)
