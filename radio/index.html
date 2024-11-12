@@ -21,6 +21,10 @@ body {
     margin-right: 10%;
 }
 
+.grey {
+    color: grey;
+}
+
 .middle {
     width: 60%;
     height: 60vh;
@@ -45,13 +49,13 @@ body {
 <div class="middle">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <pre id="date">[loading]</pre>
-    <div id="channels">Channels:<br></div>
+    <div id="channels" class="grey">Select channel:<br></div>
    
     <script src="https://unpkg.com/webaudio-oscilloscope@3.2.1/dist/index.js"></script>
     <script type="module" src="radio.js"></script>
     <canvas id="scope" width="200" height="80px"></canvas>
     <div id="title"></div>
-    <i id="author"></i>
+    <i id="author" class="grey"></i>
 </div>
 </body>
 </html>
