@@ -16,7 +16,7 @@ const template = require('es6-dynamic-template')
 
 const server_path = __dirname;
 const public_path = server_path; //path.join(server_path, "public");
-const PORT = 8080
+const PORT = 8088
 
 const meta_default = {
 	author: "Graham Wakefield",

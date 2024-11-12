@@ -5,32 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
     <meta name="rnbo-version" content="1.0.0-alpha.5">
-    <link rel="stylesheet" href="style.css">
-    <title>RNBO Web Export</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Micro+5&display=swap" rel="stylesheet">
+    <style>
+*{
+    font-family: "Micro 5", sans-serif;
+    font-size: 1.2em;
+}
+body {
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.middle {
+    width: 60%;
+    height: 60vh;
+    text-align: center;
+    
+    font-family: "Micro 5", sans-serif;
+    font-size: 1.3em;
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    margin: auto;
+}
+    </style>
+    <title>RADIO</title>
 </head>
 
 <body>
+<div class="middle">
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <svg id="background" width="100%" height="100%"></svg>
-    <div id="rnbo-root">
-		<pre>ROBOTCLOCKRADIO</pre>
-        <pre id="date">[CLICK TO BEGIN]</pre>
-    </div>
-
-    <!-- Load the script that creates the RNBO device  -->
-    <!-- Uncomment if you know the version of your exported RNBO patch to avoid dynamic loading -->
-    <!-- <script type="text/javascript" src="https://cdn.cycling74.com/rnbo/latest/rnbo.min.js"></script> -->
-
-    <!-- (Optional) The guardrails.js script isn't required for RNBO to work, and you can skip including it -->
-    <!-- It simply offers some helpful error messages for common problems -->
-    <script type="text/javascript" src="js/guardrails.js"></script>
-
-    <!-- Import RNBO Engine Wrapper -->
-    <!-- Make sure to include the RNBO engine version to the version of your exported code, found in rnbopackage.json -->
-    <script type="text/javascript" src="js/app.js"></script>
-
-	<script>
-
-	</script>
+    <pre id="date">[loading]</pre>
+    <div id="channels">Channels:<br></div>
+   
+    <script src="https://unpkg.com/webaudio-oscilloscope@3.2.1/dist/index.js"></script>
+    <script type="module" src="radio.js"></script>
+    <canvas id="scope" width="200" height="80px"></canvas>
+    <div id="title"></div>
+    <i id="author"></i>
+</div>
 </body>
 </html>
