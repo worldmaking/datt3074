@@ -32,8 +32,9 @@ let stations = [
 
 let scope = document.getElementById("scope")
 let resize = function () {
-	scope.width = window.innerWidth * 0.6;
-	scope.height = scope.width/6;
+
+	scope.width = window.innerWidth;
+    scope.height = window.innerHeight;
 };
 window.addEventListener("resize", resize);
 resize();

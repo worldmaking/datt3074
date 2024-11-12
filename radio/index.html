@@ -67,6 +67,26 @@
         button:focus {
             background-color: red;
         }
+
+
+        .fullscreen {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -10;
+}
+
+.fullscreen canvas {
+  object-fit: contain;
+  max-height: 100%;
+  max-width: 100%;
+}
     </style>
 </head>
 
@@ -80,7 +100,9 @@
         <script type="module" src="radio.js"></script>
         <pre id="date" class="led">...</pre>
 
-        <canvas id="scope" width="200" height="80px"></canvas>
+        <div class="fullscreen">
+            <canvas id="scope" width="200" height="80px"></canvas>
+        </div>
         <div id="title"></div>
         <i id="author" class="grey"></i>
     </div>
