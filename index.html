@@ -94,11 +94,11 @@ function copyPatch(str) {
 <li><a href="#final-project">Final Project</a></li>
 </ul>
 </li>
-<li><a href="#week-10-navigating-waves-of-data">Week 10: Navigating Waves of Data</a></li>
-<li><a href="#week-11-windows-of-time">Week 11: Windows of Time</a><ul>
+<li><a href="#week-10-navigating-waves-of-data">Week 10: Navigating Waves of Data</a><ul>
 <li><a href="#export-targets">Export targets</a></li>
 </ul>
 </li>
+<li><a href="#week-11-windows-of-time">Week 11: Windows of Time</a></li>
 <li><a href="#week-12-final-presentations">Week 12: Final Presentations</a></li>
 <li><a href="#zoom-recordings">Zoom Recordings</a></li>
 </ul>
@@ -1271,18 +1271,6 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 <h1 id="week-10-navigating-waves-of-data">Week 10: Navigating Waves of Data</h1>
 <p>Nov 13</p>
 <p><a href="#zoom-recordings">Zoom Recording</a></p>
-<ul>
-<li><a href="radio/">Assignment 3 demo: RADIO DATT3074</a></li>
-</ul>
-<iframe src="radio/index.html" title="RADIO DATT3074" width=100% height=500px scrolling="no" ></iframe>
-  
---- 
-
-<ul>
-<li>Final project discussion</li>
-</ul>
-<hr>
-<p><strong>Navigating Waves of Data (Chapter 9)</strong></p>
 <p>Back in chapter 2 we saw how to play a buffer~ with the <code>sample</code> operator, using linear interpolation to estimate the values between samples. Remember, linear interpolation is just like a <code>mix</code> crossfade. </p>
 <p>When the phasor playing a buffer is an audible frequency, this dominates the apparent pitch, while the buffer content determines the waveform and timbre of the sound.  This seems incredibly flexible, but the buffer data is static. </p>
 <p>To work around this, many synthesizers packed multiple waveforms into a single buffer, so you can select different subsections at any time. This is a <strong>wavetable</strong>. </p>
@@ -1316,11 +1304,16 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 <p>This means reapeatedly decimating the data in powers of two -- but we can achieve the same result just by quantizing our buffer lookup accordingly:<br ><br >
                 <iframe src="https://www.desmos.com/calculator/nvtliafeln?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
 <p>This is quite a deep topic and you should refer to the textbook for full details. See <strong>wavetable_sincmipmap_sample.maxpat</strong> for a simple example of a single sawtooth waveform, and <strong>wavetable_1D_sincmipmap.maxpat</strong> shows an example for a morphing wavetable. </p>
-<p><a href="#top">Back to top</a></p>
 <hr>
-<h1 id="week-11-windows-of-time">Week 11: Windows of Time</h1>
-<p>Nov 20</p>
-<p><a href="#zoom-recordings">Zoom Recording</a></p>
+<ul>
+<li><a href="radio/">Assignment 3 demo: RADIO DATT3074</a></li>
+</ul>
+<iframe src="radio/index.html" title="RADIO DATT3074" width=100% height=500px scrolling="no" ></iframe>
+
+<hr>
+<ul>
+<li>Final project discussion</li>
+</ul>
 <h2 id="export-targets">Export targets</h2>
 <p>For a long time Max, and more recently Gen, have been used extensively in industry (both large and small-scale), research centres, and community spaces to design and develop new audio-related software and hardware. (For example, Ableton Live was originally designed from a Max patch!) Today it is easier than ever to take the algorithms you write in a gen~ patch and place them into distributable software and hardware. </p>
 <p>It has always been possible to export C++ code from a gen~ patch just by sending the <code>exportcode</code> message, but that&#39;s a pretty uncomfortable workflow. Now it is much easier because gen~ also works inside of <a href="https://rnbo.cycling74.com">RNBO</a>. RNBO is a kind of re-implementation of the core of Max, including gen~, that is designed for code export from the ground-up, and has built-in support for many targets, as well as community projects for others. We have some RNBO licenses in our Digital Media lab machines that we can use for this. Or, there are other ways of exporting code and using it too -- here are some of them:</p>
@@ -1399,6 +1392,11 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 <p>Here&#39;s Oopsy:</p>
 <iframe width="720" height="540" src="https://youtube.com/embed/fbd1CASqUmI" frameborder="0" allowfullscreen></iframe>
 
+<p><a href="#top">Back to top</a></p>
+<hr>
+<h1 id="week-11-windows-of-time">Week 11: Windows of Time</h1>
+<p>Nov 20</p>
+<p><a href="#zoom-recordings">Zoom Recording</a></p>
 <p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-12-final-presentations">Week 12: Final Presentations</h1>

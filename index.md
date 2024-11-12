@@ -1242,18 +1242,6 @@ Nov 13
 
 [Zoom Recording](#zoom-recordings)
 
-- [Assignment 3 demo: RADIO DATT3074](radio/)
-
-<iframe src="radio/index.html" title="RADIO DATT3074" width=100% height=500px scrolling="no" ></iframe>
-  
---- 
-
-- Final project discussion
-
----
-
-**Navigating Waves of Data (Chapter 9)**
-
 Back in chapter 2 we saw how to play a buffer~ with the `sample` operator, using linear interpolation to estimate the values between samples. Remember, linear interpolation is just like a `mix` crossfade. 
 
 When the phasor playing a buffer is an audible frequency, this dominates the apparent pitch, while the buffer content determines the waveform and timbre of the sound.  This seems incredibly flexible, but the buffer data is static. 
@@ -1306,13 +1294,15 @@ https://www.desmos.com/calculator/nvtliafeln
 
 This is quite a deep topic and you should refer to the textbook for full details. See **wavetable_sincmipmap_sample.maxpat** for a simple example of a single sawtooth waveform, and **wavetable_1D_sincmipmap.maxpat** shows an example for a morphing wavetable. 
 
+--- 
 
-[Back to top](#top)
+- [Assignment 3 demo: RADIO DATT3074](radio/)
 
-# Week 11: Windows of Time
-Nov 20
+<iframe src="radio/index.html" title="RADIO DATT3074" width=100% height=500px scrolling="no" ></iframe>
 
-[Zoom Recording](#zoom-recordings)
+--- 
+
+- Final project discussion
 
 ## Export targets
 
@@ -1344,6 +1334,13 @@ Some targets are dependent on having other software installed. Some require lice
 Here's Oopsy:
 
 ---youtube:fbd1CASqUmI
+
+[Back to top](#top)
+
+# Week 11: Windows of Time
+Nov 20
+
+[Zoom Recording](#zoom-recordings)
 
 [Back to top](#top)
 
