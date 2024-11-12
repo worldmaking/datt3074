@@ -40,13 +40,13 @@ resize();
 
 function setup() {
 	for (let [id, station] of Object.entries(radio_stations)) {
-		station.freq = Number(id.split("").reverse().slice(0,4).join(""))/100
+		station.freq = 87.5 + Number(id.split("").reverse().slice(0,4).join(""))/10000 * (108-87.5)
 	}
 
 	let stations = Object.values(radio_stations).sort((a,b)=>a.freq - b.freq)
 	for (let station of stations) {
 		let div = document.createElement("button");
-		div.innerText = station.freq;
+		div.innerText = station.freq.toFixed(2);
 		document.getElementById("channels").appendChild(div);
 		div.onclick = (event) => {
 			radio_div = div;
