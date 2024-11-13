@@ -1342,6 +1342,114 @@ Nov 20
 
 [Zoom Recording](#zoom-recordings)
 
+- This chapter is all about using one proess to determine the durations (or *lifespans*) of another. For example, a repeated tom sound has three timescales -- waveform duration (periodic), duration between sounds (periodic), and the envelope duration (a window of time):
+
+https://www.desmos.com/calculator/hcae8t9tns
+
+- "Hard sync" is the simplest example of one timeline controlling another timeline, by cutting the lifespan short as it "resets" it to zero. Here one phasor (scheduler) resets another (follower):
+
+https://www.desmos.com/calculator/umlchj8rax
+
+We can do this by sending a trigger to the carrier `phasor` 2nd inlet, and using that phasor to derive our sine wave. But this will likely lead to harsh sounds due to the jump cuts here. Bright harshness is part of the characteristic sound of "hard sync" in analog synths, but can sound worse in digital due to aliasing.  (For the classic lazer sound, set the scheduler as your main frequency, and sweep the follower up and down above it.)
+
+---
+
+A simple workaround is **windowed sync**: just fade out the sound right before the cut, by deriving an envelope shape from the scheduling phasor (see **windowed_sync.maxpat**):
+
+https://www.desmos.com/calculator/micty4gzcl
+
+Comparing them on a spectroscope, the windowed-sync is certainly nicely filtered. If we sweep the follower above the scheduler now it behaves a bit more like a filter, picking out harmonics.  It could be a good idea to redefine the follower frequency as an integer multiple (a "formant" or "harmonic") of the scheduler frequency.  
+
+This sounds a bit better but we are still getting aliasing -- and to understand the reason why, we need to zoom into the atomic sample level of what a phasor is supposed to be:
+
+https://www.desmos.com/calculator/easvfjyfiy
+
+Notice how when a phasor resets, it doesn't usually do it at exactly the sample boundary, but somewhere between one sample & the next. If it didn't -- if it had to align right on sample boundaries -- then either we have to quantize our frequencies to divisions of the samplerate (not good!), or some waveform periods would be slightly shorter or longer than others (which causes aliasing frequencies to appear). This tiny tiny difference is audible!
+
+In the case of our windowed sync, this means that when our scheduler resets, the follower shouldn't be reset to exactly zero, but some number slightly bigger than zero -- because by the time the sample comes we have already reset and started climbing a little.  This tiny tiny difference is audible!
+
+OK to fix the windowed-sync we need to know a) the fraction of a sample (the "sub-sample offset") that the scheduler has gone past zero, and b) multiply this by the slope of the follower to work out where it should be. 
+
+To get that sub-sample offset, we can divide the phasor ramp by its slope. Think about it: if we divide a ramp by its slope, then the result has a slope of 1. That means it adds 1 per sample -- it is a sample counter. So if it has risen to 0.3, then 0.3 samples have elapsed since it reset. 
+
+https://www.desmos.com/calculator/mbpsra60tw
+
+The gen~ `phasor` operator doesn't have a way to reset to anything other than zero, but that's ok, we know how to patch our own phasor with a `history`, `+` `wrap 0 1` and a `switch` for the reset.  We can derive our scheduler's slope either with `go.ramp2slope` or just by the scheduler frequency / samplerate. See **windowed_sync.maxpat**
+
+Now we have an antialiased windowed sync. You can substitute any follower waveform, and any window shape, so long as the window ends at zero, and either the window or waveform begins at zero.  You might notice that actually this is kind of similar to the ModFM patch we saw in Ch8, and has a similar formant-filter kind of sound. You might notice that, the more time the window is at zero, the sharper the filter-like effect. 
+
+---
+
+That leads nicely to **pulsar synthesis**. Take the scheduler, scale it up by some "duty" ratio greater than 1, and clamp that at 1.0 to create a single shorter sub-ramp. Now use this sub-ramp to drive some carrier oscillator, and (optionally) also a window envelope to shape it:
+
+https://www.desmos.com/calculator/pisnszylwx
+
+This patch can sound remarkably like a resonant filter. It may seem strange, but the more silence between the "pulsaret" chirps, the sharper the apparent filter resonaance.  Again, you have a lot of freedom in choice of the window shape, the pulsaret waveform, etc, and you can explore quite deep modulation with it too, see **pulsar_FM.maxpat**.
+
+---
+
+OK, but what happens if we set the window duty ratio to < 1 -- that is, if we let the window duration be *longer* than the scheduler period? In that case, we have a few options:
+- let the window start again, like a hard sync
+- let the window rise up again from where it was (like many synth envelopes)
+- suppress reset triggers until the envelope is complete (which creates subharmonics)
+- layer multiple events on top of each other in parallel (polyphony)
+
+Let's look at retrigger suppression. This means we need to allow our window ramp to become independent of the scheduler phasor, as its own accumulator -- again by building our own `history`, `+`, `switch` circuit just like we did in the first class. Then we can simply prevent this accumulator from being reset if it is still "busy" (if it hasn't reached 1.0 yet). See **pulsar_subharmonic.maxpat**. Notice how setting the ratio < 1 creates new subharmonic tones -- this can be quite a musical tool (a kind of negative harmony).
+
+---
+
+OK how about the parallel overlapping option? This is a bit more involved. Strictly speaking, the CPU and the gen~ patch is only really doing one thing at once, but we need to be generating two things if two envelopes are overlapping. This is essentially like having overlapping voices in **polyphony**. There's a few different ways we can do this.  
+
+One of the simplest is just to create several "voice" subpatchers. If we need up to 4 sounds overlapping, which is 4-part polyphony, then we need 4 voice subpatches, and a way to dispatch events (such as "notes") to them. For example, when a new event happens, we can dispatch the event to the first voice that isn't already "busy" playing a note. 
+
+In our voice subpatch, create an inlet for the event trigger. If this voice is "busy" (the envelope isn't complete yet), we can route the trigger via a `gate` to an outlet, so that it can be passed onto the next voice. The voices are all arranged in a chain. The rest of the voice patch can be anything you want it to be -- any of the sound making patches we have seen so far -- and now you can make them polyphonic. (If we also output the "busy" state from a voice, then we can sum these up in the parent patch, and get a count of how many voices are active.)  Also see **poly_voices.maxpat** and the `voice1.gendsp` subpatch for an example of getting many parameters into these subvoices without tons of cables. 
+
+Now we can use this exact same structure to make **granular synthesizers** -- which are essentially the same idea, just with event durations that microscopic, so we call them "grains" rather than note events. See the **poly_granulation.maxpat** patches for many examples! Granular synthesizers and granulators often use stochastic methods to schedule & parameterize their grains. Granulation often means taking some source sound, such as from a `buffer~`, and playing many tiny somewhat randomized fragments from that sound in dense and variegated "clouds". This is a fantastically rich souce of texture! 
+
+These are called "asynchronous" methods because the duration between events is not repetitive. If we want to do synchronous granular synthesis with grains spawned at steady audible frequencies, once gain we have to take care of the fine detail of subsample offsets. If we are driving this from a phasor, then once again, we can divide the phasor by its slope to find out how far we are past the true reset point when we start a new grain:
+
+https://www.desmos.com/calculator/mbpsra60tw
+
+There's a lot of refinements we can make to this -- to handle negative frequencies, to suppress output at zero frequency, etc. which are wrapped up in `go.ramp.subsample` and **ramp-subsample-trig.maxpat**. This abstraction can replace `go.ramp2trig` and generates the offsets we need -- see **poly_pulsar.maxpat** and **poly_granulation3.maxpat**.
+
+---
+
+The polyphonic voice method works well but our maximum grain density is limited by the number of voice subpatches. What if we wanted hundreds of overlapping grains in a dense cloud?
+
+The book describes a different method here, usually called **overlap add**, in which we "overdub the future". It's a bit like a tape delay, but now instead of having one writer and many readers, now we have one reader and many writers. Each grain is overdubbed onto the tape at a point that has not yet played, which we will hear when the tape rolls around to our read head. As the tape winds around to the reader, all of these grains get played, and then the tape at that point is immediately erased. This overlap-add method can be used for many purposes, including for building stranger kinds of delays too. 
+
+The book goes into detail with an example of overlap-add optimized for very large numbers of very short grains, in which the entirety of a grain is generated and written into the tape all at the sample moment in which the grain is triggered. This method is only viable if your grains are extremely short, but it means you can have hundreds or thousands of them. Doing this requires using `codebox` to create a "for loop" over the grain samples. We can also use `go.ramp.subsample` inputs to ensure that these tiny grains are also sub-sample accurate for pitched scheduling. See **granola_buffer.maxpat** and **granola_glisson.maxpat**. 
+
+---
+
+The final section of the chapter returns to the question of anti-aliasing a sawtooth wave, using what we have learned so far. Let's just look at a raw `phasor` again for a minute, which is not antialiased. If you set the phasor frequency pretty high, and modulate it a little, you should be able to hear aliasing -- and see it in a scope~. Let's zoom into the atomic sample level again.
+
+
+- The ideal phasor (which the math approximates) has an instantaneous jump from 1 to 0, which usually happens somewhere between samples. 
+- A loudspeaker, air pressure, etc. can't jump instantaneously -- there has to be a continuous movement between them. 
+ 
+The absolute simplest movement we can imagine is a linear ramp between one sample & the next: 
+
+https://www.desmos.com/calculator/r3mtopejtw
+
+Notice how irregular this waveform looks -- the transition moments are irregularly spaced, and the waveform seems to wobble around. These wobbles and spacings are *new lower frequencies* that are not part of the ideal waveform, and this is aliasing. 
+
+It all happens because our transitions are forced to align to the sample boudnaries. But what if we could generate the same linear shape, placing the transitions between samples? Then all the irregularity disappears:
+
+https://www.desmos.com/calculator/4xyjhhorlj
+
+So if we can figure out how to generate this waveform, we may be able to reduce the aliasing? Looking carefullly at this, the only difference in the sample values is during the *single sample* in which the transition occurs. 
+
+The method taken in the book is to compute what the highest and lowest points of this shape are, and the time through this transition that occurs in a sample, so that it can linear interpolate between them.  We know we can get the transition point using the same method as in `go.ramp.subsample` (divide ideal phasor by slope). The highest and lowest points are exactly half a sample before & after the ideal transition point. 
+
+First, we create our own phasor (again with `history`, `+`, and `wrap`). This phasor accumulates the slope. So we can compute what the wave would be half a sample before & after just by adding/subtracting half of the slope.  That gets refined slightly to handle negative frequencies, and in the process also gives us the number of samples since the transition. When this number of samples is between 0 and 1, we are in the sample that needs to be fixed.  Finally this is all plugged together with a `mix` to do the interpolation. See [p building] in **ramp-antialiased.maxpat**. 
+
+This is a really cheap way to get pretty decent antialiasing. It's not perfect, not ideal, and can be done better (with various tradeoffs) but it does a surprisingly good job for how simple it is. The book then goes on to refine the patch with two additions:
+
+- Hard sync: based on figuring out the subsample moment of the hardsync, and computing the necessary phase as well as the values half a sample before & after, and plugging that in. See `go.ramp.aa`. 
+- Shaping: almost all the aliasing in a phasor comes from that jump moment from 1 to 0. The slope in between can actually be curved quite a bit without risking noticeable aliasing. The same holds for our antialiased phasor here -- we just have to be careful to apply the shaping *before* we do the linear interpolation. That really opens up space for some interesting waveforms! 
+
+
 [Back to top](#top)
 
 # Week 12: Final Presentations
