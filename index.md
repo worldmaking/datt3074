@@ -1297,6 +1297,7 @@ This is quite a deep topic and you should refer to the textbook for full details
 --- 
 
 - [Assignment 3 demo: RADIO DATT3074](radio/)
+- Source: https://github.com/worldmaking/datt3074/tree/gh-pages/radio
 
 <iframe src="radio/index.html" title="RADIO DATT3074" width=100% height=500px scrolling="no" ></iframe>
 
