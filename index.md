@@ -1307,7 +1307,7 @@ This is quite a deep topic and you should refer to the textbook for full details
 
 ## Export targets
 
-For a long time Max, and more recently Gen, have been used extensively in industry (both large and small-scale), research centres, and community spaces to design and develop new audio-related software and hardware. (For example, Ableton Live was originally designed from a Max patch!) Today it is easier than ever to take the algorithms you write in a gen~ patch and place them into distributable software and hardware. 
+For a long time Max, and more recently Gen, have been used extensively in industry (both large and small-scale), research centres, and community spaces to design and develop new audio-related software and hardware. (For example, Ableton Live was originally designed from a Max patch!) Today it is easier than ever to take the algorithms you write in a gen~ patch and place them into distributable~ software and hardware. 
 
 It has always been possible to export C++ code from a gen~ patch just by sending the `exportcode` message, but that's a pretty uncomfortable workflow. Now it is much easier because gen~ also works inside of [RNBO](https://rnbo.cycling74.com). RNBO is a kind of re-implementation of the core of Max, including gen~, that is designed for code export from the ground-up, and has built-in support for many targets, as well as community projects for others. We have some RNBO licenses in our Digital Media lab machines that we can use for this. Or, there are other ways of exporting code and using it too -- here are some of them:
 
@@ -1335,6 +1335,10 @@ Some targets are dependent on having other software installed. Some require lice
 Here's Oopsy:
 
 ---youtube:fbd1CASqUmI
+
+Here's the example of mapping a javascript animation to sound:
+
+---codepen:https://codepen.io/grrrwaaa/pen/LYwqwPw?editors=0010
 
 [Back to top](#top)
 
