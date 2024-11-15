@@ -28,7 +28,8 @@ let stations = [
 	 id:220016416,  title: "水琴窟　すいきんくつ Suikinkutsu",
 	  author: "Hiromune Kubayashi"
 	},
-	{ id: 219029677, title: "Polyrhythms", author: "Santiago Bucio-Cano" }
+	{ id: 219029677, title: "Polyrhythms", author: "Santiago Bucio-Cano" },
+	{ id: 218392290, title: "Space Station", author: "Kaidi Chen" },
 ];
 
 let scope = document.getElementById("scope")
