@@ -1401,16 +1401,10 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 <h1 id="week-11-windows-of-time">Week 11: Windows of Time</h1>
 <p>Nov 20</p>
 <p><a href="#zoom-recordings">Zoom Recording</a></p>
-<ul>
-<li><p>This chapter is all about using one proess to determine the durations (or <em>lifespans</em>) of another. For example, a repeated tom sound has three timescales -- waveform duration (periodic), duration between sounds (periodic), and the envelope duration (a window of time):<br ><br ></p>
-<pre><code>          &lt;iframe src=&quot;https://www.desmos.com/calculator/hcae8t9tns?embed&quot; width=&quot;100%&quot; height=&quot;300&quot; style=&quot;border: 1px solid #ccc&quot; frameborder=0&gt;&lt;/iframe&gt;
-</code></pre>
-</li>
-<li><p>&quot;Hard sync&quot; is the simplest example of one timeline controlling another timeline, by cutting the lifespan short as it &quot;resets&quot; it to zero. Here one phasor (scheduler) resets another (follower):<br ><br ></p>
-<pre><code>          &lt;iframe src=&quot;https://www.desmos.com/calculator/umlchj8rax?embed&quot; width=&quot;100%&quot; height=&quot;300&quot; style=&quot;border: 1px solid #ccc&quot; frameborder=0&gt;&lt;/iframe&gt;
-</code></pre>
-</li>
-</ul>
+<p>This chapter is all about using one proess to determine the durations (or <em>lifespans</em>) of another. For example, a repeated tom sound has three timescales -- waveform duration (periodic), duration between sounds (periodic), and the envelope duration (a window of time):<br ><br >
+                <iframe src="https://www.desmos.com/calculator/hcae8t9tns?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
+<p>&quot;Hard sync&quot; is the simplest example of one timeline controlling another timeline, by cutting the lifespan short as it &quot;resets&quot; it to zero. Here one phasor (scheduler) resets another (follower):<br ><br >
+                <iframe src="https://www.desmos.com/calculator/umlchj8rax?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
 <p>We can do this by sending a trigger to the carrier <code>phasor</code> 2nd inlet, and using that phasor to derive our sine wave. But this will likely lead to harsh sounds due to the jump cuts here. Bright harshness is part of the characteristic sound of &quot;hard sync&quot; in analog synths, but can sound worse in digital due to aliasing.  (For the classic lazer sound, set the scheduler as your main frequency, and sweep the follower up and down above it.)</p>
 <hr>
 <p>A simple workaround is <strong>windowed sync</strong>: just fade out the sound right before the cut, by deriving an envelope shape from the scheduling phasor (see <strong>windowed_sync.maxpat</strong>):<br ><br >
@@ -1453,14 +1447,11 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 <hr>
 <p>The final section of the chapter returns to the question of anti-aliasing a sawtooth wave, using what we have learned so far. Let&#39;s just look at a raw <code>phasor</code> again for a minute, which is not antialiased. If you set the phasor frequency pretty high, and modulate it a little, you should be able to hear aliasing -- and see it in a scope~. Let&#39;s zoom into the atomic sample level again.</p>
 <ul>
-<li><p>The ideal phasor (which the math approximates) has an instantaneous jump from 1 to 0, which usually happens somewhere between samples. </p>
-</li>
-<li><p>A loudspeaker, air pressure, etc. can&#39;t jump instantaneously -- there has to be a continuous movement between them. </p>
-<p>The absolute simplest movement we can imagine is a linear ramp between one sample &amp; the next: <br ><br ></p>
-<pre><code>          &lt;iframe src=&quot;https://www.desmos.com/calculator/r3mtopejtw?embed&quot; width=&quot;100%&quot; height=&quot;300&quot; style=&quot;border: 1px solid #ccc&quot; frameborder=0&gt;&lt;/iframe&gt;
-</code></pre>
-</li>
+<li>The ideal phasor (which the math approximates) has an instantaneous jump from 1 to 0, which usually happens somewhere between samples. </li>
+<li>A loudspeaker, air pressure, etc. can&#39;t jump instantaneously -- there has to be a continuous movement between them. </li>
 </ul>
+<p>The absolute simplest movement we can imagine is a linear ramp between one sample &amp; the next: <br ><br >
+                <iframe src="https://www.desmos.com/calculator/r3mtopejtw?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
 <p>Notice how irregular this waveform looks -- the transition moments are irregularly spaced, and the waveform seems to wobble around. These wobbles and spacings are <em>new lower frequencies</em> that are not part of the ideal waveform, and this is aliasing. </p>
 <p>It all happens because our transitions are forced to align to the sample boudnaries. But what if we could generate the same linear shape, placing the transitions between samples? Then all the irregularity disappears:<br ><br >
                 <iframe src="https://www.desmos.com/calculator/4xyjhhorlj?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>

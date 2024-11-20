@@ -1347,11 +1347,11 @@ Nov 20
 
 [Zoom Recording](#zoom-recordings)
 
-- This chapter is all about using one proess to determine the durations (or *lifespans*) of another. For example, a repeated tom sound has three timescales -- waveform duration (periodic), duration between sounds (periodic), and the envelope duration (a window of time):
+This chapter is all about using one proess to determine the durations (or *lifespans*) of another. For example, a repeated tom sound has three timescales -- waveform duration (periodic), duration between sounds (periodic), and the envelope duration (a window of time):
 
 https://www.desmos.com/calculator/hcae8t9tns
 
-- "Hard sync" is the simplest example of one timeline controlling another timeline, by cutting the lifespan short as it "resets" it to zero. Here one phasor (scheduler) resets another (follower):
+"Hard sync" is the simplest example of one timeline controlling another timeline, by cutting the lifespan short as it "resets" it to zero. Here one phasor (scheduler) resets another (follower):
 
 https://www.desmos.com/calculator/umlchj8rax
 
@@ -1432,7 +1432,7 @@ The final section of the chapter returns to the question of anti-aliasing a sawt
 
 - The ideal phasor (which the math approximates) has an instantaneous jump from 1 to 0, which usually happens somewhere between samples. 
 - A loudspeaker, air pressure, etc. can't jump instantaneously -- there has to be a continuous movement between them. 
- 
+
 The absolute simplest movement we can imagine is a linear ramp between one sample & the next: 
 
 https://www.desmos.com/calculator/r3mtopejtw
