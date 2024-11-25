@@ -30,6 +30,12 @@ let stations = [
 	},
 	{ id: 219029677, title: "Polyrhythms", author: "Santiago Bucio-Cano" },
 	{ id: 218392290, title: "Space Station", author: "Kaidi Chen" },
+
+	{ id: 217740184, title: "TECHNO24/7ALLYEARLONG", author: "Abdullah Al Fuad" },
+	{ id: 219167360, title: "F-16 Fighting Falcon during Combat", author: "Linh Dan Le" }, 
+
+	{ id: 219600576, title: "Stranger Things (Michael's Version)", author: "Michael Barras"},
+	{ id: 218894469, title: "Warped Signal", author: "Mishal Khan" }
 ];
 
 let scope = document.getElementById("scope")
