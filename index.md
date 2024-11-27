@@ -1457,12 +1457,18 @@ This is a really cheap way to get pretty decent antialiasing. It's not perfect, 
 
 [Back to top](#top)
 
-# Week 12: Final Presentations
+# Week 12: Final Meeting
 Nov 27
 
 [Zoom Recording](#zoom-recordings)
 
-**Final meeting**
+**Final project development & presenation**
+
+Instead of presenting final projects to class, we are instead spending today's class time refining final builds of the projects using the RNBO-enabled machines available, and I will help out with each project in any way that I can.
+
+Instead of in-class final presentations, each team should record a video presentation that can be shared on the course website so that all of us can view them. The final deadline for the project will be **Dec 6th**. The deadline for the recorded presentations is **Dec 12th** 
+
+**Exhibition**
 
 Digital Media will be having an end of term exhibition. Dates this year: December 4-6 with an opening celebration and performances Thursday, December 5 1-3pm. We need to know what works will be showing from DATT3074 (aside from submissions already made to the open call). 
 
