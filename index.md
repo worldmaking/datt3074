@@ -1464,6 +1464,16 @@ Nov 27
 
 **Final meeting**
 
+Digital Media will be having an end of term exhibition. Dates this year: December 4-6 with an opening celebration and performances Thursday, December 5 1-3pm. We need to know what works will be showing from DATT3074 (aside from submissions already made to the open call). 
+
+The deadline for us to submit work is November 30 (hard deadline), to Don by email, including:
+- Title
+- Name(s)
+- Course
+- A one paragraph description of the work
+- Any special technologies needed to present the work (video, audio, VR, AR, etc.)
+- Link to the materials
+
 # Zoom Recordings
 
 - [Week 0 Zoom recording - first patching](https://yorku.zoom.us/rec/share/ZL5_tEz7cuDZHNk585qCGx3GwyIf-ui4tt6ScNreRbT1ma-lIToigpasxu9n24I0.up3Jixd74Ti1Cb1j)
