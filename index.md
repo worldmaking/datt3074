@@ -1480,6 +1480,11 @@ The deadline for us to submit work is November 30 (hard deadline), to Don by ema
 - Any special technologies needed to present the work (video, audio, VR, AR, etc.)
 - Link to the materials
 
+----
+
+[Example of using a microphone in a web page](https://codepen.io/grrrwaaa/pen/ogvNmJV?editors=0010)
+
+
 # Zoom Recordings
 
 - [Week 0 Zoom recording - first patching](https://yorku.zoom.us/rec/share/ZL5_tEz7cuDZHNk585qCGx3GwyIf-ui4tt6ScNreRbT1ma-lIToigpasxu9n24I0.up3Jixd74Ti1Cb1j)
