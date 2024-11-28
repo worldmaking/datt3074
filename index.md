@@ -1498,6 +1498,7 @@ The deadline for us to submit work is November 30 (hard deadline), to Don by ema
 - [Week 7 Zoom recording - frequent modulations 1](https://yorku.zoom.us/rec/share/NcKhkz2hqEuPfgNeidRFCWjEg_XtTYNeWrLSeAajHI-tmRTv1C4EvCkZHUQb2ZJu.R2756ONcU45ty3Cl)
 -  [Week 8 Zoom recording - frequent modulations 2](https://yorku.zoom.us/rec/share/JbhqKvgQSunZmXES36cWoPhb-Xbg2HnrLvvIDH24KGVt31oTPC8AMDAuiiUjLKbG.cV3jn3RI6ULzVk1v)
 - [Week 11 Zoom recording - Windows of Time](https://drive.google.com/file/d/1B0tmhEzHsrVFWWHT0z8NBpOT0XC_27OO/view?usp=share_link)
+- [Week 12 Zoom recording - Exporting from RNBO](https://yorku.zoom.us/rec/share/tbwgGy0hvaaGOjo0cey8YDgnq1xM9m7LTzZF3DjhMGEKJ0wxRxWT3bbI1rcKdLcf.oKShC9mLhw7KDKJu)
 
 -----
 
