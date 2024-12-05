@@ -1484,6 +1484,26 @@ The deadline for us to submit work is November 30 (hard deadline), to Don by ema
 
 [Example of using a microphone in a web page](https://codepen.io/grrrwaaa/pen/ogvNmJV?editors=0010)
 
+# Final submissions
+
+
+For the final submissions:
+
+1. **Each student:** ensure all your assignments have been submitted.
+2. **Each team:** will need to submit their final project package to me. The final project package should include:
+  - The URL to the website documenting the project
+  - The full source files of the project, including Max patches, any assets, and any files that are part of the website.  This can be a Github repo if that works for you. 
+  - Please test & verify that you can open these files on another machine to make sure there are no missing dependencies! 
+  - Remember the [general requirements for patch submissions](#general-procedures-for-assignment-patches) -- including **lots of comments!**
+  - The final exported form of the project, if it is not a website -- e.g. VST plugins. 
+  - Only one member of the team needs to submit this final project package.  You can submit it to me by email. 
+3. **Each team:** should record a video presentation that can be shared on the course website so that all of us can view them. This submission should be a URL to the video hosted online. Please ensure that this video is open access to anyone with the link (verify this by testing on a different machine). Only one member of the team needs to submit this final project package. Please submit it using [the submission form here](https://docs.google.com/forms/d/e/1FAIpQLScB85pZ1o-weFqlZOdW2aONvA1JTPLI6Tl7r3ApepnnuulqaQ/viewform?usp=sf_link)
+4. **Each student:** submit a final personal report, using [the final report form here](https://docs.google.com/forms/d/e/1FAIpQLSfkYuNobBju2O9GVd2q5q0ceXlhpNWqnDc5VujaSO6jpvpnvA/viewform?usp=sf_link)
+
+The deadline for all of these submissions is **Dec 12th**. 
+
+See you at the exhibition opening! 
+
 
 # Zoom Recordings
 
