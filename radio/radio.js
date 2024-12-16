@@ -35,7 +35,9 @@ let stations = [
 	{ id: 219167360, title: "F-16 Fighting Falcon during Combat", author: "Linh Dan Le" },
 
 	{ id: 219600576, title: "Stranger Things (Michael's Version)", author: "Michael Barras" },
-	{ id: 218894469, title: "Warped Signal", author: "Mishal Khan" }
+	{ id: 218894469, title: "Warped Signal", author: "Mishal Khan" },
+
+	{ id: 218217968, title: "Spooky FM", author: "Ivan Ng" }
 ];
 
 let scope = document.getElementById("scope")
