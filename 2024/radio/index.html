@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <meta name="rnbo-version" content="1.0.0-alpha.5">
+    <title>RADIO DATT3074</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Micro+5&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: "Micro 5", sans-serif;
+            font-size: 1.1em;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            margin-left: 10%;
+            margin-right: 10%;
+            overflow: hidden; /* Hide scrollbars */
+        }
+
+        .large {
+            font-size: 1.8em;
+        }
+
+        .led {
+            color: red;
+            font-size: 1.8em;
+        }
+
+        .grey {
+            color: grey;
+        }
+
+        .middle {
+            width: 80%;
+            height: 80vh;
+            text-align: center;
+
+            font-family: "Micro 5", sans-serif;
+            font-size: 1.2em;
+
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            margin: auto;
+        }
+
+        button {
+            background-color: white;
+        }
+
+        button:hover {
+            background-color: lightgray;
+        }
+
+        button:focus {
+            background-color: red;
+        }
+
+
+        .fullscreen {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -10;
+}
+
+.fullscreen canvas {
+  object-fit: contain;
+  max-height: 100%;
+  max-width: 100%;
+}
+    </style>
+</head>
+
+<body>
+    <div class="middle">
+        <div class="large">RADIO DATT3074</div>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="channels" class="grey">Select channel:<br></div>
+
+        <script src="https://unpkg.com/webaudio-oscilloscope@3.2.1/dist/index.js"></script>
+        <script type="module" src="radio.js"></script>
+        <pre id="date" class="led">...</pre>
+
+        <div class="fullscreen">
+            <canvas id="scope" width="200" height="80px"></canvas>
+        </div>
+        <div id="title"></div>
+        <i id="author" class="grey"></i>
+    </div>
+</body>
+
+</html>
