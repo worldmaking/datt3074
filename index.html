@@ -102,15 +102,16 @@ function copyPatch(str) {
 <li><a href="#week-11-windows-of-time">Week 11: Windows of Time</a></li>
 <li><a href="#week-12-final-meeting">Week 12: Final Meeting</a></li>
 <li><a href="#final-submissions">Final submissions</a></li>
-<li><a href="#zoom-recordings">Zoom Recordings</a></li>
+<li><a href="#class-recordings">Class Recordings</a></li>
 </ul>
 
 <hr>
 <h1 id="datt3074-creative-generative-audio-signal-processing">DATT3074 Creative Generative Audio Signal Processing</h1>
 <h2 id="course-information">Course Information</h2>
-<p>Wednesdays, 3pm-6pm, Fall 2024, Fine Arts building room <em>ACW 103 or ACW 102</em></p>
-<p><strong>Instructor:</strong> <a href="https://ampd.yorku.ca/profile/graham-wakefield/">Graham Wakefield</a> grrrwaaa a t york u do t ca</p>
+<p>Wednesdays, 2.30pm-5.25pm, Fall 2024, Fine Arts building room <em>ACW 103 or ACW 102 (TBC)</em></p>
+<p><strong>Instructor:</strong> <a href="https://ampd.yorku.ca/profile/graham-wakefield/">Graham Wakefield</a> g rrr w aaa a t yo rk u do t ca</p>
 <p>Course material is available at or linked from <a href="https://alicelab.world/datt3074/">this website</a> -- bookmark it! </p>
+<p>Assignments will be handled through <strong>e-Class</strong> at <a href="">https://eclass.yorku.ca/course/view.php?id=143593</a> </p>
 <p>This course is about the astonishing things you can do—and the insights you can find—when you work at the atomic sample-by-sample structure of digital audio. The course focuses on creative exploration of algorithmic and generative sonic signal processing with a special emphasis on “working at the sample level” in real-time/interactive contexts. This means working at the lowest level of time-domain digital audio signals, as is made possible through a software called gen~, that is part of Cycling &#39;74&#39;s Max and RNBO. These tools that are widely used for prototyping in artistic and industrial settings including audio software &amp; hardware design, music production, game audio, sonic arts, and other broader contexts. </p>
 <blockquote>
 <p>Audio is one of the primary modalities of digital media art and development. A core emphasis of the Digital Media programs at York is for students to develop their own computational solutions (algorithms and code) to explore creative technology problems most deeply, rather than only relying on available off-the-shelf media and tools. This course specifically serves this aspect – learning how to develop and refine creative algorithms for audio generation and processing, at the lowest level (sample streams) for maximum creative flexibility. </p>
@@ -123,7 +124,6 @@ function copyPatch(str) {
 <blockquote>
 <p>Prerequisite: DATT 2050 or by permission of the instructor.</p>
 </blockquote>
-<p><em>Note: 2024 is the first year the course runs, so it will be somewhat experimental as we learn what works. As such, the weekly content will be fleshed out adaptively over the next few weeks.</em></p>
 <p><strong>Course textbook</strong></p>
 <p>The course follows the structure and assigns readings from the textbook “<a href="https://cycling74.com/books/go">Generating Sound &amp; Organizing Time</a>”, Wakefield G. and Taylor, G. Cycling ’74, October 2021. ISBN-10: 1732590311 / ISBN-13: 978-1732590311</p>
 <ul>
@@ -134,10 +134,10 @@ function copyPatch(str) {
 <p><strong>Course software</strong></p>
 <p>We will work using the <strong>gen~</strong> environment within <a href="https://cycling74.com">Cycling &#39;74&#39;s Max</a>. All students have access to a license for Max supported by the course fees. </p>
 <p>License codes should be coming to all students by Sep 11th. </p>
-<p>The computers in ACW 102 also have Max installed and licensed, and students can come in to use them during open lab hours.</p>
+<p>The computers in ACW 102 also have Max installed and licensed, and students can come in to use them during open lab hours. These machines also have the RNBO license that you may need for the final project. </p>
 <p><strong>Evaluation</strong></p>
 <ul>
-<li>30% Assignments<ul>
+<li>45% Assignments<ul>
 <li>Three or four practical individual assignments using gen~ patching through the course (details to follow)</li>
 </ul>
 </li>
@@ -145,11 +145,11 @@ function copyPatch(str) {
 <li>Being present in class, taking part in discussions, group reviews, etc. </li>
 </ul>
 </li>
-<li>20% Presentations<ul>
+<li>15% Presentations<ul>
 <li>Presenting your works in progress and final project, and explaining the development processes</li>
 </ul>
 </li>
-<li>30% Final Project<ul>
+<li>20% Final Project<ul>
 <li>A more significant project, possibly collaborative, through several steps of development using gen~, with a final embodiment using a code export method (details to follow)</li>
 </ul>
 </li>
@@ -157,13 +157,14 @@ function copyPatch(str) {
 <p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-0-one-sample-at-a-time">Week 0: One Sample at a Time</h1>
-<p>Sep 4</p>
-<p><a href="#zoom-recordings">Zoom Recording</a></p>
+<p>Sep 3</p>
+<p><a href="#zoom-recordings">Class Recording</a></p>
 <p><strong>Hello and welcome!</strong><p><a href="https://docs.google.com/presentation/d/1xrXM86cCE7vzykYYdINs1G9g9f7FaeiiZd6IRlKBEjI/">https://docs.google.com/presentation/d/1xrXM86cCE7vzykYYdINs1G9g9f7FaeiiZd6IRlKBEjI/</a></p>
             <iframe src="https://docs.google.com/presentation/d/1xrXM86cCE7vzykYYdINs1G9g9f7FaeiiZd6IRlKBEjI/embed?start=false" frameborder="0" width="960" height="569" allowfullscreen></iframe></p>
 <p><strong>Get things installed</strong></p>
 <p>Make sure you have Max running, and can edit a gen~ patcher. </p>
 <p>Be sure to also install the additional patches that come with the book (the download link &amp; instructions are on page 3.)</p>
+<p><strong>Attendance check</strong></p>
 <p><strong>Let&#39;s patch</strong></p>
 <p>Get to know some of the most commonly used gen~ operators. How to find out about operators while patching.</p>
 <ul>
@@ -259,8 +260,8 @@ v18mtU+yayW0h+Xs2Kyze2ut6+Tw.6SJ
 <p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-1-ramps-modular-arithmetic-of-time">Week 1: Ramps: Modular Arithmetic of Time</h1>
-<p>Sep 11</p>
-<p><a href="#zoom-recordings">Zoom Recording</a><br ><br >
+<p>Sep 10</p>
+<p><a href="#zoom-recordings">Class Recording</a><br ><br >
                 <iframe src="https://www.desmos.com/calculator/6pvtkzbh6b?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
 <p><strong>Let&#39;s work through the first patches of Chapter 2</strong></p>
 <ul>
@@ -340,6 +341,7 @@ Pm7aN3bAk9oEzqEtQ62ThVbDhLdaIg3eAiId4EUuQHpT8SMiQHMG8CAUY2HT
 kr3ddj987vmUX6j2dF0ZdxaMyIuwLm+1xL7aJyoukL52Pl9d6XTyw+3e+3+E
 fjXph
 -----------end_max5_patcher-----------" onclick="copyPatch(this.value)">Copy Max Patch and select <strong>File / New From Clipboard</strong> in Max</button></p>
+<p><strong>Attendance check</strong></p>
 <p><strong>Discuss the merits of phasor ramps over triggers for rhythm &amp; cyclic time</strong><br ><br >
                 <iframe src="https://www.desmos.com/calculator/lizn4hxeit?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
 <ul>
@@ -518,8 +520,9 @@ h
 <p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-2-unit-shaping">Week 2: Unit Shaping</h1>
-<p>Sep 18</p>
-<p><a href="#zoom-recordings">Zoom Recording</a></p>
+<p>Sep 17</p>
+<p><a href="#zoom-recordings">Class Recording</a></p>
+<p><strong>Attendance check</strong></p>
 <ul>
 <li><strong>Examples of working with phasor ramp rhythms</strong><ul>
 <li>A phasor beat clock: <strong>ramp_from_bpm.maxpat</strong></li>
@@ -630,9 +633,10 @@ jhz8+48+O7IrgnC
 <p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-3-uncertainty-and-unpredictablility">Week 3: Uncertainty and Unpredictablility</h1>
-<p>Sep 25</p>
-<p><a href="#zoom-recordings">Zoom Recording</a></p>
+<p>Sep 24</p>
+<p><a href="#zoom-recordings">Class Recording</a></p>
 <p>Reviewing <a href="#assignment-1">Assignment 1</a> &amp; <a href="#assignment-1-sounds">the sounds</a></p>
+<p><strong>Attendance check</strong></p>
 <p><strong>What is noise?</strong></p>
 <ul>
 <li>A non-repeating pattern, which our perceptual system cannot resolve </li>
@@ -748,8 +752,8 @@ p62i5784c8NdGuG2sqtS2g5xUU6xMe8l+EfYQwwF
 <p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-4-stepping-in-time">Week 4: Stepping in Time</h1>
-<p>Oct 2</p>
-<p><a href="#zoom-recordings">Zoom Recording</a></p>
+<p>Oct 1</p>
+<p><a href="#zoom-recordings">Class Recording</a></p>
 <p>We can create melodies by mixing scaled gate signals e.g. <strong>mixer-sequencer.maxpat</strong>. Or take some chaos, feed it through a comparator, and mix those. </p>
 <p>We saw the basic sample &amp; hold sequencer in week 2 (<strong>latched-sequencer.maxpat</strong>), and the basic shift register (<strong>shift-register.maxpat</strong>)</p>
 <p><strong>A quick primer on pitch</strong>, and how we represent pitch in signals</p>
@@ -774,6 +778,7 @@ p62i5784c8NdGuG2sqtS2g5xUU6xMe8l+EfYQwwF
 </ul>
 <p>See <strong>quantizing-pitch.maxpat</strong><br ><br >
                 <iframe src="https://www.desmos.com/calculator/pr6rgxwplx?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
+<p><strong>Attendance check</strong></p>
 <p><strong>Deep dive</strong>: We can combine those ideas into a more complex generative sequencer, based on the Klee Sequencer: </p>
 <ul>
 <li>Feed some binary choice input (the &quot;data&quot; input) into a <code>go.shiftregister8</code>, which is clocked by a <code>phasor</code> -&gt; <code>go.ramp2trig</code>, for example. </li>
@@ -938,8 +943,9 @@ Ad8hb+bnf5N0o5h37STjusN9D03+IZw+TJw+7zg+moB+BZvuNJv2Fv+W92e4
 <p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-5-filters-and-the-balance-of-time">Week 5: Filters and the Balance of Time</h1>
-<p>Oct 9</p>
-<p><a href="https://yorku.zoom.us/rec/share/ueNEZRT55KuhCN73jZc2CtstoEZTK5uaOe2App3gWOQqk8Ut-Hhm6jVVVjkZZBVs.3IT8WxYZVMXVVEVG">Week 5 Zoom Recordings</a></p>
+<p>Oct 8</p>
+<p><a href="https://yorku.zoom.us/rec/share/ueNEZRT55KuhCN73jZc2CtstoEZTK5uaOe2App3gWOQqk8Ut-Hhm6jVVVjkZZBVs.3IT8WxYZVMXVVEVG">Week 5 Class Recordings</a></p>
+<p><strong>Attendance check</strong></p>
 <p>In almost every class since the first week we have encountered a simple lowpass filter. Most often we have seen the filter as a <code>mix</code> and <code>history</code> pair, which is known as a <strong>one pole filter</strong>, but if we dig into the algebra of this a bit, or rather, if we re-arrange the patching a bit, there&#39;s a few other ways of seeing what this is. 
 (See <strong>onepole-explorations.maxpat</strong> for examples of most of the ideas below.)</p>
 <ul>
@@ -1005,8 +1011,9 @@ See <strong>slide_slew_and_line.maxpat</strong></p>
 <p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-7-the-effects-of-delay">Week 7: The Effects of Delay</h1>
-<p>Oct 23</p>
-<p><a href="#zoom-recordings">Zoom Recording</a></p>
+<p>Oct 22</p>
+<p><a href="#zoom-recordings">Class Recording</a></p>
+<p><strong>Attendance check</strong></p>
 <p>What is a digital delay? </p>
 <p>In a way it is a bit like a long chain of <code>history</code> objects, each one delaying the input by one sample. But it would take tens of thousands of these objects  to get an echo of one second; and we don&#39;t want to have tens of thousands of objects running in a patch! Instead we can use the <code>delay</code> object, which does things much more efficiently. For example, any signal sent into a <code>delay 10000</code> object will come out of the output 10000 samples later. </p>
 <p>It is helpful to think of a delay as a loop of memory.</p>
@@ -1199,10 +1206,12 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 <p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-8-frequent-modulations">Week 8: Frequent Modulations</h1>
-<p>Oct 30 </p>
-<p><a href="#zoom-recordings">Zoom Recording</a></p>
+<p>Oct 29 </p>
+<p><a href="#zoom-recordings">Class Recording</a></p>
 <hr>
 <p><strong>Thinking ahead about <a href="#final-project">final project</a></strong></p>
+<hr>
+<p><strong>Attendance check</strong></p>
 <hr>
 <p>This chapter is all about modulating one oscillator by another. </p>
 <p>Many times we have seen multiplying a signal by some other constant to set its apparent loudness, or multiplying by an envelope to shape the loudness over time. Try multiplying an audible sine wave (e.g. <code>cycle 200</code>) by a low frequency oscillator (LFO, e.g. <code>cycle 2</code>). You might want to <code>scale -1 1 0 1</code> to get the LFO to be unipolar, just like an envelope. Now try raising the frequency of the LFO into audible rates, and listen to what happens. <br ><br >
@@ -1237,8 +1246,8 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 <p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-9-review">Week 9: Review</h1>
-<p>Nov 6</p>
-<p><a href="#zoom-recordings">Zoom Recording</a></p>
+<p>Nov 5</p>
+<p><a href="#zoom-recordings">Class Recording</a></p>
 <ul>
 <li><p>Final project discussions</p>
 <ul>
@@ -1247,13 +1256,9 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 </li>
 <li><p>Radio discussions</p>
 </li>
-<li><p>SynthUX Hackathon -- do you want to help organize one at York University?</p>
-<ul>
-<li><a href="https://www.synthux.academy/synthux-hackathon?enchmail=Z3JycndhYWFAZ21haWwuY29t&amp;utm_source=encharge&amp;utm_medium=email&amp;utm_campaign=Synthux+Hackathon+2025+and+2024+gallery%21&amp;utm_content=Join+Synthux+Hackathon+2025">2024 gallery</a></li>
-<li><a href="https://www.youtube.com/watch?v=c4VkFAqvXvM&amp;list=PLZbxc8QYjD1cAIv1CcilXVWVpZyj_NY_n">2023 playlist</a></li>
-</ul>
-</li>
 <li><p>Longer-term projects -- do you want to do things in the Alice Lab?</p>
+</li>
+<li><p><strong>Attendance check</strong></p>
 </li>
 <li><p>Continuing from last week, from PM feedback onward. </p>
 </li>
@@ -1288,8 +1293,8 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 <p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-10-navigating-waves-of-data">Week 10: Navigating Waves of Data</h1>
-<p>Nov 13</p>
-<p><a href="#zoom-recordings">Zoom Recording</a></p>
+<p>Nov 12</p>
+<p><a href="#zoom-recordings">Class Recording</a></p>
 <p>Back in chapter 2 we saw how to play a buffer~ with the <code>sample</code> operator, using linear interpolation to estimate the values between samples. Remember, linear interpolation is just like a <code>mix</code> crossfade. </p>
 <p>When the phasor playing a buffer is an audible frequency, this dominates the apparent pitch, while the buffer content determines the waveform and timbre of the sound.  This seems incredibly flexible, but the buffer data is static. </p>
 <p>To work around this, many synthesizers packed multiple waveforms into a single buffer, so you can select different subsections at any time. This is a <strong>wavetable</strong>. </p>
@@ -1307,6 +1312,8 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 <li>Now we have X, Y, and Z indices, 8 nearest waves means 8 <code>wave</code> operators; and three layers of <code>mix</code> operators to morph them. </li>
 <li>See <strong>wavetable_3D.maxpat</strong></li>
 </ul>
+<hr>
+<p><strong>Attendance check</strong></p>
 <hr>
 <p>A related approach to 2D wavetables is to create <strong>wave terrains</strong>. In this case, there is a 2D space in which each cell is a single sample, rather than a single waveform. You play a wave terrain by traversing a path through it -- which is sometimes called an <em>orbit</em>.  We can re-use a lot of the patching from the 2D wavetable -- for computing indices and doing bilinar interpolation. For a simple orbit, we can use the <code>poltocar</code> operator, which generates X and Y pairs from a radius and angle. See <strong>waveterrain_2D.maxpat</strong>. </p>
 <p>To generate terrains we&#39;ll need to dig into a <code>codebox</code> for nested for loops -- one loop for X and another for Y. See <strong>waveterrain_generate_codebox.maxpat</strong>. Or, we can make use of Jitter matrices to generate terrains, see <strong>waveterrain_generate_BFG.maxpat</strong>. </p>
@@ -1418,8 +1425,9 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 <p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-11-windows-of-time">Week 11: Windows of Time</h1>
-<p>Nov 20</p>
-<p><a href="#zoom-recordings">Zoom Recording</a></p>
+<p>Nov 19</p>
+<p><a href="#zoom-recordings">Class Recording</a></p>
+<p><strong>Attendance check</strong></p>
 <p>This chapter is all about using one proess to determine the durations (or <em>lifespans</em>) of another. For example, a repeated tom sound has three timescales -- waveform duration (periodic), duration between sounds (periodic), and the envelope duration (a window of time):<br ><br >
                 <iframe src="https://www.desmos.com/calculator/hcae8t9tns?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
 <p>&quot;Hard sync&quot; is the simplest example of one timeline controlling another timeline, by cutting the lifespan short as it &quot;resets&quot; it to zero. Here one phasor (scheduler) resets another (follower):<br ><br >
@@ -1485,8 +1493,8 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 <p><a href="#top">Back to top</a></p>
 <hr>
 <h1 id="week-12-final-meeting">Week 12: Final Meeting</h1>
-<p>Nov 27</p>
-<p><a href="#zoom-recordings">Zoom Recording</a></p>
+<p>Nov 26</p>
+<p><a href="#zoom-recordings">Class Recording</a></p>
 <p><strong>Final project development &amp; presenation</strong></p>
 <p>Instead of presenting final projects to class, we are instead spending today&#39;s class time refining final builds of the projects using the RNBO-enabled machines available, and I will help out with each project in any way that I can.</p>
 <p>Instead of in-class final presentations, each team should record a video presentation that can be shared on the course website so that all of us can view them. The final deadline for the project will be <strong>Dec 6th</strong>. The deadline for the recorded presentations is <strong>Dec 12th</strong> </p>
@@ -1525,21 +1533,23 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 <p>The deadline for all of these submissions is <strong>Dec 12th</strong>. </p>
 <p>See you at the exhibition opening! </p>
 <hr>
-<h1 id="zoom-recordings">Zoom Recordings</h1>
-<ul>
-<li><a href="https://yorku.zoom.us/rec/share/ZL5_tEz7cuDZHNk585qCGx3GwyIf-ui4tt6ScNreRbT1ma-lIToigpasxu9n24I0.up3Jixd74Ti1Cb1j">Week 0 Zoom recording - first patching</a></li>
-<li><a href="https://yorku.zoom.us/rec/share/c48SeyUAO5fOMAsi4FHKUKhfC0cuqSElXscdCOm3_45viQCBLXB_2ntBETZTwlS_.T6avFZCTHbIMSuZz">Week 1 Zoom recording - ramps and beat slicer</a></li>
-<li><a href="https://yorku.zoom.us/rec/share/FgkO9V8vK-bC27z-XJsfaLdsN4dWlLjAPzCVJFIwj404-GM60I0Nblq0rZ3OLW4h.moN-NS8z43sjb4Z4">Week 2 Zoom recording - more ramp processing, from ramps to LFOs, and other shapes</a></li>
-<li><a href="https://yorku.zoom.us/rec/share/hOsXZrPLHHdsrvByV6L08t2bL4ST8_trA-W3ZcYc4YZ_Q-v0vUgAMgtObdhrrF-P.v7jIU_hzeyU-p94H">Week 3 Zoom recording - noise, uncertainty, chaos, simple sequencer</a></li>
-<li><a href="https://yorku.zoom.us/rec/share/ueNEZRT55KuhCN73jZc2CtstoEZTK5uaOe2App3gWOQqk8Ut-Hhm6jVVVjkZZBVs.3IT8WxYZVMXVVEVG">Week 4 Zoom recording - pitch conversions, quantizing, shift register sequencer</a></li>
-<li><a href="https://yorku.zoom.us/rec/share/iDWJhpSMjXnuglzEKIoD_iDxK6lIEw8sl4YwyhMBZXSGlN5A1IeqIUIl6ZSEADKb.wXZvqRpiamOTxXFz">Week 5 Zoom recording 1 - catching up: Euclidean Rhythms, pitch quantizers, and audio bitcrushing</a></li>
-<li><a href="https://yorku.zoom.us/rec/share/i59rxlt_NoYpDxxoQGfmQPdsBREseAF4UuGiONZbUbpEVLax8A7UiJ9OPD8moqXy.dhqkOLQaIpN2-jQR">Week 5 Zoom recording 2 - filters, lines, slews, more filters</a></li>
-<li><a href="https://yorku.zoom.us/rec/share/zzaFDAYbv7VFpi641qbFF2xhVpTqhHTJU6JX9ivVI-4346Tca9UPm36zS4w5SSLv.12-v5HytdmCvgxlo">Week 6 Zoom recording - delay effects</a></li>
-<li><a href="https://yorku.zoom.us/rec/share/NcKhkz2hqEuPfgNeidRFCWjEg_XtTYNeWrLSeAajHI-tmRTv1C4EvCkZHUQb2ZJu.R2756ONcU45ty3Cl">Week 7 Zoom recording - frequent modulations 1</a></li>
-<li> <a href="https://yorku.zoom.us/rec/share/JbhqKvgQSunZmXES36cWoPhb-Xbg2HnrLvvIDH24KGVt31oTPC8AMDAuiiUjLKbG.cV3jn3RI6ULzVk1v">Week 8 Zoom recording - frequent modulations 2</a></li>
-<li><a href="https://drive.google.com/file/d/1B0tmhEzHsrVFWWHT0z8NBpOT0XC_27OO/view?usp=share_link">Week 11 Zoom recording - Windows of Time</a></li>
-<li><a href="https://yorku.zoom.us/rec/share/tbwgGy0hvaaGOjo0cey8YDgnq1xM9m7LTzZF3DjhMGEKJ0wxRxWT3bbI1rcKdLcf.oKShC9mLhw7KDKJu">Week 12 Zoom recording - Exporting from RNBO</a></li>
-</ul>
+<h1 id="class-recordings">Class Recordings</h1>
+<p>Recordings of the weekly sessions will be here:</p>
+<!-- 
+- [Week 0 Class Recording - first patching](https://yorku.zoom.us/rec/share/ZL5_tEz7cuDZHNk585qCGx3GwyIf-ui4tt6ScNreRbT1ma-lIToigpasxu9n24I0.up3Jixd74Ti1Cb1j)
+- [Week 1 Class Recording - ramps and beat slicer](https://yorku.zoom.us/rec/share/c48SeyUAO5fOMAsi4FHKUKhfC0cuqSElXscdCOm3_45viQCBLXB_2ntBETZTwlS_.T6avFZCTHbIMSuZz)
+- [Week 2 Class Recording - more ramp processing, from ramps to LFOs, and other shapes](https://yorku.zoom.us/rec/share/FgkO9V8vK-bC27z-XJsfaLdsN4dWlLjAPzCVJFIwj404-GM60I0Nblq0rZ3OLW4h.moN-NS8z43sjb4Z4)
+- [Week 3 Class Recording - noise, uncertainty, chaos, simple sequencer](https://yorku.zoom.us/rec/share/hOsXZrPLHHdsrvByV6L08t2bL4ST8_trA-W3ZcYc4YZ_Q-v0vUgAMgtObdhrrF-P.v7jIU_hzeyU-p94H)
+- [Week 4 Class Recording - pitch conversions, quantizing, shift register sequencer](https://yorku.zoom.us/rec/share/ueNEZRT55KuhCN73jZc2CtstoEZTK5uaOe2App3gWOQqk8Ut-Hhm6jVVVjkZZBVs.3IT8WxYZVMXVVEVG)
+- [Week 5 Class Recording 1 - catching up: Euclidean Rhythms, pitch quantizers, and audio bitcrushing](https://yorku.zoom.us/rec/share/iDWJhpSMjXnuglzEKIoD_iDxK6lIEw8sl4YwyhMBZXSGlN5A1IeqIUIl6ZSEADKb.wXZvqRpiamOTxXFz)
+- [Week 5 Class Recording 2 - filters, lines, slews, more filters](https://yorku.zoom.us/rec/share/i59rxlt_NoYpDxxoQGfmQPdsBREseAF4UuGiONZbUbpEVLax8A7UiJ9OPD8moqXy.dhqkOLQaIpN2-jQR)
+- [Week 6 Class Recording - delay effects](https://yorku.zoom.us/rec/share/zzaFDAYbv7VFpi641qbFF2xhVpTqhHTJU6JX9ivVI-4346Tca9UPm36zS4w5SSLv.12-v5HytdmCvgxlo)
+- [Week 7 Class Recording - frequent modulations 1](https://yorku.zoom.us/rec/share/NcKhkz2hqEuPfgNeidRFCWjEg_XtTYNeWrLSeAajHI-tmRTv1C4EvCkZHUQb2ZJu.R2756ONcU45ty3Cl)
+-  [Week 8 Class Recording - frequent modulations 2](https://yorku.zoom.us/rec/share/JbhqKvgQSunZmXES36cWoPhb-Xbg2HnrLvvIDH24KGVt31oTPC8AMDAuiiUjLKbG.cV3jn3RI6ULzVk1v)
+- [Week 11 Class Recording - Windows of Time](https://drive.google.com/file/d/1B0tmhEzHsrVFWWHT0z8NBpOT0XC_27OO/view?usp=share_link)
+- [Week 12 Class Recording - Exporting from RNBO](https://yorku.zoom.us/rec/share/tbwgGy0hvaaGOjo0cey8YDgnq1xM9m7LTzZF3DjhMGEKJ0wxRxWT3bbI1rcKdLcf.oKShC9mLhw7KDKJu)
+-->
+
 <hr>
 <p><strong>Further reading recommendations:</strong></p>
 <ul>
