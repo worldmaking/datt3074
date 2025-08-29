@@ -23,14 +23,14 @@ For clarification: this is not a course about music composition, performance, or
 
 > Prerequisite: DATT 2050 or by permission of the instructor.
 
-**Course textbook**
+### Course textbook
 
 The course follows the structure and assigns readings from the textbook “[Generating Sound & Organizing Time](https://cycling74.com/books/go)”, Wakefield G. and Taylor, G. Cycling ’74, October 2021. ISBN-10: 1732590311 / ISBN-13: 978-1732590311
 - It is available on [Amazon.ca here](https://www.amazon.ca/Generating-Sound-Organizing-Time-Thinking/dp/1732590311)
 - Copies are in stock in the York University Bookstore.
 - There also four copies available in the Scott Library through [York University Library course reserve here](https://ocul-yor.primo.exlibrisgroup.com/permalink/01OCUL_YOR/q36jf8/alma991036915148805164) 
 
-**Course software**
+### Course software
 
 We will work using the **gen~** environment within [Cycling '74's Max](https://cycling74.com). All students have access to a license for Max supported by the course fees. 
 
@@ -38,7 +38,7 @@ License codes should be coming to all students by Sep 11th.
 
 The computers in ACW 102 also have Max installed and licensed, and students can come in to use them during open lab hours. These machines also have the RNBO license that you may need for the final project. 
 
-**Evaluation**
+### Evaluation
 
 - 50% Assignments
   - Three individual assignments using gen~ patching, through September-October. 
@@ -1566,7 +1566,7 @@ Here's the example of mapping a javascript animation to sound:
 
 Throughout November we will dedicate lab time to developing the projects step by step. 
 
-Be aware that these kinds of projects can face unexpected technical challenges -- it's important to make good progress early on! Don't get stuck with any roadblocks, identify them immediately and reach out to me.  
+Be aware that these kinds of projects can face unexpected technical challenges -- it's important to make good progress early on! Don't get stuck with any roadblocks, identify them immediately and reach out to me. 
 
 ## Stage 3: Final project submission
 
