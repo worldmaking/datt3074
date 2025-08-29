@@ -3,7 +3,7 @@
 
 ## Course Information
 
-Wednesdays, 2.30pm-5.25pm, Fall 2024, Fine Arts building room *ACW 103 or ACW 102 (TBC)*
+Wednesdays, 2.30pm-5.25pm, Fine Arts building room *ACW 103 or ACW 102 (TBC)*
 
 **Instructor:** [Graham Wakefield](https://ampd.yorku.ca/profile/graham-wakefield/) g rrr w aaa a t yo rk u do t ca
 
@@ -40,14 +40,21 @@ The computers in ACW 102 also have Max installed and licensed, and students can 
 
 **Evaluation**
 
-- 45% Assignments
-  - Three or four practical individual assignments using gen~ patching through the course (details to follow)
+- 50% Assignments
+  - Three individual assignments using gen~ patching through the course. 
+    - [Assignment 1](#assignment-1)
+    - [Assignment 2](#assignment-2)
+    - [Assignment 3](#assignment-3)
+    - [General assignment instructions](#general-procedures-for-assignment-patches)
 - 20% Participation
   - Being present in class, taking part in discussions, group reviews, etc. 
-- 15% Presentations
-  - Presenting your works in progress and final project, and explaining the development processes
+    - There will be attendance checks most weeks. 
 - 20% Final Project
-  - A more significant project, possibly collaborative, through several steps of development using gen~, with a final embodiment using a code export method (details to follow)
+  - A more significant project, optionally in a group collaboration, through several steps of development using gen~, with a final embodiment using a code export method
+- 10% Presentations
+  - Presenting your works in progress and final project, and explaining the development processes
+
+*Grading proportions have been adjusted in response to student feedback in 2024.* 
 
 [Back to top](#top)
 
@@ -66,7 +73,7 @@ Make sure you have Max running, and can edit a gen~ patcher.
 
 Be sure to also install the additional patches that come with the book (the download link & instructions are on page 3.)
 
-**Attendance check**
+**[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
 
 **Let's patch**
 
@@ -165,7 +172,7 @@ https://www.desmos.com/calculator/6pvtkzbh6b
 **Let's work through the first patches of Chapter 2**
 
 - **Counting by sample frames**
-  - Every object, every signal cable, the entire patch, runs one sample at a time
+  - **Remember:** Every object, every signal cable, the entire patch, runs one sample at a time
   - A counter with `+` and `history`.  Toggle to enable. `/ samplerate` for seconds.
   - Adding a `switch` to rewind, `click~` to trigger it. 
   - We have just built the `accum` operator. 
@@ -235,7 +242,7 @@ fjXph
 -----------end_max5_patcher-----------
 </code></pre>
 
-**Attendance check**
+**[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
 
 **Discuss the merits of phasor ramps over triggers for rhythm & cyclic time**
 
@@ -306,122 +313,6 @@ rCn6pSIUGySp36DpBMtlGDNtp2JrxNiuxNmjjvQuRdMK5QuJdG8Z3c5qf24e
 -----------end_max5_patcher-----------
 </code></pre>
 
-## Assignment 1
-
-Make a patch that can generate new ring tones for your phone. This is a generative patch: each time the patch runs, it produces a ring tone that sounds a little different. Your ring tone will be 25 seconds long. It can be stereo if you want, but mono (single channel) is fine -- not all phones have stereo speakers.
-
-Be sure to follow all the [general procedures for assignment patches](#general-procedures-for-assignment-patches)
-
-Start from the template patch here: press the button below to copy the patch to your clipboard, and then open Max and select `File -> New From Clipboard`, then save that patch as "assignment1.maxpat":
-
-<pre><code>
-----------begin_max5_patcher----------
-2562.3ocwas0bihiE94jeEpXeYlcSbPhal9oYps1eA6C6CcOUJYP1VciAFjH
-I8L0z+1WcCLXyMavd5pRbPRFcNe5b46Ho9Oe7AqMYePXVfOA9L3gG9yGe3AU
-SxFdv77CVGveDkfYpgYEkc3.Ika8jtON4Ctpc12Si.E3C4fexFvy.vetZHIz
-TRTVYpZbNlFSKOPSSHb0KEdrwrRdUq1lVowpIHayWeNvt5kli4Q6oo6dsfDw
-0xuiMbk8S.GGj7C2fpeC9M4W4ud7Q4udZlpItLllADRYdIuSEDMKEzObHEzU
-oe1gG0OGmEV+9OwTNfumx.JAfT.D+PjKnwjsB8D78rxBPgPv3YhmXB0N9xwg
-Mka1jPtLjIvp0WlQiIMmGoF70RFmtkFg4zrzlu8N.yPaI9gfJiEn9IOzBil7
-xhTAZR.aJ4B7BPSE.IFvDhRB4YlvaIg.hRnQeCvKn61QJtE1T9CXS4q0+.k9
-C8ruIFUaKH+dIIM56.VtXlKJOXMOMxc.Mx0ySsVFF1PkP1KrJ8N9Mx1rh4pH
-NiqHtAqWBEQi7YrnrbxO5TpQcJ0vykZTsAkdb7umSzhrkE325WgBT1Zdd5HW
-qcTpk80ZrkPeirps5ncnTc65Bk30rTSudUyM3zcCppHac5GjRIQt9Jc0Qs3Y
-9VEh2g488LbETz8J30sxdoKoUvBtjmcPDqLpO.XH2L8hoQAUZVsBtftY+JiQ
-2kJ6B.+D3WOl34.9ajhuj9eIDvdNOm8oWdAKhiRRvaV8dVQR7KwXN2wNv8k+
-At9k7L7FDeEU6DuMKkyn+gNujas4WW1GJpJHEF56p+XwwN.xCvDZYZL3mPdO
-Yaaef8yhTQa2JRqKRDIDmrhXURo4EFCgFJLVnqNEqJdLxGdShG++JnbhLnL3
-cZRBPHrRlJ.lrEAiFLSj1cknevVZB4Iv66oQ6UiHBqxPmBD3zajBNPkgt1NS
-DiWS4Ieu3wKmR6UvzAAWVlNFezPeMvqVF78WX7+emPvE.RAlQXFFORyrebCJ
-B.YeE3CZ.ew05ny9qW48DH.Nq5FNPXL7Nx47EprOmWpWX30k50USvE5qRKoI
-8gPKrNFIsAlo9ckTKbzgUL5mi27zuxDNkkHLqJFLtHS7L+6C4ci5PCajTUTt
-LgSJdkjhMAIr6U6epIBHlYg7HDZcu501FbKxJnBmzZie6QANGS4j5X0NquRj
-Sn8aZ3zKyGtEG0Ry5ztPjeVMllL1FAF6LoqpZtdPPIG.bhDG2ljg4GAS4KHU
-rRnSZVPkCxnaYsirLvlNXqHo64OKCuphJ5lLmWcTOYj0ZItJUkUmPmeGPGpW
-eLMx7zf+QBkwaaM1uYEB40vrBBu1npoj2ER9YAbL4XNlsF4IH4bAbY5xvBNN
-5LJ8+pvQg5R2Pgyxrf7Gw3nqgfeycNqNQbVjv.eXFCZ1o9Pc8m0+95KSaGll
-Vq.ugOZ7dduSP8pbDDygPzwoojjZpEcUj8PAbgiGt33ectevf0.BaTgjFEgA
-nFQokjSieUTlRAcSImb7uXF7z.nRHKojjssp4p1apRzTJmpWYEETFfplktFz
-45eqQkjktq+UnVC8fIGjeUb2S5kpx+7bfc28mEWEh0oitY6yJ3STPpV45ZZJ
-EZcchZWc+Jq3pOVlnQp8w6GWPzmN3+z+VNXrBG2fCtVmQZdwb5mmuZyJOtkl
-hxkXbrntILPfKpPw.dekJ4tvkJMzFTrtQUOgd5BsuRvPqpyakEcUz9FeilfG
-0Re6YsOB8XVuij9CvuvoBIqNQ6ypseYlIZGYWSFOh733BxWSHSu2CNdMB9ZN
-diSizJ2df2HEr1kU+fENOuQysCBe.+0L0KZccvGAfnaxutoBxazpuuacq3Bg
-jyEhcYgNL2G0atsg.ZQZIUIJUAtpDI0JmL7HK2vw1JlkuRrdU8BrZrO+q0aG
-tsxFITuecA1tGQDg4wNA4fuQhaFG0JKmjRSyKHrNpn3AqXxVrnboW6lEd69O
-oTf1c1IC7Gr1UPiyRkBQqkCYyUS2mAZhJPulJiZDo37N9xBqOAtzSmhfY7R1
-Fbgb0x3dhp5jmkkztq5uWBYK2zcNUPIoMJxyx6uyB5t8C7c2jI57vPuaUOLQ
-dNcuuJIF8pjcQ6wgSRL93se8efSoGvbBmpWBP10cpCQsmEUjkjzRe087VG8D
-KLziHuSi46aUTmrGwvo4UFQV0qxwzcDFucab7NV6Vpyg2noxMFG4W4jC4IBs
-n8.j68KiKXR7NyLvJCsl.vwi.uoicy.lsZen.msCd9Oa1ZWTa6O4wYIPBa9t
-5e6Q5KhnoXDGMSTQIIdMoGzfSTUNiEFJRynLRuvg8ECGqmGbfzYHbfpLDNAs
-YKsPvQaVTmb1vBuM.IAmyHx8fGTc3UMFaWGRQuYb6mwTuGrUeXim2J+l+K.V
-QgReVjGOf3auYiPc.H0EKwZ4..zH.fohcnd+b78u6FGEDQrrH4gYv2qO+Abx
-trBwSGTWHi4YkbFS6K.5fi.cHe8V9fzaptYCfBtiXmfnRrpBE0kSQdWc.YaA
-JZrhhU1KOmBJeAMlrGyXxvN2WeVvvv1G.1c.QTG9PCHQcMTNdHMKGV.CGCKr
-a.Ev.26NTDWVnHw1SD2Yp9AVSJoiY2AO8Fcb6ClFkPyA1.3Unx8jFt9.alGq
-DHBd7RscWizh0WZwsEYG.5Kt3cHCLbrLvHWS4Z5PG2lrtCAKJk9F3g3NhhG3
-eN0Cs6RH7d6s7xxQdGBWD2jv+l3t+uVPjvdQPBO8QJc+gB3xUByLKnyw9bWE
-Gy4NcSBiN.pfihpuTmKfQx5kGYzaNpq68FYxy91w8MsWDx8RCjFLMhVNp7Gq
-g2as1bIyFUu62mA0sdOBcimlRk+5q.k1UYs+8FZDDOgfuXYtu20GZhDl9h0x
-EbYlIb5ZK.LAWbu6PlrDNIl09+1ACfVWLuDWqIk0w3OAQCCAG2EZI+wd1aQ0
-rH6uarQnhEQUKWlrE.6VKawDFmlVum7etN1IXpqLWpLrdhxfH5jXAq43xJh0
-G1B7uUASxC6jAdfFmmIpH1rL4ZuBd1deYqXYXGH+P9P2pl8MQ07uDUCdiV3Q
-S05SRu6lY9gl5xrRbuUXAz+RjB66osxzEMzX9AFqcnoPTm00OcO8q6vesG6N
-+ancWkQ8jh6MET0G4ofyv5Gtqf5TUG26t86EjiC1Sp2yuWOpWX6Tw56Cwohm
-4VQLbH3orzexJ3YWDikdhgmOw1yZh8lvDCO5wc0yCZByi2s.YmxD2NZ5otxN
-JRAP8co2I33SK8ZALbJxJbHY0MLTGuwQ9QkvJeZlqeP+KP1l2L4zxNumYxcI
-loInRSvxv0Vg4Md3bCCmatfhltjtFNfjBu8Rp2jkTDze.Q091KptKCnhlsjN
-pCgyYND5rgmbe1jywI2isStCame+05+tqc58VScm0559pI2YfG+qG++fr294
-h
------------end_max5_patcher-----------
-</code></pre>
-
-
-**If you want to put this ring tone on your phone:**
-- Android: first use an online coverter tool (google for one) to convert your WAV file to mp3 or ogg. Then put the file on your phone under your /Ringtones folder. 
-- IOS: use an online converter to convert your WAV file into a m4r file. Then google for how to get that on your phone, because Apple made that a bit more complex. 
-
-
-## General procedures for assignment patches
-
-- All of your work should be inside the gen~ patcher -- you shouldn't need to work in the Max patch much, except to support the gen~ patch (e.g. adding a buffer~ or a scope~.) 
-- **Everything needed to run the patch should be included in the patch.** Do not use Max Projects, 3rd party externals, external files etc. 
-  - You can use any of the "go." abstractions from the book, or any of the gen~ example patchers built into Max. Don't use any other external patches. 
-  - If you want to name a gen~ patcher, use `gen~ @title myname`, not `gen~ myname`.  Similarly, if you want to name a subpatcher inside the genpatcher, use `gen~ @title myname`, not `gen myname`.  This will ensure that all your work is in one patch. 
-  - If you want to use an external sound file, set it up so that by default it uses a sound file that is included with Max, e.g. using `buffer~ test jongly`. The built-in sounds include: ahkey, anton, bass, brushes, cello-f2, cherokee, cym, drumloop, duduk, epno, eroica, huge, isthatyou, jongly, rainstick, sacre, sfizz_help_loop, sfizz_help_vibes, sho0630, talk, and vibes-a1.  Your project shouldn't depend on any other sound files to work. 
-- Document your patch using comment objects (you can create a comment by typing 'c' in edit mode.) **This is an essential part of your grading!**  
-  - Include a full explanation of what needs to be done in the proper order to run your patch, e.g. `1. turn audio on`, `2. press this button`, `3. wiggle this parameter`. 
-  - Include a longer comment to document particular parameter sets that you think sound good or best demonstrate what the patch is doing. 
-  - Include a longer comment (you can put it in a subpatch if you want more space) to explain why and how you built the patch the way you did. What makes it "earcatching" but not annoying? How did you make the variations consistently interesting, not too much the same, and yet still of a similar character? Did you start from a certain inspiration (if so document it -- with links if you can!)
-  - Insert many small comments to document what each step or section are doing, to show that you understand how the algorithm is working (or insert comments with questions about any areas you are unsure of). This is essential for me to know what I should focus on in lecture patching sessions. 
-
-**Assignment 1 due Sep 21**
-
-## Assignment 1 sounds
-
----audio:assignment1_sounds/220016416.wav.mp3
----audio:assignment1_sounds/219600360.wav.mp3
----audio:assignment1_sounds/218856542.wav.mp3
----audio:assignment1_sounds/219029677.wav.mp3
----audio:assignment1_sounds/219596675.wav.mp3
-
----audio:assignment1_sounds/219678788.wav.mp3
----audio:assignment1_sounds/218836585.wav.mp3
----audio:assignment1_sounds/219719616.wav.mp3
----audio:assignment1_sounds/220007787.wav.mp3
----audio:assignment1_sounds/219600576.wav.mp3
-
----audio:assignment1_sounds/217898909.wav.mp3
----audio:assignment1_sounds/217751405.wav.mp3
----audio:assignment1_sounds/217277237.wav.mp3
----audio:assignment1_sounds/218860916.wav.mp3
----audio:assignment1_sounds/219167360.wav.mp3
----audio:assignment1_sounds/216416901.wav.mp3
-
-
-
-
 [Back to top](#top)
 
 # Week 2: Unit Shaping
@@ -429,7 +320,7 @@ Sep 17
 
 [Class Recording](#zoom-recordings)
 
-**Attendance check**
+**[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
 
 - **Examples of working with phasor ramp rhythms**
   - A phasor beat clock: **ramp_from_bpm.maxpat**
@@ -542,7 +433,7 @@ Sep 24
 
 Reviewing [Assignment 1](#assignment-1) & [the sounds](#assignment-1-sounds)
 
-**Attendance check**
+**[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
 
 **What is noise?**
   - A non-repeating pattern, which our perceptual system cannot resolve 
@@ -571,85 +462,9 @@ Reviewing [Assignment 1](#assignment-1) & [the sounds](#assignment-1-sounds)
 
 - Continue to Chapter 5: Stepping in Time
 
-## Assignment 2
-
-A lot of sound synthesis technology innovation has been inspired by science fiction, or indeed has pioneered science fiction! Sometimes these are also built from very meager resources. A wonderful example is the [soundtrack of the film Forbidden Planet](https://en.wikipedia.org/wiki/Forbidden_Planet#Soundtrack) from **1956**.
-
----youtube:AMR75C_zfso
-
-> "Forbidden Planet's innovative electronic music score (credited as "electronic tonalities") was composed by [Bebe and Louis Barron](https://en.wikipedia.org/wiki/Bebe_and_Louis_Barron). It is credited with being the first completely electronic film score, preceding the development of analog synthesizers by Robert Moog and Don Buchla in the early 1960s. Using ideas and procedures from the book *Cybernetics: Or Control and Communication in the Animal and the Machine (1948)* by the mathematician and electrical engineer Norbert Wiener, Louis Barron constructed his own electronic circuits that he used to generate the score's "bleeps, blurps, whirs, whines, throbs, hums, and screeches". By following the equations presented in the book, Louis was able to build electronic circuits that he manipulated to generate sounds. Most of the production was not scripted or notated in any way. The circuit generated sound was not treated as notes, but instead as "actors". 
-
-**The assignment**: Create your own "electronic tonalities" for an alien world, e.g. 
-- create the music of an alien race, or of their advanced technologies
-- or, create the sounds of an alien world or ecosystem
-
-Be sure to follow all the [general procedures for assignment patches](#general-procedures-for-assignment-patches) -- especially remembering to make sure that everything that generates sound and structure is contained in your gen~ patcher, and your patch does not have any external dependencies! 
-
-You are free to re-use any patches from the textbook, or from the Help/examples/gen folder in Max.  Here's the starter-patch:
-
-<pre><code>
-----------begin_max5_patcher----------
-1691.3oc0YszbaaCD9r7uBLrWsk4aJkSsS6OfNM8VRFMPjPRHADfEDT1NYR9
-sW7jhTljR1QpMwGnj2cAwteXWrOzWtYl2Z1inZOva.uCLa1WtY1LMIEgY1+e
-lWI7wbBrVKlWNqrDQEd2Z3IPOJzz+CF.RHfmXMbvCL9m.XJXGhibBRvTTNqg
-pkNzRrhipkuLn.ynqFTh0MqWSP03BjhZjkJtPumr0e7tfD2NPaJwTBRn0yfd
-quKEoXrFgSNeml.E46vzsq3nbgAOBiil6eKHHMT8wxEpmQYy8AePsjudyMpG
-29cBa+EpDUtFwABFXCiPXO.D6PRvqVvaxU3RM.J.6Dhp52b+8PBNGQfqmKgX
-Rw8EPgHxOK9dLs.837chRxurEQQbH4tJNKGUzHQ361v32IUD7VpRGtSaqxS8
-A.y3IAyyG5zPVlFxB7S8UeF5eggt+TaFbveikpD38z2JZJjxAjZoDPmzuqqI
-G9JL4MLpnF+YseUX77ShDAQcQhzWKRTWIeubVcNqB8sAN9FNTHbPSwYfa1ly
-HLtQaCzpY2GfOXkyrTwSUHinddsrFvrSBzVZ7hk5nlEV6OpyKbc2MVK8gGAu
-R.hf2il2Gdfxfn8nStYOGLWLIXZdsFmqyA9FF74P5VKddWv7.0RBFGwWKkdR
-TOyOUC2IF3dQlw2KridTCKqHla7ii0GRVMQFhTfzV+AhWiinQcdC7eAdu9uP
-uWXifUJSyj2E8G2u0gfKidNBdM.EyUVCgJK85bkyFXNpq0eF.kiZIyjAMbfa
-vBBaOwelOmJoAj3cKvaCgAES69kY.gLieWrzYT8WbTRPPzR+zk2puNr8UnzA
-JrTuUd+FGq1GqWJdq0S7R5gE8CfClEiB8SLPUmDBWQ+qwRgtgi9mFDM+IfI0
-RS4.vV5EpnfkFaNIxXJIWmpBd.tGIq2YPCI5hZHw9KuDFxoRpGl9CSV8zfe1
-SpGl7yWV8vjredypGF+CvktF+1+qSpi9bALeHLI6U.IDVtL83zlYbbhIah45
-o1mu9ntsPLs0B1C4sYqeN2t2yNo8UA4x2h.wWgnvi5MWt6RqBRoHRaOa9ChK
-ImtfkCe6P4K2pT85oKiwBiV2kT8yvn3dga6QEqj8dywqaDnCeq1BnVDUgYjF
-DaiiridWT.SwBr4rUdeQVnaWFRnmCY8jhvnaG+HpmnkxCakXotqENhKlp3dW
-l+v7YEtBJiFfc8NFWblJh6nansoQZ00hmLFbrgu1M18wEplgemfy+jZBLF3E
-.aJvL0.rD6v0.sKxfiSXfwQEeslFU7xXSvcmoQk7p62.8fTYeFNrEQ+F3WEl
-4o3oGkmYVQ726MTGaufxohldxImUXr8aSE6FkXRRXiZWXFZWRmXWqAcbf5FL
-AsGwqwLZ2nKOXUUGx8igKgezjxXQquqDGLjRaIwQ6wt0G2RExkptPp2MbSTx
-iskYa6ViSavZUw426TI8wnJ5ptx1OnWQc0b4gm6E30APzdMAgZ7XgIQ3xto9
-T49jIW9jsJAGQY5bJl1c9r8XWf1.aHhUC2FYe9G00ZelC1+2LusbbAipThdm
-FJxtsSVYfoGpjtFiVBJrZfEKcYkvxHLqkFYS8ZHWcXYiQCcLELFoOq10QPaD
-V1UXYdq9nnfUMNSNd6tIV6ZljY4TuaMmZ4sjFtqTYOWoxM0WNHgXi26+5eDR
-wxpmPBr4HHzuko4dvc04bFgzydMb1O.mBoedN5AbgXWu5MUbjhiqbNQdsmxE
-3snZQeZB3159TZy.zgTyZab7JARV5qzJ5KfZZ20BYdnGpsB5bz5B.G9kO5FW
-28xydzm5Rz9WjJuNCDAJPqa11k+.ipcz6OGO6vnytxjgXgYlBY57Dl4s3VlM
-2oKSwqwn6mBsuU+VYNaDCH03pFwH1c7k2tMiaZQl4tsiZF+BY1m3rNbDqM7x
-asANy02kZ6JbJeByMXDyM3xatQKNeq8PV.UUZ1Xaqj8pWTKXWgbUMoU.E890
-NUKqDJ2UYh0PAsEpqteSfosIIeW6zFAcFzBuvTzwvSz7RtwKGdiC9t2X+Srw
-o8joDWTwvTgEhiR8mmHOBM+fXwIws+20.iBNCUMXLUMdooAPqpJq0dbUM5pi
-pgu.XMyeBUM75qpImupFllNgtd8cVUCl5h.qQWcm0IQ0Vm0HSGgKMpZz0AUO
-kpt3rTUCnJKb++yq.T+dimqt1BqWg.qzyPWyLx7cuO9mw9zehBlTkG0ErZKN
-p62i5784c8NdGuG2sqtS2g5xUU6xMe8l+EfYQwwF
------------end_max5_patcher-----------
-</code></pre>
-
-**Assignment due Oct 9**
-
-[Please submit Assignment 2 here](https://docs.google.com/forms/d/e/1FAIpQLScQmz1jJviJXZV8FQ2I6k1fhuZYgF4uJP9UzwLXJ77V_Uy6Dw/viewform?usp=sf_link)
-
-## Assignment 2 sounds
-
----audio:assignment2_sounds/216416901.wav.mp3
----audio:assignment2_sounds/217277237.wav.mp3 z
----audio:assignment2_sounds/217740184.wav.mp3 
----audio:assignment2_sounds/218392290.wav.mp3 
----audio:assignment2_sounds/218856542.wav.mp3 
----audio:assignment2_sounds/218860916.wav.mp3 
----audio:assignment2_sounds/219167360.wav.mp3 
----audio:assignment2_sounds/219596675.wav.mp3 
----audio:assignment2_sounds/219719616.wav.mp3 
----audio:assignment2_sounds/220007787.wav.mp3 
----audio:assignment2_sounds/220016416.wav.mp3 
----audio:assignment2_sounds/220101895.wav.mp3
-
 [Back to top](#top)
+
+
 
 # Week 4: Stepping in Time
 Oct 1
@@ -678,7 +493,7 @@ See **quantizing-pitch.maxpat**
 
 https://www.desmos.com/calculator/pr6rgxwplx
 
-**Attendance check**
+**[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
 
 **Deep dive**: We can combine those ideas into a more complex generative sequencer, based on the Klee Sequencer: 
 - Feed some binary choice input (the "data" input) into a `go.shiftregister8`, which is clocked by a `phasor` -> `go.ramp2trig`, for example. 
@@ -847,7 +662,7 @@ Oct 8
 
 [Week 5 Class Recordings](https://yorku.zoom.us/rec/share/ueNEZRT55KuhCN73jZc2CtstoEZTK5uaOe2App3gWOQqk8Ut-Hhm6jVVVjkZZBVs.3IT8WxYZVMXVVEVG)
 
-**Attendance check**
+**[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
 
 In almost every class since the first week we have encountered a simple lowpass filter. Most often we have seen the filter as a `mix` and `history` pair, which is known as a **one pole filter**, but if we dig into the algebra of this a bit, or rather, if we re-arrange the patching a bit, there's a few other ways of seeing what this is. 
 (See **onepole-explorations.maxpat** for examples of most of the ideas below.)
@@ -939,7 +754,7 @@ Oct 22
 
 [Class Recording](#zoom-recordings)
 
-**Attendance check**
+**[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
 
 What is a digital delay? 
 
@@ -1020,131 +835,8 @@ With delays of 0.5 to 25ms, we are in the region of pitches, and with enough fee
   - Of course using `delay @interp none` sounds much worse. There's no simple and cheap solution here, but there are a few different kinds of interpolators that you can try with different tradeoffs. See **delay_interpoation_types.maxpat** for some examples. 
 - Finally we can see all these together in **string_everything.maxpat**
 
-## Assignment 3
-
-**Generative Radio Station!**
-
-Have you ever heard [Generative.FM](https://generative.fm)? It is a collection of generative radio stations that never end or repeat. It could be music for working to, sleeping to, meditating to, focusing to, ... and never getting bored from.  (*It's not the first generative radio station ever, there have been quite a few, but it's the most active one I could find today*)
-
-This assignment is to create a robot radio station, which is always absolutely different every time you listen in. 
-
-- To ensure it is always unique, the patch should use the current date and time to modify its parameters. The template patch below has this already set up for you. You can either listen to the current date & time, or pick a random date & time (or choose by hand), to make sure that the station has enough variety. 
-
-- Most of the stations at generative.fm are pretty ambient, and might be a bit too slow and sleepy. Let's make stations that are a little more upbeat. The template patch has a clock source built in (with bar and beat phasor ramps).  Use this to drive for some element of your station -- maybe a backbeat, maybe a melody, maybe an LFO pattern, etc. 
-
-- Before building the patch, spend some time researching among the example patches drawn from the textbook or from the Max / Help -> Examples -> gen folders. Spend some time playing with many of these patches until you find **three or four** that you think you can work with. Your radio station must combine these patches together in a way that you (and your friends) can listen to for a long time.  You can modify these patches as much as you want, and you are recommended to add more processing of your own to make it uniquely yours. 
-
-Later, we will use RNBO to embed these patches as running code in a class website. In order to do so, we have some specific rules for the assignment:
-- Do not use any patches that require poly~ or pfft~. 
-- **Do not use any external sound files at all**; no buffer~ etc.  (That will rule out a lot of the example patchers.)
-- Do not modify anything in the starter Max patch -- only add your patching INSIDE of the `gen~ @title CLOCK_RADIO` patch. 
-- That means that you will have to figure out how to embed the patchers you want to use inside of that `gen~ @title CLOCK_RADIO` patch, and connect them up. 
-- The audio output should be routed to the `dcblock` -> `tanh` -> `out` section at the bottom of `gen~ @title CLOCK_RADIO` patch. If your output is mono (not stereo), route it to both of them.  
-- Do not add any extra inputs or outputs. 
-
-Aesthetic requirements:
-- It should never sound the same -- each minute, each hour and each day is notably different
-- Every single input (bar, beat, seconds, minute, hour, day, and month) must be used to control the patch. 
-- Some aspect of it should follow the tempo of the bar/beat phasors -- it could be subtle but should be there
-- It should generate sounds that you can listen to for a long time -- for working, walking, meditating, sleeping, etc. -- it's up to you. 
-
-And all the usual [general requirements for assignments](https://alicelab.world/datt3074/index.html#general-procedures-for-assignment-patches)
-
-Comments:
-- Make sure to add a comment with your student number. 
-- Add a comment to name your radio station
-- Also add comments to explain which example patches you chose to work with, and why. Explain how you changed them. Explain why you chose to map the various inputs (beat, bar, seconds, minutes, hour, day, month) to them. Explain what modifcations and additions you made and why. 
-
-[Here's a quick example radio station, based on a couple of patches we have already looked at](radio/index.html)
-
-**Assignment 3 is due on Nov 10.**  - [Submit the Max patch via this form here](https://docs.google.com/forms/d/e/1FAIpQLSdppThQmusV_H8CMImkfzv3hDxIpZdkO-ugrwwquF1_9hyW0Q/viewform?usp=sf_link)
-
-Here's the assignment 3 template patch:
-
-<pre><code>
-----------begin_max5_patcher----------
-3489.3oc6c02aaabF+uc9TbPCXXCyV4tiGeQECCMyMc0XoIcwonnHYvfR7jD
-anH0HO4X2h1O66dizjxjRjTjTptouHayij2yyu64c9bT+xyNazzn6nIi.eA3
-8fyN6Wd1YmIOj3.mo+6yFsx8tYAtIxSazrnUqngrQmqFiQuiIO9e+cKofP2U
-TPzbv8QahAwtd9Q+izSbdTHSLr7jeQrua.3eFE3Ath4F3OK8rB2rJZCKfxjS
-FTez0trYK8CWbSLcFSQrHzXyyAHK6wvyAF7+R7CiwPv+M27k3+yx4CSFCeXB
-7CSu+H8A88jTUzze5BG3Hww90m8LwGmWSPIj9I9E+HLgAfkyXoSr5Pr6WSUb
-0HeNxlwBkv1DSCAmhrfhefwoelcMK887ng4mi8ww1SZCGWoXvOJV5ulsgSEL
-vq2rZJMtmkAvS5XY.amtDQd22b00fWb80W8ud829xW+Nv27hqAe6Kd8OBt96
-d4kW80WcI3su7+78W81WJF8Zv6dC3qeyqd0a9AvEW.l4FSmuIH3dvrkzYeD3
-FD.Xb8L9b5uHTLc.+vDV7lYL+nvDfK6CgKYr0Iewyet.RoAtSG+on3.um64x
-XFPaxy8C8n2MdIaUve5gayEFozcfeHcVzlPIwar6EtluhIEXssDeRPRcWhct
-Er8txX1lUF5O64N621MwFDMyMH+rVF0aKkzrPNRB2L8yxIebIjuQaH+jYQqo
-+ViwZrRufXSTVLjjqvtQF4x43YYK03cwCS2LOSOxzpDFCOfLlRHZX3KTq3q0
-bZMNZWrWkN.1o0e8RpIAki0MIMPBzZxIECoVJOD9oUlpC7ukNdgqeXFybqab
-l8sGOZQV0L0jgaBmgbCCoAYRavpfAggVtAlyy+ah+edPjKS7KA9I610u15iV
-tmHsAgLrZBXYOJ61Gy4VFM9FZn6z.Z9UvD2aod2v8VD6OcCi9vuknQTMjJ.s
-fMzn4oGN834u8AQgKpFXKbpq3KQhSyJ0O8Vi5Kip4BaX4iG4w+OZNmVEFNYY
-TLqlDR5pVYSylPeVB6dEhQTiKE9R+QCkD43JKJrgpTScCWrSQESkcBzDodEA
-m9Ys8yZYsKIEXGFcz24KBqgmqPnWzJ.OHEJ3OCX97EpcEOR49JltY5VxxkgM
-1pHncjQeLQFGsIpIXCoKiN76SnxH5lsINVDN2.f.DzjCDAL5RD3xXpfmcCAz
-Pu.ZRhJwQPByUDTKGcbYfDN+6k.3pe+uMTd3vd9ymSU.FcM+53bHfeteRbtB
-rie67TXIOUTfv1JMbL.jIUGSS3WrbBto.9Z1xnQjliMcjHKF1DvD0kf4ailF
-w.Wxil8ifeHJ9if2Jvx9J+KrxGTGm9kUqRAW3lZied.4lO46wVJcoXlexKwD
-q3hk2kUbRd4nVEKigsTeB6nPEErTH2bO+j0At2m5mptIna5z0Fi6Frxy89CB
-oLflcMRYeZhTKi1DeXPE1oqgJqSSnhS07PMOLvxD00fkYWCVUTvv0fET1EB+
-VWvcfcQ9n.JOGjRKf3463G0wBlor9LHazivu8kggIYT9aOMd6TFl6GPukFmv
-86lCq4q+qWm6vEylXk6OEIuQNYAjyoB0grxNTL8V+zq2L6ntwbljw4vMwJud
-2YQdHlegbPbHWnUPJoAymRRxEKg2xj0tyTWrXMMc3bQTpBmREUkC1REOkyCv
-FWXXgviL0KeZEi3ISG5GlOTjBC6Qm6tIfcSdunROtkL9bMEV5fE83mw.Kh88
-hBEDQgUBwgSmNtKdkIZy7Li7LBcWWxEykA3vRECJBnaSxT2XwBkV2AmNHKJJ
-n3PYWW.cNSO7Zed11EQQVz5pGL1ewxcbs7XkXQq108VNRBOsO0n2Hx4+FQFx
-EOO2f.sFcwa+ctg9q3ZyREYA6ByFTY+XYxr3nffB7qZjaKYDOtL9LZlUUXdg
-A9o6uNUHZT1prm+BZBq3wXtKRJdjrTZycnMS05v2vnq3VMYacBhhGmv3IV+o
-D8IlJnkG.d3gKkWmNu4wBGemg4VzVI2R4dxbp5nYqLhVnxOKTECmIb6v4qzc
-w1VBQpJUmq9.otG5ZbX8dxft4n.QUfdDDcvn.oKQA4zUMWkmF1cMSpjwMjK+
-SvpvSS+rZ1FVAaiySkoKd40djWf3AwHsJzgXTgBJ0mfDREkkLuN4mMV3XxnB
-STEAV0Q3Rg.tJp.o0brfsD01KhYanhD0P8nJr1NrpJCs5QONhQOQPDKKb2fH
-VCKhfI8EhX5X1MHh4vhHF3dCQPcjLBYXQDTugHZKuGNhfFHDgaPONhmOID7k
-tyX92RAn9zyjk1wDNW9XsShYnDYzEqVDzV0.CdW.iJPOQw3DwmWO.xQFYi5o
-sta7oBO23ABd3oc4xCtEJ927mP0Y09XzyXWnW00GY2PH1TkWr54rgM1BCKjx
-twXXSg2+.iuXcrR8K.OTF.2Vwty.VY2Bb9C+rAht5mWiNqttFYsNUR3q9HxA
-mtGwoQo6g5PDRw1sudGXkvfEptPPEq6jIGsLdOPHPICb3HfI72qBAFDsPf4g
-BAnFAAlmNP.1woifflU4GxIDDXzURAFMBBLJABd3YMH5MiJpfrjGDiWN1jDs
-IdVpyfzhxAJxNdzDleX1id48Y0kRbd0ZoooDwjZRC1O57hh8TONM3Qkvrplv
-PGUByrZBCeTILR0DlwQkvPUSXjdgvrq6RIpG0.spKQf6QhfTWYm9zVjYcQBi
-djHP0kHf8HQfqqPAF22TApNTQepeTWujoXVuQDniMQPpqVZuZovotlJH845Q
-cWP5UCVX7IgwBg1G9X6FSREniseLL5v8gnOXZiWo2+IpNIZGa9jF0wKKBhl5
-FrUapTVCwz9cxQEczWPjq2JQSsi5x8MktS8zaCXaXGrMfI1soqqYQKVDP63M
-4bJ2oJLGAl9Ys6odh0.0ulKng+F3KY9bFDb4qdyk+6ad6K9pqdS43At16Mr8
-uk4H51sGoxS2rgcceIstogyS5V2zKY8X9pUIsuosdmzIwUGn7op5P9b6a941
-27ysuYO19lhM9l30YPzbQWbx+CttzFVBfEAlwk54fWt2hHYaFL09.qPiiU4V
-4BWqRgp1xbI9dzxGY6JcV5NyU8X0kOqRaUSZXLoMOW8AqoQulF5IgeIFmvcP
-Ri.taDPMGm3KD.t.A8Cg+E+4.eFvOA7SaRXfUb6BmCh4mBUbX9ZEWGbo9RR9
-q4mpJWJpdAizhELbaVvvVXwaNDK8aQEhb8yrUcBwP0oHdylJ7A0asVDDJPDa
-Uc+ISZeqgX7z.Pv1jNBPvCkN8WcoDQ.T5Zsp7L9oFS8D6L1elFG8gvWv05em
-a3RvG4mThPE9S9LNmKaj9KPBE5+FRzJ4KnGntrYCzkqgFqIOtrGVNv5GZqca
-VOFpd+fww49Vc0jn1cfsW5D9D.MR0UOXz.MYv7+p73pbbVKUsNTIxV0+n1sV
-GB4LPRMbNFfUFytPlLP62SKZMF0tydR668QzP0x4ABln2ZtZcSxpJthAo8sR
-r4SB3.0UvA4o.bXn2hOGNbX7T.NvJyEc.bLTM16hnwwtqViYbil8EpfzUoU8
-Vbv1p8VTQOIDRz6Z9CWHYnBISVabPBObCdVAeImv.P9ObuCXNouAInpfI0.j
-fUs2AGRLR9Vgo.DgP8rmYkXDRUb5VAQNCJD44deA.x.129pg4dmA1J.xdXkg
-juXSFJ8LkGKsPjCt0Xj0fhQh2SNEPHrQOGhisVMC1ZDZnh+kCJHvT23KDN16
-O4lGDabZOlfFNLAClRcY8JnfvvbnhUqQE7.lzLRmzr3gu09VBWWWEk8CGmVG
-gWoIE0KM4cc6PHTu1aNF0swwfmBcKEpW6YKXcoh9rU9PMrYs6GhntMKEx7Q8
-10Jeu0Q9gLsZBxQVIOjZOaXZ+veMj6Yf5yPjFxPF6igPGYFxnYLjg5ANtCFB
-ejYHbCYHzj8vPFG0t2GgOAZbdTe1371MQ2quHBmlXQ63aWE1LgbrCbOB4ji6
-F3At+lpssuc7a065+89hIW8ZLUuaKUkLL+CfZj5IOKO0KfiQbreb150nDdL9
-Ap.EQPw+j0aipWtHSWLKJP0aguW1bU49.suWhkpag5oukcSP5K8gOxtIOtkG
-NgPY8KkqmXvLYT+z3tyDcMw5ktIQw8ei6pq.ptwcwM4kxu8ePaP2Il5lcmn9
-ldQkMtI7ycn6m6P2O2gtGVG5t2RxNcs3MZFTUUVqzxxRf8bw1PP82jBVm7k2
-WUts8WY18UrszuUNjNsUe2bzphsYMrOi4wyiiVwkRZ46uL42CR0UnP8NKBgb
-N4ey2oZboZTZZX83bkTwDieGTBVzoPo1p4liz5THA8dIItt4aiAUyAbXeaLn
-+d5q691XvXRc2cexYpnrsB61dsTifOdMrPp3UIHWnnT425kkttU241xpFy8V
-D3i21mEqXZ6IF67ZTUQL5phd3yDrNyD7.mIwNdb+7TgmhRWAmFN0gIQkO039
-mqslT9TC6et1xo2.78x0EEx6R.GVmotyA7ZYBwjTNWeXSsYc35Tn4vlI6Aal
-rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
-8wK5JiICkFVchbZK2ScjM3lXXrac2VGdFS5qYde7bw9yobzVk5vVkNWLoaUx
-7sJW9iKUd0kIe6RjKKOdUesi8re8Y+evDY6us
------------end_max5_patcher-----------
-</code></pre>
-
 [Back to top](#top)
+
 
 # Week 8: Frequent Modulations
 Oct 29 
@@ -1157,7 +849,7 @@ Oct 29
 
 ---
 
-**Attendance check**
+**[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
 
 ---
 
@@ -1230,42 +922,14 @@ Nov 5
 
 - Longer-term projects -- do you want to do things in the Alice Lab?
 
-- **Attendance check**
+- **[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
 
 - Continuing from last week, from PM feedback onward. 
 
----
-
-## Final Project
-
-Some requirements:
-- Must use some kind of code export: see [notes on export targets](#export-targets)
-- Must include some way to present or exhibit -- a performance with newly designed instruments, part of an existing installation, a web-page, a film, sounds for a video game, or it could be software, e.g. a packaged audio plugin. 
-- Can be individual or group
-
-You should have your proposed idea ready for next week! 
-
-Some more detail on ideas:
-
-Perhaps a few of you want to design instruments and make a "gen~ band" (or "gen~ ensemble") to perform together? 
-- You can use [Ableton Link](https://www.ableton.com/en/link/) -- "Link is a technology that keeps devices in time over a local network, so you can forget the hassle of setting up and focus on playing music."  You can install the Link package in Max just by searching for "link" in Max's Package Manager (`File -> Show Package Manager`, search for "Link", install) and once installed, you can create a `link.phasor~` object that will give you bar and beat phasor ramps you can route into gen~; and anyone on the same local network will be synced to the same tempo.  Link also works with Ableton Live of course, and also [VCVRack](https://github.com/stellare-modular/vcv-link), [SuperCollider](https://doc.sccode.org/Classes/LinkClock.html), tons of Android and iOS apps, TouchDesigner, TidalCycles, and lots of other interesting software, and also some hardware devices too -- see [list here](https://www.ableton.com/en/link/products/). 
-- Think about how the performance you can showcase your patch
-- You'll need to develop quickly, so that you have time to practice together! 
-
-
-Web-based data sonification:
-- Find an online free data source. Ideally something that changes hourly or daily (e.g. weather/climate/transport etc. data), but if not it can be static data that you move through gradually (e.g. a random walk over openstreetmap data). 
-- Use this dataset to derive changing control signals for your patch
-- Export this as a web page that visualizes and sonifies the data
-
-
-Sounds for a project in another course
-- E.g. if you are making a game, or website, Max project, or some other project in another course, you can create sounds for this project as your work for DATT3074. 
-
-
-Or something else -- tell me your ideas! 
 
 [Back to top](#top)
+
+
 
 # Week 10: Navigating Waves of Data
 Nov 12
@@ -1294,7 +958,7 @@ Of course we could take that to a 3D volume too:
 
 ---
 
-**Attendance check**
+**[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
   
 ---
 
@@ -1335,44 +999,7 @@ This is quite a deep topic and you should refer to the textbook for full details
 
 <iframe src="radio/index.html" title="RADIO DATT3074" width=100% height=500px scrolling="no" ></iframe>
 
---- 
-
-- Final project discussion
-
-## Export targets
-
-For a long time Max, and more recently Gen, have been used extensively in industry (both large and small-scale), research centres, and community spaces to design and develop new audio-related software and hardware. (For example, Ableton Live was originally designed from a Max patch!) Today it is easier than ever to take the algorithms you write in a gen~ patch and place them into distributable~ software and hardware. 
-
-It has always been possible to export C++ code from a gen~ patch just by sending the `exportcode` message, but that's a pretty uncomfortable workflow. Now it is much easier because gen~ also works inside of [RNBO](https://rnbo.cycling74.com). RNBO is a kind of re-implementation of the core of Max, including gen~, that is designed for code export from the ground-up, and has built-in support for many targets, as well as community projects for others. We have some RNBO licenses in our Digital Media lab machines that we can use for this. Or, there are other ways of exporting code and using it too -- here are some of them:
-
-| Target | Toolchain | Description |
-|:--- |:--- |:--- |
-| Web | [RNBO](https://rnbo.cycling74.com/learn/the-web-export-target) | It can basically be **anything** (a soundtrack, a soundtoy, sound for a VR world, etc.) that you can embed into a website, but you will need to code your own interface in Javascript. |
-| Audio Plugin (VST, AU) | [RNBO](https://rnbo.cycling74.com/learn/using-the-vst-audiounit-target) | Typically either an **audio effect** (sound -> sound), or an **instrument** (MIDI -> sound), which you can use in any typical audio software or DAW (or video editors too). It will only have a basic default interface though; to make a custom interface [you can try using JUCE](https://rnbo.cycling74.com/learn/programming-a-custom-ui-with-juce) |
-| Ableton Live device | [Max4Live](https://www.ableton.com/en/blog/make-your-own-max-live-devices/) | Build new devices for what is probably the world's most popular digital audio software. Requires a [Max4Live](https://www.ableton.com/en/live/max-for-live/) license; 30 day trial available. |
-| [VCVRack](https://vcvrack.com) module | [RNBO adapter](https://rnbo.cycling74.com/explore/vcv-rack-starter) | Create a module for this popular free virtual modular synthesizer software |
-| [VCVRack](https://vcvrack.com) module | [gen~ adapter](https://github.com/isabelgk/gen-rack) | Create a module for this popular free virtual modular synthesizer software |
-| [Supercollider](https://supercollider.github.io) | [RNBO starter](https://rnbo.cycling74.com/explore/supercollider-ugen) | Create a unit generator (UGen) for this advanced audio programming language |
-| Unreal plugin | [RNBO adapter](https://github.com/Cycling74/RNBOMetasound) | Create a "Metasound" plugin for the Unreal game engine |
-| Unity plugin | [RNBO adapter](https://github.com/Cycling74/rnbo.unity.audioplugin) | Create a plugin for the Unity game engine |
-| Daisy hardware | [Oopsy](https://github.com/electro-smith/oopsy) | The [Daisy](https://electro-smith.com/collections/daisy) is a small Arduino-like microcontroller with high-fidelity audio support; it is now used inside many commercial (mostly independent) hardware devices (**guitar pedals, Eurorack modules, desktop synthesizers**) as well as lots of custom **breadboard-style** community projects for instruments and installations etc. Oopsy is a free/open source tool that makes it really easy to export gen~ patches to Daisy hardware. We have some Daisy-bsaed hardware available to use from the Alice Lab. See https://www.youtube.com/watch?v=fbd1CASqUmI |
-| Raspberry Pi | [RNBO](https://rnbo.cycling74.com/learn/raspberry-pi-target-overview) | For custom **sensor-based instruments, interactive installations, etc.** Includes full support for USB Audio devices, MIDI, OSC, etc. |
-| C++ code | [RNBO](https://rnbo.cycling74.com/learn/the-cpp-source-code-target-introduction) | To embed in a custom C++ based application. It's up to you how to connect this with your other C++ code, but you could start from [this RNBO/JUCE template](https://rnbo.cycling74.com/explore/c-plugin-application-template) |
-| C++ code | [gen~](https://docs.cycling74.com/max8/refpages/gen~#exportcode) | Just send the `exportcode` message to a `gen~` object, and it will output some C++. It's up to you how to connect this with your other C++ code. | 
-
-Note that all of export targets will require extra work on your part to complete the project, and will require developing familiarity with the target itself. I strongly suggest taking the simplest possible examples through the export process to test them and get familiar with the process and any limitations before going any further. 
-
-Some targets are dependent on having other software installed. Some require licenses -- we do have RNBO licenses on some machines in the lab, and you can also get a trial license of RNBO to use at home. We do not have Max4Live licenses, but you can get this as part of a 30-day trial of Ableton Suite. VCVRack and Supercollider are free to install. Unreal and Unity are also free to install. You may already have software that can load VST or AU audio plugins -- pretty much any audio editor, digital audio workstation, many video editors, etc. -- many of which are free. For hardware projects, we do have a couple of Daisy-based devices available in the Alice Lab that can be used, including a guitar-pedal and some Eurorack modules, as well as bare Daisy Seed for breadboarding. 
-
-**This means you will need to budget your development & testing time carefully around any access limitations!**
-
-Here's Oopsy:
-
----youtube:fbd1CASqUmI
-
-Here's the example of mapping a javascript animation to sound:
-
----codepen:https://codepen.io/grrrwaaa/pen/LYwqwPw?editors=0010
+- [Final project](#final-project) discussion
 
 [Back to top](#top)
 
@@ -1381,7 +1008,7 @@ Nov 19
 
 [Class Recording](#zoom-recordings)
 
-**Attendance check**
+**[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
 
 This chapter is all about using one proess to determine the durations (or *lifespans*) of another. For example, a repeated tom sound has three timescales -- waveform duration (periodic), duration between sounds (periodic), and the envelope duration (a window of time):
 
@@ -1520,9 +1147,417 @@ The deadline for us to submit work is November 30 (hard deadline), to Don by ema
 
 [Example of using a microphone in a web page](https://codepen.io/grrrwaaa/pen/ogvNmJV?editors=0010)
 
-# Final submissions
+---
 
-For the final submissions:
+# Assignments
+
+Assignment submissions and grading rubrics are managed through e-Class. 
+
+Assignments delivered late without reasonable grounds will be penalized at 5% per day. 
+
+[Plagiarism will not be tolerated](https://www.yorku.ca/laps/decisions-petitions/academic-honesty/). 
+
+Note also that we follow York's [policy on AI technology & academic integrity](https://www.yorku.ca/unit/vpacad/academic-integrity/ai-technology-academic-integrity/). In particular, use of AI tools without proper citation or documentation may be considered a breach of cheating. Use of AI for language advice may be helpful, but at the time of writing, you will probably find that AIs are not very helpful for the technical aspects of the assignments. 
+
+---
+
+## Assignment 1
+
+**[Via e-Class](https://eclass.yorku.ca/mod/assign/view.php?id=3731005)**
+
+Make a patch that can generate new ring tones for your phone. This is a generative patch: each time the patch runs, it produces a ring tone that sounds a little different. Your ring tone will be 25 seconds long. It can be stereo if you want, but mono (single channel) is fine -- not all phones have stereo speakers.
+
+Be sure to follow all the [general procedures for assignment patches](#general-procedures-for-assignment-patches)
+
+Start from the template patch here: press the button below to copy the patch to your clipboard, and then open Max and select `File -> New From Clipboard`, then save that patch as "assignment1.maxpat":
+
+<pre><code>
+----------begin_max5_patcher----------
+2562.3ocwas0bihiE94jeEpXeYlcSbPhal9oYps1eA6C6CcOUJYP1VciAFjH
+I8L0z+1WcCLXyMavd5pRbPRFcNe5b46Ho9Oe7AqMYePXVfOA9L3gG9yGe3AU
+SxFdv77CVGveDkfYpgYEkc3.Ika8jtON4Ctpc12Si.E3C4fexFvy.vetZHIz
+TRTVYpZbNlFSKOPSSHb0KEdrwrRdUq1lVowpIHayWeNvt5kli4Q6oo6dsfDw
+0xuiMbk8S.GGj7C2fpeC9M4W4ud7Q4udZlpItLllADRYdIuSEDMKEzObHEzU
+oe1gG0OGmEV+9OwTNfumx.JAfT.D+PjKnwjsB8D78rxBPgPv3YhmXB0N9xwg
+Mka1jPtLjIvp0WlQiIMmGoF70RFmtkFg4zrzlu8N.yPaI9gfJiEn9IOzBil7
+xhTAZR.aJ4B7BPSE.IFvDhRB4YlvaIg.hRnQeCvKn61QJtE1T9CXS4q0+.k9
+C8ruIFUaKH+dIIM56.VtXlKJOXMOMxc.Mx0ySsVFF1PkP1KrJ8N9Mx1rh4pH
+NiqHtAqWBEQi7YrnrbxO5TpQcJ0vykZTsAkdb7umSzhrkE325WgBT1Zdd5HW
+qcTpk80ZrkPeirps5ncnTc65Bk30rTSudUyM3zcCppHac5GjRIQt9Jc0Qs3Y
+9VEh2g488LbETz8J30sxdoKoUvBtjmcPDqLpO.XH2L8hoQAUZVsBtftY+JiQ
+2kJ6B.+D3WOl34.9ajhuj9eIDvdNOm8oWdAKhiRRvaV8dVQR7KwXN2wNv8k+
+At9k7L7FDeEU6DuMKkyn+gNujas4WW1GJpJHEF56p+XwwN.xCvDZYZL3mPdO
+Yaaef8yhTQa2JRqKRDIDmrhXURo4EFCgFJLVnqNEqJdLxGdShG++JnbhLnL3
+cZRBPHrRlJ.lrEAiFLSj1cknevVZB4Iv66oQ6UiHBqxPmBD3zajBNPkgt1NS
+DiWS4Ieu3wKmR6UvzAAWVlNFezPeMvqVF78WX7+emPvE.RAlQXFFORyrebCJ
+B.YeE3CZ.ew05ny9qW48DH.Nq5FNPXL7Nx47EprOmWpWX30k50USvE5qRKoI
+8gPKrNFIsAlo9ckTKbzgUL5mi27zuxDNkkHLqJFLtHS7L+6C4ci5PCajTUTt
+LgSJdkjhMAIr6U6epIBHlYg7HDZcu501FbKxJnBmzZie6QANGS4j5X0NquRj
+Sn8aZ3zKyGtEG0Ry5ztPjeVMllL1FAF6LoqpZtdPPIG.bhDG2ljg4GAS4KHU
+rRnSZVPkCxnaYsirLvlNXqHo64OKCuphJ5lLmWcTOYj0ZItJUkUmPmeGPGpW
+eLMx7zf+QBkwaaM1uYEB40vrBBu1npoj2ER9YAbL4XNlsF4IH4bAbY5xvBNN
+5LJ8+pvQg5R2Pgyxrf7Gw3nqgfeycNqNQbVjv.eXFCZ1o9Pc8m0+95KSaGll
+Vq.ugOZ7dduSP8pbDDygPzwoojjZpEcUj8PAbgiGt33ectevf0.BaTgjFEgA
+nFQokjSieUTlRAcSImb7uXF7z.nRHKojjssp4p1apRzTJmpWYEETFfplktFz
+45eqQkjktq+UnVC8fIGjeUb2S5kpx+7bfc28mEWEh0oitY6yJ3STPpV45ZZJ
+EZcchZWc+Jq3pOVlnQp8w6GWPzmN3+z+VNXrBG2fCtVmQZdwb5mmuZyJOtkl
+hxkXbrntILPfKpPw.dekJ4tvkJMzFTrtQUOgd5BsuRvPqpyakEcUz9FeilfG
+0Re6YsOB8XVuij9CvuvoBIqNQ6ypseYlIZGYWSFOh733BxWSHSu2CNdMB9ZN
+diSizJ2df2HEr1kU+fENOuQysCBe.+0L0KZccvGAfnaxutoBxazpuuacq3Bg
+jyEhcYgNL2G0atsg.ZQZIUIJUAtpDI0JmL7HK2vw1JlkuRrdU8BrZrO+q0aG
+tsxFITuecA1tGQDg4wNA4fuQhaFG0JKmjRSyKHrNpn3AqXxVrnboW6lEd69O
+oTf1c1IC7Gr1UPiyRkBQqkCYyUS2mAZhJPulJiZDo37N9xBqOAtzSmhfY7R1
+Fbgb0x3dhp5jmkkztq5uWBYK2zcNUPIoMJxyx6uyB5t8C7c2jI57vPuaUOLQ
+dNcuuJIF8pjcQ6wgSRL93se8efSoGvbBmpWBP10cpCQsmEUjkjzRe087VG8D
+KLziHuSi46aUTmrGwvo4UFQV0qxwzcDFucab7NV6Vpyg2noxMFG4W4jC4IBs
+n8.j68KiKXR7NyLvJCsl.vwi.uoicy.lsZen.msCd9Oa1ZWTa6O4wYIPBa9t
+5e6Q5KhnoXDGMSTQIIdMoGzfSTUNiEFJRynLRuvg8ECGqmGbfzYHbfpLDNAs
+YKsPvQaVTmb1vBuM.IAmyHx8fGTc3UMFaWGRQuYb6mwTuGrUeXim2J+l+K.V
+QgReVjGOf3auYiPc.H0EKwZ4..zH.fohcnd+b78u6FGEDQrrH4gYv2qO+Abx
+trBwSGTWHi4YkbFS6K.5fi.cHe8V9fzaptYCfBtiXmfnRrpBE0kSQdWc.YaA
+JZrhhU1KOmBJeAMlrGyXxvN2WeVvvv1G.1c.QTG9PCHQcMTNdHMKGV.CGCKr
+a.Ev.26NTDWVnHw1SD2Yp9AVSJoiY2AO8Fcb6ClFkPyA1.3Unx8jFt9.alGq
+DHBd7RscWizh0WZwsEYG.5Kt3cHCLbrLvHWS4Z5PG2lrtCAKJk9F3g3NhhG3
+eN0Cs6RH7d6s7xxQdGBWD2jv+l3t+uVPjvdQPBO8QJc+gB3xUByLKnyw9bWE
+Gy4NcSBiN.pfihpuTmKfQx5kGYzaNpq68FYxy91w8MsWDx8RCjFLMhVNp7Gq
+g2as1bIyFUu62mA0sdOBcimlRk+5q.k1UYs+8FZDDOgfuXYtu20GZhDl9h0x
+EbYlIb5ZK.LAWbu6PlrDNIl09+1ACfVWLuDWqIk0w3OAQCCAG2EZI+wd1aQ0
+rH6uarQnhEQUKWlrE.6VKawDFmlVum7etN1IXpqLWpLrdhxfH5jXAq43xJh0
+G1B7uUASxC6jAdfFmmIpH1rL4ZuBd1deYqXYXGH+P9P2pl8MQ07uDUCdiV3Q
+S05SRu6lY9gl5xrRbuUXAz+RjB66osxzEMzX9AFqcnoPTm00OcO8q6vesG6N
++ancWkQ8jh6MET0G4ofyv5Gtqf5TUG26t86EjiC1Sp2yuWOpWX6Tw56Cwohm
+4VQLbH3orzexJ3YWDikdhgmOw1yZh8lvDCO5wc0yCZByi2s.YmxD2NZ5otxN
+JRAP8co2I33SK8ZALbJxJbHY0MLTGuwQ9QkvJeZlqeP+KP1l2L4zxNumYxcI
+loInRSvxv0Vg4Md3bCCmatfhltjtFNfjBu8Rp2jkTDze.Q091KptKCnhlsjN
+pCgyYND5rgmbe1jywI2isStCame+05+tqc58VScm0559pI2YfG+qG++fr294
+h
+-----------end_max5_patcher-----------
+</code></pre>
+
+**If you want to put this ring tone on your phone:**
+- Android: first use an online coverter tool (google for one) to convert your WAV file to mp3 or ogg. Then put the file on your phone under your /Ringtones folder. 
+- IOS: use an online converter to convert your WAV file into a m4r file. Then google for how to get that on your phone, because Apple made that a bit more complex. 
+
+### Example Assignment 1 sounds from 2024
+
+---audio:2024/assignment1_sounds/220016416.wav.mp3
+---audio:2024/assignment1_sounds/219600360.wav.mp3
+---audio:2024/assignment1_sounds/218856542.wav.mp3
+---audio:2024/assignment1_sounds/219029677.wav.mp3
+---audio:2024/assignment1_sounds/219596675.wav.mp3
+
+---audio:2024/assignment1_sounds/219678788.wav.mp3
+---audio:2024/assignment1_sounds/218836585.wav.mp3
+---audio:2024/assignment1_sounds/219719616.wav.mp3
+---audio:2024/assignment1_sounds/220007787.wav.mp3
+---audio:2024/assignment1_sounds/219600576.wav.mp3
+
+---audio:2024/assignment1_sounds/217898909.wav.mp3
+---audio:2024/assignment1_sounds/217751405.wav.mp3
+---audio:2024/assignment1_sounds/217277237.wav.mp3
+---audio:2024/assignment1_sounds/218860916.wav.mp3
+---audio:2024/assignment1_sounds/219167360.wav.mp3
+---audio:2024/assignment1_sounds/216416901.wav.mp3
+
+---
+
+## Assignment 2
+
+**[Via e-Class](https://eclass.yorku.ca/mod/assign/view.php?id=3753146)**
+
+A lot of sound synthesis technology innovation has been inspired by science fiction, or indeed has pioneered science fiction! Sometimes these are also built from very meager resources. A wonderful example is the [soundtrack of the film Forbidden Planet](https://en.wikipedia.org/wiki/Forbidden_Planet#Soundtrack) from **1956**.
+
+---youtube:AMR75C_zfso
+
+> "Forbidden Planet's innovative electronic music score (credited as "electronic tonalities") was composed by [Bebe and Louis Barron](https://en.wikipedia.org/wiki/Bebe_and_Louis_Barron). It is credited with being the first completely electronic film score, preceding the development of analog synthesizers by Robert Moog and Don Buchla in the early 1960s. Using ideas and procedures from the book *Cybernetics: Or Control and Communication in the Animal and the Machine (1948)* by the mathematician and electrical engineer Norbert Wiener, Louis Barron constructed his own electronic circuits that he used to generate the score's "bleeps, blurps, whirs, whines, throbs, hums, and screeches". By following the equations presented in the book, Louis was able to build electronic circuits that he manipulated to generate sounds. Most of the production was not scripted or notated in any way. The circuit generated sound was not treated as notes, but instead as "actors". 
+
+**The assignment**: Create your own "electronic tonalities" for an alien world, e.g. 
+- create the music of an alien race, or of their advanced technologies
+- or, create the sounds of an alien world or ecosystem
+
+Be sure to follow all the [general procedures for assignment patches](#general-procedures-for-assignment-patches) -- especially remembering to make sure that everything that generates sound and structure is contained in your gen~ patcher, and your patch does not have any external dependencies! 
+
+You are free to re-use any patches from the textbook, or from the Help/examples/gen folder in Max.  Here's the starter-patch:
+
+<pre><code>
+----------begin_max5_patcher----------
+1691.3oc0YszbaaCD9r7uBLrWsk4aJkSsS6OfNM8VRFMPjPRHADfEDT1NYR9
+sW7jhTljR1QpMwGnj2cAwteXWrOzWtYl2Z1inZOva.uCLa1WtY1LMIEgY1+e
+lWI7wbBrVKlWNqrDQEd2Z3IPOJzz+CF.RHfmXMbvCL9m.XJXGhibBRvTTNqg
+pkNzRrhipkuLn.ynqFTh0MqWSP03BjhZjkJtPumr0e7tfD2NPaJwTBRn0yfd
+quKEoXrFgSNeml.E46vzsq3nbgAOBiil6eKHHMT8wxEpmQYy8AePsjudyMpG
+29cBa+EpDUtFwABFXCiPXO.D6PRvqVvaxU3RM.J.6Dhp52b+8PBNGQfqmKgX
+Rw8EPgHxOK9dLs.837chRxurEQQbH4tJNKGUzHQ361v32IUD7VpRGtSaqxS8
+A.y3IAyyG5zPVlFxB7S8UeF5eggt+TaFbveikpD38z2JZJjxAjZoDPmzuqqI
+G9JL4MLpnF+YseUX77ShDAQcQhzWKRTWIeubVcNqB8sAN9FNTHbPSwYfa1ly
+HLtQaCzpY2GfOXkyrTwSUHinddsrFvrSBzVZ7hk5nlEV6OpyKbc2MVK8gGAu
+R.hf2il2Gdfxfn8nStYOGLWLIXZdsFmqyA9FF74P5VKddWv7.0RBFGwWKkdR
+TOyOUC2IF3dQlw2KridTCKqHla7ii0GRVMQFhTfzV+AhWiinQcdC7eAdu9uP
+uWXifUJSyj2E8G2u0gfKidNBdM.EyUVCgJK85bkyFXNpq0eF.kiZIyjAMbfa
+vBBaOwelOmJoAj3cKvaCgAES69kY.gLieWrzYT8WbTRPPzR+zk2puNr8UnzA
+JrTuUd+FGq1GqWJdq0S7R5gE8CfClEiB8SLPUmDBWQ+qwRgtgi9mFDM+IfI0
+RS4.vV5EpnfkFaNIxXJIWmpBd.tGIq2YPCI5hZHw9KuDFxoRpGl9CSV8zfe1
+SpGl7yWV8vjredypGF+CvktF+1+qSpi9bALeHLI6U.IDVtL83zlYbbhIah45
+o1mu9ntsPLs0B1C4sYqeN2t2yNo8UA4x2h.wWgnvi5MWt6RqBRoHRaOa9ChK
+ImtfkCe6P4K2pT85oKiwBiV2kT8yvn3dga6QEqj8dywqaDnCeq1BnVDUgYjF
+DaiiridWT.SwBr4rUdeQVnaWFRnmCY8jhvnaG+HpmnkxCakXotqENhKlp3dW
+l+v7YEtBJiFfc8NFWblJh6nansoQZ00hmLFbrgu1M18wEplgemfy+jZBLF3E
+.aJvL0.rD6v0.sKxfiSXfwQEeslFU7xXSvcmoQk7p62.8fTYeFNrEQ+F3WEl
+4o3oGkmYVQ726MTGaufxohldxImUXr8aSE6FkXRRXiZWXFZWRmXWqAcbf5FL
+AsGwqwLZ2nKOXUUGx8igKgezjxXQquqDGLjRaIwQ6wt0G2RExkptPp2MbSTx
+iskYa6ViSavZUw426TI8wnJ5ptx1OnWQc0b4gm6E30APzdMAgZ7XgIQ3xto9
+T49jIW9jsJAGQY5bJl1c9r8XWf1.aHhUC2FYe9G00ZelC1+2LusbbAipThdm
+FJxtsSVYfoGpjtFiVBJrZfEKcYkvxHLqkFYS8ZHWcXYiQCcLELFoOq10QPaD
+V1UXYdq9nnfUMNSNd6tIV6ZljY4TuaMmZ4sjFtqTYOWoxM0WNHgXi26+5eDR
+wxpmPBr4HHzuko4dvc04bFgzydMb1O.mBoedN5AbgXWu5MUbjhiqbNQdsmxE
+3snZQeZB3159TZy.zgTyZab7JARV5qzJ5KfZZ20BYdnGpsB5bz5B.G9kO5FW
+28xydzm5Rz9WjJuNCDAJPqa11k+.ipcz6OGO6vnytxjgXgYlBY57Dl4s3VlM
+2oKSwqwn6mBsuU+VYNaDCH03pFwH1c7k2tMiaZQl4tsiZF+BY1m3rNbDqM7x
+asANy02kZ6JbJeByMXDyM3xatQKNeq8PV.UUZ1Xaqj8pWTKXWgbUMoU.E890
+NUKqDJ2UYh0PAsEpqteSfosIIeW6zFAcFzBuvTzwvSz7RtwKGdiC9t2X+Srw
+o8joDWTwvTgEhiR8mmHOBM+fXwIws+20.iBNCUMXLUMdooAPqpJq0dbUM5pi
+pgu.XMyeBUM75qpImupFllNgtd8cVUCl5h.qQWcm0IQ0Vm0HSGgKMpZz0AUO
+kpt3rTUCnJKb++yq.T+dimqt1BqWg.qzyPWyLx7cuO9mw9zehBlTkG0ErZKN
+p62i5784c8NdGuG2sqtS2g5xUU6xMe8l+EfYQwwF
+-----------end_max5_patcher-----------
+</code></pre>
+
+### Example assignment 2 sounds from 2024
+
+---audio:assignment2_sounds/216416901.wav.mp3
+---audio:assignment2_sounds/217277237.wav.mp3 z
+---audio:assignment2_sounds/217740184.wav.mp3 
+---audio:assignment2_sounds/218392290.wav.mp3 
+---audio:assignment2_sounds/218856542.wav.mp3 
+---audio:assignment2_sounds/218860916.wav.mp3 
+---audio:assignment2_sounds/219167360.wav.mp3 
+---audio:assignment2_sounds/219596675.wav.mp3 
+---audio:assignment2_sounds/219719616.wav.mp3 
+---audio:assignment2_sounds/220007787.wav.mp3 
+---audio:assignment2_sounds/220016416.wav.mp3 
+---audio:assignment2_sounds/220101895.wav.mp3
+
+[Back to top](#top)
+
+---
+
+## Assignment 3
+
+**[Via e-Class](https://eclass.yorku.ca/mod/assign/view.php?id=3753152)**
+
+**Generative Radio Station!**
+
+Have you ever heard [Generative.FM](https://generative.fm)? It is a collection of generative radio stations that never end or repeat. It could be music for working to, sleeping to, meditating to, focusing to, ... and never getting bored from.  (*It's not the first generative radio station ever, there have been quite a few, but it's the most active one I could find today*)
+
+This assignment is to create a robot radio station, which is always absolutely different every time you listen in. 
+
+- To ensure it is always unique, the patch should use the current date and time to modify its parameters. The template patch below has this already set up for you. You can either listen to the current date & time, or pick a random date & time (or choose by hand), to make sure that the station has enough variety. 
+
+- Most of the stations at generative.fm are pretty ambient, and might be a bit too slow and sleepy. Let's make stations that are a little more upbeat. The template patch has a clock source built in (with bar and beat phasor ramps).  Use this to drive for some element of your station -- maybe a backbeat, maybe a melody, maybe an LFO pattern, etc. 
+
+- Before building the patch, spend some time researching among the example patches drawn from the textbook or from the Max / Help -> Examples -> gen folders. Spend some time playing with many of these patches until you find **three or four** that you think you can work with. Your radio station must combine these patches together in a way that you (and your friends) can listen to for a long time.  You can modify these patches as much as you want, and you are recommended to add more processing of your own to make it uniquely yours. 
+
+Later, we will use RNBO to embed these patches as running code in a class website. In order to do so, we have some specific rules for the assignment:
+- Do not use any patches that require poly~ or pfft~. 
+- **Do not use any external sound files at all**; no buffer~ etc.  (That will rule out a lot of the example patchers.)
+- Do not modify anything in the starter Max patch -- only add your patching INSIDE of the `gen~ @title CLOCK_RADIO` patch. 
+- That means that you will have to figure out how to embed the patchers you want to use inside of that `gen~ @title CLOCK_RADIO` patch, and connect them up. 
+- The audio output should be routed to the `dcblock` -> `tanh` -> `out` section at the bottom of `gen~ @title CLOCK_RADIO` patch. If your output is mono (not stereo), route it to both of them.  
+- Do not add any extra inputs or outputs. 
+
+Aesthetic requirements:
+- It should never sound the same -- each minute, each hour and each day is notably different
+- Every single input (bar, beat, seconds, minute, hour, day, and month) must be used to control the patch. 
+- Some aspect of it should follow the tempo of the bar/beat phasors -- it could be subtle but should be there
+- It should generate sounds that you can listen to for a long time -- for working, walking, meditating, sleeping, etc. -- it's up to you. 
+
+And all the usual [general requirements for assignments](https://alicelab.world/datt3074/index.html#general-procedures-for-assignment-patches)
+
+Comments:
+- Make sure to add a comment with your student number. 
+- Add a comment to name your radio station
+- Also add comments to explain which example patches you chose to work with, and why. Explain how you changed them. Explain why you chose to map the various inputs (beat, bar, seconds, minutes, hour, day, month) to them. Explain what modifcations and additions you made and why. 
+
+Here's the assignment 3 template patch:
+
+<pre><code>
+----------begin_max5_patcher----------
+3489.3oc6c02aaabF+uc9TbPCXXCyV4tiGeQECCMyMc0XoIcwonnHYvfR7jD
+anH0HO4X2h1O66dizjxjRjTjTptouHayij2yyu64c9bT+xyNazzn6nIi.eA3
+8fyN6Wd1YmIOj3.mo+6yFsx8tYAtIxSazrnUqngrQmqFiQuiIO9e+cKofP2U
+TPzbv8QahAwtd9Q+izSbdTHSLr7jeQrua.3eFE3Ath4F3OK8rB2rJZCKfxjS
+FTez0trYK8CWbSLcFSQrHzXyyAHK6wvyAF7+R7CiwPv+M27k3+yx4CSFCeXB
+7CSu+H8A88jTUzze5BG3Hww90m8LwGmWSPIj9I9E+HLgAfkyXoSr5Pr6WSUb
+0HeNxlwBkv1DSCAmhrfhefwoelcMK887ng4mi8ww1SZCGWoXvOJV5ulsgSEL
+vq2rZJMtmkAvS5XY.amtDQd22b00fWb80W8ud829xW+Nv27hqAe6Kd8OBt96
+d4kW80WcI3su7+78W81WJF8Zv6dC3qeyqd0a9AvEW.l4FSmuIH3dvrkzYeD3
+FD.Xb8L9b5uHTLc.+vDV7lYL+nvDfK6CgKYr0Iewyet.RoAtSG+on3.um64x
+XFPaxy8C8n2MdIaUve5gayEFozcfeHcVzlPIwar6EtluhIEXssDeRPRcWhct
+Er8txX1lUF5O64N621MwFDMyMH+rVF0aKkzrPNRB2L8yxIebIjuQaH+jYQqo
++ViwZrRufXSTVLjjqvtQF4x43YYK03cwCS2LOSOxzpDFCOfLlRHZX3KTq3q0
+bZMNZWrWkN.1o0e8RpIAki0MIMPBzZxIECoVJOD9oUlpC7ukNdgqeXFybqab
+l8sGOZQV0L0jgaBmgbCCoAYRavpfAggVtAlyy+ah+edPjKS7KA9I610u15iV
+tmHsAgLrZBXYOJ61Gy4VFM9FZn6z.Z9UvD2aod2v8VD6OcCi9vuknQTMjJ.s
+fMzn4oGN834u8AQgKpFXKbpq3KQhSyJ0O8Vi5Kip4BaX4iG4w+OZNmVEFNYY
+TLqlDR5pVYSylPeVB6dEhQTiKE9R+QCkD43JKJrgpTScCWrSQESkcBzDodEA
+m9Ys8yZYsKIEXGFcz24KBqgmqPnWzJ.OHEJ3OCX97EpcEOR49JltY5VxxkgM
+1pHncjQeLQFGsIpIXCoKiN76SnxH5lsINVDN2.f.DzjCDAL5RD3xXpfmcCAz
+Pu.ZRhJwQPByUDTKGcbYfDN+6k.3pe+uMTd3vd9ymSU.FcM+53bHfeteRbtB
+rie67TXIOUTfv1JMbL.jIUGSS3WrbBto.9Z1xnQjliMcjHKF1DvD0kf4ailF
+w.Wxil8ifeHJ9if2Jvx9J+KrxGTGm9kUqRAW3lZied.4lO46wVJcoXlexKwD
+q3hk2kUbRd4nVEKigsTeB6nPEErTH2bO+j0At2m5mptIna5z0Fi6Frxy89CB
+oLflcMRYeZhTKi1DeXPE1oqgJqSSnhS07PMOLvxD00fkYWCVUTvv0fET1EB+
+VWvcfcQ9n.JOGjRKf3463G0wBlor9LHazivu8kggIYT9aOMd6TFl6GPukFmv
+86lCq4q+qWm6vEylXk6OEIuQNYAjyoB0grxNTL8V+zq2L6ntwbljw4vMwJud
+2YQdHlegbPbHWnUPJoAymRRxEKg2xj0tyTWrXMMc3bQTpBmREUkC1REOkyCv
+FWXXgviL0KeZEi3ISG5GlOTjBC6Qm6tIfcSdunROtkL9bMEV5fE83mw.Kh88
+hBEDQgUBwgSmNtKdkIZy7Li7LBcWWxEykA3vRECJBnaSxT2XwBkV2AmNHKJJ
+n3PYWW.cNSO7Zed11EQQVz5pGL1ewxcbs7XkXQq108VNRBOsO0n2Hx4+FQFx
+EOO2f.sFcwa+ctg9q3ZyREYA6ByFTY+XYxr3nffB7qZjaKYDOtL9LZlUUXdg
+A9o6uNUHZT1prm+BZBq3wXtKRJdjrTZycnMS05v2vnq3VMYacBhhGmv3IV+o
+D8IlJnkG.d3gKkWmNu4wBGemg4VzVI2R4dxbp5nYqLhVnxOKTECmIb6v4qzc
+w1VBQpJUmq9.otG5ZbX8dxft4n.QUfdDDcvn.oKQA4zUMWkmF1cMSpjwMjK+
+SvpvSS+rZ1FVAaiySkoKd40djWf3AwHsJzgXTgBJ0mfDREkkLuN4mMV3XxnB
+STEAV0Q3Rg.tJp.o0brfsD01KhYanhD0P8nJr1NrpJCs5QONhQOQPDKKb2fH
+VCKhfI8EhX5X1MHh4vhHF3dCQPcjLBYXQDTugHZKuGNhfFHDgaPONhmOID7k
+tyX92RAn9zyjk1wDNW9XsShYnDYzEqVDzV0.CdW.iJPOQw3DwmWO.xQFYi5o
+sta7oBO23ABd3oc4xCtEJ927mP0Y09XzyXWnW00GY2PH1TkWr54rgM1BCKjx
+twXXSg2+.iuXcrR8K.OTF.2Vwty.VY2Bb9C+rAht5mWiNqttFYsNUR3q9HxA
+mtGwoQo6g5PDRw1sudGXkvfEptPPEq6jIGsLdOPHPICb3HfI72qBAFDsPf4g
+BAnFAAlmNP.1woifflU4GxIDDXzURAFMBBLJABd3YMH5MiJpfrjGDiWN1jDs
+IdVpyfzhxAJxNdzDleX1id48Y0kRbd0ZoooDwjZRC1O57hh8TONM3Qkvrplv
+PGUByrZBCeTILR0DlwQkvPUSXjdgvrq6RIpG0.spKQf6QhfTWYm9zVjYcQBi
+djHP0kHf8HQfqqPAF22TApNTQepeTWujoXVuQDniMQPpqVZuZovotlJH845Q
+cWP5UCVX7IgwBg1G9X6FSREniseLL5v8gnOXZiWo2+IpNIZGa9jF0wKKBhl5
+FrUapTVCwz9cxQEczWPjq2JQSsi5x8MktS8zaCXaXGrMfI1soqqYQKVDP63M
+4bJ2oJLGAl9Ys6odh0.0ulKng+F3KY9bFDb4qdyk+6ad6K9pqdS43At16Mr8
+uk4H51sGoxS2rgcceIstogyS5V2zKY8X9pUIsuosdmzIwUGn7op5P9b6a941
+27ysuYO19lhM9l30YPzbQWbx+CttzFVBfEAlwk54fWt2hHYaFL09.qPiiU4V
+4BWqRgp1xbI9dzxGY6JcV5NyU8X0kOqRaUSZXLoMOW8AqoQulF5IgeIFmvcP
+Ri.taDPMGm3KD.t.A8Cg+E+4.eFvOA7SaRXfUb6BmCh4mBUbX9ZEWGbo9RR9
+q4mpJWJpdAizhELbaVvvVXwaNDK8aQEhb8yrUcBwP0oHdylJ7A0asVDDJPDa
+Uc+ISZeqgX7z.Pv1jNBPvCkN8WcoDQ.T5Zsp7L9oFS8D6L1elFG8gvWv05em
+a3RvG4mThPE9S9LNmKaj9KPBE5+FRzJ4KnGntrYCzkqgFqIOtrGVNv5GZqca
+VOFpd+fww49Vc0jn1cfsW5D9D.MR0UOXz.MYv7+p73pbbVKUsNTIxV0+n1sV
+GB4LPRMbNFfUFytPlLP62SKZMF0tydR668QzP0x4ABln2ZtZcSxpJthAo8sR
+r4SB3.0UvA4o.bXn2hOGNbX7T.NvJyEc.bLTM16hnwwtqViYbil8EpfzUoU8
+Vbv1p8VTQOIDRz6Z9CWHYnBISVabPBObCdVAeImv.P9ObuCXNouAInpfI0.j
+fUs2AGRLR9Vgo.DgP8rmYkXDRUb5VAQNCJD44deA.x.129pg4dmA1J.xdXkg
+juXSFJ8LkGKsPjCt0Xj0fhQh2SNEPHrQOGhisVMC1ZDZnh+kCJHvT23KDN16
+O4lGDabZOlfFNLAClRcY8JnfvvbnhUqQE7.lzLRmzr3gu09VBWWWEk8CGmVG
+gWoIE0KM4cc6PHTu1aNF0swwfmBcKEpW6YKXcoh9rU9PMrYs6GhntMKEx7Q8
+10Jeu0Q9gLsZBxQVIOjZOaXZ+veMj6Yf5yPjFxPF6igPGYFxnYLjg5ANtCFB
+ejYHbCYHzj8vPFG0t2GgOAZbdTe1371MQ2quHBmlXQ63aWE1LgbrCbOB4ji6
+F3At+lpssuc7a065+89hIW8ZLUuaKUkLL+CfZj5IOKO0KfiQbreb150nDdL9
+Ap.EQPw+j0aipWtHSWLKJP0aguW1bU49.suWhkpag5oukcSP5K8gOxtIOtkG
+NgPY8KkqmXvLYT+z3tyDcMw5ktIQw8ei6pq.ptwcwM4kxu8ePaP2Il5lcmn9
+ldQkMtI7ycn6m6P2O2gtGVG5t2RxNcs3MZFTUUVqzxxRf8bw1PP82jBVm7k2
+WUts8WY18UrszuUNjNsUe2bzphsYMrOi4wyiiVwkRZ46uL42CR0UnP8NKBgb
+N4ey2oZboZTZZX83bkTwDieGTBVzoPo1p4liz5THA8dIItt4aiAUyAbXeaLn
++d5q691XvXRc2cexYpnrsB61dsTifOdMrPp3UIHWnnT425kkttU241xpFy8V
+D3i21mEqXZ6IF67ZTUQL5phd3yDrNyD7.mIwNdb+7TgmhRWAmFN0gIQkO039
+mqslT9TC6et1xo2.78x0EEx6R.GVmotyA7ZYBwjTNWeXSsYc35Tn4vlI6Aal
+rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
+8wK5JiICkFVchbZK2ScjM3lXXrac2VGdFS5qYde7bw9yobzVk5vVkNWLoaUx
+7sJW9iKUd0kIe6RjKKOdUesi8re8Y+evDY6us
+-----------end_max5_patcher-----------
+</code></pre>
+
+### Assignment 3 examples from 2024
+
+[Here's the radio station submissions from students in 2024](2024/radio/index.html)
+
+[Back to top](#top)
+
+---
+
+## General procedures for assignment patches
+
+- All of your work should be inside the gen~ patcher -- you shouldn't need to work in the Max patch much, except to support the gen~ patch (e.g. adding a buffer~ or a scope~.) 
+- **Everything needed to run the patch should be included in the patch.** Do not use Max Projects, 3rd party externals, external files etc. 
+  - You can use any of the "go." abstractions from the book, or any of the gen~ example patchers built into Max. Don't use any other external patches. 
+  - If you want to name a gen~ patcher, use `gen~ @title myname`, not `gen~ myname`.  Similarly, if you want to name a subpatcher inside the genpatcher, use `gen~ @title myname`, not `gen myname`.  This will ensure that all your work is in one patch. 
+  - If you want to use an external sound file, set it up so that by default it uses a sound file that is included with Max, e.g. using `buffer~ test jongly`. The built-in sounds include: ahkey, anton, bass, brushes, cello-f2, cherokee, cym, drumloop, duduk, epno, eroica, huge, isthatyou, jongly, rainstick, sacre, sfizz_help_loop, sfizz_help_vibes, sho0630, talk, and vibes-a1.  Your project shouldn't depend on any other sound files to work. 
+- Document your patch using comment objects (you can create a comment by typing 'c' in edit mode.) **This is an essential part of your grading!**  
+  - Include a full explanation of what needs to be done in the proper order to run your patch, e.g. `1. turn audio on`, `2. press this button`, `3. wiggle this parameter`. 
+  - Include a longer comment to document particular parameter sets that you think sound good or best demonstrate what the patch is doing. 
+  - Include a longer comment (you can put it in a subpatch if you want more space) to explain why and how you built the patch the way you did. What makes it "earcatching" but not annoying? How did you make the variations consistently interesting, not too much the same, and yet still of a similar character? Did you start from a certain inspiration (if so document it -- with links if you can!)
+  - Insert many small comments to document what each step or section are doing, to show that you understand how the algorithm is working (or insert comments with questions about any areas you are unsure of). This is essential for me to know what I should focus on in lecture patching sessions. 
+
+
+[Back to top](#top)
+
+# Final Project
+
+The final project will be a more substantial patcher development, which demonstrates the export of the project into a real-world application area through the use of one of the many possible [export targets](#export-targets). 
+
+There should be some way to present or exhibit this project -- a performance with newly designed instruments, part of an existing installation, a sound-making web-page, a film, sounds embedded within a video game, or it could be software, e.g. a packaged audio plugin that people can download and install.
+
+This can be an individual or group submission. 
+
+You will be required to present your initial idea in class, develop this idea over several weeks, present the final work (either in-class or via video submision, TBD), and document the final project on a public web page. 
+
+Some more detail on ideas:
+
+Perhaps a few of you want to design instruments and make a "gen~ band" (or "gen~ ensemble") to perform together? 
+- You can use [Ableton Link](https://www.ableton.com/en/link/) -- "Link is a technology that keeps devices in time over a local network, so you can forget the hassle of setting up and focus on playing music."  You can install the Link package in Max just by searching for "link" in Max's Package Manager (`File -> Show Package Manager`, search for "Link", install) and once installed, you can create a `link.phasor~` object that will give you bar and beat phasor ramps you can route into gen~; and anyone on the same local network will be synced to the same tempo.  Link also works with Ableton Live of course, and also [VCVRack](https://github.com/stellare-modular/vcv-link), [SuperCollider](https://doc.sccode.org/Classes/LinkClock.html), tons of Android and iOS apps, TouchDesigner, TidalCycles, and lots of other interesting software, and also some hardware devices too -- see [list here](https://www.ableton.com/en/link/products/). 
+- Think about how the performance you can showcase your patch
+- You'll need to develop quickly, so that you have time to practice together! 
+
+Web-based data sonification:
+- Find an online free data source. Ideally something that changes hourly or daily (e.g. weather/climate/transport etc. data), but if not it can be static data that you move through gradually (e.g. a random walk over openstreetmap data). 
+- Use this dataset to derive changing control signals for your patch
+- Export this as a web page that visualizes and sonifies the data
+
+Sounds for a project in another course
+- E.g. if you are making a game, or website, Max project, or some other project in another course, you can create sounds for this project as your work for DATT3074. 
+
+Or something else -- tell me your ideas and let's work it out!  
+
+[Back to top](#top)
+
+## Export targets
+
+For a long time Max, and more recently Gen, have been used extensively in industry (both large and small-scale), research centres, and community spaces to design and develop new audio-related software and hardware. For example, Ableton Live itself, and many of the devices within it, were originally designed from Max patches! Today it is easier than ever to take the algorithms you write in a gen~ patch and place them into distributable~ software and hardware. 
+
+It has always been possible to export C++ code from a gen~ patch just by sending the `exportcode` message, but that's a pretty uncomfortable workflow. Now it is much easier because gen~ also works inside of [RNBO](https://rnbo.cycling74.com). RNBO is a kind of re-implementation of the core of Max, including gen~, that is designed for code export from the ground-up, and has built-in support for many targets, as well as community projects for others. We have some RNBO licenses in our Digital Media lab machines that we can use for this. Or, there are other ways of exporting code and using it too -- here are some of them:
+
+| Target | Toolchain | Description |
+|:--- |:--- |:--- |
+| Web | [RNBO](https://rnbo.cycling74.com/learn/the-web-export-target) | It can basically be **anything** (a soundtrack, a soundtoy, sound for a VR world, etc.) that you can embed into a website, but you will need to code your own interface in Javascript. |
+| Audio Plugin (VST, AU) | [RNBO](https://rnbo.cycling74.com/learn/using-the-vst-audiounit-target) | Typically either an **audio effect** (sound -> sound), or an **instrument** (MIDI -> sound), which you can use in any typical audio software or DAW (or video editors too). It will only have a basic default interface though; to make a custom interface [you can try using JUCE](https://rnbo.cycling74.com/learn/programming-a-custom-ui-with-juce) |
+| Ableton Live device | [Max4Live](https://www.ableton.com/en/blog/make-your-own-max-live-devices/) | Build new devices for what is probably the world's most popular digital audio software. Requires a [Max4Live](https://www.ableton.com/en/live/max-for-live/) license; 30 day trial available. |
+| [VCVRack](https://vcvrack.com) module | [RNBO adapter](https://rnbo.cycling74.com/explore/vcv-rack-starter) | Create a module for this popular free virtual modular synthesizer software |
+| [VCVRack](https://vcvrack.com) module | [gen~ adapter](https://github.com/isabelgk/gen-rack) | Create a module for this popular free virtual modular synthesizer software |
+| [Supercollider](https://supercollider.github.io) | [RNBO starter](https://rnbo.cycling74.com/explore/supercollider-ugen) | Create a unit generator (UGen) for this advanced audio programming language |
+| Unreal plugin | [RNBO adapter](https://github.com/Cycling74/RNBOMetasound) | Create a "Metasound" plugin for the Unreal game engine |
+| Unity plugin | [RNBO adapter](https://github.com/Cycling74/rnbo.unity.audioplugin) | Create a plugin for the Unity game engine |
+| Daisy hardware | [Oopsy](https://github.com/electro-smith/oopsy) | The [Daisy](https://electro-smith.com/collections/daisy) is a small Arduino-like microcontroller with high-fidelity audio support; it is now used inside many commercial (mostly independent) hardware devices (**guitar pedals, Eurorack modules, desktop synthesizers**) as well as lots of custom **breadboard-style** community projects for instruments and installations etc. Oopsy is a free/open source tool that makes it really easy to export gen~ patches to Daisy hardware. We have some Daisy-bsaed hardware available to use from the Alice Lab. See https://www.youtube.com/watch?v=fbd1CASqUmI |
+| Raspberry Pi | [RNBO](https://rnbo.cycling74.com/learn/raspberry-pi-target-overview) | For custom **sensor-based instruments, interactive installations, etc.** Includes full support for USB Audio devices, MIDI, OSC, etc. |
+| C++ code | [RNBO](https://rnbo.cycling74.com/learn/the-cpp-source-code-target-introduction) | To embed in a custom C++ based application. It's up to you how to connect this with your other C++ code, but you could start from [this RNBO/JUCE template](https://rnbo.cycling74.com/explore/c-plugin-application-template) |
+| C++ code | [gen~](https://docs.cycling74.com/max8/refpages/gen~#exportcode) | Just send the `exportcode` message to a `gen~` object, and it will output some C++. It's up to you how to connect this with your other C++ code. | 
+
+Note that all of export targets will require extra work on your part to complete the project, and will require developing familiarity with the target itself. I strongly suggest taking the simplest possible examples through the export process to test them and get familiar with the process and any limitations before going any further. 
+
+Some targets are dependent on having other software installed. Some require licenses -- we do have RNBO licenses on some machines in the lab, and you can also get a trial license of RNBO to use at home. We do not have Max4Live licenses, but you can get this as part of a 30-day trial of Ableton Suite. VCVRack and Supercollider are free to install. Unreal and Unity are also free to install. You may already have software that can load VST or AU audio plugins -- pretty much any audio editor, digital audio workstation, many video editors, etc. -- many of which are free. For hardware projects, we do have a couple of Daisy-based devices available in the Alice Lab that can be used, including a guitar-pedal and some Eurorack modules, as well as bare Daisy Seed for breadboarding. 
+
+**This means you will need to budget your development & testing time carefully around any access limitations!**
+
+Here's Oopsy:
+
+---youtube:fbd1CASqUmI
+
+Here's the example of mapping a javascript animation to sound:
+
+---codepen:https://codepen.io/grrrwaaa/pen/LYwqwPw?editors=0010
+
+---
+
+## Final submissions
+
+For the final submissions: **details TBC**
+
+<!-- 
 
 1. **Each student:** ensure all your assignments have been submitted.
 2. **Each team:** will need to submit their final project package to me. The final project package should include:
@@ -1535,10 +1570,9 @@ For the final submissions:
 3. **Each team:** should record a video presentation that can be shared on the course website so that all of us can view them. This submission should be a URL to the video hosted online. Please ensure that this video is open access to anyone with the link (verify this by testing on a different machine). Only one member of the team needs to submit this final project package. Please submit it using [the submission form here](https://docs.google.com/forms/d/e/1FAIpQLScB85pZ1o-weFqlZOdW2aONvA1JTPLI6Tl7r3ApepnnuulqaQ/viewform?usp=sf_link)
 4. **Each student:** submit a final personal report, using [the final report form here](https://docs.google.com/forms/d/e/1FAIpQLSfkYuNobBju2O9GVd2q5q0ceXlhpNWqnDc5VujaSO6jpvpnvA/viewform?usp=sf_link)
 
-The deadline for all of these submissions is **Dec 12th**. 
-
 See you at the exhibition opening! 
 
+-->
 
 # Class Recordings
 

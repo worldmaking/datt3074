@@ -17,6 +17,7 @@ const template = require('es6-dynamic-template')
 const server_path = __dirname;
 const public_path = server_path; //path.join(server_path, "public");
 const PORT = 8087
+const MAX_TOC_LEVEL = 4
 
 const meta_default = {
 	author: "Graham Wakefield",
@@ -101,7 +102,7 @@ function generate(file) {
 	renderer.heading = function(text, level, ...args) {
 		const html = heading(text, level, ...args)
 		const match = /id="(.+)"/gm.exec(html)
-		if (match && match.length > 1 && level < 3) {
+		if (match && match.length > 1 && level < MAX_TOC_LEVEL) {
 			const id = match[1]
 			console.log(text, level, id)
 			toc.push({
