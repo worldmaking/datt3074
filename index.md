@@ -30,6 +30,8 @@ The course follows the structure and assigns readings from the textbook “[Gene
 - Copies are in stock in the York University Bookstore.
 - There also four copies available in the Scott Library through [York University Library course reserve here](https://ocul-yor.primo.exlibrisgroup.com/permalink/01OCUL_YOR/q36jf8/alma991036915148805164) 
 
+**Each week you are expected to have read the corresponding chapter in advance**, so that we can move quickly into details in the lab time available! 
+
 ### Course software
 
 We will work using the **gen~** environment within [Cycling '74's Max](https://cycling74.com). All students have access to a license for Max supported by the course fees. 
@@ -62,7 +64,7 @@ Please note that the online course notes below on this website are subject to ch
 
 [Back to top](#top)
 
-# Week 0: One Sample at a Time
+# Week 1: One Sample at a Time
 Sep 3
 
 [Class Recording](#zoom-recordings)
@@ -166,7 +168,7 @@ v18mtU+yayW0h+Xs2Kyze2ut6+Tw.6SJ
 
 [Back to top](#top)
 
-# Week 1: Ramps: Modular Arithmetic of Time
+# Week 2: Ramps: Modular Arithmetic of Time
 Sep 10
 
 [Class Recording](#zoom-recordings)
@@ -317,9 +319,15 @@ rCn6pSIUGySp36DpBMtlGDNtp2JrxNiuxNmjjvQuRdMK5QuJdG8Z3c5qf24e
 -----------end_max5_patcher-----------
 </code></pre>
 
+**Homework**
+
+- Read through Chapter 3 in advance of next week, and bring any questions or ideas to discuss! 
+- Complete your [Assignment 1](#assignment-1)
+
+
 [Back to top](#top)
 
-# Week 2: Unit Shaping
+# Week 3: Unit Shaping
 Sep 17
 
 [Class Recording](#zoom-recordings)
@@ -428,9 +436,14 @@ What if we don't want it to jump between steps, but instead to **glide** between
   - See Ch3 **Interpolating_LFO.maxpat**
   - It doesn't need to be driven by a phasor. For a non-cycling glide, feed an `accum` ramp into a `clip 0 1` to stop at 1. Retrigger the `accum` ramp when the target changes (via `change`). This is a basic line generator (see Ch6 **slide_slew_and_line.maxpat**).  We can smoothly shape the ramp too, see Ch2 **interpolating_glides.maxpat**. 
 
+**Homework**
+
+- Read through Chapter 4 in advance of next week, and bring any questions or ideas to discuss! 
+- Begin thinking about [Assignment 2](#assignment-2)
+
 [Back to top](#top)
 
-# Week 3: Uncertainty and Unpredictablility
+# Week 4: Uncertainty and Unpredictablility
 Sep 24
 
 [Class Recording](#zoom-recordings)
@@ -466,11 +479,15 @@ Reviewing [Assignment 1](#assignment-1) & [the sounds](#assignment-1-sounds)
 
 - Continue to Chapter 5: Stepping in Time
 
+**Homework**
+
+- Read through Chapter 5 in advance of next week, and bring any questions or ideas to discuss! 
+- Complete your [Assignment 2](#assignment-2)
+
+
 [Back to top](#top)
 
-
-
-# Week 4: Stepping in Time
+# Week 5: Stepping in Time
 Oct 1
 
 [Class Recording](#zoom-recordings)
@@ -658,10 +675,13 @@ Ad8hb+bnf5N0o5h37STjusN9D03+IZw+TJw+7zg+moB+BZvuNJv2Fv+W92e4
 </code></pre>
 
 
+- Read through Chapter 6 in advance of next week, and bring any questions or ideas to discuss! 
+- Begin planning for [Assignment 3](#assignment-3)
+
 
 [Back to top](#top)
 
-# Week 5: Filters and the Balance of Time
+# Week 6: Filters and the Balance of Time
 Oct 8
 
 [Week 5 Class Recordings](https://yorku.zoom.us/rec/share/ueNEZRT55KuhCN73jZc2CtstoEZTK5uaOe2App3gWOQqk8Ut-Hhm6jVVVjkZZBVs.3IT8WxYZVMXVVEVG)
@@ -745,11 +765,14 @@ So how do we build a filter out of this kind of trapzoidal integrator? The math 
 A wonderful example of the trapezoidal method is the state variable filter (e.g. `go.svf`), which, similar to biquads, can produce many different output spectra, but it does them all at once, and can be modulated at audio-rates very nicely.  This will be our go-to filter most of the time.  See **trapezoidal-state-variable-filter.maxpat**
 
 
-
 [Back to top](#top)
 
-# Week 6: Reading week
+# Reading week
 
+**Homework**
+
+- Read through Chapter 7 in advance of next week, and bring any questions or ideas to discuss! 
+- Begin thinking about [final project](#final-project) ideas
 
 [Back to top](#top)
 
@@ -839,6 +862,11 @@ With delays of 0.5 to 25ms, we are in the region of pitches, and with enough fee
   - Of course using `delay @interp none` sounds much worse. There's no simple and cheap solution here, but there are a few different kinds of interpolators that you can try with different tradeoffs. See **delay_interpoation_types.maxpat** for some examples. 
 - Finally we can see all these together in **string_everything.maxpat**
 
+**Homework**
+
+- Read through Chapter 8 in advance of next week, and bring any questions or ideas to discuss! 
+- Continue developing the [final project](#final-project) ideas
+
 [Back to top](#top)
 
 
@@ -912,9 +940,13 @@ We saw last week how delays can create pitch shifts through Doppler effects, and
 You may have noticed that FM and PM often produces complex inharmonic "clangorous" tones. But there's a way to get all the fluidity of FM/PM and yet stay completely harmonic, if you want. The trick is similar to how we solved changing delay times without pitch shifts: we replace our single gliding sine oscillator with two integer harmonic oscillators and crossfade between them instead. See **Harmonic.maxpat**. The `go.harmonic` abstraction can be dropped in as a replacement for the sine oscillators at the heart of all the patches we have seen before -- compare **AMRM.maxpat** with **AMRM-blended-harmonics.maxpat** for example. See also **PM-blended-harmonics.maxpat**, and **ModFM.maxpat**.
 
 
+**Homework**
+
+- Read through Chapter 9 in advance of next week, and bring any questions or ideas to discuss! 
+
 [Back to top](#top)
 
-# Week 9: Review
+# Week 9: Navigating Waves of Data
 Nov 5
 
 [Class Recording](#zoom-recordings)
@@ -927,14 +959,8 @@ Nov 5
 
 - **[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
 
-- Continuing from last week, from PM feedback onward. 
+---
 
-[Back to top](#top)
-
-# Week 10: Navigating Waves of Data
-Nov 12
-
-[Class Recording](#zoom-recordings)
 
 Back in chapter 2 we saw how to play a buffer~ with the `sample` operator, using linear interpolation to estimate the values between samples. Remember, linear interpolation is just like a `mix` crossfade. 
 
@@ -992,7 +1018,16 @@ https://www.desmos.com/calculator/nvtliafeln
 
 This is quite a deep topic and you should refer to the textbook for full details. See **wavetable_sincmipmap_sample.maxpat** for a simple example of a single sawtooth waveform, and **wavetable_1D_sincmipmap.maxpat** shows an example for a morphing wavetable. 
 
---- 
+**Homework**
+
+- Read through Chapter 10 in advance of next week, and bring any questions or ideas to discuss! 
+
+[Back to top](#top)
+
+# Week 10: Windows of Time
+Nov 12
+
+[Class Recording](#zoom-recordings)
 
 - [Assignment 3 demo: RADIO DATT3074](radio/)
 - Source: https://github.com/worldmaking/datt3074/tree/gh-pages/radio
@@ -1001,14 +1036,8 @@ This is quite a deep topic and you should refer to the textbook for full details
 
 - [Final project](#final-project) discussion
 
-[Back to top](#top)
+---
 
-# Week 11: Windows of Time
-Nov 19
-
-[Class Recording](#zoom-recordings)
-
-**[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
 
 This chapter is all about using one proess to determine the durations (or *lifespans*) of another. For example, a repeated tom sound has three timescales -- waveform duration (periodic), duration between sounds (periodic), and the envelope duration (a window of time):
 
@@ -1116,6 +1145,16 @@ This is a really cheap way to get pretty decent antialiasing. It's not perfect, 
 
 - Hard sync: based on figuring out the subsample moment of the hardsync, and computing the necessary phase as well as the values half a sample before & after, and plugging that in. See `go.ramp.aa`. 
 - Shaping: almost all the aliasing in a phasor comes from that jump moment from 1 to 0. The slope in between can actually be curved quite a bit without risking noticeable aliasing. The same holds for our antialiased phasor here -- we just have to be careful to apply the shaping *before* we do the linear interpolation. That really opens up space for some interesting waveforms! 
+
+
+[Back to top](#top)
+
+# Week 11: Final Development Sprint
+Nov 19
+
+[Class Recording](#zoom-recordings)
+
+**[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
 
 
 [Back to top](#top)
