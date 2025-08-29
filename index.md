@@ -1129,13 +1129,13 @@ Nov 26
 
 Instead of presenting final projects to class, we are instead spending today's class time refining final builds of the projects using the RNBO-enabled machines available, and I will help out with each project in any way that I can.
 
-Instead of in-class final presentations, each team should record a video presentation that can be shared on the course website so that all of us can view them. The final deadline for the project will be **Dec 6th**. The deadline for the recorded presentations is **Dec 12th** 
+Instead of in-class final presentations, each team should record a video presentation that can be shared on the course website so that all of us can view them. 
 
 **Exhibition**
 
-Digital Media will be having an end of term exhibition. Dates this year: December 4-6 with an opening celebration and performances Thursday, December 5 1-3pm. We need to know what works will be showing from DATT3074 (aside from submissions already made to the open call). 
+Digital Media will be having an end of term exhibition. Dates TBC with an opening celebration and performances TBD. We need to know what works will be showing from DATT3074 (aside from submissions already made to the open call). 
 
-The deadline for us to submit work is November 30 (hard deadline), to Don by email, including:
+The deadline for us to submit work is TBC including:
 - Title
 - Name(s)
 - Course
@@ -1554,7 +1554,7 @@ Here's the example of mapping a javascript animation to sound:
 
 ## Stage 1: Project proposal
 
-- Group memberships have been randomly assigned in e-Class. If the class majority prefers to select their own groups, I need to know your group memberships before the proposal can be submitted! 
+- Group memberships have been randomly assigned in e-Class. If the class majority prefers to select their own groups, I need to know your group memberships before [the proposal can be submitted via e-Class](https://eclass.yorku.ca/mod/assign/view.php?id=3753849)!
 - The project proposal is a simple PDF. It should state:
   - Your group membership
     - How you will distribute roles within the group
@@ -1562,28 +1562,33 @@ Here's the example of mapping a javascript animation to sound:
   - Your choice of final presentation/distribution
   - The core idea or ideas that you want to explore. This should include reference to specific example patches from the textbook and/or Max examples folder, as well as referring to external references (inspirational projects, artists, etc.) to illustrate the intention. 
 
+## Stage 2: In-class development
 
+Throughout November we will dedicate lab time to developing the projects step by step. 
 
-## Final submissions
+Be aware that these kinds of projects can face unexpected technical challenges -- it's important to make good progress early on! Don't get stuck with any roadblocks, identify them immediately and reach out to me.  
 
-For the final submissions: **details TBC**
+## Stage 3: Final project submission
 
-<!-- 
-
-1. **Each student:** ensure all your assignments have been submitted.
-2. **Each team:** will need to submit their final project package to me. The final project package should include:
+The final project package should be [submitted via e-Class](https://eclass.yorku.ca/mod/assign/view.php?id=3754664). It should include:
   - The URL to the website documenting the project
   - The full source files of the project, including Max patches, any assets, and any files that are part of the website.  This can be a Github repo if that works for you. 
   - Please test & verify that you can open these files on another machine to make sure there are no missing dependencies! 
   - Remember the [general requirements for patch submissions](#general-procedures-for-assignment-patches) -- including **lots of comments!**
-  - The final exported form of the project, if it is not a website -- e.g. VST plugins. 
-  - Only one member of the team needs to submit this final project package.  You can submit it to me by email. 
-3. **Each team:** should record a video presentation that can be shared on the course website so that all of us can view them. This submission should be a URL to the video hosted online. Please ensure that this video is open access to anyone with the link (verify this by testing on a different machine). Only one member of the team needs to submit this final project package. Please submit it using [the submission form here](https://docs.google.com/forms/d/e/1FAIpQLScB85pZ1o-weFqlZOdW2aONvA1JTPLI6Tl7r3ApepnnuulqaQ/viewform?usp=sf_link)
-4. **Each student:** submit a final personal report, using [the final report form here](https://docs.google.com/forms/d/e/1FAIpQLSfkYuNobBju2O9GVd2q5q0ceXlhpNWqnDc5VujaSO6jpvpnvA/viewform?usp=sf_link)
+  - The final exported form of the project, if it is not a website -- e.g. VST plugin, etc. 
 
-See you at the exhibition opening! 
+## Stage 4: Video documentation
 
--->
+**Each group:** should record a video presentation that can be shared on the course website so that all of us can view them. This submission should be a URL to the video hosted online. Please ensure that this video is open access to anyone with the link (verify this by testing on a different machine). [Submissions via e-Class](https://eclass.yorku.ca/mod/assign/view.php?id=3754773)
+
+If your project culminated in a performance, then a recording of the performance will satisfy this requirement. But please ensure to record the audio directly if this is possible (not via a microphone and laptop speakers!!) for best audio quality. Please ensure that all team members have an equal contribution. 
+
+If your project did not culminate in a performance, then this video can be a powerpoint-style presentation, in which you talk through the details of the project, including your working process, challenges faced and insights gained, technical detail, and so on. Please ensure that all team members have an equal contribution. 
+
+## Stage 5: Final report
+
+[The final survey should be completed individually by each student on e-Class](https://eclass.yorku.ca/mod/questionnaire/questions.php)
+
 
 # Class Recordings
 
