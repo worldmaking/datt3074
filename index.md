@@ -920,7 +920,6 @@ Nov 5
 [Class Recording](#zoom-recordings)
 
 - Final project discussions
-  - [Project Ideas Doc](https://docs.google.com/document/d/1xBaPt7R7XKsno1gr0GTEcA5vDRDkDHNyNZeU9xOIoGY/edit?usp=sharing)
 
 - Radio discussions
 
@@ -930,10 +929,7 @@ Nov 5
 
 - Continuing from last week, from PM feedback onward. 
 
-
 [Back to top](#top)
-
-
 
 # Week 10: Navigating Waves of Data
 Nov 12
