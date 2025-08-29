@@ -34,7 +34,7 @@ The course follows the structure and assigns readings from the textbook “[Gene
 
 We will work using the **gen~** environment within [Cycling '74's Max](https://cycling74.com). All students have access to a license for Max supported by the course fees. 
 
-License codes should be coming to all students by Sep 11th. 
+License codes should be coming to all students in the first week. 
 
 The computers in ACW 102 also have Max installed and licensed, and students can come in to use them during open lab hours. These machines also have the RNBO license that you may need for the final project. 
 
@@ -55,6 +55,10 @@ The computers in ACW 102 also have Max installed and licensed, and students can 
   - Presenting your works in progress and final project, and explaining the development processes.
 
 *These grading percentages have been adjusted in response to student feedback in 2024.* 
+
+### Online course notes
+
+Please note that the online course notes below on this website are subject to change. Feedback from students in 2024 (the first time the course ran) included requests for reducing the quantity of material in order to have more lab development time, so I will be adjusting the material accordingly as we go. 
 
 [Back to top](#top)
 
