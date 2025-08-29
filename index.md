@@ -41,20 +41,20 @@ The computers in ACW 102 also have Max installed and licensed, and students can 
 **Evaluation**
 
 - 50% Assignments
-  - Three individual assignments using gen~ patching through the course. 
+  - Three individual assignments using gen~ patching, through September-October. 
     - [Assignment 1](#assignment-1)
     - [Assignment 2](#assignment-2)
     - [Assignment 3](#assignment-3)
     - [General assignment instructions](#general-procedures-for-assignment-patches)
+- 20% Final Project
+  - A more significant project, in a group collaboration, through several steps of development using gen~, with a final embodiment using a code export method. This will take place throughout November. 
 - 20% Participation
   - Being present in class, taking part in discussions, group reviews, etc. 
     - There will be attendance checks most weeks. 
-- 20% Final Project
-  - A more significant project, optionally in a group collaboration, through several steps of development using gen~, with a final embodiment using a code export method
 - 10% Presentations
-  - Presenting your works in progress and final project, and explaining the development processes
+  - Presenting your works in progress and final project, and explaining the development processes.
 
-*Grading proportions have been adjusted in response to student feedback in 2024.* 
+*These grading percentages have been adjusted in response to student feedback in 2024.* 
 
 [Back to top](#top)
 
@@ -1551,7 +1551,18 @@ Here's the example of mapping a javascript animation to sound:
 
 ---codepen:https://codepen.io/grrrwaaa/pen/LYwqwPw?editors=0010
 
----
+
+## Stage 1: Project proposal
+
+- Group memberships have been randomly assigned in e-Class. If the class majority prefers to select their own groups, I need to know your group memberships before the proposal can be submitted! 
+- The project proposal is a simple PDF. It should state:
+  - Your group membership
+    - How you will distribute roles within the group
+  - Your choice of [export target](#export-targets)
+  - Your choice of final presentation/distribution
+  - The core idea or ideas that you want to explore. This should include reference to specific example patches from the textbook and/or Max examples folder, as well as referring to external references (inspirational projects, artists, etc.) to illustrate the intention. 
+
+
 
 ## Final submissions
 
