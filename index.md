@@ -3,13 +3,21 @@
 
 ## Course Information
 
-Wednesdays, 2.30pm-5.25pm, Fine Arts building room *ACW 103 or ACW 102 (TBC)*
+Wednesdays, 2.30pm-5.25pm, [Fine Arts building room ACW 103](https://find.yorku.dev)
 
 **Instructor:** [Graham Wakefield](https://ampd.yorku.ca/profile/graham-wakefield/) g rrr w aaa a t yo rk u do t ca
 
-Course material is available at or linked from [this website](https://alicelab.world/datt3074/) -- bookmark it! 
+**Course material** is available at or linked from [this website](https://alicelab.world/datt3074/) -- bookmark it! 
 
-Assignments will be handled through **e-Class** at [https://eclass.yorku.ca/course/view.php?id=143593]() 
+**Assignments** will be handled through **e-Class** at [https://eclass.yorku.ca/course/view.php?id=143593]() 
+
+**Class recordings**: I usually share screen and record classes via Zoom. This doesn't mean the class is hybrid (in-person attendence is required and will be accounted), but I have heard that it has been useful for many students to be able to review sessions after class hours, or to view a live class on their personal laptop screens. 
+- [Zoom meeting (same link every week)](https://yorku.zoom.us/j/99944013694?pwd=C1aWllAW7YWalt6fAATld8VEZEqFHi.1)
+- [Add it to your calendar (.ics file)](https://yorku.zoom.us/meeting/tJ0kc-2orzgsE9BpSk-Zc0unPksfMenJe5DU/ics?icsToken=DDp2uv1BWjD6EGHg4wAALAAAAGiObQe5-sLsBtJuVNbLdvPccKDGOzVG0jD4Ob9giixIVpRt-o4ZokvJCKP0DER5qFkcsDn39LVwgbKQZDAwMDAwMQ&meetingMasterEventId=eQ5O6Ts7TqiPcdx6RaLw5g)
+- [List of class recordings](#class-recordings)
+
+I normally also record sessions and share recordings with the course participants (so long as no participants have objections to this), as I have heard that it has been useful for many students to be able to review sessions after class hours, including when, due to factors outside their control, they could not attend in class time. *Synchronous attendance is highly recommended given the importance of critical discussion on the development of your studies in the program and your research/research-creation; but if you are expecting challenges in attending all times please do not worry. Having the sessions recorded alleviates some inevitable challenges of the graduate situation, and moreover allows some time to review any material if it seemed to fly too fast. You are all coming from different backgrounds so this is also inevitable.*
+
 
 This course is about the astonishing things you can do—and the insights you can find—when you work at the atomic sample-by-sample structure of digital audio. The course focuses on creative exploration of algorithmic and generative sonic signal processing with a special emphasis on “working at the sample level” in real-time/interactive contexts. This means working at the lowest level of time-domain digital audio signals, as is made possible through a software called gen~, that is part of Cycling '74's Max and RNBO. These tools that are widely used for prototyping in artistic and industrial settings including audio software & hardware design, music production, game audio, sonic arts, and other broader contexts. 
 
@@ -36,9 +44,9 @@ The course follows the structure and assigns readings from the textbook “[Gene
 
 We will work using the **gen~** environment within [Cycling '74's Max](https://cycling74.com). All students have access to a license for Max supported by the course fees. 
 
-License codes should be coming to all students in the first week. 
+License codes should be coming to all students through the department after our first attendance check.  
 
-The computers in ACW 102 also have Max installed and licensed, and students can come in to use them during open lab hours. These machines also have the RNBO license that you may need for the final project. 
+The computers in ACW 102 also have Max installed and licensed, and students can come in to use them during open lab hours. Two of the machines also have the RNBO license that you may need for the final project. 
 
 ### Evaluation
 
