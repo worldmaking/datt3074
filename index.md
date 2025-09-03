@@ -148,6 +148,55 @@ v18mtU+yayW0h+Xs2Kyze2ut6+Tw.6SJ
 
 - Feedback example: noise, mix, history
 
+**Today's patcher**
+
+<pre><code>
+----------begin_max5_patcher----------
+1880.3oc2ZstbahCE92NOEZ7e5tcb7nabamN6j2iNsYHXYGZwfW.mlzNce1W
+cAr4h.IbhSh2Lo1oR.567ctpC5WWMa9cYOxJlC9KvmAyl8qqlMSNjXfYU++Y
+y2F9XTRXg7xlGkscKKsb9B0bkrGKki+0uBBKKy2GWOytvxn6iS2baNKpTsBD
+LcoyBfi2Rh3GGHEEDD3i7V.PNvkvE.L+SvWpdBwqjO4r6910Xu5Ga59sY6KS
+XkR3.ONZbZ8fHwX+9pqDervRwxL1gzkt7e7b7ntTJz2miZbkjPQTu.BDQcNJ
+I3AjDm5EQrjxgWyXqtKL56GW87vsrRV9srzv6RXcDzFhORq3WMn55JeZGSIA
+ymC9xIvLEQY6X+6HLCl3sTJ2XwWXjmP783ioU7oiqHC2WlsMrLNZPwCeBxv5
+jL9yXDYfqyPBsqK1kqGwDWet.4uDJ+wgvU3HeHYAH.Ikwl510Y4b.KdLtZDW
+xzUp3ooTW.leWX5lSS4Nj27m9DPwYf+HKG7g0e.7c1S+4HDnKQPLTrhxPXGj
+afmC0riM9L6XOR7phcb3mmY1.GFHENZfPRLHPH5YVflHp41tRSVWGAp8QCfZ
+xb6CvfGI.S0Tq3NwwopgUzEkaVHV6WXUnjE.2bHrA.MFkfbkTBgrzywrl7ba
+ZZVEpvKlGYEaNzJB8VDZ0nxYrnttR4xR8Qvas5nBt0pCDVFyyKPu5veBv8TH
+9j3GXK2v8xN.4GByS44XFXVMBjmxyzWFcyWFbi3pm78FKOFRqj5TMJGw7UNL
+MkkDksOsbXVXn3JEwaRCSDY5N9Wh+wSQwy7tPHsEkGC9TD9.a0shxqhuaeI6
+3eUTQmU7ofwR1yxVWOb83MkRdVvMCypstzsb8irNfkPsypBHdsGT+7Yq3+JW
+Ghlo4A7u8.N9zJ15v8Ik+sNXTbeVdokPtlj0An8owkEkOoTwT07Raz5ud4p0
+vJqUpai7YFhU37FUUAWVX+bUXDOkTRVTXxnoippYB4aQYEm6pJTn1TrBR.Q7
+E0o9yCPUJsMiEzrFuybjvT1O3KSOcwFVJWMTFyWPv1mVGmWTJFZ7cAvUHAJC
+LhyXaiafbsSq18dw0NrRRvwx6FuZcbB6AVdQbVZiGLO09tcMFtcnrsgeKS9f
+BN3iywlZnit84rGhque5gQCy4TTIme1mqhl7nK8XXDQ3p7T9tlqs4jJsJHIU
+OhnPE6BiT27phcK4Zf5Gv7iDOhPk9.X4WAdROh.mfib+r4axiWUD+yJtC4nb
+ZZdEs5kQSNnoATqwGyPpswTb5AW4AiOgEPRYCg86Z7zKBUPyGm1pt6aIAaLw
+PauuQX5ZmnWXtfqCq8q3Fj7TEFHFOYAFDrrMA9AFYFugYF7PLCdTlYQi8lny
++pMQLne1P9Zctcc9bC32MrumY+ug7Aa4GZouXG+QG0NcgtpufxTSd9v1JMK7
+I06W1ku5ZS1adS1lssO45e.Bjj8ichanyUow9DgHpsHKcZ8w5LPGJ9+.1ov9
+y1I+7rttpscWOyTz0VPK7DfBVwSkGLnaiuz55RFmVPiQK3NSNV.t2Nl6d9VM
+xxexFyJnpvNTU2irwrxA8LHPzEAAtM9QKHOupdJKScffHqHO3yf7HWDjmnLD
+PAeWzqrfCoxv1JyOW6L+nOCFDdovfXPm23xndwNR9Swh9PqXQm+2yhhTrXv8
+wat2xbrpjIDUKy78rhFcOS4XaWcRRbpopSjxi35Fm.49k4Q0poZCAPeYbEqn
+LNMrrpjuOeL5EmSOMk6IiP5TPHQ6EmkuRUIM5cLzgiCc3qKzISA5tpK90Egn
+oRtnWaDBmpkKZX0O9cLz0qI1FuZWVbZYUjKUDUTfr4Cd3kj.pCAIeKE5FChU
+UlpJxBpKP7akW8T3Fzo6T2NGPVd7l3zpbObneMBN+p9244ssJxNuenzDvM7r
+Ybo6F9sar0SH06vAW05ReyceBew18onmhRX.rIFw8PGEEa9x0DgPNklNAsno
+SuNjxGMQGNpVbfTmQGsaluEcPOA6C76B6ic2GVjkCbMvHXp7n7TYf33Xz.gb
+BLB5cAiTDEx8Xf7DfH9mvkHKoFW4KbKvyH0fuXolOZUqqQU8DzraC5h0sIMK
+tfYGanbYHlsKfWrIYT4hKyYayRxtccN6e.9UYjWhpxICgPq3qp2Hj4bP3K2W
+Ijpe.2T8ZwAqX2seikojTMFEY1bxcX1ANXTlWOw2xZzHNxhyHFS3PegD2iue
+zdc53HCnqb8F7P+xz85tgpAJQm1dyqipFlLHvcq+en8P40dCpunnPT4nUnPT
+S04CETKQgauqq+9kdaPlH4YGap9aB8kEZDagF9LZFSvSw.5rgBzTblNan.NE
+iE8n3X.udaq2ed+iul7xaGaTcni5h8pidTOL2x+e.31v9o2gaZJqCxh0A8LW
+GriEBD5EPfvjWoEBYw5325ZZ2Yvy5B6oegIO6E1nsB8UhZQD8hH57uxH8qLr
+m+emS0iXQ6bJd5b5c5epcF9z5z8T5HOcN5NUNhBQu52W8ev2Zd.C
+-----------end_max5_patcher-----------
+</code></pre>
+
 **Homework**
 
 - Read Chapter 1 to review thinking in signals, and get to know the most common operators
@@ -1642,8 +1691,9 @@ If your project did not culminate in a performance, then this video can be a pow
 
 Recordings of the weekly sessions will be here:
 
+
+- [Week 0 Class Recording - first patching](https://yorku.zoom.us/rec/share/LFlCuXbpW01jk3GSbiZ1tKeyahRsGpqmgwd-dzWu1ZYK-PQyeSa9AL03jZF76Qiu.h7aKllpVyX9HfVTC)
 <!-- 
-- [Week 0 Class Recording - first patching](https://yorku.zoom.us/rec/share/ZL5_tEz7cuDZHNk585qCGx3GwyIf-ui4tt6ScNreRbT1ma-lIToigpasxu9n24I0.up3Jixd74Ti1Cb1j)
 - [Week 1 Class Recording - ramps and beat slicer](https://yorku.zoom.us/rec/share/c48SeyUAO5fOMAsi4FHKUKhfC0cuqSElXscdCOm3_45viQCBLXB_2ntBETZTwlS_.T6avFZCTHbIMSuZz)
 - [Week 2 Class Recording - more ramp processing, from ramps to LFOs, and other shapes](https://yorku.zoom.us/rec/share/FgkO9V8vK-bC27z-XJsfaLdsN4dWlLjAPzCVJFIwj404-GM60I0Nblq0rZ3OLW4h.moN-NS8z43sjb4Z4)
 - [Week 3 Class Recording - noise, uncertainty, chaos, simple sequencer](https://yorku.zoom.us/rec/share/hOsXZrPLHHdsrvByV6L08t2bL4ST8_trA-W3ZcYc4YZ_Q-v0vUgAMgtObdhrrF-P.v7jIU_hzeyU-p94H)
