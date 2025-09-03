@@ -18,7 +18,7 @@ Wednesdays, 2.30pm-5.25pm, [Fine Arts building room ACW 103](https://find.yorku.
 
 ---
 
-This course is about the astonishing things you can do—and the insights you can find—when you work at the atomic sample-by-sample structure of digital audio. The course focuses on creative exploration of algorithmic and generative sonic signal processing with a special emphasis on “working at the sample level” in real-time/interactive contexts. This means working at the lowest level of time-domain digital audio signals, as is made possible through a software called gen~, that is part of Cycling '74's Max and RNBO. These tools that are widely used for prototyping in artistic and industrial settings including audio software & hardware design, music production, game audio, sonic arts, and other broader contexts. 
+This course is about the astonishing things you can do—and the insights you can find—when you work at the atomic sample-by-sample structure of digital audio. The course focuses on creative exploration of algorithmic and generative sonic signal processing with a special emphasis on “working at the sample level” in real-time/interactive contexts. This means working at the lowest level of time-domain digital audio signals, as is made possible through a software called gen~, that is part of [Cycling '74's Max and RNBO](https://cycling74.com/products/max). These tools that are widely used for prototyping in artistic and industrial settings including audio software & hardware design, music production, game audio, sonic arts, and other broader contexts. 
 
 > Audio is one of the primary modalities of digital media art and development. A core emphasis of the Digital Media programs at York is for students to develop their own computational solutions (algorithms and code) to explore creative technology problems most deeply, rather than only relying on available off-the-shelf media and tools. This course specifically serves this aspect – learning how to develop and refine creative algorithms for audio generation and processing, at the lowest level (sample streams) for maximum creative flexibility. 
 
@@ -26,7 +26,7 @@ Starting from the simplest beginnings we’ll see how very many seemingly unrela
 
 > As the course equips students with techniques and methods in audio synthesis and processing, it could further support students taking courses in sonic arts streams in Music and Digital Media. As it develops awareness and understanding of the potential of digital signal processing it could lead students to continue to take up more advanced signal processing courses in EECS. 
 
-For clarification: this is not a course about music composition, performance, or studio production as such; nor is it a course in mathematics and engineering for digital signal processing. No background in music theory, mathematics or computer science beyond high school levels are assumed. The curriculum is primarily practice-based: problem-driven and technique-focused leading toward applications that you can utilize in other project-based courses, research, compositions, and artworks.  
+For clarification: this is not a course about music composition, performance, or studio production as such; nor is it a course in mathematics and engineering for digital signal processing. No background in music theory or mathematics beyond high school levels are assumed. The curriculum is primarily practice-based: problem-driven and technique-focused leading toward applications that you can utilize in other project-based courses, research, compositions, and artworks.  
 
 > Prerequisite: DATT 2050 or by permission of the instructor.
 
@@ -84,7 +84,7 @@ https://docs.google.com/presentation/d/1xrXM86cCE7vzykYYdINs1G9g9f7FaeiiZd6IRlKB
 
 Make sure you have Max running, and can edit a gen~ patcher. 
 
-Be sure to also install the additional patches that come with the book (the download link & instructions are on page 3.)
+Be sure to also install the additional patches that come with the book (**the download link & instructions are on page 3.**)
 
 **[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
 
@@ -326,6 +326,19 @@ rCn6pSIUGySp36DpBMtlGDNtp2JrxNiuxNmjjvQuRdMK5QuJdG8Z3c5qf24e
 -----------end_max5_patcher-----------
 </code></pre>
 
+
+- **Examples of working with phasor ramp rhythms**
+  - A phasor beat clock: **ramp_from_bpm.maxpat**
+  - Deriving faster sub-ramps by multiplying the ramp and sending through `wrap 0 1`: see **ramp_ratchets.maxpat**
+  - Deriving steps by multiplying the ramp and sending through a `floor` (`go.ramp2steps`): see **ramp_steps.maxpat**
+  - Shifting the *phase* of a ramp by subtracting a fraction and sending through `wrap 0 1` (`go.ramp.rotate`): see **ramp_rotate.maxpat**
+  - Deriving the ramp slope safely (`go.ramp2slope`) and getting information from the ramp's slope (`go.ramp2freq`): direction, phase within cycle, Hz, BPM, period, time until next cycle, etc: see **ramp_slope.maxpat**. 
+  - Deriving **triggers** when a ramp cycles (`go.ramp2trig`), which you can use to start a sound, sample an input, etc: **ramp_to_trig.maxpat**. 
+  - Deriving related frequency phasors with arbitrary divisions and multiplications, by taking the slope and re-accumulating it, and choosing when to sync, using `go.ramp.div.simple`, or `go.ramp.div` and `go.ramp.mul`: see **ramp_div.maxpat** then **ramp_divisions.maxpat**
+  - More generative patterns by subdividing subdivisions -- multiplying, modulo, and then rewrapping: **ramp_modulo_rhythm.maxpat**
+    - This also shows making swing rhythms by shaping the unit phasor -- see Ch3 **ramp.swing.maxpat** -- leading to the idea of **unit shapers**, see Ch3 **unit_shapers.maxpat**
+   
+
 **Homework**
 
 - Read through Chapter 3 in advance of next week, and bring any questions or ideas to discuss! 
@@ -341,17 +354,6 @@ Sep 17
 
 **[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
 
-- **Examples of working with phasor ramp rhythms**
-  - A phasor beat clock: **ramp_from_bpm.maxpat**
-  - Deriving faster sub-ramps by multiplying the ramp and sending through `wrap 0 1`: see **ramp_ratchets.maxpat**
-  - Deriving steps by multiplying the ramp and sending through a `floor` (`go.ramp2steps`): see **ramp_steps.maxpat**
-  - Shifting the *phase* of a ramp by subtracting a fraction and sending through `wrap 0 1` (`go.ramp.rotate`): see **ramp_rotate.maxpat**
-  - Deriving the ramp slope safely (`go.ramp2slope`) and getting information from the ramp's slope (`go.ramp2freq`): direction, phase within cycle, Hz, BPM, period, time until next cycle, etc: see **ramp_slope.maxpat**. 
-  - Deriving **triggers** when a ramp cycles (`go.ramp2trig`), which you can use to start a sound, sample an input, etc: **ramp_to_trig.maxpat**. 
-  - Deriving related frequency phasors with arbitrary divisions and multiplications, by taking the slope and re-accumulating it, and choosing when to sync, using `go.ramp.div.simple`, or `go.ramp.div` and `go.ramp.mul`: see **ramp_div.maxpat** then **ramp_divisions.maxpat**
-  - More generative patterns by subdividing subdivisions -- multiplying, modulo, and then rewrapping: **ramp_modulo_rhythm.maxpat**
-    - This also shows making swing rhythms by shaping the unit phasor -- see Ch3 **ramp.swing.maxpat** -- leading to the idea of **unit shapers**, see Ch3 **unit_shapers.maxpat**
-   
 **Patching together deep dive: Chapter 3 Unit Shaping / From ramps to LFOs**
 
 - From a simple ramp, let's define many different shapes we can use for modulators, envelopes etc. If the source ramp is rhythmic, then these modulations are tempo-synced.  Let's try to make these shapes morphable too! 
@@ -1370,18 +1372,18 @@ p62i5784c8NdGuG2sqtS2g5xUU6xMe8l+EfYQwwF
 
 ### Example assignment 2 sounds from 2024
 
----audio:assignment2_sounds/216416901.wav.mp3
----audio:assignment2_sounds/217277237.wav.mp3 z
----audio:assignment2_sounds/217740184.wav.mp3 
----audio:assignment2_sounds/218392290.wav.mp3 
----audio:assignment2_sounds/218856542.wav.mp3 
----audio:assignment2_sounds/218860916.wav.mp3 
----audio:assignment2_sounds/219167360.wav.mp3 
----audio:assignment2_sounds/219596675.wav.mp3 
----audio:assignment2_sounds/219719616.wav.mp3 
----audio:assignment2_sounds/220007787.wav.mp3 
----audio:assignment2_sounds/220016416.wav.mp3 
----audio:assignment2_sounds/220101895.wav.mp3
+---audio:2024/assignment2_sounds/216416901.wav.mp3
+---audio:2024/assignment2_sounds/217277237.wav.mp3 
+---audio:2024/assignment2_sounds/217740184.wav.mp3 
+---audio:2024/assignment2_sounds/218392290.wav.mp3 
+---audio:2024/assignment2_sounds/218856542.wav.mp3 
+---audio:2024/assignment2_sounds/218860916.wav.mp3 
+---audio:2024/assignment2_sounds/219167360.wav.mp3 
+---audio:2024/assignment2_sounds/219596675.wav.mp3 
+---audio:2024/assignment2_sounds/219719616.wav.mp3 
+---audio:2024/assignment2_sounds/220007787.wav.mp3 
+---audio:2024/assignment2_sounds/220016416.wav.mp3 
+---audio:2024/assignment2_sounds/220101895.wav.mp3
 
 [Back to top](#top)
 
