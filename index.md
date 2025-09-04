@@ -33,9 +33,11 @@ For clarification: this is not a course about music composition, performance, or
 ### Course textbook
 
 The course follows the structure and assigns readings from the textbook “[Generating Sound & Organizing Time](https://cycling74.com/books/go)”, Wakefield G. and Taylor, G. Cycling ’74, October 2021. ISBN-10: 1732590311 / ISBN-13: 978-1732590311
-- It is available on [Amazon.ca here](https://www.amazon.ca/Generating-Sound-Organizing-Time-Thinking/dp/1732590311)
-- Copies are in stock in the York University Bookstore.
+
+The textbook will be provided as part of your course fees. 
+
 - There also four copies available in the Scott Library through [York University Library course reserve here](https://ocul-yor.primo.exlibrisgroup.com/permalink/01OCUL_YOR/q36jf8/alma991036915148805164) 
+- It is also available on [Amazon.ca here](https://www.amazon.ca/Generating-Sound-Organizing-Time-Thinking/dp/1732590311)
 
 **Each week you are expected to have read the corresponding chapter in advance**, so that we can move quickly into details in the lab time available! 
 
