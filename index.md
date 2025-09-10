@@ -1266,7 +1266,9 @@ Note also that we follow York's [policy on AI technology & academic integrity](h
 
 You will make a patch that can generate new ring tones for your phone. This is a generative patch: **each time the patch runs, it produces a ring tone that sounds a little different.** Your ring tone will be 25 seconds long. It can be stereo if you want, but mono (single channel) is fine -- not all phones have stereo speakers.
 
-Start from the template patch here: press the button below to copy the patch to your clipboard, and then open Max and select `File -> New From Clipboard`, then save that patch as "assignment1.maxpat":
+First, spend some time through some of the example patchers from the textbook download, or from the built-in Max/gen examples. Pick them at random at first, try quite a few out, until you find a couple that you think are the most interesting. *(Just avoid examples that use poly~, pfft~, or rely on external files.)* 
+
+Next, create a new patcher starting from the template patch here: press the button below to copy the patch to your clipboard, and then open Max and select `File -> New From Clipboard`, then save that patch as "assignment1.maxpat":
 
 <pre><code>
 ----------begin_max5_patcher----------
@@ -1331,9 +1333,11 @@ h
 -----------end_max5_patcher-----------
 </code></pre>
 
-Next, look through some of the example patchers from the textbook download, or from the built-in Max/gen examples. *(Just avoid examples that use poly~, pfft~, or rely on external files.)*
+**Do not modify the Max part of this patcher** -- all of your work will be inside your gen~ patcher. 
 
-When you find one or two you like the sound of, open up the gen~ patcher and copy some of the content into your assignment gen~ patcher.  Now see if you can find an interesting way to connect the objects up to make your ring tone sound. 
+Open up the gen~ patchers from the examples you found, and copy some of the content into your assignment's gen~ patcher.  
+
+Now see if you can find an interesting way to connect the objects up to make your ring tone sound. 
   - Maybe you will replace some `param` objects with your own LFO modulations, for example. 
   - Maybe you will also combine this with some of the patchers we have built in class. 
   - Or maybe you will experiment around to discover something new! 

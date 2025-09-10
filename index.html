@@ -1225,7 +1225,8 @@ See <strong>slide_slew_and_line.maxpat</strong></p>
 <h2 id="assignment-1">Assignment 1</h2>
 <p><strong><a href="https://eclass.yorku.ca/mod/assign/view.php?id=3731005">Via e-Class</a></strong></p>
 <p>You will make a patch that can generate new ring tones for your phone. This is a generative patch: <strong>each time the patch runs, it produces a ring tone that sounds a little different.</strong> Your ring tone will be 25 seconds long. It can be stereo if you want, but mono (single channel) is fine -- not all phones have stereo speakers.</p>
-<p>Start from the template patch here: press the button below to copy the patch to your clipboard, and then open Max and select <code>File -&gt; New From Clipboard</code>, then save that patch as &quot;assignment1.maxpat&quot;:</p>
+<p>First, spend some time through some of the example patchers from the textbook download, or from the built-in Max/gen examples. Pick them at random at first, try quite a few out, until you find a couple that you think are the most interesting. <em>(Just avoid examples that use poly<del>, pfft</del>, or rely on external files.)</em> </p>
+<p>Next, create a new patcher starting from the template patch here: press the button below to copy the patch to your clipboard, and then open Max and select <code>File -&gt; New From Clipboard</code>, then save that patch as &quot;assignment1.maxpat&quot;:</p>
 <p><button value="----------begin_max5_patcher----------
 2562.3ocwas0bihiE94jeEpXeYlcSbPhal9oYps1eA6C6CcOUJYP1VciAFjH
 I8L0z+1WcCLXyMavd5pRbPRFcNe5b46Ho9Oe7AqMYePXVfOA9L3gG9yGe3AU
@@ -1286,8 +1287,9 @@ loInRSvxv0Vg4Md3bCCmatfhltjtFNfjBu8Rp2jkTDze.Q091KptKCnhlsjN
 pCgyYND5rgmbe1jywI2isStCame+05+tqc58VScm0559pI2YfG+qG++fr294
 h
 -----------end_max5_patcher-----------" onclick="copyPatch(this.value)">Copy Max Patch and select <strong>File / New From Clipboard</strong> in Max</button></p>
-<p>Next, look through some of the example patchers from the textbook download, or from the built-in Max/gen examples. <em>(Just avoid examples that use poly<del>, pfft</del>, or rely on external files.)</em></p>
-<p>When you find one or two you like the sound of, open up the gen~ patcher and copy some of the content into your assignment gen~ patcher.  Now see if you can find an interesting way to connect the objects up to make your ring tone sound. </p>
+<p><strong>Do not modify the Max part of this patcher</strong> -- all of your work will be inside your gen~ patcher. </p>
+<p>Open up the gen~ patchers from the examples you found, and copy some of the content into your assignment&#39;s gen~ patcher.  </p>
+<p>Now see if you can find an interesting way to connect the objects up to make your ring tone sound. </p>
 <ul>
 <li>Maybe you will replace some <code>param</code> objects with your own LFO modulations, for example. </li>
 <li>Maybe you will also combine this with some of the patchers we have built in class. </li>
