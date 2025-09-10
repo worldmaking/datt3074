@@ -231,6 +231,7 @@ Sep 10
 
 [Class Recording](#zoom-recordings)
 
+**[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
 - **Book distribution**
 - Checking **Max license** and textbook **download** & installation
 
@@ -309,7 +310,6 @@ fjXph
 -----------end_max5_patcher-----------
 </code></pre>
 
-**[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
 
 **Discuss the merits of phasor ramps over triggers for rhythm & cyclic time**
 
