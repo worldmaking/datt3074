@@ -231,6 +231,9 @@ Sep 10
 
 [Class Recording](#zoom-recordings)
 
+- **Book distribution**
+- Checking **Max license** and textbook **download** & installation
+
 https://www.desmos.com/calculator/6pvtkzbh6b
 
 **Let's work through the first patches of Chapter 2**
@@ -1341,6 +1344,7 @@ Now see if you can find an interesting way to connect the objects up to make you
   - Maybe you will replace some `param` objects with your own LFO modulations, for example. 
   - Maybe you will also combine this with some of the patchers we have built in class. 
   - Or maybe you will experiment around to discover something new! 
+  - At this stage in the course it doesn't matter too much if you don't understand everything within the example  patches -- the goal here is to explore and discover -- and to learn how to connect things and modulate things in a way that you can control. 
 
 **Be sure to follow all the [general procedures for assignment patches]**(#general-procedures-for-assignment-patches)
 
