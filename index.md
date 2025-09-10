@@ -1831,6 +1831,7 @@ Recordings of the weekly sessions will be here:
 
 
 - [Week 1 Class Recording - first patching](https://yorku.zoom.us/rec/share/LFlCuXbpW01jk3GSbiZ1tKeyahRsGpqmgwd-dzWu1ZYK-PQyeSa9AL03jZF76Qiu.h7aKllpVyX9HfVTC)
+- [Week 2 Class Recording - ramps and beat slicer](https://yorku.zoom.us/rec/share/97D2_n02rC6MUwfns-jY_F_47CgC4HIbW9_ifvRbrq0y6mBNTnjr3WIUp5lyhLPL.Pk0Y31q4t2pVOHjF)
 <!-- 
 - [Week 2 Class Recording - ramps and beat slicer](https://yorku.zoom.us/rec/share/c48SeyUAO5fOMAsi4FHKUKhfC0cuqSElXscdCOm3_45viQCBLXB_2ntBETZTwlS_.T6avFZCTHbIMSuZz)
 - [Week 3 Class Recording - more ramp processing, from ramps to LFOs, and other shapes](https://yorku.zoom.us/rec/share/FgkO9V8vK-bC27z-XJsfaLdsN4dWlLjAPzCVJFIwj404-GM60I0Nblq0rZ3OLW4h.moN-NS8z43sjb4Z4)
