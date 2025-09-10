@@ -231,12 +231,12 @@ Sep 10
 
 [Class Recording](#zoom-recordings)
 
+https://www.desmos.com/calculator/6pvtkzbh6b
+
 **[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
 - **Book distribution**
 - Checking **Max license** and textbook **download** & installation
-
-https://www.desmos.com/calculator/6pvtkzbh6b
-
+  
 **Let's work through the first patches of Chapter 2**
 
 - **Counting by sample frames**
