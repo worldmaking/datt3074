@@ -1710,17 +1710,17 @@ If your project did not culminate in a performance, then this video can be a pow
 Recordings of the weekly sessions will be here:
 
 
-- [Week 0 Class Recording - first patching](https://yorku.zoom.us/rec/share/LFlCuXbpW01jk3GSbiZ1tKeyahRsGpqmgwd-dzWu1ZYK-PQyeSa9AL03jZF76Qiu.h7aKllpVyX9HfVTC)
+- [Week 1 Class Recording - first patching](https://yorku.zoom.us/rec/share/LFlCuXbpW01jk3GSbiZ1tKeyahRsGpqmgwd-dzWu1ZYK-PQyeSa9AL03jZF76Qiu.h7aKllpVyX9HfVTC)
 <!-- 
-- [Week 1 Class Recording - ramps and beat slicer](https://yorku.zoom.us/rec/share/c48SeyUAO5fOMAsi4FHKUKhfC0cuqSElXscdCOm3_45viQCBLXB_2ntBETZTwlS_.T6avFZCTHbIMSuZz)
-- [Week 2 Class Recording - more ramp processing, from ramps to LFOs, and other shapes](https://yorku.zoom.us/rec/share/FgkO9V8vK-bC27z-XJsfaLdsN4dWlLjAPzCVJFIwj404-GM60I0Nblq0rZ3OLW4h.moN-NS8z43sjb4Z4)
-- [Week 3 Class Recording - noise, uncertainty, chaos, simple sequencer](https://yorku.zoom.us/rec/share/hOsXZrPLHHdsrvByV6L08t2bL4ST8_trA-W3ZcYc4YZ_Q-v0vUgAMgtObdhrrF-P.v7jIU_hzeyU-p94H)
-- [Week 4 Class Recording - pitch conversions, quantizing, shift register sequencer](https://yorku.zoom.us/rec/share/ueNEZRT55KuhCN73jZc2CtstoEZTK5uaOe2App3gWOQqk8Ut-Hhm6jVVVjkZZBVs.3IT8WxYZVMXVVEVG)
-- [Week 5 Class Recording 1 - catching up: Euclidean Rhythms, pitch quantizers, and audio bitcrushing](https://yorku.zoom.us/rec/share/iDWJhpSMjXnuglzEKIoD_iDxK6lIEw8sl4YwyhMBZXSGlN5A1IeqIUIl6ZSEADKb.wXZvqRpiamOTxXFz)
-- [Week 5 Class Recording 2 - filters, lines, slews, more filters](https://yorku.zoom.us/rec/share/i59rxlt_NoYpDxxoQGfmQPdsBREseAF4UuGiONZbUbpEVLax8A7UiJ9OPD8moqXy.dhqkOLQaIpN2-jQR)
-- [Week 6 Class Recording - delay effects](https://yorku.zoom.us/rec/share/zzaFDAYbv7VFpi641qbFF2xhVpTqhHTJU6JX9ivVI-4346Tca9UPm36zS4w5SSLv.12-v5HytdmCvgxlo)
-- [Week 7 Class Recording - frequent modulations 1](https://yorku.zoom.us/rec/share/NcKhkz2hqEuPfgNeidRFCWjEg_XtTYNeWrLSeAajHI-tmRTv1C4EvCkZHUQb2ZJu.R2756ONcU45ty3Cl)
--  [Week 8 Class Recording - frequent modulations 2](https://yorku.zoom.us/rec/share/JbhqKvgQSunZmXES36cWoPhb-Xbg2HnrLvvIDH24KGVt31oTPC8AMDAuiiUjLKbG.cV3jn3RI6ULzVk1v)
+- [Week 2 Class Recording - ramps and beat slicer](https://yorku.zoom.us/rec/share/c48SeyUAO5fOMAsi4FHKUKhfC0cuqSElXscdCOm3_45viQCBLXB_2ntBETZTwlS_.T6avFZCTHbIMSuZz)
+- [Week 3 Class Recording - more ramp processing, from ramps to LFOs, and other shapes](https://yorku.zoom.us/rec/share/FgkO9V8vK-bC27z-XJsfaLdsN4dWlLjAPzCVJFIwj404-GM60I0Nblq0rZ3OLW4h.moN-NS8z43sjb4Z4)
+- [Week 4 Class Recording - noise, uncertainty, chaos, simple sequencer](https://yorku.zoom.us/rec/share/hOsXZrPLHHdsrvByV6L08t2bL4ST8_trA-W3ZcYc4YZ_Q-v0vUgAMgtObdhrrF-P.v7jIU_hzeyU-p94H)
+- [Week 5 Class Recording - pitch conversions, quantizing, shift register sequencer](https://yorku.zoom.us/rec/share/ueNEZRT55KuhCN73jZc2CtstoEZTK5uaOe2App3gWOQqk8Ut-Hhm6jVVVjkZZBVs.3IT8WxYZVMXVVEVG)
+- [Week 6 Class Recording 1 - catching up: Euclidean Rhythms, pitch quantizers, and audio bitcrushing](https://yorku.zoom.us/rec/share/iDWJhpSMjXnuglzEKIoD_iDxK6lIEw8sl4YwyhMBZXSGlN5A1IeqIUIl6ZSEADKb.wXZvqRpiamOTxXFz)
+- [Week 7 Class Recording 2 - filters, lines, slews, more filters](https://yorku.zoom.us/rec/share/i59rxlt_NoYpDxxoQGfmQPdsBREseAF4UuGiONZbUbpEVLax8A7UiJ9OPD8moqXy.dhqkOLQaIpN2-jQR)
+- [Week 8 Class Recording - delay effects](https://yorku.zoom.us/rec/share/zzaFDAYbv7VFpi641qbFF2xhVpTqhHTJU6JX9ivVI-4346Tca9UPm36zS4w5SSLv.12-v5HytdmCvgxlo)
+- [Week 9 Class Recording - frequent modulations 1](https://yorku.zoom.us/rec/share/NcKhkz2hqEuPfgNeidRFCWjEg_XtTYNeWrLSeAajHI-tmRTv1C4EvCkZHUQb2ZJu.R2756ONcU45ty3Cl)
+- [Week 10 Class Recording - frequent modulations 2](https://yorku.zoom.us/rec/share/JbhqKvgQSunZmXES36cWoPhb-Xbg2HnrLvvIDH24KGVt31oTPC8AMDAuiiUjLKbG.cV3jn3RI6ULzVk1v)
 - [Week 11 Class Recording - Windows of Time](https://drive.google.com/file/d/1B0tmhEzHsrVFWWHT0z8NBpOT0XC_27OO/view?usp=share_link)
 - [Week 12 Class Recording - Exporting from RNBO](https://yorku.zoom.us/rec/share/tbwgGy0hvaaGOjo0cey8YDgnq1xM9m7LTzZF3DjhMGEKJ0wxRxWT3bbI1rcKdLcf.oKShC9mLhw7KDKJu)
 -->
