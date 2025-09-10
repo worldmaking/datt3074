@@ -380,8 +380,9 @@ rCn6pSIUGySp36DpBMtlGDNtp2JrxNiuxNmjjvQuRdMK5QuJdG8Z3c5qf24e
 -----------end_max5_patcher-----------
 </code></pre>
 
+- Discuss [Assignment 1](#assignment-1)
 
-- **Examples of working with phasor ramp rhythms**
+- If time permits: **Examples of working with phasor ramp rhythms**
   - A phasor beat clock: **ramp_from_bpm.maxpat**
   - Deriving faster sub-ramps by multiplying the ramp and sending through `wrap 0 1`: see **ramp_ratchets.maxpat**
   - Deriving steps by multiplying the ramp and sending through a `floor` (`go.ramp2steps`): see **ramp_steps.maxpat**
