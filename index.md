@@ -76,7 +76,7 @@ Please note that the online course notes below on this website are subject to ch
 # Week 1: One Sample at a Time
 Sep 3
 
-[Class Recording](#zoom-recordings)
+[Class Recording](#class-recordings)
 
 **Hello and welcome!**
 
@@ -229,7 +229,7 @@ m+emS0iXQ6bJd5b5c5epcF9z5z8T5HOcN5NUNhBQu52W8ev2Zd.C
 # Week 2: Ramps: Modular Arithmetic of Time
 Sep 10
 
-[Class Recording](#zoom-recordings)
+[Class Recording](#class-recordings)
 
 https://www.desmos.com/calculator/6pvtkzbh6b
 
@@ -405,7 +405,7 @@ rCn6pSIUGySp36DpBMtlGDNtp2JrxNiuxNmjjvQuRdMK5QuJdG8Z3c5qf24e
 # Week 3: Unit Shaping
 Sep 17
 
-[Class Recording](#zoom-recordings)
+[Class Recording](#class-recordings)
 
 **[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
 
@@ -510,7 +510,7 @@ What if we don't want it to jump between steps, but instead to **glide** between
 # Week 4: Uncertainty and Unpredictablility
 Sep 24
 
-[Class Recording](#zoom-recordings)
+[Class Recording](#class-recordings)
 
 Reviewing [Assignment 1](#assignment-1) & [the sounds](#assignment-1-sounds)
 
@@ -554,7 +554,7 @@ Reviewing [Assignment 1](#assignment-1) & [the sounds](#assignment-1-sounds)
 # Week 5: Stepping in Time
 Oct 1
 
-[Class Recording](#zoom-recordings)
+[Class Recording](#class-recordings)
 
 We can create melodies by mixing scaled gate signals e.g. **mixer-sequencer.maxpat**. Or take some chaos, feed it through a comparator, and mix those. 
 
@@ -843,7 +843,7 @@ A wonderful example of the trapezoidal method is the state variable filter (e.g.
 # Week 7: The Effects of Delay
 Oct 22
 
-[Class Recording](#zoom-recordings)
+[Class Recording](#class-recordings)
 
 **[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
 
@@ -937,7 +937,7 @@ With delays of 0.5 to 25ms, we are in the region of pitches, and with enough fee
 # Week 8: Frequent Modulations
 Oct 29 
 
-[Class Recording](#zoom-recordings)
+[Class Recording](#class-recordings)
 
 ---
 
@@ -1013,7 +1013,7 @@ You may have noticed that FM and PM often produces complex inharmonic "clangorou
 # Week 9: Navigating Waves of Data
 Nov 5
 
-[Class Recording](#zoom-recordings)
+[Class Recording](#class-recordings)
 
 - Final project discussions
 
@@ -1091,7 +1091,7 @@ This is quite a deep topic and you should refer to the textbook for full details
 # Week 10: Windows of Time
 Nov 12
 
-[Class Recording](#zoom-recordings)
+[Class Recording](#class-recordings)
 
 - [Assignment 3 demo: RADIO DATT3074](radio/)
 - Source: https://github.com/worldmaking/datt3074/tree/gh-pages/radio
@@ -1216,7 +1216,7 @@ This is a really cheap way to get pretty decent antialiasing. It's not perfect, 
 # Week 11: Final Development Sprint
 Nov 19
 
-[Class Recording](#zoom-recordings)
+[Class Recording](#class-recordings)
 
 **[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
 
@@ -1226,7 +1226,7 @@ Nov 19
 # Week 12: Final Meeting
 Nov 26
 
-[Class Recording](#zoom-recordings)
+[Class Recording](#class-recordings)
 
 **Final project development & presenation**
 
