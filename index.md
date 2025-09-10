@@ -1264,9 +1264,7 @@ Note also that we follow York's [policy on AI technology & academic integrity](h
 
 **[Via e-Class](https://eclass.yorku.ca/mod/assign/view.php?id=3731005)**
 
-Make a patch that can generate new ring tones for your phone. This is a generative patch: each time the patch runs, it produces a ring tone that sounds a little different. Your ring tone will be 25 seconds long. It can be stereo if you want, but mono (single channel) is fine -- not all phones have stereo speakers.
-
-Be sure to follow all the [general procedures for assignment patches](#general-procedures-for-assignment-patches)
+You will make a patch that can generate new ring tones for your phone. This is a generative patch: **each time the patch runs, it produces a ring tone that sounds a little different.** Your ring tone will be 25 seconds long. It can be stereo if you want, but mono (single channel) is fine -- not all phones have stereo speakers.
 
 Start from the template patch here: press the button below to copy the patch to your clipboard, and then open Max and select `File -> New From Clipboard`, then save that patch as "assignment1.maxpat":
 
@@ -1332,6 +1330,15 @@ pCgyYND5rgmbe1jywI2isStCame+05+tqc58VScm0559pI2YfG+qG++fr294
 h
 -----------end_max5_patcher-----------
 </code></pre>
+
+Next, look through some of the example patchers from the textbook download, or from the built-in Max/gen examples. *(Just avoid examples that use poly~, pfft~, or rely on external files.)*
+
+When you find one or two you like the sound of, open up the gen~ patcher and copy some of the content into your assignment gen~ patcher.  Now see if you can find an interesting way to connect the objects up to make your ring tone sound. 
+  - Maybe you will replace some `param` objects with your own LFO modulations, for example. 
+  - Maybe you will also combine this with some of the patchers we have built in class. 
+  - Or maybe you will experiment around to discover something new! 
+
+**Be sure to follow all the [general procedures for assignment patches]**(#general-procedures-for-assignment-patches)
 
 **If you want to put this ring tone on your phone:**
 - Android: first use an online coverter tool (google for one) to convert your WAV file to mp3 or ogg. Then put the file on your phone under your /Ringtones folder. 
