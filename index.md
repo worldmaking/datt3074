@@ -1457,7 +1457,7 @@ h
 -----------end_max5_patcher-----------
 </code></pre>
 
-**Do not modify the Max part of this patcher** -- all of your work will be inside your gen~ patcher. 
+**Do not modify the Max part of this patcher** -- all of your work will be inside your gen~ patcher. (*The exception is that if you need to load in one of the example wav files, then you can add a `buffer~` object to do so, e.g. `buffer~ mybuf jongly`.*)
 
 Open up the gen~ patchers from the examples you found, and copy some of the content into your assignment's gen~ patcher.  
 
