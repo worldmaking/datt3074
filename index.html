@@ -1633,7 +1633,7 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 <hr>
 <h2 id="general-procedures-for-assignment-patches">General procedures for assignment patches</h2>
 <ul>
-<li>All of your work should be inside the gen~ patcher -- you shouldn&#39;t need to work in the Max patch much, except to support the gen~ patch (e.g. adding a buffer~ or a scope~.) </li>
+<li>All of your work should be inside the gen~ patcher -- you shouldn&#39;t need to work in the Max patch much, except to support the gen~ patch <strong>(e.g. adding a buffer~ or a scope~.)</strong></li>
 <li><strong>Everything needed to run the patch should be included in the patch.</strong> Do not use Max Projects, 3rd party externals, external files etc. <ul>
 <li>You can use any of the &quot;go.&quot; abstractions from the book, or any of the gen~ example patchers built into Max. Don&#39;t use any other external patches. </li>
 <li>If you want to name a gen~ patcher, use <code>gen~ @title myname</code>, not <code>gen~ myname</code>.  Similarly, if you want to name a subpatcher inside the genpatcher, use <code>gen~ @title myname</code>, not <code>gen myname</code>.  This will ensure that all your work is in one patch. </li>
