@@ -864,61 +864,74 @@ QiUyeiUwe6Uue+qZ+lqVe4pzuqUmunoha98M+GDtGHgD
 <p>Sep 24</p>
 <p><a href="#class-recordings">Class Recording</a></p>
 <p>Reviewing <a href="#assignment-1">Assignment 1</a> &amp; <a href="#assignment-1-sounds">the sounds</a></p>
-<p><strong><a href="https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784">Attendance check</a></strong></p>
-<p><strong>What is noise?</strong></p>
+<p><strong>Random techniques</strong></p>
+<p>We covered some of these in previous weeks, but it is good to review.  Let&#39;s start from last week&#39;s latched sequencer, and replace the phasor source with a random source. </p>
+<p>Remember from Chapter 1, we talked about signal changes in terms of <strong>rates</strong>, <strong>ranges</strong>, and <strong>kinds</strong>.  </p>
+<ul>
+<li><strong>Ratres</strong>: Starting from a full audio-rate <code>noise</code> source, we can slow this down by triggering a <code>latch</code> with some trigger-generating signal.  <ul>
+<li>Last week we saw an example of using a <code>phasor</code> -&gt; <code>go.ramp2trig</code> -&gt; <code>latch</code> to create a periodic, stepped waveform, which we can feed with <code>noise</code>. <ul>
+<li><em>(We also saw how to smooth this by chaining another latch and using a crossfading <code>mix</code> driven by the <code>phasor</code>)</em></li>
+</ul>
+</li>
+<li>An alternative trigger source is <code>change</code>, which will be non-zero if the input is rising or falling. To detect only a rising edge, use <code>change</code> -&gt; <code>&gt; 0</code>. </li>
+<li>Another option would be to use an <code>accum</code> to count samples, and test for duration N using <code>&gt; N</code> -- when this is true, trigger the latch, but also (via <code>history</code>) trigger the <code>accum</code> to reset to zero again. </li>
+</ul>
+</li>
+<li><strong>Ranges</strong>: By default, <code>noise</code> is in a -1..1 range, but we can remap this to a desired range using <code>scale</code>.  <ul>
+<li><em>(Or, for a quick conversion to a 0..1 range, use <code>abs</code>)</em></li>
+<li>For 0..N, use <code>noise</code> -&gt; <code>abs</code> -&gt; <code>* N</code></li>
+</ul>
+</li>
+<li><strong>Kinds</strong>: By default, <code>noise</code> can produce any fractional number in the range. But often we want to restrict to only whole numbers -- we can do this by feeding it through a <code>round</code> (or <code>floor</code> or <code>ceil</code>).<ul>
+<li>For a random roll of a dice, we might use <code>noise</code> -&gt; <code>abs</code> -&gt; <code>* 6</code> -&gt; <code>floor</code>. </li>
+</ul>
+</li>
+</ul>
+<p>(This could be a good time to review pitch quantization)</p>
+<p><strong>Random periods between events</strong></p>
+<ul>
+<li>We can use the <code>accum</code> into <code>&gt; N</code> method, and simply randomize N each time. </li>
+<li>We can use a <code>phasor</code> into a <code>go.ramp2trig</code> to trigger a <code>latch</code>, with some random-range of frequencies, and then feed that back into the <code>phasor</code>.  That has the advantage that we can use the phasor ramp to drive an interpolation between values.  For an even smoother example, see <strong>random_smoothed.maxpat</strong></li>
+<li>If we wanted it to be quantized to some meter, we could use <code>phasor</code> into a clock multiplier like we saw in Chapter 2, and feed the multiplier by a random integer that is latched, where the latch is triggered from the root phasor using <code>go.ramp2trig</code>. </li>
+</ul>
+<p><strong>What is sonic noise?</strong></p>
 <ul>
 <li>A non-repeating pattern, which our perceptual system cannot resolve </li>
 <li>How long does it have to not repeat? <strong>random_when_does_noise_get_forgotten.maxpat</strong></li>
 <li>Filtered noise (noise colors) -- a quick example using <code>go.svf.hz</code></li>
 <li>Shaping noise: noise <strong>color</strong> and noise <strong>distribution</strong> are not the same. Distribution is about what kinds of <em>values</em> are produced, color is about what frequencies of similarity are more likely to occur <em>over time</em>.   Importantly, <em>color and distribution are mostly indepenedent: you can have the same color but very different distributions</em> -- see <strong>random_distributions.maxpat</strong>. </li>
 </ul>
-<p><strong>Random techniques</strong> (ch4) -- we covered most of these last week, but maybe build a random walker to review?</p>
+<p><strong>Some interesting distributions</strong></p>
 <ul>
-<li>Random ranges: <code>noise</code> -&gt; <code>scale</code>.  Or, for a 0..1 range, <code>noise</code> -&gt; <code>abs</code>. </li>
-<li>Random integers: <code>noise</code> -&gt; <code>scale</code> -&gt; <code>floor</code>, and <code>go.random</code>. </li>
-<li>Chance: <code>noise</code> -&gt; <code>abs</code> -&gt; <code>&lt; chance</code> (maybe -&gt; <code>latch</code>), where &quot;chance&quot; is from 0 (no chance) to 1 (sure thing).  Use <code>go.chance</code>.  <strong>random_chance.maxpat</strong><ul>
-<li>A low probability of passing a noise signal can create nice dust &amp; scratches sound</li>
+<li>True/false <strong>probabilities</strong>:<ul>
+<li>What if we want to say there is a 25% chance of an event happening?  Then we can use <code>noise</code> -&gt; <code>abs</code> -&gt; <code>&lt; 0.25</code>.  </li>
+<li>Again, this can be <code>latch</code>ed to turn this into a gate sequence -- perhaps with a specific rhythm. This could be good to add some probability to a pattern. </li>
+<li>See <code>go.chance</code> and <strong>random_chance.maxpat</strong></li>
+<li>At audio rates, a low probability of passing a noise signal can create nice dust &amp; scratches sound</li>
 </ul>
 </li>
-<li>Stepped random: <code>noise</code> -&gt; <code>latch</code><ul>
-<li>Smooth stepped random: use the <code>latch</code> seqeuence into <code>mix</code> as we saw last week. Can chain this into a longer interpolated curve: <strong>random_smoothed.maxpat</strong></li>
-</ul>
-</li>
-<li>Random periods: a stepped random that changes the period of stepping on each step: <strong>random_periods.maxpat</strong></li>
-<li><strong>Random walks</strong>: accumulate a random source (e.g. a stepped random). May want to <code>wrap</code>, <code>clip</code> or <code>fold</code> the count to keep it in a usable range. <ul>
+<li><strong>Random walks</strong>: A very common pattern in nature (Brownian motion). Simply accumulate a random source.  <ul>
+<li>May want to <code>wrap</code>, <code>clip</code> or <code>fold</code> the count to keep it in a usable range.  </li>
+<li>It can be interesting if the random source itself has an interesting quality, such as stepped random, integer random, or normal distribution (<code>go.noise.normal</code>). <ul>
 <li>Can also smooth these steps, see <strong>random_walks.maxpat</strong></li>
 </ul>
 </li>
 </ul>
-<p><strong>What is chaos?</strong> An algorithm producing a deterministic yet unpredictable trajectory. Tend to have recognizable patterns of behaviour but never quite exactly the same. This can make them perceptually interesting, especially for modulations. Another way to ride the line between tedious repetition and incoherent randomness.  </p>
-<ul>
-<li><p>Lots of different chaotic algorithms are known, and many included in the book (see the <strong>go.chaos</strong> subfolders)</p>
-</li>
-<li><p>Focus example: Lorenz attractor</p>
-</li>
-<li><p>Most of them are essentially accumulators that are cross-coupled, so they have multiple simultaneous outputs. </p>
-</li>
-<li><p>Output ranges can be very different for different algorithms; but we can use an &quot;auto-limter&quot; patch to keep things in our desired range</p>
-</li>
-<li><p>Example: loosening up a clock: <strong>chaos.tempo.nonrobotic.maxpat</strong></p>
-</li>
-<li><p>Example: injecting audio into a chaotic system <strong>chaos_Lorenz_audioinjection.maxpat</strong></p>
-</li>
-<li><p>Continue to Chapter 5: Stepping in Time</p>
 </li>
 </ul>
-<p><strong>Homework</strong></p>
+<p><strong><a href="https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784">Attendance check</a></strong></p>
+<p><strong>What is chaos?</strong> 
+An algorithm producing a deterministic yet unpredictable trajectory. Tend to have recognizable patterns of behaviour but never quite exactly the same. This can make them perceptually interesting, especially for modulations. Another way to ride the line between tedious repetition and incoherent randomness.  </p>
 <ul>
-<li>Read through Chapter 5 in advance of next week, and bring any questions or ideas to discuss! </li>
-<li>Complete your <a href="#assignment-2">Assignment 2</a></li>
+<li>Lots of different chaotic algorithms are known, and many included in the book (see the <strong>go.chaos</strong> subfolders)</li>
+<li>Focus example: Lorenz attractor</li>
+<li>Most of them are essentially accumulators that are cross-coupled, so they have multiple simultaneous outputs. </li>
+<li>Output ranges can be very different for different algorithms; but we can use an &quot;auto-limter&quot; patch to keep things in our desired range</li>
+<li>Example: create a &quot;mixer sequencer&quot; by feeding the chaotic outputs into comparators, and scaling then summing the results into a pitch. You may want to latch this to lock it to a tempo. </li>
+<li>Example: loosening up a clock: <strong>chaos.tempo.nonrobotic.maxpat</strong></li>
+<li>Example: injecting audio into a chaotic system <strong>chaos_Lorenz_audioinjection.maxpat</strong></li>
 </ul>
-<p><a href="#top">Back to top</a></p>
-<hr>
-<h1 id="week-5-stepping-in-time">Week 5: Stepping in Time</h1>
-<p>Oct 1</p>
-<p><a href="#class-recordings">Class Recording</a></p>
-<p>We can create melodies by mixing scaled gate signals e.g. <strong>mixer-sequencer.maxpat</strong>. Or take some chaos, feed it through a comparator, and mix those. </p>
-<p>We saw the basic sample &amp; hold sequencer in week 2 (<strong>latched-sequencer.maxpat</strong>), and the basic shift register (<strong>shift-register.maxpat</strong>)</p>
+<p>(If time allows) Continue to discuss pitch transformations (from Chapter 5: Stepping in Time)</p>
 <p><strong>A quick primer on pitch</strong>, and how we represent pitch in signals</p>
 <ul>
 <li>Oscillators like <code>phasor</code> and <code>cycle</code> work with frequencies in Hz, meaning repetitions per second. But we are used to thinking about pitches in octaves, semitones, etc. What&#39;s the relationship?</li>
@@ -939,7 +952,19 @@ QiUyeiUwe6Uue+qZ+lqVe4pzuqUmunoha98M+GDtGHgD
 </ul>
 </li>
 </ul>
-<p>See <strong>quantizing-pitch.maxpat</strong><br ><br >
+<p>See <strong>quantizing-pitch.maxpat</strong></p>
+<p><strong>Homework</strong></p>
+<ul>
+<li>Read through Chapter 5 in advance of next week, and bring any questions or ideas to discuss! </li>
+<li>Complete your <a href="#assignment-2">Assignment 2</a></li>
+</ul>
+<p><a href="#top">Back to top</a></p>
+<hr>
+<h1 id="week-5-stepping-in-time">Week 5: Stepping in Time</h1>
+<p>Oct 1</p>
+<p><a href="#class-recordings">Class Recording</a></p>
+<p>In past weeks we have already seen how to create some simple melodies from generative processes, including using <code>latch</code> to capture cyclic, random, or chaotic patterns to a tempo. </p>
+<p>Here&#39;s another classic generative method -- sequencing several <code>latch</code> stages in series, and treating each one as a transposition controller: <strong>The shift register sequencer</strong> (<strong>shift-register.maxpat</strong>)<br ><br >
                 <iframe src="https://www.desmos.com/calculator/pr6rgxwplx?embed" width="100%" height="300" style="border: 1px solid #ccc" frameborder=0></iframe></p>
 <p><strong><a href="https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784">Attendance check</a></strong></p>
 <p><strong>Deep dive</strong>: We can combine those ideas into a more complex generative sequencer, based on the Klee Sequencer: </p>
