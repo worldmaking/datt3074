@@ -1641,46 +1641,54 @@ h
 <li>or, create the sounds of an alien world or ecosystem</li>
 </ul>
 <p>Be sure to follow all the <a href="#general-procedures-for-assignment-patches">general procedures for assignment patches</a> -- especially remembering to make sure that everything that generates sound and structure is contained in your gen~ patcher, and your patch does not have any external dependencies! </p>
-<p>You are free to re-use any patches from the textbook, or from the Help/examples/gen folder in Max.  Here&#39;s the starter-patch:</p>
+<p>You are <strong>strongly encouraged</strong> to re-use and adapt patches from the textbook, or from the Help/examples/gen folder in Max! </p>
+<p>Here&#39;s the starter-patch:</p>
 <p><button value="----------begin_max5_patcher----------
-1691.3oc0YszbaaCD9r7uBLrWsk4aJkSsS6OfNM8VRFMPjPRHADfEDT1NYR9
-sW7jhTljR1QpMwGnj2cAwteXWrOzWtYl2Z1inZOva.uCLa1WtY1LMIEgY1+e
-lWI7wbBrVKlWNqrDQEd2Z3IPOJzz+CF.RHfmXMbvCL9m.XJXGhibBRvTTNqg
-pkNzRrhipkuLn.ynqFTh0MqWSP03BjhZjkJtPumr0e7tfD2NPaJwTBRn0yfd
-quKEoXrFgSNeml.E46vzsq3nbgAOBiil6eKHHMT8wxEpmQYy8AePsjudyMpG
-29cBa+EpDUtFwABFXCiPXO.D6PRvqVvaxU3RM.J.6Dhp52b+8PBNGQfqmKgX
-Rw8EPgHxOK9dLs.837chRxurEQQbH4tJNKGUzHQ361v32IUD7VpRGtSaqxS8
-A.y3IAyyG5zPVlFxB7S8UeF5eggt+TaFbveikpD38z2JZJjxAjZoDPmzuqqI
-G9JL4MLpnF+YseUX77ShDAQcQhzWKRTWIeubVcNqB8sAN9FNTHbPSwYfa1ly
-HLtQaCzpY2GfOXkyrTwSUHinddsrFvrSBzVZ7hk5nlEV6OpyKbc2MVK8gGAu
-R.hf2il2Gdfxfn8nStYOGLWLIXZdsFmqyA9FF74P5VKddWv7.0RBFGwWKkdR
-TOyOUC2IF3dQlw2KridTCKqHla7ii0GRVMQFhTfzV+AhWiinQcdC7eAdu9uP
-uWXifUJSyj2E8G2u0gfKidNBdM.EyUVCgJK85bkyFXNpq0eF.kiZIyjAMbfa
-vBBaOwelOmJoAj3cKvaCgAES69kY.gLieWrzYT8WbTRPPzR+zk2puNr8UnzA
-JrTuUd+FGq1GqWJdq0S7R5gE8CfClEiB8SLPUmDBWQ+qwRgtgi9mFDM+IfI0
-RS4.vV5EpnfkFaNIxXJIWmpBd.tGIq2YPCI5hZHw9KuDFxoRpGl9CSV8zfe1
-SpGl7yWV8vjredypGF+CvktF+1+qSpi9bALeHLI6U.IDVtL83zlYbbhIah45
-o1mu9ntsPLs0B1C4sYqeN2t2yNo8UA4x2h.wWgnvi5MWt6RqBRoHRaOa9ChK
-ImtfkCe6P4K2pT85oKiwBiV2kT8yvn3dga6QEqj8dywqaDnCeq1BnVDUgYjF
-DaiiridWT.SwBr4rUdeQVnaWFRnmCY8jhvnaG+HpmnkxCakXotqENhKlp3dW
-l+v7YEtBJiFfc8NFWblJh6nansoQZ00hmLFbrgu1M18wEplgemfy+jZBLF3E
-.aJvL0.rD6v0.sKxfiSXfwQEeslFU7xXSvcmoQk7p62.8fTYeFNrEQ+F3WEl
-4o3oGkmYVQ726MTGaufxohldxImUXr8aSE6FkXRRXiZWXFZWRmXWqAcbf5FL
-AsGwqwLZ2nKOXUUGx8igKgezjxXQquqDGLjRaIwQ6wt0G2RExkptPp2MbSTx
-iskYa6ViSavZUw426TI8wnJ5ptx1OnWQc0b4gm6E30APzdMAgZ7XgIQ3xto9
-T49jIW9jsJAGQY5bJl1c9r8XWf1.aHhUC2FYe9G00ZelC1+2LusbbAipThdm
-FJxtsSVYfoGpjtFiVBJrZfEKcYkvxHLqkFYS8ZHWcXYiQCcLELFoOq10QPaD
-V1UXYdq9nnfUMNSNd6tIV6ZljY4TuaMmZ4sjFtqTYOWoxM0WNHgXi26+5eDR
-wxpmPBr4HHzuko4dvc04bFgzydMb1O.mBoedN5AbgXWu5MUbjhiqbNQdsmxE
-3snZQeZB3159TZy.zgTyZab7JARV5qzJ5KfZZ20BYdnGpsB5bz5B.G9kO5FW
-28xydzm5Rz9WjJuNCDAJPqa11k+.ipcz6OGO6vnytxjgXgYlBY57Dl4s3VlM
-2oKSwqwn6mBsuU+VYNaDCH03pFwH1c7k2tMiaZQl4tsiZF+BY1m3rNbDqM7x
-asANy02kZ6JbJeByMXDyM3xatQKNeq8PV.UUZ1Xaqj8pWTKXWgbUMoU.E890
-NUKqDJ2UYh0PAsEpqteSfosIIeW6zFAcFzBuvTzwvSz7RtwKGdiC9t2X+Srw
-o8joDWTwvTgEhiR8mmHOBM+fXwIws+20.iBNCUMXLUMdooAPqpJq0dbUM5pi
-pgu.XMyeBUM75qpImupFllNgtd8cVUCl5h.qQWcm0IQ0Vm0HSGgKMpZz0AUO
-kpt3rTUCnJKb++yq.T+dimqt1BqWg.qzyPWyLx7cuO9mw9zehBlTkG0ErZKN
-p62i5784c8NdGuG2sqtS2g5xUU6xMe8l+EfYQwwF
+2017.3oc4ZssaiiaF95jmBB0aS7HRpiKFTzEsO.EcK5dQ2h.ZIZatijnKEUN
+LK14YuTj5nsjrrirmrn4BYGRJwu+u+i7W92t+Nq07Wo4Vfe.7uA2c2uc+c2o
+Gpbf6p9+6rRIuFkPx0KyJhmlRyjVOXlSReUpG+yeF7hfIof0Ea1PE.RNX0O+
+i+q50smHi1wx19jfFIM6GD5Gtx9A.1AW9Az0t7Cj5J3+TcWYEorrDpTu0v1A
+4Ex5QsqFkEqgAe8u9HBYUN1ue+8kWd38KXJLyEw.IuR3lRnrQtZgxFsvBE7R
+DJIe61D5D3MzG2AtNd0WOGzVOpYH4a6olmsESQmMOntxhcKhDjTpjJdhlQVm
+P6J74OuUeGWhbmRyyIaoGoL0lnuPdlNocIzvINZNwSeEgFiSPmGmLHg.CVXK
+1X55hs.0luuPNo0psi1LE5urVqPuKQfJULa3hzucZCVmJcjA+AtigX2AQr2X
+ZmMIbhhvl7KIrb8msZRSTgLkkrwfc.9.eI7QF8E0Mej90DN5apPr4rsYkl.H
+.ZF93AFcMFNsAsy4YPWhARxvl0vETpMjbeoFaq9aRYuwYtR38blV3G1BGcR6
+k0jrsCGqaI8r+ab.IIA7FuP.dgK9BfkA1QEMQyRXYJaihLYWPO.qff5LuHb3
+J2G.gAZFx+x75WWrVE3NmEq4D7.VAtV8Vp9Qtfjx+flRSWqJ4PkedCOIg+BP
+tipnlbonHRx3Y4.hDrSJ2m+Ce5SjDVDMgrdkh.Sh+TLQJw19NehkESec0NYZ
+xeZKMiJHIOtWvinwEBZ9ipvRO1Z48nlSUENMAEqSa3qoVufvkJtpyRZN820R
+g.7OYp8D7KY+jrHVsNfBFqaqxY1FUlJdvcjXuEPha7t2vyj4rupsePJ23KfH
+x2qPqfmGw2SmJIiSfVVb8flXGlBTswWyZ.Z7R1rMhmvEUwuz6b2KsYc5tNch
+61K50cADTB6Y5pSROdFyZGSotv.SwC3tAUIJGumomDhSQl4jz8IlCm33.Kum
+oHYgxBMlpoy1kJTQkqH8GgqfkaJrYSORsLZL7.q4R48jdiiyjpxKwFdlFu0Z
+mP7wZmYX7VSgjBIOkHYQcI6t9m1eDraMQrlhUBP5MvvMvxi3T9mC1UUfPnsW
+3AEETFroofteTvTU3LetC04grgD06TMobShRzIpmpohyFHolnu0cGsP3PAIg
+nKKH4oLvpnRHz7gu8zg5ee1W3OBlWik.cif9eKnYQuALYVJRO2jlA95fmtg5
+Sd6ax2fe2YM8Vz5DpOWl0IkCm.Xqbr.063cQmaZto4w3adVdj2ebRyiPg+eU
+Zdj6enxyarduQo4QNeDraoeMlDMYsOlFY4UEMxs9ZCpR3QkMqnWHn4xQcnCe
+qK0qaKgk0HAOSZ6ZzwyNt7Uoz8vlSw6zU.I4p6hjkQSZx+XOeY08zkkz9sia
+K1PtUdS0rWXSTfmowOoNKtfstPRa+VdEgVwnkbVRAkuod35w693YYLIynlUQ
+D7Q0nZnEcLV5spDd11wUQ8VZpRYqatXcboClkkUN6i91COOOttzP7.SqRl8T
+CN9bLcCoHQ9mGBF463B4Lgbs9cH.Un3mb4aFpwwLu1fu9iEp3h+ZBK5Kk8tw
+nH.jhXFurwVxcrbf1GXvhpvS3k34YhBna1mo8Vtv2cwHNKSerFo+laoYeC7W
+jlVwXoawmoKShewZpr.HcDAjicYq7PAld44ddBK9b75mpgui0qlt3mJNzkdC
+Kg9LUjy3Yc8CsH622Y39d6oje0jbIrw1UIllgZMmEzmY02uSynDghEkJJrPX
+7Rd0yo08nzMTjUvZzuZkaEjzpwRuq78UGryJNe+Jkxq9AX0Q2X54LRGlNvTl
+YX2Lz2YsUvhqIJU5TStb2tqn2ansKEz0Nq23S53czqJZGa6NkkVdNPoFTN9O
+.1qXM0MjCxKK1RMtfmBhErMRkoGf7B4MyPekJ3fRextOZ0MmqtYRYeWeZnSA
+MZ0lXsoafo0zXS0lcOBwnFyi68NPyJpGuJTVsi6UfXyIJ6KMOLBkFkv1uujR
+mG+4LO9yw7FNB7tB7W3RRe8hC1m8hiVqJT6KVSKwPSUdAPS2HCO7M6bNBb2Y
+F+jbG2XvOR7QsCz2M5v+FQGRR1tYZaXdG9XzsmL793PF0QF9twE3aDWnPD.a
+9wObBJwKzzNXSyK8eWbxHAKcuU4Z9IUVaJu+u1iwj6J2BSC5BsuB4Hbtg5Zz
+LiBXzxX2qfVFcCEW377yuhRKbHossV0x5UFoVUMb0EKNHMnpKRDUGGo5ctA5
+i7XZtp.TcgQcVmmYcyRIbtXvelX.eEwf2Lw.5JhA7Lw.bTLzZhvErsrrJSJE
+PpqorWOEzKuu0j4j0Gh7pyWeDhK+EF1B4wfaG7dzY3m6NAClwNgVhMR8LfyQ
+hZWTJKdOmkIqHQmpWujmyJOja4q5PcVq.bm+7gMS21+bQr4D61ua3OWExvvG
+i8JawA12YExwyND6q+sKgNbvkF4dy.49KfB1aFJXeyZt9FR1SoIpMjBcLmz.
+pUAgcaCcC2iu5XMX9P0KveBnBu5P0cVP0sGq5NDTQWcewxW3yo8Eqr.PSvpN
+Wen5NenV1kjww5MfV8VHZ856W4MmbIUH0296pEvYQpdW0P.nS.0vdP8Ftw3g
+2X6iJ65fttWtmGzs8C5z9wcYe7NreX200cVentpWdfo6+86+eOcUvzC
 -----------end_max5_patcher-----------" onclick="copyPatch(this.value)">Copy Max Patch and select <strong>File / New From Clipboard</strong> in Max</button></p>
 <h3 id="example-assignment-2-sounds-from-2024">Example assignment 2 sounds from 2024</h3>
 <p><audio controls src="2024/assignment2_sounds/216416901.wav.mp3" title="216416901.wav.mp3"></audio> <a href="2024/assignment2_sounds/216416901.wav.mp3">216416901.wav.mp3</a></p>
