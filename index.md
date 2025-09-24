@@ -777,6 +777,8 @@ Sep 24
 
 Reviewing [Assignment 1](#assignment-1) & [the sounds](#assignment-1-sounds)
 
+Reminder for [Assignment 2](#assignment-2) -- due Thursday, 2 October 2025, 12:00 AM
+
 **Random techniques**
 
 We covered some of these in previous weeks, but it is good to review.  Let's start from last week's latched sequencer, and replace the phasor source with a random source. 
@@ -1640,6 +1642,33 @@ Now see if you can find an interesting way to connect the objects up to make you
 **If you want to put this ring tone on your phone:**
 - Android: first use an online coverter tool (google for one) to convert your WAV file to mp3 or ogg. Then put the file on your phone under your /Ringtones folder. 
 - IOS: use an online converter to convert your WAV file into a m4r file. Then google for how to get that on your phone, because Apple made that a bit more complex. 
+
+### Example Assignment 1 sounds from 2025
+
+---audio:2025/assignment1_sounds/7101652.mp3
+---audio:2025/assignment1_sounds/7101638.mp3
+---audio:2025/assignment1_sounds/7142261.mp3
+---audio:2025/assignment1_sounds/7101657.mp3
+---audio:2025/assignment1_sounds/7101649.mp3
+---audio:2025/assignment1_sounds/7101646.mp3
+---audio:2025/assignment1_sounds/7101637.mp3
+---audio:2025/assignment1_sounds/7101643.mp3
+---audio:2025/assignment1_sounds/7101654.mp3
+---audio:2025/assignment1_sounds/7101645.mp3
+---audio:2025/assignment1_sounds/7101642.mp3
+---audio:2025/assignment1_sounds/7101641.mp3
+---audio:2025/assignment1_sounds/7101653.mp3
+---audio:2025/assignment1_sounds/7101655.mp3
+---audio:2025/assignment1_sounds/7101648.mp3
+---audio:2025/assignment1_sounds/7101634.mp3
+---audio:2025/assignment1_sounds/7101635.mp3
+---audio:2025/assignment1_sounds/7101636.mp3
+---audio:2025/assignment1_sounds/7101632.mp3
+---audio:2025/assignment1_sounds/7101630.mp3
+---audio:2025/assignment1_sounds/7101627.mp3
+---audio:2025/assignment1_sounds/7101625.mp3
+---audio:2025/assignment1_sounds/7101626.mp3
+
 
 ### Example Assignment 1 sounds from 2024
 
