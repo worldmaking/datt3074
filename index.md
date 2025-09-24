@@ -784,7 +784,7 @@ Reminder for [Assignment 2](#assignment-2) -- due Thursday, 2 October 2025, 12:0
 We covered some of these in previous weeks, but it is good to review.  Let's start from last week's latched sequencer, and replace the phasor source with a random source. 
 
 Remember from Chapter 1, we talked about signal changes in terms of **rates**, **ranges**, and **kinds**.  
-- **Ratres**: Starting from a full audio-rate `noise` source, we can slow this down by triggering a `latch` with some trigger-generating signal.  
+- **Rates**: Starting from a full audio-rate `noise` source, we can slow this down by triggering a `latch` with some trigger-generating signal.  
   - Last week we saw an example of using a `phasor` -> `go.ramp2trig` -> `latch` to create a periodic, stepped waveform, which we can feed with `noise`. 
     - *(We also saw how to smooth this by chaining another latch and using a crossfading `mix` driven by the `phasor`)*
   - An alternative trigger source is `change`, which will be non-zero if the input is rising or falling. To detect only a rising edge, use `change` -> `> 0`. 
@@ -849,10 +849,99 @@ An algorithm producing a deterministic yet unpredictable trajectory. Tend to hav
 
 See **quantizing-pitch.maxpat**
 
+Today's patch: 
+
+<pre><code>
+----------begin_max5_patcher----------
+3551.3oc6cs0kiZiD94t+UvwOkroGhtKz9xt6a6+gb1SensU6lL1fW.2yzSN
+I+1WcAeGCBaPvjMyLocG.iT8opJUUQUE+1iOL6kruJKlE72C9kfGd32d7gGL
+GRefGp9+eX153uNeUbg4xlsJ4cYXw7rMx+X1S1yuItb9aIoKeNWNuzduvjPl
+9OblPDAwQD7SADFHD7T.Lhn+fEEBB9OU2grskqjkkerQZ+5ydINc4r8mNc65
+jT0EXlAnCGz90LGEVczjElYY1K+5mHyzG52e7Q8OdxQx6yEqRVHyahzv7P5S
+AXggZvXl9CJtIpIIsb1S1O1eQu8Y4GyyVkkauFn9t.1+C3Q2NGndzkTOL5.M
+jGuVVJyeVlF+xJyjBbCPSp7Kpa7t6Zo7qF.Y1lfh2x9RS.FkX.LJT+AgqoOD
+pI750UYwkWY4G55xOjexbRlWQZUz1CydMYk7cYdQRV5Q2hGlEuYyQG9gi9JZ
+.4WsqXhm1enjT6g.6OTt78jcee99iFmqPlRErrM2Pny9JiL6vsISw1ktMwLU
+rGTszTMkLKBopUwhMwyseY8Z0tSe.qoBC2Cz9A.XXl3QfCn8CyVlmrnH4aUf
+MjZtT5wWwIJENl9OlE4jieFqhckYOwUOeADZDcPTyL.C18y8yiqs1Wy5O3ny
+bhJfiN97r0qkoVl1iOdR5B4WOB1qDLpVAtQD3DgkSEX9o.khvVwFqZ.gAhr5
+XNVlwE4lqp735xOmie3Y9AR9aAPTqPBvfBPrvp2cjfDTeBIl4QqzsgTYnFjR
+5LYC5JYCuaIoCpWVkjdM0KF5We95Auhrs4y2QiVFT0FlmPlKjEkIowkUpe+k
+8JBzWmSKcccNfbbNfGv4.zw4.5pygpCZORWsLX65Wj4MZOHRXrA.Y3hoWnOa
+1qYok61TBpunqXZPQxxz3UZqoNyHA0ILL16+p56ndKSyL7ekmn+VOteq1yrk
+5RCrze8Wq1rE3rQWrawlSGMoNxH5K7qQzP5MSQKiSR2SPuGmuew3xyVC4hpr
+ZDXXbnFplQahbOvZb32Nvn7jdbKNhgQMYUCZbZpb07rsVsY.2wJZMXEoISt2
+AtEwuKW7bbYYdxKaKkG9shyMP883UakYudoUnGt8qxRWdcb8jKcsZEReYrPP
+smMwnm3SbP8mOawNwFbMmV4BPdoiSjcKY0MLaSSJKJ+vhXjGOVI0soYpdeVV
+JS+if+YYhZ0LXShhM343zEOW7QZ4asyRhhP5OfV2Ya1Sl53Iu325hHJoF1N7
+epczYQwlP05UMN6fnBy1IQFWJgHpwPIg1GHu5sSCF1BBosXdGAZbKFIhrNC4
+lYs8oocHpmrxeYVnVgqZcsYHAyLKnXDViLLxcCIc2Hehub7oMi+onPtl8faY
+OLaF5Yr.4IrPMUBHAoYkxOsLtzUlDtQmbjnVlj6K5AQ9StPs+2FjxNfktQ0H
+tIdgb1cKZ.6tif8HnryQx5PkhX09GF+WBVnLbSYegdillgmHlwlQN0rAs0nQ
+T+FRIJ0W.PdV15.472xBju9plDaQUAxR7DncKtAg3I9h3kouKWo7HZQPg1K3
+1BQRjgzgjAbcG6KRe91bkGBA6Pffh2h2zFBfDUgUmLfK9dSzOWVLOVYZdYVf
+xF07rMJu2KkmgHA68Zn33ahNnI68mC2h1Ta3zf1mLQEpoe.E8IpA7ztHVH6S
+v.X.HDq9OQa6kfrjMxZ9L.5e6rfB+sax5MJ3IMKoPF7k2joAkuIMFaDnsIco
+75LQn11R13NXkSgTvtnS2mOFCgurDQgKUtEmMuL9cYwykYO+12Z0GFq5FqyU
+Dr+sJgvuXJdvO3SAiq5O707I9rudc9FeE+iutOxs6m707U9D+kczm4y7a9nG
+ybsOgP27atdemOGrNmo7hy2pL7obnuDqjeK2lpX.O+ZpgwTfsOxHfV1rxZ4y
+ozlX9ZVD8BOk3yN9b6EUOUb8dQnKDeO+QoQH.GfFqhJXUb440Ix5fXaWQOXC
+nGcBfdxutA4N3YEdvzI.3Ql.fWRZ.zYviXMQMp2vNvshcjo.imN3GtCdHaPC
+afyqeznQXMAMmtUvEOU2KQr5dpl0faW7zMUqPm83Ma5Qbd1y5sSqo25LD0kY
+nBUGgYHoKXHs0Y3Qm7vY7l0o+2swokJqSzlmZb7wIKTgHqda18agJtyVnh9K
+KT+SgEpsnH+mC3ta.AaucWisADX7jv1UdWM9Bgm.X2Tv3q7rsoKbG8vV69E8
+F5gtYzaJX90Oq1avcqupdjjhI.qGZRH11AvCJrwpGLA.O32cxsHLapH2hD+k
+Km2LmWzz.6bQrMBOwvtIBeG1ArqpDGlPw5.7cWrNvDVKQYqmh0AbZDqCPW7S
+WLBQR.K5vLDSGiYXTWlgiQ7hvcIdQX7XLCIS9UYbWlgvwXFh5RTAGkYHbpqs
+A0IsMnoXbKMIpRPR5tv10Vo+YxhIlIB+Bh+yGXLelOwkOK+nMDwt2O2DxB1H
+jgzXlGSAVrshDbfKwDuSSDDuRNReeYcBF3qjy4e+sfeX9GyWIKB1HyCJjyyR
+W7isf.zJZlNbY7FxW0+pMEjZM2eMB.D6Oi7eR1ffdBNVE2t.PU1qYUJfGiZD
+vWI1mIm0bCMHMjMGCqJRnuRVdPHtsbgkWkNZfwphZfb+U4.5JlKLNedafxNb
+frqPJ8dtd5qMQKySTZSa8QBuamC6dm8f9ztiH9pvqL6s5VNbZkcbsgSXJw1a
+YGFzUPDhGMzBsOgxaiSgXdjEHpow+DwG.asf9xRCcPeCJSVKeVWxQNJh.sY3
+bzHnI0WlbTFm9V6RHz8EbFFMBkdkur330boN8SdoE.wp4DaitMcDx5awDoJM
+s5Nw1pPhA7eMZx8nZSnShID.85Yn3cprj4Ockvp5fvIF.i9Q1HX7cs1QLH8a
+mKyhvqDItKh.+rr7E1DdCLtc.mAsU.4J7fzApDVO9.GloFsK.Dbn5SQrt.P.
+uBPt1Gm3CI93JaLz2xWBWmXfAT9h63jP3azg2Qzwer0tJ1SPS0YF5Rd80IK1
+jkjVVrOQArAADQwB.CYLS21l.ObLexNPbleXH2Mh3pFsZltC7ZuySMLv2hxX
+dWjXFpMBvrtLKPCk8LNaUEX.wBDvUoIwP1hEcdGP5PZfPTWVQFLrvY8arofw
+jPr28Fg1E.ZvVlHcvjVvnaRK026BAcUwBaPZapcpueBMI9s+56mnYCRifEYi
+HTUWy+Os8AV3sfdJJQcmakUv9zHnNz8I0vyoLCulkuN1b2Xt2b8qi.A88aWf
+VkCp3bX1d6kMofgfi6HrwaKyTTWx7yHk1X+AWReQCce7EQvdUd9lZLwxusHd
+dyMoWSzNIPaMBP28yCMY2r45Fb58tbPG5kCH2uKG3YCSyrMONcQ15mKSVenA
+obcptp8nPQ2UirsKumNv0nJ4+W6dsb.4P2qUXegO3+lWaS4kW4aIEAp+EGTr
+8kEIVzJH6USuyZcbRZvl2hKxxeR2o11VHCh0WqooZsnp2MdqslMDJJjAo3nH
+JDwfPbjPW8aQ65mObl.gPBNgy4peo2aaabjm6LYm1Sx1AeA5mRevWxi2by8m
+LXjHDgAbJWPUp4XDSnxhBinQBJFg4TLlxD1dADmfoQH.DfXBHi16cxLt25gf
+yUa874f0aWUlrYUhLO3GJjxfpVsZn53+3MCnPK3wnPZDggnHxAVSPz.z+23f
+whYzJeeeLfnHPnP+GtRfNBRP.MyVTTHGxEXNgIHQHhVFdXPOlXBknlPkjGBP
+gPEkCIp+FYJFZPnRMWjRpC.hX.pfMNYwIiOgxv25gJJIDetlqwH8eYroW2gF
+JrOzi5XmFidEMya8J4jzR4x8u19t9Vg3iZ9EUuMG52RFf4qLXbtLYUqBP19g
+L1l9h7QfAvaMMYPXXHywkeHc3V9Qd6MlVjiq91xICMBomGC5yUenaq9B7vs3
+6q7yL9kB2V7E1bQbDpUHp25ryeB53hO0jbdC0hO0W1CnsEO.zZZXZiLGhXrH
+fRGANfox6PkJj.YkEFg2fJT7DxpZTUqPTfBUN5SAPLhSgDFIZbril3s.snbp
+M27NEXorLHaadf84AFXdMqUD7Zd1Z0UciwqhPCYDH.gDH.CDQQPkTWTHQGCK
+hxyWAUnN2dWb64nUQ71NslZS9ezp1VVnx+Cnf.T9tAT91STjr88l8.UotTeV
+g12hiqjpN20PjP7HuYlsVzINP6JpxaKaXh5iPDU8ZN1veLHw.xakmpaw.x1g
+GXiVw5NAicAxlL.zpskDLNBxHBHejdMW4SEJHmrfoRA5fnAwWhGUJKZ+0hX0
+S4um53GvumKnJCTLjK9DuU9Ptl1fTruSELd2dQhW2DCMtUV.0243Hy0oFaHy
+wQlyUTzP99WmQ6BVLTIDKC2wh8XXlEtlvmrgbEg5Z5ZyfC4rnGpWR33NyXdW
+wB0U1X5jn5YLS2QOG2oCZsOPu+Zh4dxT53xx7sIMkHhLaLtskfOzoji8Pdip
+t6lg4PqnykbYqlz5CAaLsXqN2hjhMqh+XW5GCGR.oJsTtQ.47dV3sBKn6DVL
+yrSMD0hRmyHWgUWx.qkQw6IvFssq1kCWGnSqh3VpGk6ajf9ZjNsZet1HE0Gi
+D63xh+ZiDuOFIhCzzIZ8NaC4gejgWNxf6ajw1RErYzk0GnK1k0QZeMRsxa1G
+R1mVrPMWV922.4vpTzfvY5vhFanF31PVbOgrPWzX1+hdtH4gqGa8vHipejwC
++HCqejQWr4+Yo6udPOKM+OKE+uL89udp8edZ8aRo+5RmesUYO96O9+.iO8wC
+-----------end_max5_patcher-----------
+</code></pre>
+
+
 **Homework**
 
 - Read through Chapter 5 in advance of next week, and bring any questions or ideas to discuss! 
 - Complete your [Assignment 2](#assignment-2)
+
+
 
 
 [Back to top](#top)
@@ -2038,6 +2127,7 @@ Recordings of the weekly sessions will be here:
 - [Week 1 Class Recording - first patching](https://yorku.zoom.us/rec/share/LFlCuXbpW01jk3GSbiZ1tKeyahRsGpqmgwd-dzWu1ZYK-PQyeSa9AL03jZF76Qiu.h7aKllpVyX9HfVTC)
 - [Week 2 Class Recording - ramps and beat slicer](https://yorku.zoom.us/rec/share/97D2_n02rC6MUwfns-jY_F_47CgC4HIbW9_ifvRbrq0y6mBNTnjr3WIUp5lyhLPL.Pk0Y31q4t2pVOHjF)
 - [Week 3 Class Recording - Unit Shaping and Max for Ableton Live](https://yorku.zoom.us/rec/share/uLoSGMw37DSDxyXJSAaxm9v0UFwhmaPMh_naKcuFZicCkLh-g24hRhI3vsCeZwOT.MrlIQm0kHtA0I1dL)
+- [Week 4 Class Recording - Noise & Uncertainty](https://yorku.zoom.us/rec/share/KsWbc__gD7hb4k60v7Fqg5KAbPEnBFKi2yrvwTKso2LbDmbpLbmR9dCbq2yl57ts.bkELtrkjw2i5OZeN)
 <!-- 
 - [Week 2 Class Recording - ramps and beat slicer](https://yorku.zoom.us/rec/share/c48SeyUAO5fOMAsi4FHKUKhfC0cuqSElXscdCOm3_45viQCBLXB_2ntBETZTwlS_.T6avFZCTHbIMSuZz)
 - [Week 3 Class Recording - more ramp processing, from ramps to LFOs, and other shapes](https://yorku.zoom.us/rec/share/FgkO9V8vK-bC27z-XJsfaLdsN4dWlLjAPzCVJFIwj404-GM60I0Nblq0rZ3OLW4h.moN-NS8z43sjb4Z4)
