@@ -844,10 +844,13 @@ An algorithm producing a deterministic yet unpredictable trajectory. Tend to hav
   - In MIDI representation, just ensure the value is integer (e.g. `floor` or `round`)
   - In octave representation, multiply by 12, make integer, then divide by 12
   - In Hz representation, convert to MIDI or octave, quantize, then convert back
-- A neat trick to quickly quantize an octave signal to a common scale:
-  - First quantize to K (octave -> * K -> round -> / K), then quantize the result to 12 ( -> * 12 -> round -> / 12).  If K=7 this gives major/minor scales; if K=5 it gives pentatonic modes.  You can also add offsets before the `round` operators for inversion & transposition.
 
 See **quantizing-pitch.maxpat**
+
+A neat trick to quickly quantize an octave signal to a common scale: First quantize to K (octave -> * K -> round -> / K), then quantize the result to 12 ( -> * 12 -> round -> / 12).  If K=7 this gives major/minor scales; if K=5 it gives pentatonic modes.  You can also add offsets before the `round` operators for inversion & transposition.
+
+https://www.desmos.com/calculator/pr6rgxwplx
+
 
 Today's patch: 
 
@@ -941,9 +944,6 @@ R1mVrPMWV922.4vpTzfvY5vhFanF31PVbOgrPWzX1+hdtH4gqGa8vHipejwC
 - Read through Chapter 5 in advance of next week, and bring any questions or ideas to discuss! 
 - Complete your [Assignment 2](#assignment-2)
 
-
-
-
 [Back to top](#top)
 
 # Week 5: Stepping in Time
@@ -951,17 +951,48 @@ Oct 1
 
 [Class Recording](#class-recordings)
 
-In past weeks we have already seen how to create some simple melodies from generative processes, including using `latch` to capture cyclic, random, or chaotic patterns to a tempo. 
+Today we're going to look deeper into musical pattern generation, especially for pitches -- which I hope will be helpful for your [Assignment 3](#assignment-3).
 
-Here's another classic generative method -- sequencing several `latch` stages in series, and treating each one as a transposition controller: **The shift register sequencer** (**shift-register.maxpat**)
+To help you plan for this, today I'm going to try to walk through building up an example generative radio stream and exporting it to a website by the end of the class. 
 
-https://www.desmos.com/calculator/pr6rgxwplx
+---
 
-**[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
+Musical events such as "notes" are typically described in terms of several components:
+- **Timing**: The start time and duration/end time of the event, and its relation to other events (rhythm/metre)
+- **Pitch**: The fundamental frequency of an event (if it is not noise); and its relation to other events (harmony, scales)
+- **Intensity**: The apparent loudness of the event
+- **Timbre**: The total spectral shape of the event (bright, dark, harmonic, inharmonic, noisy, etc.)
+- **Articulation**: How these properties vary over the duration of the event. Of these, the most notable is usually the articulation of intensity, as the sound's **"envelope"**. 
+
+How do we represent these in a system?  
+- In typical **Western notation**, a "note" tells us two kinds of information: pitch, and timing (onest and duration).  Additional markings might roughly indicate loudness/intensity, but this is often absent.
+- In **MIDI messages**, a "note" event tells us either to start/stop a note, with a pitch (in semitones), and a precise intensity (mapping to volume) when the note starts. The time of the event itself is the timing of the note. 
+- In **analog synthesizers**, these things are represented as continuous voltage signals: using "gate" (on/off) signals for timing and "volt-per-octave" signals for pitches, "envelope" signals for intensity, and "modulation" signals for articulation
+
+Of all three representations, analog signals offer the most detailed articulation and freedom; and that's what we'll look at for working with digital signals too. 
+
+Let's start with gates and pitches. For a simple melody, these look like a pair of stepped signals: 
+
+https://www.desmos.com/calculator/cfkrffkvso
+
+That means that **any source of stepped signals can be used to generate note and pitch events**. We can use many different kinds of mathematical and signal-processing methods on pitch and timing directly here. It also allows us to work with generating pitch, timing, intensity, and timbre control quite independently, which can lead to some interesting behaviours. For example, in past weeks we have already seen how to create some simple melodies from generative processes, including 
+- using `latch` to capture cyclic, random, or chaotic patterns to a tempo,
+- using tempo operations to change the rhythms of the melodies
+- using range mappings for pitches and frequencies, including quantization to select specific scales
+- using ramp shaping to produce envelopes
+- using smoothing to create pitch glides or shape gates into envelopes
+
+For note patterns as "gates", we can also explore using logical operators of **and** (`&&`), **or** (`||`), **xor** (exclusive or, `^^`), and **not** (`!`) to combine simpler patterns into more complex ones.  For example, using **and** to combine a metric pulse with any other gate signal (such as `noise` -> `> 0`) will lock that signal to the pulse.  
+
+Chapter 5 opens with another interesting example: taking a root phasor, using ramp division/multiplication to generate several related rhythm ramps; using comparators (`<`) to turn this into patterns of gates, multiplying these gates by some transposition factors (e.g. in semitones), and summing these transpositions to generate melodies. 
+
+Another classic generative method is to cascade several latched gates, creating a kind of rhythmic delay, known as a **shift register**. We have already seen this pattern when we built some of our interpolators/smoothers.  The `go.shiftregister8` is an 8-stage version of this. Try combining some of these outputs with logics. 
+
+Or, if we treat each output of the shift register as a transposition controller, we end up with the **The shift register sequencer** (**shift-register.maxpat**). This is a very popular generative circuit in both analog and digital audio. 
 
 **Deep dive**: We can combine those ideas into a more complex generative sequencer, based on the Klee Sequencer: 
 - Feed some binary choice input (the "data" input) into a `go.shiftregister8`, which is clocked by a `phasor` -> `go.ramp2trig`, for example. 
-- Multiply all the outputs by some pitch offset, e.g. in semitones, and sum them.  That's the melody output. 
+- Multiply each of the outputs by some pitch offset, e.g. in semitones, and sum them.  That's the melody output. 
 - We can choose to loop the pattern by feeding the last shift register stage back to the data input. 
 - **shift-register-weighted-random.maxpat**
 - We can choose whether to replicate or mutate (evolve) by `xor` of the last step with some chance control: **shift-register-weighted-xor.maxpat**
@@ -969,11 +1000,24 @@ https://www.desmos.com/calculator/pr6rgxwplx
 - Another variant, often found in modular synthesizers, is to set all the scaling weights to be powers of 2, which is a binary digital-to-analog encoder. 
   - The book shows how in this case we can accurately represent the loop as a single integer, and how we can manipulate the bits as an integer (**shift-register-integer.maxpat**)
 
-Depending on time, we could **deep dive** into another looping sequencer -- the urn model from Ch4
+**[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
+
+--- 
+
+Let's get what we have so far exported into a web page to see how it is working. Here's a template webpage for the RNBO export:
+
+---codepen:https://codepen.io/grrrwaaa/pen/LEGREEL
+
+---
+
+Depending on time, we could **deep dive** into another looping sequencer -- the urn model from Ch4. 
+Or we could **deep dive** into the Euclidean rhythm generator. Or, we could look at some examples of timbral shaping. Or we could look ahead at some basic enveloping and filtering ((slew, line, onepole, SVF) from Chapter 6. What would be most useful for you?
+
+---
 
 https://www.desmos.com/calculator/gflrzuhqee
 
-**Deep dive**: Euclidean rhythms: an algorithm to distribute K events over N steps as evenly as possible. It happens to produce a lot of rhythmic motifs common in musics from around the world. Also prevalent in techno. 
+**Euclidean rhythms**: an algorithm to distribute K events over N steps as evenly as possible. It happens to produce a lot of rhythmic motifs common in musics from around the world. Also prevalent in techno. 
 - Rather than use the GCD algorithm, which is recursive, we can solve it in a much simpler way, equivalent to rasterizing a ramp of slope K/N, looping every N steps. 
   - Notice that this is essentially the same as what we did earlier to quantize pitches to scales!
 - Scale ramp by N, quantize to N steps with `floor`, multiply by K/N for the desired slope, quantize again with `floor` for the Euclidean steps. Send these through `change` -> `bool` for triggers.
@@ -985,7 +1029,9 @@ https://www.desmos.com/calculator/gflrzuhqee
 
 ---
 
-Timbral shaping via sigmoids (end of Ch3) to turn a simpler signal into a more complex one. 
+**Timbral shaping** 
+
+Via sigmoids (end of Ch3) to turn a simpler signal into a more complex one.
   - For audio waveshaping we often use sigmoid shapes, such as `tanh`
   - This can add spectral complexity -- adding harmonics ("harmonic distortion"). Sine & triangle are good input choices. 
   - The response depends on the loudness of the input. Often put a "preamplification" gain element first. 
@@ -995,7 +1041,7 @@ Timbral shaping via sigmoids (end of Ch3) to turn a simpler signal into a more c
   - Can also normalize the sigmoids, see `go.unit.sigmoid.*`
   - More interesting input than sine can create quite complex intermodulation distortion effects, see **bipolar_waveshaping_intermodulation.maxpat**
 
-Timbral shaping via quantizing (bitcrushing) -- last section of Chapter 5
+Via quantizing (bitcrushing) -- last section of Chapter 5
   - Recall the basic quantizer: * N -> round -> / N. This same method can be used for audio signals too -- the smaller N is, the steppier our audio becomes, creating a harsh kind of bitcrushing noise. 
   - We can use the *distance* between the quantized & unquantized outputs to mix between them, creating a slightly smoother step between each note **quantizing-pitch-smoothed.maxpat**
   - The same can be done for audio, softening the bitcrushing. **quantizing-audio-bitcrush.maxpat**
@@ -1004,7 +1050,12 @@ Timbral shaping via quantizing (bitcrushing) -- last section of Chapter 5
 
 ---
 
-Today's patch:
+**Homework**
+
+- Read through Chapter 6 in advance of next week, and bring any questions or ideas to discuss! 
+- Begin planning for [Assignment 3](#assignment-3)
+
+The class patch from 2024:
 
 <pre><code>
 ----------begin_max5_patcher----------
@@ -1117,9 +1168,6 @@ Ad8hb+bnf5N0o5h37STjusN9D03+IZw+TJw+7zg+moB+BZvuNJv2Fv+W92e4
 -----------end_max5_patcher-----------
 </code></pre>
 
-
-- Read through Chapter 6 in advance of next week, and bring any questions or ideas to discuss! 
-- Begin planning for [Assignment 3](#assignment-3)
 
 
 [Back to top](#top)
@@ -1879,7 +1927,7 @@ Wen5NenV1kjww5MfV8VHZ856W4MmbIUH0296pEvYQpdW0P.nS.0vdP8Ftw3g
 
 Have you ever heard [Generative.FM](https://generative.fm)? It is a collection of generative radio stations that never end or repeat. It could be music for working to, sleeping to, meditating to, focusing to, ... and never getting bored from.  (*It's not the first generative radio station ever, there have been quite a few, but it's the most active one I could find today*)
 
-This assignment is to create a robot radio station, which is always absolutely different every time you listen in. 
+This assignment is to create a robot radio station, **which is always different, every time you listen in.** 
 
 - To ensure it is always unique, the patch should use the current date and time to modify its parameters. The template patch below has this already set up for you. You can either listen to the current date & time, or pick a random date & time (or choose by hand), to make sure that the station has enough variety. 
 
