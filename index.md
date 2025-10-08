@@ -1177,7 +1177,15 @@ Oct 8
 
 [Week 5 Class Recordings](https://yorku.zoom.us/rec/share/ueNEZRT55KuhCN73jZc2CtstoEZTK5uaOe2App3gWOQqk8Ut-Hhm6jVVVjkZZBVs.3IT8WxYZVMXVVEVG)
 
-**[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
+---
+
+**Assignment 2 submissions**
+
+---
+
+Before jumping into filters, let's have a quick look at the timbral shaping material we skipped last week. 
+
+---
 
 In almost every class since the first week we have encountered a simple lowpass filter. Most often we have seen the filter as a `mix` and `history` pair, which is known as a **one pole filter**, but if we dig into the algebra of this a bit, or rather, if we re-arrange the patching a bit, there's a few other ways of seeing what this is. 
 (See **onepole-explorations.maxpat** for examples of most of the ideas below.)
@@ -1209,6 +1217,12 @@ In this case it often makes sense to have it rise quickly but fall slowly, becau
 - Consider chaining several low pass filters for a deeper effect. 
 - **low-pass-gate.maxpat**
 
+---
+
+**[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
+
+---
+
 **Slews and lags/lines**
 
 Aside from using onepole filters, there's some other kinds of smoothening and filtering that are especially useful at sub-audio rates. One drawback of the onepole filter (and most recursive feedback filters) is that they never quite reach their target -- the response curve is logarithmic so it's always just slightly closer but not quite there. What alternatives are there for smoothly approaching a target but also definitely arriving there? 
@@ -1217,6 +1231,7 @@ See **slide_slew_and_line.maxpat**
 We saw one already several times: we can `mix` from a `latch`ed output to a `latch`ed input.  In this case we can drive the mix by an `accum @resetmode pre` into `clip 0 1`. And we can retrigger the `latch`es and `accum` whenever the input changes. The input to the `accum` sets *how long it takes to reach the target*. This is a **line generator** or **lag generator**, and it is what `go.line.ms` and `go.line.samples` do. 
 
 A different option is to have the filter always approach the target but give it a speed limit; that's called a **slew limiter**.  In that case, we get the difference between the input and our current state (`history`), which tells us how much we need to move, but then we `clip` that amount to a certain negative & positive maximum speed, and add that clipped speed to our state as the output.  This ensures we will reach the target, with a maximum speed, but how long it takes to get there depends on how far away the target is.
+
 
 **Allpass filters**
 - A slightly more complex circuit, that feeds some signal backward, and some signal forward. These are exactly balanced so that there is no frequency effect at all -- the output sounds the same as the input! So why would you want to do that?
@@ -1900,7 +1915,28 @@ Wen5NenV1kjww5MfV8VHZ856W4MmbIUH0296pEvYQpdW0P.nS.0vdP8Ftw3g
 -----------end_max5_patcher-----------
 </code></pre>
 
-### Example assignment 2 sounds from 2024
+### Example Assignment 2 sounds from 2025
+
+---audio:2025/assignment2_sounds/AlienTonality.mp3
+---audio:2025/assignment2_sounds/LifeOnTheMoon.mp3
+---audio:2025/assignment2_sounds/BiosphereInASpaceship.mp3
+---audio:2025/assignment2_sounds/AlienResearchSite.mp3
+---audio:2025/assignment2_sounds/Untitled.mp3
+---audio:2025/assignment2_sounds/AlienAmbiance.mp3
+---audio:2025/assignment2_sounds/AlienSynthesis.mp3
+---audio:2025/assignment2_sounds/SpaceInvaded.mp3
+---audio:2025/assignment2_sounds/SpaceNoodleSynth.mp3
+---audio:2025/assignment2_sounds/AlienWorld.mp3
+---audio:2025/assignment2_sounds/AlienElectronica.mp3
+---audio:2025/assignment2_sounds/AlienMarch.mp3
+---audio:2025/assignment2_sounds/AlienSignal.mp3
+---audio:2025/assignment2_sounds/AlienWarfare.mp3
+---audio:2025/assignment2_sounds/AlienUFOCrashing.mp3
+---audio:2025/assignment2_sounds/DistressSignal.mp3
+---audio:2025/assignment2_sounds/AliensOfNeptune.mp3
+---audio:2025/assignment2_sounds/NoTitle.mp3
+
+### Example Assignment 2 sounds from 2024
 
 ---audio:2024/assignment2_sounds/216416901.wav.mp3
 ---audio:2024/assignment2_sounds/217277237.wav.mp3 
