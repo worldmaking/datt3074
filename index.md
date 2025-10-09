@@ -2214,6 +2214,7 @@ Recordings of the weekly sessions will be here:
 - [Week 4 part 2](https://yorku.zoom.us/rec/share/zqCLnrCu0lbYFc9fY2wFpuUtTaQxx6_ZfE4srtMzmkA1vaHu8PQrt3ZmhjrgsrTt.UJxdDz3xbKykRKN3)
 - [Week 5 Class Recording - Stepping in Time part 1](https://yorku.zoom.us/rec/share/bgSRApF8A3FoZbgLgSsU2T1Po-3ze3pDiD1adpOGsDlAUHLCoXOFl6E6GbPq3Mku.dCaimEfhWKnG2gGP)
 - [Week 5 part 2](https://yorku.zoom.us/rec/share/B1i7o---6Rx8vsTrwkPYH8tEJ6LcmRhpLzPdrfl41uqk6tnQgPs0YXhqgoVMGir6.A6SWjyWv7h8gk6V8)
+- [Week 6 - Filters and smoothing](https://yorku.zoom.us/rec/share/Ic6h8vreDZIr96zdH0masBPrtYkEsWhXDgU2sKJosJzZln0AY9G-8xkwljIv9QLb.4PWr8zCHTCy63YN1)
 <!-- 
 - [Week 2 Class Recording - ramps and beat slicer](https://yorku.zoom.us/rec/share/c48SeyUAO5fOMAsi4FHKUKhfC0cuqSElXscdCOm3_45viQCBLXB_2ntBETZTwlS_.T6avFZCTHbIMSuZz)
 - [Week 3 Class Recording - more ramp processing, from ramps to LFOs, and other shapes](https://yorku.zoom.us/rec/share/FgkO9V8vK-bC27z-XJsfaLdsN4dWlLjAPzCVJFIwj404-GM60I0Nblq0rZ3OLW4h.moN-NS8z43sjb4Z4)
