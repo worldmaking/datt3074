@@ -1347,6 +1347,45 @@ That patch also shows how you can calculate what the pitch change will be, or vi
 
 What if you want to change the delay time without any pitch artefacts at all? The only way to get around relativity is to create a second delay (or a second tap of your delay), and crossfade between them. It's a sleight of hand: whichever one is currently silent in the crossfader, we can change the delay time however we want, and then quickly crossfade over to it -- quick enough to not be distracting, but not so quick to click. The patching to do this is a little trickier, but the core of it is a very handy little circuit that we will use again as `go.background.change`. See **delay_morphed_times_no_pitch_change.maxpat**
 
+<pre><code>
+----------begin_max5_patcher----------
+1498.3oc6ZssbZqCE8Y3qvierSJi0Eeg9z4+HSJivV.pw1hwVPSRmd91O5hM
+XCFaAIPJSOYlfRjLdu2q8ZeQV9WiG4Nm+Bsz04aNO5LZzuFOZjdJ0Dip9+Qt
+YjWhSIk5KyMkskNoLlul9utOXVeMQDuhkubVAMVXtWQgS7evAAf5AHZh2CN.
+DZhuySUeIVh91wm+iuBhpuS4axX4oTgVTv8Sx2HpmETMqYJwqqoFI5Nmjuz0
+4I0p+d7X0GOXoIUtVp2EbqMpH8fmm1nTCcZTAeDF0kYP14i..s8.QQZCIBqF
+BhNg4f+b8QDgnXCqWqQ6Vf.fZ.DAUVCDdBqAs+NUPxnBZwLZNYdpVQ85xRqs
+IA8EwrexRDqzyhTrf9v.khqk6BJMYNI9Y2OVecLOKilKband54+92clqgIZg
+SBMiWx2jmLL9A.X8fulcCOE41ysOLpMR3cAVUspWKlsL5O2xJYyYoLwqs3XK
+VTRqrAsN2TkS4wOSSRJHKKiK3ooM8twor3mEqJ3aVtp47Fdvpi+BlE1d7BFo
+TxdqE6Y9xLdR6Y3EIzhlyzkevSGUZbCPnNA5T+F1Ttjupwncd0IRnSdmbO1O
+0chUuyKnsjsLmj9NxDsjvx2kHZKoXmEre0GAO0C2Doqe.i7UC9.0mgMySIEm
+76PxyoowR.QzzHafF98EzCrO8l+.H0CM+K0uKR4J2ixfKkJWsZWR1RSloRPv
+luQP2+WkUHZEjp.szMT9h5oqmuokjxyW1Kv15pyjdI0UFTm85fUY4pU+ZnW2
+qySp41nNVtbEuPzgtzkhTidcIlM4LQo3Ui+AaVWy+pGtRjwdXhPSRROcQlKm
+Ih+KjI9+zvJZH8MRRbejLjlcg7Ueh047v9cWGFcFkggVyUtnL8z2RH1XUQA0
+FzoMK3YzqYihvDcUYvEn74zeJk6Q8Psj1ax.j1Tf9lM4DzaCmmgiZ3BwMUIS
+CEMCQWvjcoPKJY77F2NYmnqW2X51QuYjev02no6B.j5IuncLQAU0Cl46u+BI
+ERfQHQkMElPsWBv6iwTQnE4xV2qcMZ+RkJo8.pPzx0j3ptZJWOQh602.28vs
++T89T.UCXMfOM.uGwG4trfsqQLYuTZVFvu4UzZCuMwflbjVy2GWoMeQtmPul
+KzU6cgU6dzuJF+.RyQQ3nl2vtZi6zLnd2lQirX0QJevnwR9DdNcMOkNY0aC.
+KlrBUnhYmn8hJ3ShJvShJndQkpBj2LzwePhhdG.H0CMQxgmNDj.i9ahnXPkg
+IJvv6dhhfjuZHtR0ijJP+POPvAQkfShJf+v4JewRnXZnFDlZ1EcOPg+EPP9y
+.J7GpVCB0jV.GlVbWWqIkkSmjUN.l.CzYRqvj.zfXxkToANXBjaEtjUJ3kjr
+0CAKfpxLQdpgPugfEP3caFD8F6bRnojWmwxmkU57ORs2wSNPdwAZQKbUXEd5
+Dj5mvvHTD.gCCUXVvfPWvcaTlA5peP1svMfkwc07rngfoo2snjlZ4nh5RoED
+A8KPq5oAhq1XCXHn49sjkjuLDQAXJYa52cPVB3tkkHkrkXAFirauh3KHmrWG
+V69MKqpodhMKqUW05cCCk7MEw0fZEo0oslmPKErbhn5AJ739s1otPq7BmqR.
+rTINVY2ezMWEEC5ewZVFKYMmkKp7S.SPCVNf7BBvdAPUEc3jHbXfu9e5aMHF
+KWyKLB.MG7zAycKAEUSFVCJfqEkIvRknVauJZQcTwfZA7ppEnyIHF7IGDiOc
+PL35DDGZr5gcRAWQmj5AAYOU4Z4jf1F1Tm46yMsJ15zpxFSf.bDFEtqMkVSd
+SIb3yAjuVt5o1pDWyJ6Pz4nEcCEUSdQGpmsueR.er4ssp22Oova+qmTiMDa4
+anjVwa2hnAoNz2UgW8mH+TUUakG4f.pi7QenRF2sj8deRFYin2GnbwBJ5FIm
+vajb7sPNvO.4XC0vualA7cIXaHF3iLPSP3AGsqRDGbjtGbbtGeTtm9XbO7Hb
+0GeaWGcqJC43eO9+.I9HZxB
+-----------end_max5_patcher-----------
+</code></pre>
+
 ---
 
 **[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
@@ -2177,7 +2216,6 @@ Here's the example of mapping a javascript animation to sound:
 
 ---codepen:https://codepen.io/grrrwaaa/pen/LYwqwPw?editors=0010
 
-
 ## Stage 1: Project proposal
 
 - I will need to know your group memberships to set it up in e-Class. Currently I have created groups by random assignment. Groups should not be more than five people. This is required before [the proposal can be submitted via e-Class](https://eclass.yorku.ca/mod/assign/view.php?id=3753849)!
@@ -2228,19 +2266,8 @@ Recordings of the weekly sessions will be here:
 - [Week 5 Class Recording - Stepping in Time part 1](https://yorku.zoom.us/rec/share/bgSRApF8A3FoZbgLgSsU2T1Po-3ze3pDiD1adpOGsDlAUHLCoXOFl6E6GbPq3Mku.dCaimEfhWKnG2gGP)
 - [Week 5 part 2](https://yorku.zoom.us/rec/share/B1i7o---6Rx8vsTrwkPYH8tEJ6LcmRhpLzPdrfl41uqk6tnQgPs0YXhqgoVMGir6.A6SWjyWv7h8gk6V8)
 - [Week 6 - Filters and smoothing](https://yorku.zoom.us/rec/share/Ic6h8vreDZIr96zdH0masBPrtYkEsWhXDgU2sKJosJzZln0AY9G-8xkwljIv9QLb.4PWr8zCHTCy63YN1)
-<!-- 
-- [Week 2 Class Recording - ramps and beat slicer](https://yorku.zoom.us/rec/share/c48SeyUAO5fOMAsi4FHKUKhfC0cuqSElXscdCOm3_45viQCBLXB_2ntBETZTwlS_.T6avFZCTHbIMSuZz)
-- [Week 3 Class Recording - more ramp processing, from ramps to LFOs, and other shapes](https://yorku.zoom.us/rec/share/FgkO9V8vK-bC27z-XJsfaLdsN4dWlLjAPzCVJFIwj404-GM60I0Nblq0rZ3OLW4h.moN-NS8z43sjb4Z4)
-- [Week 4 Class Recording - noise, uncertainty, chaos, simple sequencer](https://yorku.zoom.us/rec/share/hOsXZrPLHHdsrvByV6L08t2bL4ST8_trA-W3ZcYc4YZ_Q-v0vUgAMgtObdhrrF-P.v7jIU_hzeyU-p94H)
-- [Week 5 Class Recording - pitch conversions, quantizing, shift register sequencer](https://yorku.zoom.us/rec/share/ueNEZRT55KuhCN73jZc2CtstoEZTK5uaOe2App3gWOQqk8Ut-Hhm6jVVVjkZZBVs.3IT8WxYZVMXVVEVG)
-- [Week 6 Class Recording 1 - catching up: Euclidean Rhythms, pitch quantizers, and audio bitcrushing](https://yorku.zoom.us/rec/share/iDWJhpSMjXnuglzEKIoD_iDxK6lIEw8sl4YwyhMBZXSGlN5A1IeqIUIl6ZSEADKb.wXZvqRpiamOTxXFz)
-- [Week 7 Class Recording 2 - filters, lines, slews, more filters](https://yorku.zoom.us/rec/share/i59rxlt_NoYpDxxoQGfmQPdsBREseAF4UuGiONZbUbpEVLax8A7UiJ9OPD8moqXy.dhqkOLQaIpN2-jQR)
-- [Week 8 Class Recording - delay effects](https://yorku.zoom.us/rec/share/zzaFDAYbv7VFpi641qbFF2xhVpTqhHTJU6JX9ivVI-4346Tca9UPm36zS4w5SSLv.12-v5HytdmCvgxlo)
-- [Week 9 Class Recording - frequent modulations 1](https://yorku.zoom.us/rec/share/NcKhkz2hqEuPfgNeidRFCWjEg_XtTYNeWrLSeAajHI-tmRTv1C4EvCkZHUQb2ZJu.R2756ONcU45ty3Cl)
-- [Week 10 Class Recording - frequent modulations 2](https://yorku.zoom.us/rec/share/JbhqKvgQSunZmXES36cWoPhb-Xbg2HnrLvvIDH24KGVt31oTPC8AMDAuiiUjLKbG.cV3jn3RI6ULzVk1v)
-- [Week 11 Class Recording - Windows of Time](https://drive.google.com/file/d/1B0tmhEzHsrVFWWHT0z8NBpOT0XC_27OO/view?usp=share_link)
-- [Week 12 Class Recording - Exporting from RNBO](https://yorku.zoom.us/rec/share/tbwgGy0hvaaGOjo0cey8YDgnq1xM9m7LTzZF3DjhMGEKJ0wxRxWT3bbI1rcKdLcf.oKShC9mLhw7KDKJu)
--->
+- [Week 7 - The Effects of Delay](https://yorku.zoom.us/rec/share/4Ovi-bU6R2x2SXd4sVSQvPaFivJTHXwkwM_bs9fTlBU3tcXh9R6KGNxE5EJ2xxVA.UcnkKylvTk7u1_mx)
+- 
 
 -----
 
