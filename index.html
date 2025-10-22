@@ -1338,14 +1338,13 @@ See <strong>slide_slew_and_line.maxpat</strong></p>
 <h1 id="week-7-the-effects-of-delay">Week 7: The Effects of Delay</h1>
 <p>Oct 22</p>
 <p><a href="#class-recordings">Class Recording</a></p>
-<p><strong><a href="https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784">Attendance check</a></strong></p>
 <p>What is a digital delay? </p>
 <p>In a way it is a bit like a long chain of <code>history</code> objects, each one delaying the input by one sample. But it would take tens of thousands of these objects  to get an echo of one second; and we don&#39;t want to have tens of thousands of objects running in a patch! Instead we can use the <code>delay</code> object, which does things much more efficiently. For example, any signal sent into a <code>delay 10000</code> object will come out of the output 10000 samples later. </p>
 <p>It is helpful to think of a delay as a loop of memory.</p>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Circular_buffer.svg" alt="loop"></p>
 <ul>
 <li>The loop is made up of slots, each one of which can hold one number. </li>
-<li>There is a &quot;write head&quot; (or &quot;read pointer&quot;) that moves around this loop by one step for every sample of passing time, writing in some input value. </li>
+<li>There is a &quot;write head&quot; (or &quot;write pointer&quot;) that moves around this loop by one step for every sample of passing time, writing in some input value. </li>
 <li>We can have a &quot;read head&quot;, that also moves around this loop, reading values out.  </li>
 <li>The distance between the write and read head then gives the delay time (in samples) it takes for a writer&#39;s input value to come out at the reader&#39;s output.</li>
 </ul>
@@ -1389,6 +1388,11 @@ See <strong>slide_slew_and_line.maxpat</strong></p>
 <p>That patch also shows how you can calculate what the pitch change will be, or vice versa, how to <em>control</em> the pitch change in a desired way!</p>
 <p>What if you want to change the delay time without any pitch artefacts at all? The only way to get around relativity is to create a second delay (or a second tap of your delay), and crossfade between them. It&#39;s a sleight of hand: whichever one is currently silent in the crossfader, we can change the delay time however we want, and then quickly crossfade over to it -- quick enough to not be distracting, but not so quick to click. The patching to do this is a little trickier, but the core of it is a very handy little circuit that we will use again as <code>go.background.change</code>. See <strong>delay_morphed_times_no_pitch_change.maxpat</strong></p>
 <hr>
+<p><strong><a href="https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784">Attendance check</a></strong></p>
+<p>Discussion about the <a href="#final-project">Final Project</a> and <a href="#stage-1-project-proposal">project proposal</a>.</p>
+<p>Establish your groups today!  </p>
+<p>Your group&#39;s proposal is due to be presented <strong>in class next week</strong>.</p>
+<hr>
 <p>Delays of around 0.05ms to 5ms (equivalent to frequencies of 500Hz to 20kHz) have almost filter-like effects. These are often call &quot;comb filters&quot; because the spectrum response has teeth like a comb. See <strong>comb_filter.maxpat</strong></p>
 <p>With delays of 0.5 to 25ms, we are in the region of pitches, and with enough feedback these can sound a bit like a stringed instrument. This is usually called Karplus-Strong synthesis. See <strong>string_basic.maxpat</strong></p>
 <ul>
@@ -1413,7 +1417,7 @@ See <strong>slide_slew_and_line.maxpat</strong></p>
 <p><strong>Homework</strong></p>
 <ul>
 <li>Read through Chapter 8 in advance of next week, and bring any questions or ideas to discuss! </li>
-<li>Continue developing the <a href="#final-project">final project</a> ideas</li>
+<li>Work with your group on the <a href="#stage-1-project-proposal">final project proposal</a>, ready to present in-class next week!</li>
 </ul>
 <p><a href="#top">Back to top</a></p>
 <hr>
@@ -1994,9 +1998,15 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 <hr>
 <h1 id="final-project">Final Project</h1>
 <p>The final project will be a more substantial patcher development, which demonstrates the export of the project into a real-world application area through the use of one of the many possible <a href="#export-targets">export targets</a>. </p>
-<p>There should be some way to present or exhibit this project -- a performance with newly designed instruments, part of an existing installation, a sound-making web-page, a film, sounds embedded within a video game, or it could be software, e.g. a packaged audio plugin that people can download and install.</p>
-<p>This can be an individual or group submission. </p>
-<p>You will be required to present your initial idea in class, develop this idea over several weeks, present the final work (either in-class or via video submision, TBD), and document the final project on a public web page. </p>
+<p>There should be some way to <strong>present</strong>. <strong>exhibit</strong>, and/or <strong>distribute</strong> this project -- a performance with newly designed instruments, part of an existing installation, a sound-making web-page, a film, sounds embedded within a video game, or it could be software, e.g. a packaged audio plugin that people can download and install.</p>
+<p>This can be an <strong>individual or group</strong> submission. </p>
+<p>You will be required to:</p>
+<ul>
+<li><strong>present your initial idea in class</strong>, </li>
+<li>develop this idea over several weeks, </li>
+<li><strong>present the final work (either in-class or via video submision)</strong>,</li>
+<li>and <strong>document the final project on a public web page</strong>. </li>
+</ul>
 <p>Some more detail on ideas:</p>
 <p>Perhaps a few of you want to design instruments and make a &quot;gen~ band&quot; (or &quot;gen~ ensemble&quot;) to perform together? </p>
 <ul>
@@ -2100,15 +2110,16 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 
 <h2 id="stage-1-project-proposal">Stage 1: Project proposal</h2>
 <ul>
-<li>Group memberships have been randomly assigned in e-Class. If the class majority prefers to select their own groups, I need to know your group memberships before <a href="https://eclass.yorku.ca/mod/assign/view.php?id=3753849">the proposal can be submitted via e-Class</a>!</li>
-<li>The project proposal is a simple PDF. It should state:<ul>
+<li>I will need to know your group memberships to set it up in e-Class. Currently I have created groups by random assignment. Groups should not be more than five people. This is required before <a href="https://eclass.yorku.ca/mod/assign/view.php?id=3753849">the proposal can be submitted via e-Class</a>!</li>
+<li>The project proposal is a slide presentation that you will present in class. You will submit it to e-Class as a PDF. It should include:<ul>
+<li>Your project title</li>
+<li>Your choice of <a href="#export-targets">export target</a></li>
+<li>The core idea or ideas that you want to explore. This should include reference to specific example patches from the textbook and/or Max examples folder, as well as referring to external references (inspirational projects, artists, etc.) to illustrate the intention.</li>
+<li>Your choice of final presentation/distribution </li>
 <li>Your group membership<ul>
 <li>How you will distribute roles within the group</li>
 </ul>
 </li>
-<li>Your choice of <a href="#export-targets">export target</a></li>
-<li>Your choice of final presentation/distribution</li>
-<li>The core idea or ideas that you want to explore. This should include reference to specific example patches from the textbook and/or Max examples folder, as well as referring to external references (inspirational projects, artists, etc.) to illustrate the intention. </li>
 </ul>
 </li>
 </ul>

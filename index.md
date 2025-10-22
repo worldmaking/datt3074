@@ -1287,8 +1287,6 @@ Oct 22
 
 [Class Recording](#class-recordings)
 
-**[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
-
 What is a digital delay? 
 
 In a way it is a bit like a long chain of `history` objects, each one delaying the input by one sample. But it would take tens of thousands of these objects  to get an echo of one second; and we don't want to have tens of thousands of objects running in a patch! Instead we can use the `delay` object, which does things much more efficiently. For example, any signal sent into a `delay 10000` object will come out of the output 10000 samples later. 
@@ -1298,7 +1296,7 @@ It is helpful to think of a delay as a loop of memory.
 ![loop](https://upload.wikimedia.org/wikipedia/commons/b/b7/Circular_buffer.svg)
 
 - The loop is made up of slots, each one of which can hold one number. 
-- There is a "write head" (or "read pointer") that moves around this loop by one step for every sample of passing time, writing in some input value. 
+- There is a "write head" (or "write pointer") that moves around this loop by one step for every sample of passing time, writing in some input value. 
 - We can have a "read head", that also moves around this loop, reading values out.  
 - The distance between the write and read head then gives the delay time (in samples) it takes for a writer's input value to come out at the reader's output.
 
@@ -1351,6 +1349,16 @@ What if you want to change the delay time without any pitch artefacts at all? Th
 
 ---
 
+**[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
+
+Discussion about the [Final Project](#final-project) and [project proposal](#stage-1-project-proposal).
+
+Establish your groups today!  
+
+Your group's proposal is due to be presented **in class next week**.
+
+---
+
 Delays of around 0.05ms to 5ms (equivalent to frequencies of 500Hz to 20kHz) have almost filter-like effects. These are often call "comb filters" because the spectrum response has teeth like a comb. See **comb_filter.maxpat**
 
 With delays of 0.5 to 25ms, we are in the region of pitches, and with enough feedback these can sound a bit like a stringed instrument. This is usually called Karplus-Strong synthesis. See **string_basic.maxpat**
@@ -1371,7 +1379,7 @@ With delays of 0.5 to 25ms, we are in the region of pitches, and with enough fee
 **Homework**
 
 - Read through Chapter 8 in advance of next week, and bring any questions or ideas to discuss! 
-- Continue developing the [final project](#final-project) ideas
+- Work with your group on the [final project proposal](#stage-1-project-proposal), ready to present in-class next week!
 
 [Back to top](#top)
 
@@ -2105,11 +2113,15 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 
 The final project will be a more substantial patcher development, which demonstrates the export of the project into a real-world application area through the use of one of the many possible [export targets](#export-targets). 
 
-There should be some way to present or exhibit this project -- a performance with newly designed instruments, part of an existing installation, a sound-making web-page, a film, sounds embedded within a video game, or it could be software, e.g. a packaged audio plugin that people can download and install.
+There should be some way to **present**. **exhibit**, and/or **distribute** this project -- a performance with newly designed instruments, part of an existing installation, a sound-making web-page, a film, sounds embedded within a video game, or it could be software, e.g. a packaged audio plugin that people can download and install.
 
-This can be an individual or group submission. 
+This can be an **individual or group** submission. 
 
-You will be required to present your initial idea in class, develop this idea over several weeks, present the final work (either in-class or via video submision, TBD), and document the final project on a public web page. 
+You will be required to:
+- **present your initial idea in class**, 
+- develop this idea over several weeks, 
+- **present the final work (either in-class or via video submision)**,
+- and **document the final project on a public web page**. 
 
 Some more detail on ideas:
 
@@ -2168,13 +2180,14 @@ Here's the example of mapping a javascript animation to sound:
 
 ## Stage 1: Project proposal
 
-- Group memberships have been randomly assigned in e-Class. If the class majority prefers to select their own groups, I need to know your group memberships before [the proposal can be submitted via e-Class](https://eclass.yorku.ca/mod/assign/view.php?id=3753849)!
-- The project proposal is a simple PDF. It should state:
+- I will need to know your group memberships to set it up in e-Class. Currently I have created groups by random assignment. Groups should not be more than five people. This is required before [the proposal can be submitted via e-Class](https://eclass.yorku.ca/mod/assign/view.php?id=3753849)!
+- The project proposal is a slide presentation that you will present in class. You will submit it to e-Class as a PDF. It should include:
+  - Your project title
+  - Your choice of [export target](#export-targets)
+  - The core idea or ideas that you want to explore. This should include reference to specific example patches from the textbook and/or Max examples folder, as well as referring to external references (inspirational projects, artists, etc.) to illustrate the intention.
+  - Your choice of final presentation/distribution 
   - Your group membership
     - How you will distribute roles within the group
-  - Your choice of [export target](#export-targets)
-  - Your choice of final presentation/distribution
-  - The core idea or ideas that you want to explore. This should include reference to specific example patches from the textbook and/or Max examples folder, as well as referring to external references (inspirational projects, artists, etc.) to illustrate the intention. 
 
 ## Stage 2: In-class development
 
