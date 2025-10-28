@@ -2124,6 +2124,10 @@ rFrYxbvlIRcDQ5rYZepfoKlG9Lg22LY0Uyjw9lIyNXlH0VUtS3Ix9j8lzE7j
 -----------end_max5_patcher-----------
 </code></pre>
 
+### Assignment 3 examples from 2025
+
+[Here's the radio station submissions from students in 2025](2025/radio/index.html)
+
 ### Assignment 3 examples from 2024
 
 [Here's the radio station submissions from students in 2024](2024/radio/index.html)
