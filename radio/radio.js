@@ -10,6 +10,31 @@ let radio_div;
 let date_div = document.getElementById("date");
 
 let stations = [
+
+	// 2025
+	{ id: 219434158, title: "Bubble Gum Station", author: "Sofia Metallo" },
+	{ id: 220516894, title: "Urgent Signals", author: "Yingwen Fan" },
+	{ id: 220263612, title: "Robot Clock Work Radio", author: "Thu Huong Nguyen" },
+	{ id: 220511093, title: "Space Station", author: "Joseph Palma" },
+	{ id: 220691374, title: "The Pandora's Box", author: "Calvin Tang" },
+	{ id: 219515667, title: "Pulsar Charger", author: "Stefan Sreckovic" },
+	{ id: 220660916, title: "Lost Transmission // The Drums Of Hell", author: "Cristian Spangaro" },
+	{ id: 218016485, title: "Robot Chorus", author: "Zeta Sovery" },
+	{ id: 219029339, title: "1017 Random FM", author: "Spencer Samra" },
+	{ id: 219707918, title: "Summer Night FM", author: "Karim Samji" },
+	{ id: 218055871, title: "WeeWoo Radio", author: "Syd Rhodd" },
+	{ id: 220458477, title: "Bring the House Down Inc. FM", author: "Autumn Pham" },
+	{ id: 219671536, title: "Gradual Phenomenon", author: "Uday Pal" },
+	{ id: 217870361, title: "Tick-Tock", author: "Cecilia Nguyen" },
+	{ id: 219652064, title: "Underwater Motion", author: "Cassandra Hutchinson" },
+	{ id: 220396297, title: "Crystal Cave Radio", author: "Marce Higuera" },
+	{ id: 211714375, title: "Sinusoidal Enrichment", author: "Eric Hanson" },
+	{ id: 220041497, title: "Mushroom Music", author: "Harrison Fok" },
+	{ id: 220641890, title: "Crash + Flow Radio", author: "Jayden Anderson-Johnson" },
+	{ id: 219962422, title: "The Knockoff Buzzer", author: "Adam Abdillahi" },
+
+	// 2024
+	
 	{ id: 217751405, title: "ARCY Radio", author: "Rabiha Chowdhury" },
 	{ id: 218860916, title: "Blade Runner FM", author: "Luca Iamundo" },
 	{ id: 219600360, title: "Chaos and tingles", author: "Tsz Him Ng" },
