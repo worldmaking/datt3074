@@ -1430,7 +1430,11 @@ Oct 29
 
 ---
 
-**Thinking ahead about [final project](#final-project)**
+**Check out our [2025 Robot Radio DATT3074](2025/radio/index.html)**
+
+---
+
+**Presenting your group ideas for the [final project](#final-project)**
 
 ---
 
@@ -1506,14 +1510,9 @@ Nov 5
 
 - Final project discussions
 
-- Radio discussions
-
-- Longer-term projects -- do you want to do things in the Alice Lab?
-
 - **[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
 
 ---
-
 
 Back in chapter 2 we saw how to play a buffer~ with the `sample` operator, using linear interpolation to estimate the values between samples. Remember, linear interpolation is just like a `mix` crossfade. 
 
@@ -1581,11 +1580,6 @@ This is quite a deep topic and you should refer to the textbook for full details
 Nov 12
 
 [Class Recording](#class-recordings)
-
-- [Assignment 3 demo: RADIO DATT3074](radio/)
-- Source: https://github.com/worldmaking/datt3074/tree/gh-pages/radio
-
-<iframe src="radio/index.html" title="RADIO DATT3074" width=100% height=500px scrolling="no" ></iframe>
 
 - [Final project](#final-project) discussion
 
@@ -1709,6 +1703,9 @@ Nov 19
 
 **[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
 
+- Longer-term projects -- do you want to do things in the Alice Lab?
+
+**Today: final in-class sprint developing your projects!**
 
 [Back to top](#top)
 
@@ -1717,11 +1714,12 @@ Nov 26
 
 [Class Recording](#class-recordings)
 
-**Final project development & presenation**
+**Final project presenation**
 
-Instead of presenting final projects to class, we are instead spending today's class time refining final builds of the projects using the RNBO-enabled machines available, and I will help out with each project in any way that I can.
+<!--Instead of presenting final projects to class, we are instead spending today's class time refining final builds of the projects using the RNBO-enabled machines available, and I will help out with each project in any way that I can.
 
 Instead of in-class final presentations, each team should record a video presentation that can be shared on the course website so that all of us can view them. 
+-->
 
 **Exhibition**
 
