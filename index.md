@@ -1496,6 +1496,46 @@ We saw last week how delays can create pitch shifts through Doppler effects, and
 
 You may have noticed that FM and PM often produces complex inharmonic "clangorous" tones. But there's a way to get all the fluidity of FM/PM and yet stay completely harmonic, if you want. The trick is similar to how we solved changing delay times without pitch shifts: we replace our single gliding sine oscillator with two integer harmonic oscillators and crossfade between them instead. See **Harmonic.maxpat**. The `go.harmonic` abstraction can be dropped in as a replacement for the sine oscillators at the heart of all the patches we have seen before -- compare **AMRM.maxpat** with **AMRM-blended-harmonics.maxpat** for example. See also **PM-blended-harmonics.maxpat**, and **ModFM.maxpat**.
 
+Today's patcher:
+
+<pre><code>
+----------begin_max5_patcher----------
+1495.3oc0astiapCD92IOEH944rMx2.B8Uo5nUNf2DpH.BHoa2p1m8iu.IPB
+DLYwoDo1FhwgYlu4atXi6uVtvdS56rBaquZ8MqEK90xEKjCIFXQ02WXum9dP
+LsPNMaZYY9gH6WT2JiVFrKJY6q4rfR0iA5rB7hEAtx4E90.wWPnU.q+q5mjb
+XeTRLqT93fmGL8P4kiFEJEY5lu+EHoVjp4U9yLlRd11mdzYzb5dVIK+UVBcS
+rbBfp6Iza4SKfl+5NZ99zjn.aw898xkh+4koB.PHOgQu1chQ.7Tg.QIgr2uG
+SuHHMi8maX59qE1L1iH9.45KLcG9WNoeAz3ffzCIx4i5BOpGbyg2Jh9PZ.HG
+2NAIPGfDxj1ET5X+qXWPiPUUwpdSLQELUD0cebOVcbzQ1pgcoxvSBdszp8vx
+jV98Y70duB59rXUBSBAJPLMAE+dwjMzjsbb4dnsYbqIOcPSEB.p3QTC5KwaH
+acPaxQC+bX5dZThZ3JBlfn8PrWfyzZu2rDzcXOrOBoA+YvvSDQl8gnpq5LNy
+nibI36NnZK2UdReORyS3gv8b2dsFHP1Y.QF2AwtCYNbMf+jnIIr3SIX6Npy4
+ZSE0qGqHZaBM19klWI96awozRwEwQEk2NcE7TNgirvWEIsh1bnjc9phJ7rBP
+EPV7AV5a0CWOdyGebZx19g0VScO2AIllacVnKtqJr6KdftueZH+OR4f631E6
+RyK0TQpg0tDygjnxhxepPLh59RpW8GijGlv9A2wV6VKYuKID1aY2l5gj4.fH
+YhAAoa7U5vcToaTzqpqZvo35IK+RRxaQwrir7hnzjFJCupXVVigaye1S+dp7
+A4exEvsG0Pm8J4riQ0+9ySjlyQqRNTcHW4re2kb1KK3H4I7lHDpRs6qVkjtE
+AIoHiFn9wgEYq3Ni5Gfci1hcIDYewxln7IX0GMJ4tvdadTXc2QmRX3zbFsVu
+RSLnIwo032h.0lD8OMGsCVDQ1VK1WRhf.+KYQ8lDq+xKWUhYcScnu5LMBhpi
+cdvPA1krBIPAOUIJeYA2oEKv3mCr.Aj8UQTMcXDj.8bfDDowq5r1L.Abd.Dx
+5aV69f66ACfIpUNJS1sFMbFCvXgDzyRFCHRkwvGXrLFHu4AVv6+iuntXlXEO
+HcyjhkLkp7o2DWfiFWbmIgM6nEo4VXcgDHTtQKFARbdNBaf93FaPgqiA54.Q
+lSIUUaN4.DDdrhff34oaHy3SqNSZ93e0pmTjuuwp4hlKMeXU9izrH85QGCOu
+kIScliYROHAoE5gENUawoIvBvyD2.Avpcf5zNoM4.BzaNUoUO7P81ZHlnzBb
+8yRrRM2.qV7hIBVf9OQbC0R4fN95FpLdtgybpsiluUXK3PMkwWwOGcT6CDx2
+.se.mIsevk7fnAxgndi+pk59oRqB5AN.1ON6EoUYUR0dIaBycs8ij5uOM7L0
+GOny1+7FZ.wln0a24C0evUpJe4JVDrrdgQ3Bjt3Bm2O73nj91Obo9Jte23PQ
+5g7fZTsB2sZq4grhxnDZY06L3am2MRKnltgwpDhM.WKsnZdFQID67rVJgTag
+sl39nvrznjxhZFBdkm7Lwv6B2UtqFpWCR8.s9wo4gpWHD7urcc07NoY.ynYH
+M0LnQ86Pc0BGCpEn0iIP7g5lzW0f8qZlgaK16WsTMw1cYrzWHsShhe3.znTM
+3CkVoqpIcx8nZHynZN5pZtlLk.QWsvj0lQ3w3lLFVnaoBDzjZgtkJDaQl4zB
+vXZTwTZgXiMzO0qwzBcqMAMI6DpaYnZPyLZgyXxWXLs.OltE5NqU0f20YEa3
+i+rmbebl5+uJ3MUm+4lqLu4g1T9TZuzOEdboGpBUtxyzhj1GA8Ly3JbWW4fz
+PNsHIWzDjwEL7ZAC9TBFRdPPa6fKSJHviRP7mAZ.43OQxANfbb5lTBLtfIlH
+ZPGAi5VvXiKXXORF8ok7fj1qYspLqWbTaEx3hiX6EGu1qOZs8erZu7H0JONs
+ccTZEE2V96k+OsKgVlB
+-----------end_max5_patcher-----------
+</code></pre>
 
 **Homework**
 
@@ -2269,7 +2309,7 @@ Recordings of the weekly sessions will be here:
 - [Week 5 part 2](https://yorku.zoom.us/rec/share/B1i7o---6Rx8vsTrwkPYH8tEJ6LcmRhpLzPdrfl41uqk6tnQgPs0YXhqgoVMGir6.A6SWjyWv7h8gk6V8)
 - [Week 6 - Filters and smoothing](https://yorku.zoom.us/rec/share/Ic6h8vreDZIr96zdH0masBPrtYkEsWhXDgU2sKJosJzZln0AY9G-8xkwljIv9QLb.4PWr8zCHTCy63YN1)
 - [Week 7 - The Effects of Delay](https://yorku.zoom.us/rec/share/4Ovi-bU6R2x2SXd4sVSQvPaFivJTHXwkwM_bs9fTlBU3tcXh9R6KGNxE5EJ2xxVA.UcnkKylvTk7u1_mx)
-- 
+- [Week 8 - Frequent Modulations](https://yorku.zoom.us/rec/share/hXuke5TB2RCgezUP-pf5QxuUeKiCy_ryD9Go5i2TPbcswzcDSxkjMU2S_VvMpAVL.FLQcCicaJ_rlnTO2)
 
 -----
 
