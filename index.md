@@ -1548,7 +1548,456 @@ Nov 5
 
 [Class Recording](#class-recordings)
 
-- Final project discussions
+## Project export practices
+
+### From gen~ to web + harnessing online data
+
+For an example data source, see https://openweathermap.org/api/
+
+**First, sign up for a free API key** -- you need this to get a response. Please don't re-use the key in these documents! 
+
+You can get current conditions for any particular latitude and longitude
+
+```js
+url = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=" + key
+```
+
+Or, you can get a forecast for the next 4 days, with 96 hourly data points:
+
+```js
+url = "https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=" + lat + "&lon=" + lon + "&appid=" + key
+```
+
+DON'T HAMMER THESE SERVICES CONTINUOUSLY -- YOU MAY GET BLOCKED.
+
+Grab the data you need once, and store it locally, and re-use that data. 
+
+You can quickly test some of these in Max directly, using the `maxurl` object.  Here's an example patcher that is pulling current weather data for Toronto, and using it to set parameters of a gen~ patcher:
+
+<pre><code>
+----------begin_max5_patcher----------
+2712.3oc4as9baiaD+yx+UfvOzdomLMAeSm51lIW5kqoINSi+Pmd5FMPjPRL
+ghfCInsUxj92dwC9RO3C4n3I5pmwOzhEXW7aWrXAv5Oe1HkYj6wYJfKA+JXz
+nOe1nQBRbBiJ97HkUn68iPYB1T7IqVgioJiksQw2SEzeO5VLHjBPYf+w6u9s
+ksmfn9KCiWLME6SkxwUWWUaLvzwQ0ZL.p6w+jtkpF32J5TXfXHIy9v4lvxQZ
+NIllE9ILuInAqORxw4qBiivTg1AavaLZkfWkmmFhhTpYmjSK4ubPlkOaVjbj
+4D9xYmw+w3uVHAGG.nKwfDTJMCPlK9fedZJi6n0fTLMEGdKN.DFOmjtBQCIw
+f0jb.JkgkwTbJNiJZFPIfE33+aoLhBiw9j7XgfzKwZF6rQVLLS2OG6ZMLsrD
+VCSGgYv1P7Is8aML7NcsFu.EEIL.jDb7cXD6OYPdB34u6W.HlgZAlBxHqvf.
+DEAX1C.Bjkf8CmG5ChH9BXUE.lD+SW+1+3MfW8727lW9u.27pe48fq+627x2
+NFv5Cy5kJFxOhWCVgVKF1Yrt+QbvSdxS..vCzDZ1wBJWgoSZ4LM6x.BOAVNM
+KmRIwcD.QNSghIpka4O2q+pS8vjxl.rUTSwwnBkqy47lyrRpRRz0IXopnLCE
+uPA7aOfo4stp9j.Lmo9lpNhopqssbIZaSV68Za0O.a6e9MjXRVBxGG7WT5DH
+3caNiul33NfiRkZxmoBILOO1WDliCb+vSAedR5j3IzKt.bCIkMljKkDXCDHB
+QAWALMTssLzaPl06q.NdpFtMIyWvcEXhhCBYYY3aiLsslqA8w5ylCwrOE345
+aNSahRcexSiD8YIkljc4EWfRBU2L7fJIcwE7HBWnqZcQA8+JSytZhB3GEp3O
+xFf+.SoJnvzNAETRRXfjFS0jxrZxlgwfRgtGAxziKFJuE6mTfaRavzfPAJiR
+W+CLWlOKjMUNOmxVFrjDLgaNlnvBOMQYbY6L7PPm86JZrUNY3obqZQW9PFIl
+Ahrl+xSeFWpeoxuKLBW4KEShwkMjwRNHXJyIk4XOEQoogrE4x7NFUs7nkEoh
+1DqsNzUXbAkG1UlHxXHNFPQ.EKMw5K8VVdoMjXIbYJ2FJhjGj0bWno2EFPWx
+az0S8XD64gE2Ynnhss2.PEc2CBUtKLNXJaWUbvoLx3MHjw6vQl.7hSYbQrWS
+u3h8AgK7LhxxSwmx3h4fvEmCBWVxltAgz0mv3Baa5gfKVGDtPwqR9NDShw2w
+lL6bnjlmoqiMnDpNvvtSbRS4HL6xBWDyRuuR.BkBmt8N07c5uEmlwxwnwvwL
+CIIMHOpQW33wGHhAxabEovXIIsJRo3aCK6eMinTFzPY3BOR.eFeusoR8vvxt
+LMl4xUdhCgkoPkD1.dVIh7ZEcNHKQkg7kCfRMfCMbjqU0D9jFR72zpwwoFor
+HMLnL8ZVWrjNwM4XiaUoIHzzMYC5c4troKiXU.XizKZy8oXgkovuwEts2y1d
+PdMGtMbhz1rgccj5boRcBbiJWx7MAS1ZKzdPEMQvGOm9PE2eOfJMS4pabAZK
+8mgZ8ALNm3.yV6f1CrnKfEudWDYehiJakuU2nhqHxhmQefh0INnzHohdbSJN
+PYe.B7DGPliwQYSiB+3v7Sj+zytOXQ+jEVXRF.6AKfNB.vDJtyRCq9PCyVQC
+Xqng1dlt04kvuQ4h7RJ.lGzEqzRxrTvLPTGYyZXUjMkzOvi+7OskMKz6.xlU
+uyamc7CMm8duHZCYjOSC29uJZn42uWEMK23LzB7NFzjTxB91Ac9XdBeYomsq
+Y4CQrWDv9Pd6A8C7sGNxmWqsWQJfbWbDAE.nDJpKmccnHUAih6JRSl3.rEnQ
+qGnQ9hJIjP4iAo08IYkbmEFrguU6HYFcszMTYINJge1toQnY31dkmG.bNOhv
+FjA.WRGIHzoSOI8grVR9jpbJ1eCeyqVi8vi67vWR1q+WL4tthLY3MbuOS2+e
+26qDtFj2m0u+89ZYC973Dj+GAYqWAz.Z8uqforzNbr5DNM+V9jzFcAPb+4he
+8ffI9qrodaH9tdeAWSa4VidxT+3EawdWId.I8nc7rq74A3ugWMCGTkDaGkhf
+Quo3Yo40Hg+VL7teKSGvpM6d8KiJRLr42UJI+8d29FOmQBVu6cZ5SHoA0mbn
+9.EQxavr3Up0p9RebMKxvCx22F5U8ka84TJESwS917FEadHEIn5pYNt4AWBi
+k08xN2TX.NyOMLgVbKqJjawo9nL5dtTwP+BdzLiUpOZQ8IVXAYxjFiLoqRVi
+qksPE1FaDmllaScbTscpwFMncM5z3DlBVgp5lMXUya7Fi2zURY04XJYDceuL
+VcIHbORM8FsTcoQ7.6V0zyvno7qDOZ2trHMNntMOK3t1W9UdOKLpXbgb0o11
+GFuWOL4U5IWxXuAzTe5PE9sgxmr1NMzm7LgiG6XntVdM+ZWEqviXOhGEULU0
+1sWAxw2wVW2SW2xspgr06crDQVREyckW+eTZfp4wogR+K9nYnY43osQyY3JY
+YXpCMr1UangqvehWLBh4bSnUttAZoaZ6UYvTpBu7hk4wAeZIp1i1mH5gd4jt
+9UFVhQAxEnJu5lad2EPUHmMv0ulWgD+DhhuDbSNdLPyD7Vxsr1zsXIjcogyk
+Ftfe9M2vY6ErfarPtmeCKb0k.TRRTnrrytfWyEOC3ujWKFzqxoyO2sYG9m33
+EzkrndZkjYgq4c7RvGw3jyQQg2h4s7uO+EH+k3yeMd8kf8WWKh3Qh5YQD7h2
+qm66yVObNWZojnyedTD4tyuNMbQHS.+oV43Eo3.l1whQmcIflliaky2HJIEF
+W+7KuYL3cW+dAbv+t5MZ3gWxyJP+p21QNQmVVdQUMjmFIyn7ATXOEEbTMDv9
+aYw7zWoEUorhjX49cbk37pWGSblwJ5ZpPWSS6pV4aANMOgmc+FYYWzRYl+hc
+2zbUaBBbm.VHFtSvf4auRpjmxMLU5wIT4rlKCFZc9HxzXi2MLBu.4udCRcjb
+cyFYlxjiPsBMnpwqL6F4oELkOquNzqkGj8Tpb7VksnYQiw1+KgsWNtp.8pqY
+NdhPfq.kbnx+7yZxjTt75NahXG2Irjq3LoxyGPkS4oOaWNq2ueS9qouudUtQ
+8l8oj595Q4F3a1iRp6qG0OfVUe3jTEjZsCrcd2jcFg8wrbG1JVkeTks65220
+VWKmjfwCulJ068.QEmMzxpqRZ.dLtC3sR3+aaEs3NnJZAdPUzxNu0x2S00Ra
+WcL99DRJsCDywQie++lNxXo5cAXl6uzVz+ZlfB4z7AQJmuBckSeyYcFIO0ub
+nJUJPs5xNTEMLFUdnpes5Ltbd1KvNTAwufjdED+x0AvJlXQyDWWWwbyCxwZC
+mBuS6pOcLTM8dTM98k0P+2R032ERstYX5dT0MXevVm5Feq8ZcSWW6XoavAnZ
+kl8uJAw+GfnWeG9+3.e8RxdHdoGCAMj0c5ZGAIo69nIIuGMIY+nIImGMIY8n
+IoGMAAerjD+g16MVzwXargLifdctUgtHiASaUnsFaWLcdzXaisIV0cRZwUxn
+80iPOFazCMejDzfhq8HYx2bNWYxf6jp1VkVLWlaURwaUNw6VJwsWFwaWBwha
+zXekNLOa3y9xY+Ov75W1o
+-----------end_max5_patcher-----------
+</code></pre>
+
+**Exporting this for the web**
+
+As with the Radio project, we'll need a machine with RNBO installed. 
+- MAKE SURE ALL YOUR PARAMS have @min and @max values! 
+- Copy your gen~ patcher onto this machine. 
+- Create a new Max patcher on this machine, and add a `rnbo~` object, and double-click the `rnbo~` object to open its patcher. 
+- Paste your `gen~` object into this patcher. 
+- Connect it up to an `out~ 1` and `out~ 2`. 
+
+- TODO: parameters or messages?
+
+- Open the Export tab at the side (looks like a page with an arrow leaving it), select Web Export, select an export folder, then click the export icon to do it.  It will convert the patcher into WASM code that can be used in a webpage. 
+- This will export a few files, including `patch.export.json`, which is your synth in JS and WASM code. 
+
+Now it's just a case of writing a web page that starts up a Webaudio context and loads in this synth ... and pulling data from the weather API to map to the synth's parameters.
+
+Here's an example of pulling the current "feels like" temperature (in Kelvin) and mapping this to a sine frequency:
+
+---codepen:https://codepen.io/grrrwaaa/pen/xbZearx?editors=0010
+
+The standard bits of code for audio setup look like this:
+
+```js
+// globals:
+let context; // the WebAudio context
+let patcherNode; // the patcher as a WebAudio node
+let outputNode; // the WebAudio device that represents the loudspeakers/headphones
+
+// start the audio:
+async function audio_setup(patcher) {
+  // if this is the first time, set up the web audio context and RNBO support:
+  if (!window.RNBO) {
+    // Create AudioContext
+    const WAContext = window.AudioContext || window.webkitAudioContext;
+    context = new WAContext();
+    // Create gain node and connect it to audio output
+    outputNode = context.createGain();
+    outputNode.connect(context.destination);
+    // Load RNBO script dynamically
+    // Note that you can skip this by knowing the RNBO version of your patch
+    // beforehand and just include it using a <script> tag
+    await loadRNBOScript(patcher.desc.meta.rnboversion);
+    console.log("loaded RNBO");
+  }
+
+  // Remove any current device:
+  if (patcherNode != null) {
+    patcherNode.node.disconnect(outputNode);
+  }
+  // Create the new device
+  try {
+    patcherNode = await RNBO.createDevice({ context, patcher });
+  } catch (err) {
+    // TODO: display an error on the weboage
+    console.error(err);
+    return;
+  }
+  // Connect the patcher to the web audio outputs:
+  patcherNode.node.connect(outputNode);
+  // start sound:
+  context.resume();
+}
+
+function loadRNBOScript(version) {
+  return new Promise((resolve, reject) => {
+    if (/^\d+\.\d+\.\d+-dev$/.test(version)) {
+      throw new Error(
+        "Patcher exported with a Debug Version!\nPlease specify the correct RNBO version to use in the code."
+      );
+    }
+    const el = document.createElement("script");
+    el.src =
+      "https://c74-public.nyc3.digitaloceanspaces.com/rnbo/" +
+      encodeURIComponent(version) +
+      "/rnbo.min.js";
+    el.onload = resolve;
+    el.onerror = function (err) {
+      console.log(err);
+      reject(new Error("Failed to load rnbo.js v" + version));
+    };
+    document.body.append(el);
+  });
+}
+```
+
+To start audio on the page you need a user event.  I put a button in the html like this:
+
+```html
+<button id="start_button">Start Audio</button>
+```
+
+And then attached a handler to run the audio setup like this:
+
+```js
+// attach a handler to button to start patcher
+// (web audio requires user input for permission to run)
+document.getElementById("start_button").onclick = (event) => {
+  audio_setup(patcher);
+};
+```
+
+The `patcher` in question here is the JSON that RNBO exported.  Somewhere in the JS code you can define it like so:
+
+```js
+let patcher = <<<paste the JSON here>>>
+```
+
+Next we can define some example weather data like the following, which I extracted from the JSON downloaded in Max:
+
+```js
+let weather_data = {
+  main: {
+    temp: 277.67,
+    feels_like: 271.24,
+    pressure: 1026,
+    humidity: 65,
+  },
+  wind: {
+    speed: 13.640000000000001,
+    deg: 267,
+    gust: 18.859999999999999
+  },
+  clouds: {
+    all: 100
+  }
+};
+```
+
+We can map this to our patcherNode like this:
+
+```js
+function update_parameters(json, node) {
+  if (node) {
+    // update audio parameters:
+    node.parameters.forEach((param) => {
+      switch (param.name) {
+        case "weather_synth/feels_like": {
+          param.value = json.main.feels_like;
+          break;
+        }
+        // etc. for other parameters
+      }
+    });
+  }
+}
+```
+
+We can load live data as follows:
+
+```js
+
+async function getData() {
+  // Toronto:
+  let lat = 43.6532;
+  let lon = 79.3832;
+  let key = "7aa553c6a465f01ce2bf1ea46d98c4b0";
+  let url =
+    "https://api.openweathermap.org/data/2.5/weather?lat=" +
+    lat +
+    "&lon=" +
+    lon +
+    "&appid=" +
+    key;
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+    weather_data = await response.json();
+    console.log(weather_data);
+
+    update_parameters(weather_data, patcherNode);
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+```
+
+And I put that on another HTML button like so:
+
+```js
+document.getElementById("data_button").onclick = (event) => {
+  getData();
+};
+```
+
+
+**Embedding in a webpage**
+
+
+
+### From gen~ to Unity
+
+The process here is to create a Unity audio plugin that contains C++ code exported from your gen~ patcher. This is made a lot easier by using RNBO and the UnityRNBO wrapper provided by Cycling '74. 
+
+The plugin you create can either be added to a track of a Unity Audio Mixer, or it can be a "custom filter" attached to a GameObject. 
+
+The main adapter code is at [https://github.com/Cycling74/rnbo.unity.audioplugin](https://github.com/Cycling74/rnbo.unity.audioplugin)
+
+Here is the documentation: [https://github.com/Cycling74/rnbo.unity.audioplugin/blob/main/docs/INDEX.md](https://github.com/Cycling74/rnbo.unity.audioplugin/blob/main/docs/INDEX.md)
+
+You will need:
+- A machine with Max & RNBO installed, as well as a Unity installation. We have one Windows machine in ACW103, and one in ACW102. 
+- Your gen~ patch on this machine. 
+- The machine will also need Cmake installed
+
+**The process**
+
+Download https://github.com/Cycling74/rnbo.unity.audioplugin (or fork it and download that!)
+Add an /export folder
+
+Create a Max patcher with rnbo~
+  - copy your gen~ object into a rnbo~ patcher, and connect it up to `out~ 1`, `out~ 2` objects as appropriate. 
+  - gen~ @exposeparams 1 doesn't seem to work. Instead, create `param` objects in the RNBO patch, and either route them to inlets of the gen, or use `setparam` to route them to gen~ parameters.
+  - For an Audio Mixer plugin, it expects two input and two output channels -- if you plan to load the plugin in this way, you'll want to include an `in~ 1`, `in~ 2`, `out~ 1`, and `out~ 2`.
+  - For a GameObject audio source, it won't have audio inputs and probably just a single `out~ 1`. 
+  - Export C++ to the /export folder
+
+Use cmake to build the plugin. Here's the command line commands that worked for me, run from within the audioplugin folder:
+
+```sh
+rm -rf build
+mkdir build
+cd build
+cmake .. -DRNBO_CLASS_FILE_NAME="rnbo_source.cpp" -DPLUGIN_NAME="MyPlugin" 
+cmake --build . --config Release
+cd ..
+```
+
+This is probably a good thing to put into a shell script / batch file, because it needs to be run each time you update the Max patcher and export.  
+
+**Adding to Unity**
+
+Copy the audioplugin folder, including the /build subfolder, to somewhere safe on the machine that has your Unity project. 
+
+Window / Package Manager / + / Install Package From Disk... to install:
+- audioplugin / RNBOTypes / package.json
+- audioplugin / build / MyPlugin / package.json
+
+There's two options for how to add the plugin to a Unity scene -- either as a stereo processor plugin in the Audio Mixer, or as a "Custom Filter" on a GameObject
+
+**As an audio mixer plugin**
+
+See https://github.com/Cycling74/rnbo.unity.audioplugin/blob/main/docs/GETTING_STARTED.md
+
+Window / Audio / AudioMixer
+- use "+" to create a new audiomixer
+- use "Add..." to select "MyPlugin"
+- in the inspector for MyPlugin, set "Instance Index" to a unique *integer* value
+- other params appear in the Inspector of the plugin in the mixer. They do seem to work. 
+
+Add an Audio Source to the scene, and set its Output to the Master track of this Audio Mixer, to make sure that audio processing begins. 
+
+Script control
+- On some object in the scene, Add Component / New Script
+
+Example:
+
+```cs
+using UnityEngine;
+
+public class AudioScript : MonoBehaviour
+{
+    // references to the plugin instance and its helper class:
+    MyPluginHandle audioPlugin;
+    MyPluginHelper audioHelper;
+
+    const int instanceIndex = 1; // this corresponds to the Instance Index key we set in the mixer
+
+    readonly System.Int32 harmonicParam = (int)MyPluginHandle.GetParamIndexById("harmonic");
+    
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start() {
+        // set up the plugin helper & instance references:
+        audioHelper = MyPluginHelper.FindById(instanceIndex);
+        audioPlugin = audioHelper.Plugin;
+    }
+
+    // Update is called once per frame
+    void Update() {
+        if (Random.Range(0, 100) == 0) {
+            audioPlugin.SetParamValue(harmonicParam, Random.Range(1, 10));
+        }
+    }
+}
+```
+
+**Custom Filter**
+
+Attaching a sound to a game object:
+
+- In the game object, Add Component / Audio Source
+- Add Component / New Script
+
+Example code:
+
+```cs
+using UnityEngine;
+
+[RequireComponent(typeof(AudioSource))]
+public class AudioCustom : MonoBehaviour
+{
+    MyPluginHandle synth;
+
+    readonly System.Int32 harmonicParam = (int)MyPluginHandle.GetParamIndexById("harmonic");
+
+    public AudioCustom() : base() {}
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start() {
+        synth = new MyPluginHandle();
+    }
+
+    // Update is called once per frame
+    void Update() {
+        if (Random.Range(0, 100) == 0) {
+            synth.SetParamValue(harmonicParam, Random.Range(1, 10));
+        }
+        
+        synth.Update();
+    }
+
+    void OnAudioFilterRead(float[] data, int channels) {
+        if (synth != null) {
+            synth.Process(data, channels);
+        } 
+    }
+}
+```
+
+**Updating the Max patcher**
+
+- Update the rnbo~ patch, and then re-export. 
+- Run the cmake build commands again. 
+- If the plugin didn't update in Unity automatically, you might have to close & reopen Unity, or even remove and then re-import the plugin? 
+
+
+<!--
+### From gen~ to Guitar Pedal
+
+In this pathway we will use Oopsy to flash code from a gen~ patcher onto a guitar pedal called [Daisy Petal](https://cicadasound.ca/products/petal?srsltid=AfmBOorN5V0-gCnihUZ1ZFLvzTiha8lWfSY-qNRYoac72nCdLyfw5URk)
+
+You'll need to install a few things for the toolchain that is used to flash the code onto the hardware. Follow the instructions at https://daisy.audio/tutorials/oopsy-dev-env/ -- they are different for MacOS and for Windows
+
+Open Max. You should be able to create a new patch via File / New from Template / Oopsy Petal.   Have a look inside the gen~ patch, it has the stereo inputs & outputs, and parameters for all the switches and knobs on the pedal. It also has a parameter input for the expression pedal input. 
+
+To flash the patch onto the pedal, enable flash mode on the daisy microcontroller (by pressing both small white buttons on the microcontroller itself), make sure it is plugged in by USB to your computer, and then save your Max patcher.  Every time you save, it will try to flash the hardware in this way. 
+
+
+-->
+
+
+
+
+
+
+---
 
 - **[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
 
