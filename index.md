@@ -1983,7 +1983,7 @@ The basic version of this is pretty straightforward:
 - create the `rnbo~` object and place the `gen~` inside it
 - hook up `in~ ` and `out~ ` objects accordingly
 - Go to the Export tab (icon looks like a document with an arrow out of it) and choose the format, choose whether it is and Effect or Instrument, etc, then hit the export icon. 
-
+x
 
 **A custom interface**
 
