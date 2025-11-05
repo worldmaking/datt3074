@@ -2773,6 +2773,7 @@ Recordings of the weekly sessions will be here:
 - [Week 6 - Filters and smoothing](https://yorku.zoom.us/rec/share/Ic6h8vreDZIr96zdH0masBPrtYkEsWhXDgU2sKJosJzZln0AY9G-8xkwljIv9QLb.4PWr8zCHTCy63YN1)
 - [Week 7 - The Effects of Delay](https://yorku.zoom.us/rec/share/4Ovi-bU6R2x2SXd4sVSQvPaFivJTHXwkwM_bs9fTlBU3tcXh9R6KGNxE5EJ2xxVA.UcnkKylvTk7u1_mx)
 - [Week 8 - Frequent Modulations](https://yorku.zoom.us/rec/share/hXuke5TB2RCgezUP-pf5QxuUeKiCy_ryD9Go5i2TPbcswzcDSxkjMU2S_VvMpAVL.FLQcCicaJ_rlnTO2)
+- [Week 9 - Exporting to Web with Data APIs / Exporting to Unity / Exporting to VSTs](https://yorku.zoom.us/rec/share/7HOEIET0I_ihxWYYrknl3T2tReayatN3usVa_LKxoNv32AS8rS3ua_hvCTm4zBjV.ZoqUBezHgx7IH1nZ)
 
 -----
 
