@@ -1977,6 +1977,24 @@ public class AudioCustom : MonoBehaviour
 - Run the cmake build commands again. 
 - If the plugin didn't update in Unity automatically, you might have to close & reopen Unity, or even remove and then re-import the plugin? 
 
+### From gen~ to VST/AU plugin
+
+The basic version of this is pretty straightforward: 
+- create the `rnbo~` object and place the `gen~` inside it
+- hook up `in~ ` and `out~ ` objects accordingly
+- Go to the Export tab (icon looks like a document with an arrow out of it) and choose the format, choose whether it is and Effect or Instrument, etc, then hit the export icon. 
+
+
+**A custom interface**
+
+The basic RNBO VST plugin export won't have a very nice user interface, just the default set of sliders. If you want a custom interface, it is recommended instead to use the RNBO Juce export example at https://github.com/Cycling74/rnbo.example.juce/tree/main
+
+JUCE is a cross-platform C++ framework that is used for many widely-used desktop audio software and very many plugins. It requires installing some build tools on the system. 
+
+See https://rnbo.cycling74.com/learn/programming-a-custom-ui-with-juce and https://github.com/Cycling74/rnbo.example.juce/blob/main/CUSTOM_UI.md 
+
+
+
 
 <!--
 ### From gen~ to Guitar Pedal
@@ -2023,10 +2041,6 @@ Of course we could take that to a 3D volume too:
 - Now we have X, Y, and Z indices, 8 nearest waves means 8 `wave` operators; and three layers of `mix` operators to morph them. 
 - See **wavetable_3D.maxpat**
 
----
-
-**[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
-  
 ---
 
 A related approach to 2D wavetables is to create **wave terrains**. In this case, there is a 2D space in which each cell is a single sample, rather than a single waveform. You play a wave terrain by traversing a path through it -- which is sometimes called an *orbit*.  We can re-use a lot of the patching from the 2D wavetable -- for computing indices and doing bilinar interpolation. For a simple orbit, we can use the `poltocar` operator, which generates X and Y pairs from a radius and angle. See **waveterrain_2D.maxpat**. 

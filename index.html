@@ -89,6 +89,7 @@ function copyPatch(str) {
 <li><a href="#project-export-practices">Project export practices</a><ul>
 <li><a href="#from-gen-to-web--harnessing-online-data">From gen~ to web + harnessing online data</a></li>
 <li><a href="#from-gen-to-unity">From gen~ to Unity</a></li>
+<li><a href="#from-gen-to-vstau-plugin">From gen~ to VST/AU plugin</a></li>
 </ul>
 </li>
 </ul>
@@ -1921,6 +1922,17 @@ cmake --build . --config Release
 <li>Run the cmake build commands again. </li>
 <li>If the plugin didn&#39;t update in Unity automatically, you might have to close &amp; reopen Unity, or even remove and then re-import the plugin? </li>
 </ul>
+<h3 id="from-gen-to-vstau-plugin">From gen~ to VST/AU plugin</h3>
+<p>The basic version of this is pretty straightforward: </p>
+<ul>
+<li>create the <code>rnbo~</code> object and place the <code>gen~</code> inside it</li>
+<li>hook up <code>in~ </code> and <code>out~ </code> objects accordingly</li>
+<li>Go to the Export tab (icon looks like a document with an arrow out of it) and choose the format, choose whether it is and Effect or Instrument, etc, then hit the export icon. </li>
+</ul>
+<p><strong>A custom interface</strong></p>
+<p>The basic RNBO VST plugin export won&#39;t have a very nice user interface, just the default set of sliders. If you want a custom interface, it is recommended instead to use the RNBO Juce export example at <a href="https://github.com/Cycling74/rnbo.example.juce/tree/main">https://github.com/Cycling74/rnbo.example.juce/tree/main</a></p>
+<p>JUCE is a cross-platform C++ framework that is used for many widely-used desktop audio software and very many plugins. It requires installing some build tools on the system. </p>
+<p>See <a href="https://rnbo.cycling74.com/learn/programming-a-custom-ui-with-juce">https://rnbo.cycling74.com/learn/programming-a-custom-ui-with-juce</a> and <a href="https://github.com/Cycling74/rnbo.example.juce/blob/main/CUSTOM_UI.md">https://github.com/Cycling74/rnbo.example.juce/blob/main/CUSTOM_UI.md</a> </p>
 <!--
 ### From gen~ to Guitar Pedal
 
@@ -1962,8 +1974,6 @@ To flash the patch onto the pedal, enable flash mode on the daisy microcontrolle
 <li>Now we have X, Y, and Z indices, 8 nearest waves means 8 <code>wave</code> operators; and three layers of <code>mix</code> operators to morph them. </li>
 <li>See <strong>wavetable_3D.maxpat</strong></li>
 </ul>
-<hr>
-<p><strong><a href="https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784">Attendance check</a></strong></p>
 <hr>
 <p>A related approach to 2D wavetables is to create <strong>wave terrains</strong>. In this case, there is a 2D space in which each cell is a single sample, rather than a single waveform. You play a wave terrain by traversing a path through it -- which is sometimes called an <em>orbit</em>.  We can re-use a lot of the patching from the 2D wavetable -- for computing indices and doing bilinar interpolation. For a simple orbit, we can use the <code>poltocar</code> operator, which generates X and Y pairs from a radius and angle. See <strong>waveterrain_2D.maxpat</strong>. </p>
 <p>To generate terrains we&#39;ll need to dig into a <code>codebox</code> for nested for loops -- one loop for X and another for Y. See <strong>waveterrain_generate_codebox.maxpat</strong>. Or, we can make use of Jitter matrices to generate terrains, see <strong>waveterrain_generate_BFG.maxpat</strong>. </p>
