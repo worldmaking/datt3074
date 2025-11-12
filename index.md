@@ -2084,12 +2084,11 @@ Nov 12
 
 [Class Recording](#class-recordings)
 
-- [Final project](#final-project) discussion
+[Final project](#final-project) discussion & developement sprint
 
 ---
 
-
-This chapter is all about using one proess to determine the durations (or *lifespans*) of another. For example, a repeated tom sound has three timescales -- waveform duration (periodic), duration between sounds (periodic), and the envelope duration (a window of time):
+Chapter 10 is all about using one proess to determine the durations (or *lifespans*) of another. For example, a repeated tom sound has three timescales -- waveform duration (periodic), duration between sounds (periodic), and the envelope duration (a window of time):
 
 https://www.desmos.com/calculator/hcae8t9tns
 
