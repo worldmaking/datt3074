@@ -2426,7 +2426,6 @@ This is a really cheap way to get pretty decent antialiasing. It's not perfect, 
 - Hard sync: based on figuring out the subsample moment of the hardsync, and computing the necessary phase as well as the values half a sample before & after, and plugging that in. See `go.ramp.aa`. 
 - Shaping: almost all the aliasing in a phasor comes from that jump moment from 1 to 0. The slope in between can actually be curved quite a bit without risking noticeable aliasing. The same holds for our antialiased phasor here -- we just have to be careful to apply the shaping *before* we do the linear interpolation. That really opens up space for some interesting waveforms! 
 
-
 [Back to top](#top)
 
 # Week 11: Final Development Sprint
@@ -2434,11 +2433,16 @@ Nov 19
 
 [Class Recording](#class-recordings)
 
+- Looking forward:
+  - Next year I will teach DATT4074, Synthesis Workshop, as a "part II" of this course, where we can cover some more in-depth algorithms and spend more time developing final projects
+  - Other related courses you can consider include DATT4071, DATT3070/4070, and EECS4441. 
+  - Do you want to do things like this in the Alice Lab?
+
 **[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
 
-- Longer-term projects -- do you want to do things in the Alice Lab?
-
 **Today: final in-class sprint developing your projects!**
+
+...and covering any material that we haven't gone as deep into yet that would be useful for any of your specific projects!
 
 [Back to top](#top)
 
