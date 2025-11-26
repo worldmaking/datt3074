@@ -1,5 +1,8 @@
 //import {Oscilloscope} from "https://unpkg.com/webaudio-oscilloscope@3.2.1/dist/index.js";
 
+const urlParams = new URLSearchParams(window.location.search);
+const useFullScreen = urlParams.get("fs")
+const randomStationTimeout = urlParams.get("timeout") 
 
 let { Oscilloscope } = _osc
 
@@ -32,8 +35,6 @@ let stations = [
 	{ id: 220041497, title: "Mushroom Music", author: "Harrison Fok" },//
 	{ id: 220641890, title: "Crash + Flow Radio", author: "Jayden Anderson-Johnson" }, //
 	{ id: 219962422, title: "The Knockoff Buzzer", author: "Adam Abdillahi" }, //
-
-
 ];
 
 let scope = document.getElementById("scope")
@@ -43,6 +44,23 @@ let resize = function () {
 };
 window.addEventListener("resize", resize);
 resize();
+
+
+function enterFullScreen() {
+  if (useFullScreen && !document.fullscreenElement) {
+    // If the document is not in full screen mode
+    // make the video full screen
+    document.body.requestFullscreen();
+  } 
+}
+
+// On pressing ENTER call toggleFullScreen method
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    enterFullScreen();
+  }
+});
+
 
 function setup() {
 	for (let station of stations) {
@@ -59,6 +77,7 @@ function setup() {
 			radio_div = div;
 			//console.log("start radio", radio_div.id);
 			playStation(station);
+			enterFullScreen()
 		};
 	}
 }
@@ -174,6 +193,11 @@ async function playStation(station) {
 	document.getElementById("author").innerText = station.author
 
 }
+
+if (randomStationTimeout) setInterval(function() {
+	let station = stations[Math.floor(Math.random()*stations.length)];
+	playStation(station);
+}, randomStationTimeout)
 
 function loadRNBOScript(version) {
 	return new Promise((resolve, reject) => {

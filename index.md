@@ -2435,7 +2435,7 @@ Nov 19
 
 - Looking forward:
   - Next year I will teach DATT4074, Synthesis Workshop, as a "part II" of this course, where we can cover some more in-depth algorithms and spend more time developing final projects
-  - Other related courses you can consider include DATT4071, DATT3070/4070, and EECS4441. 
+  - Other related courses you can consider include DATT4071, DATT3070/4070, and EECS6642. 
   - Do you want to do things like this in the Alice Lab?
 
 **[Attendance check](https://eclass.yorku.ca/mod/attendance/manage.php?id=3730784)**
