@@ -2449,26 +2449,32 @@ Nov 19
 # Week 12: Final Meeting
 Nov 26
 
-[Class Recording](#class-recordings)
+**Exhibition**
 
-**Final project presenation**
+Digital Media will be having an end of term exhibition, Dec 3rd-5th, opening Dec 3rd at 3pm. We need to know what works will be showing from DATT3074. 
+
+I am also recommending that we show RADIO DATT3074 (http://alicelab.world/datt3074/2025/radio/index.html?fs=1&timeout=60000), and need at least one volunteer from the class to help set it up! 
+
+The deadline for us to submit work is TBC including:
+- Title
+- Creator Name(s)
+- Course
+- A one paragraph description of the work.
+- Any special technologies needed to present the work (video, audio, VR, AR, etc.) If this is an object - please indicate WHO will come and set up this work.
+- Image of the work if you have it.
+- Link to the materials - Please test this link before you send. Make sure that the project can be set up by Frank. If the students need any specialised set up - please indicate WHO will come and set up this work. Students are responsible for setting their work up if the project is specialised in anyway.
+- Submit Here: https://docs.google.com/spreadsheets/d/1pRx25FqEHKefFNBDw7mZrMVPQTEs0J-xCzi7-dXPpbc/edit?usp=sharing
+- Set up will be DEC 3rd from 9-2pm. Students must be available for set up if there are any specialised requirements. Take down is Dec 5th - Students must​ be available to pick up their work, or make arrangements​ to have their work picked up after the expo.
+
+**Project presenations**
+
+Each group will present their work to the class as a whole! 
 
 <!--Instead of presenting final projects to class, we are instead spending today's class time refining final builds of the projects using the RNBO-enabled machines available, and I will help out with each project in any way that I can.
 
 Instead of in-class final presentations, each team should record a video presentation that can be shared on the course website so that all of us can view them. 
 -->
 
-**Exhibition**
-
-Digital Media will be having an end of term exhibition. Dates TBC with an opening celebration and performances TBD. We need to know what works will be showing from DATT3074 (aside from submissions already made to the open call). 
-
-The deadline for us to submit work is TBC including:
-- Title
-- Name(s)
-- Course
-- A one paragraph description of the work
-- Any special technologies needed to present the work (video, audio, VR, AR, etc.)
-- Link to the materials
 
 ----
 
