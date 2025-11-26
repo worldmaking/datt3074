@@ -2466,6 +2466,14 @@ The deadline for us to submit work is TBC including:
 - Submit Here: https://docs.google.com/spreadsheets/d/1pRx25FqEHKefFNBDw7mZrMVPQTEs0J-xCzi7-dXPpbc/edit?usp=sharing
 - Set up will be DEC 3rd from 9-2pm. Students must be available for set up if there are any specialised requirements. Take down is Dec 5th - Students must​ be available to pick up their work, or make arrangements​ to have their work picked up after the expo.
 
+**Final project submissions**
+
+Remember, submission via e-Class by Friday, 5 December 2025, 12:00 AM
+
+**Course evaluations**
+
+Please remember to [fill in the course evaluations here](https://courseevaluations.yorku.ca)
+
 **Project presenations**
 
 Each group will present their work to the class as a whole! 
@@ -2989,11 +2997,13 @@ The final project package should be [submitted via e-Class](https://eclass.yorku
 
 ## Stage 4: Video documentation
 
-**Each group:** should record a video presentation that can be shared on the course website so that all of us can view them. This submission should be a URL to the video hosted online. Please ensure that this video is open access to anyone with the link (verify this by testing on a different machine). [Submissions via e-Class](https://eclass.yorku.ca/mod/assign/view.php?id=3754773)
+**Each group:** should record a video presentation.
 
 If your project culminated in a performance, then a recording of the performance will satisfy this requirement. But please ensure to record the audio directly if this is possible (not via a microphone and laptop speakers!!) for best audio quality. Please ensure that all team members have an equal contribution. 
 
 If your project did not culminate in a performance, then this video can be a powerpoint-style presentation, in which you talk through the details of the project, including your working process, challenges faced and insights gained, technical detail, and so on. Please ensure that all team members have an equal contribution. 
+
+[Submissions via e-Class](https://eclass.yorku.ca/mod/assign/view.php?id=3754773)
 
 ## Stage 5: Final report
 
