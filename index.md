@@ -2474,7 +2474,7 @@ Remember, submission via e-Class by Friday, 5 December 2025, 12:00 AM
 
 Please remember to [fill in the course evaluations here](https://courseevaluations.yorku.ca)
 
-**Project presenations**
+**Project presentations**
 
 Each group will present their work to the class as a whole! 
 
